@@ -1,4 +1,6 @@
-# 📡 ALCOFIX 지원사업 레이더
+# 📢 ALCOFIX 지원사업 알리미
+
+**사이트**: https://alcofixkorea-a11y.github.io/alcofix-biz-alert/
 
 세종시·중앙부처의 식품·바이오 분야 지원사업 공고를 매일 자동 수집하여 보여주는 알코픽스 내부용 통합 알리미 사이트입니다.
 

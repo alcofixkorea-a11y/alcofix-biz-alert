@@ -7,6 +7,10 @@ on:
 
 permissions:
   contents: write
+  issues: write
+
+env:
+  HAS_GMAIL: ${{ secrets.GMAIL_APP_PASSWORD }}
 
 jobs:
   collect:
@@ -28,5 +32,31 @@ jobs:
         run: |
           git config user.name "alcofix-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/programs.json
+          git add data/programs.json data/new_today.md
           git diff --cached --quiet || (git commit -m "data: 공고 자동 업데이트 $(date -u -d '+9 hours' +'%Y-%m-%d')" && git push)
+
+      - name: 신규 공고 여부 확인
+        id: newcheck
+        run: echo "has_new=$([ -s data/new_today.md ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+
+      - name: 신규 공고 알림 (이슈 코멘트 → 워치 중이면 이메일 수신)
+        if: steps.newcheck.outputs.has_new == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment 1 --repo ${{ github.repository }} --body-file data/new_today.md \
+            || gh issue create --repo ${{ github.repository }} --title "📬 일일 신규 공고 알림" --body-file data/new_today.md
+
+      - name: 이메일 발송 (GMAIL_APP_PASSWORD 시크릿 등록 시에만 실행)
+        if: steps.newcheck.outputs.has_new == 'yes' && env.HAS_GMAIL != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: alcofixkorea@gmail.com
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          subject: "[ALCOFIX 알리미] 오늘의 신규 지원사업 공고"
+          to: alcofixkorea@gmail.com
+          from: ALCOFIX 지원사업 알리미
+          convert_markdown: true
+          html_body: file://data/new_today.md

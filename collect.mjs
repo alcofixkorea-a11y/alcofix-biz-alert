@@ -318,6 +318,30 @@ async function main() {
   mkdirSync(dirname(OUT_PATH), { recursive: true });
   writeFileSync(OUT_PATH, JSON.stringify(out, null, 2), "utf8");
 
+  // 오늘 처음 발견된 공고 요약 (이메일·이슈 알림용). 신규가 없으면 빈 파일
+  const newItems = items.filter((i) => i.firstSeen === TODAY);
+  let md = "";
+  if (newItems.length) {
+    md += `## 📬 ${TODAY} 신규 지원사업 공고 ${newItems.length}건\n\n`;
+    const line = (it) =>
+      `- ${it.region === "세종" ? "📍**[세종]** " : ""}[${it.title}](${it.url})` +
+      ` — ${it.org}${it.applyEnd ? ` (마감 ${it.applyEnd})` : " (상시)"}` +
+      (it.foodBio ? " `식품·바이오`" : "");
+    const foodBio = newItems.filter((i) => i.foodBio || i.region === "세종");
+    const rest = newItems.filter((i) => !i.foodBio && i.region !== "세종");
+    if (foodBio.length) {
+      md += `### ⭐ 세종·식품바이오 관련 (${foodBio.length}건)\n`;
+      md += foodBio.map(line).join("\n") + "\n\n";
+    }
+    if (rest.length) {
+      md += `### 일반 (${rest.length}건)\n`;
+      md += rest.slice(0, 30).map(line).join("\n") + "\n";
+      if (rest.length > 30) md += `\n…외 ${rest.length - 30}건\n`;
+    }
+    md += `\n👉 전체 공고 보기: https://alcofixkorea-a11y.github.io/alcofix-biz-alert/\n`;
+  }
+  writeFileSync(join(dirname(OUT_PATH), "new_today.md"), md, "utf8");
+
   console.log(`[${TODAY}] 수집 완료 — 총 ${items.length}건`);
   console.log(`  K-Startup: ${kst.error ? "오류/" + kst.error : kst.items.length + "건"}`);
   console.log(`  기업마당 : ${biz.error ? "오류/" + biz.error : biz.items.length + "건"}`);
