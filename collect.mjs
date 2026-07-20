@@ -1,0 +1,271 @@
+// ALCOFIX 지원사업 레이더 — 공고 수집기
+//
+// K-Startup(창업진흥원)과 기업마당(중소벤처기업부)에서 지원사업 공고를 수집하고
+// 알코픽스 조건에 맞게 필터링하여 data/programs.json 을 생성한다.
+//
+// 필터 기준:
+//   - 모집기간: 오늘 기준 접수 중이거나 접수 예정인 공고만 (마감 공고 자동 제외)
+//   - 지역: 전국(중앙부처) 또는 세종
+//   - 분야: 식품·바이오 관련 공고는 태그로 표시 (일반 창업지원 공고도 포함)
+//   - 자격: 업력 1년 미만(2025.8 창업), 청년 대표(1997년생) 요건 충족 여부 태그
+//
+// 실행: KSTARTUP_KEY=... BIZINFO_KEY=... node collect.mjs
+
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const ROOT = dirname(fileURLToPath(import.meta.url));
+const OUT_PATH = join(ROOT, "data", "programs.json");
+
+const KSTARTUP_KEY = process.env.KSTARTUP_KEY || "";
+const BIZINFO_KEY = process.env.BIZINFO_KEY || "";
+
+// ---------- 날짜 유틸 (KST 기준) ----------
+const kstNow = new Date(Date.now() + 9 * 3600 * 1000);
+const TODAY = kstNow.toISOString().slice(0, 10); // "2026-07-20"
+
+function toIso(d8) {
+  if (!d8) return null;
+  const m = String(d8).match(/(\d{4})(\d{2})(\d{2})/);
+  return m ? `${m[1]}-${m[2]}-${m[3]}` : null;
+}
+function isoDaysAgo(n) {
+  return new Date(kstNow.getTime() - n * 86400000).toISOString().slice(0, 10);
+}
+
+// ---------- 알코픽스 맞춤 기준 ----------
+const FOOD_BIO_KEYWORDS = [
+  "식품", "푸드", "외식", "음료", "주류", "양조", "발효", "숙취",
+  "건강기능", "기능성식품", "건기식", "바이오", "제약", "의약", "헬스케어",
+  "농식품", "농산물", "식음료", "F&B", "f&b", "푸드테크", "HACCP", "해썹",
+  "케어푸드", "고령친화식품", "그린바이오", "레드바이오", "화이트바이오",
+];
+// 세종 외 광역시·도 (지역 제한 공고 판별용)
+const OTHER_SIDO = [
+  "서울", "부산", "대구", "인천", "광주", "대전", "울산", "경기", "강원",
+  "충북", "충남", "전북", "전남", "경북", "경남", "제주",
+  "충청북도", "충청남도", "전라북도", "전라남도", "경상북도", "경상남도",
+  "경기도", "강원특별자치도", "전북특별자치도", "제주특별자치도",
+];
+
+function hasFoodBio(text) {
+  if (!text) return false;
+  return FOOD_BIO_KEYWORDS.some((k) => text.includes(k));
+}
+function decodeEntities(s) {
+  return (s || "")
+    .replace(/&apos;|&#39;/g, "'")
+    .replace(/&quot;|&#34;/g, '"')
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
+}
+function stripHtml(s) {
+  return decodeEntities((s || "").replace(/<[^>]*>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// 업력 요건: 알코픽스는 2025.8 창업 → 업력 1년 미만
+function checkEnyy(s) {
+  if (!s) return null;
+  if (/(1|2|3|5|7|10)년미만/.test(s.replace(/\s/g, ""))) return true;
+  return false; // "예비창업자"만 대상인 공고 등
+}
+// 연령 요건: 대표 1997년생 → 만 20~39세 구간
+function checkAge(s) {
+  if (!s) return null;
+  return s.includes("만 20세 이상") || s.replace(/\s/g, "").includes("만39세이하");
+}
+
+// ---------- K-Startup 수집 ----------
+async function fetchKstartup() {
+  if (!KSTARTUP_KEY) return { items: [], error: "no-key" };
+  const perPage = 100;
+  const maxPages = 35;
+  const cutoff = isoDaysAgo(150); // 접수 시작일이 5개월 이전인 페이지까지 내려가면 중단
+  const raw = [];
+  for (let page = 1; page <= maxPages; page++) {
+    const url =
+      `https://nidapi.k-startup.go.kr/api/kisedKstartupService/v1/getAnnouncementInformation` +
+      `?serviceKey=${KSTARTUP_KEY}&page=${page}&perPage=${perPage}&returnType=json`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`K-Startup API HTTP ${res.status}`);
+    const j = await res.json();
+    const data = j.data || [];
+    raw.push(...data);
+    if (data.length < perPage) break;
+    const oldest = data
+      .map((x) => toIso(x.pbanc_rcpt_bgng_dt))
+      .filter(Boolean)
+      .sort()[0];
+    if (oldest && oldest < cutoff) break;
+  }
+
+  const items = [];
+  for (const x of raw) {
+    const start = toIso(x.pbanc_rcpt_bgng_dt);
+    const end = toIso(x.pbanc_rcpt_end_dt);
+    // 모집기간 철저 확인: 마감됐거나 조기종료된 공고는 제외
+    if (end && end < TODAY) continue;
+    const upcoming = start && start > TODAY;
+    if (x.rcrt_prgs_yn !== "Y" && !upcoming) continue;
+    // 지역: 전국 또는 세종 포함만
+    const region = x.supt_regin || "";
+    if (region && !region.includes("전국") && !region.includes("세종")) continue;
+
+    const textAll = [x.biz_pbanc_nm, x.pbanc_ctnt, x.supt_biz_clsfc].join(" ");
+    items.push({
+      id: `kstartup-${x.pbanc_sn}`,
+      source: "kstartup",
+      title: decodeEntities(x.biz_pbanc_nm || "").trim(),
+      org: x.pbanc_ntrp_nm || "",
+      category: x.supt_biz_clsfc || "",
+      region: region.includes("전국") ? "전국" : "세종",
+      target: x.aply_trgt || "",
+      applyStart: start,
+      applyEnd: end,
+      alwaysOpen: !end,
+      status: upcoming ? "upcoming" : "open",
+      url:
+        x.detl_pg_url ||
+        `https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=${x.pbanc_sn}`,
+      summary: stripHtml(x.pbanc_ctnt).slice(0, 300),
+      foodBio: hasFoodBio(textAll),
+      youngOk: checkAge(x.biz_trgt_age),
+      enyyOk: checkEnyy(x.biz_enyy),
+      privateHost: x.sprv_inst === "민간",
+    });
+  }
+  return { items };
+}
+
+// ---------- 기업마당 수집 ----------
+async function fetchBizinfo() {
+  if (!BIZINFO_KEY) return { items: [], error: "no-key" };
+  const url =
+    `https://www.bizinfo.go.kr/uss/rss/bizinfoApi.do` +
+    `?crtfcKey=${BIZINFO_KEY}&dataType=json&searchCnt=800`;
+  const res = await fetch(url);
+  const text = await res.text();
+  let j;
+  try {
+    j = JSON.parse(text);
+  } catch {
+    return { items: [], error: `응답 파싱 실패: ${text.slice(0, 120)}` };
+  }
+  if (j && j.reqErr) return { items: [], error: j.reqErr };
+  const arr = Array.isArray(j) ? j : j.jsonArray || j.item || [];
+
+  const items = [];
+  for (const x of arr) {
+    const title = decodeEntities(x.pblancNm || x.pblancnm || "").trim();
+    if (!title) continue;
+    // 모집기간 파싱: "20260701 ~ 20260731" 또는 "예산 소진시" 등
+    const period = String(x.reqstBeginEndDe || "");
+    const m = period.match(/(\d{8})\s*~\s*(\d{8})/);
+    const start = m ? toIso(m[1]) : null;
+    const end = m ? toIso(m[2]) : null;
+    if (end && end < TODAY) continue; // 마감 공고 제외
+    const upcoming = start && start > TODAY;
+
+    // 지역: hashtags 에 타 시도만 있고 세종/전국이 없으면 제외
+    const tags = String(x.hashtags || "");
+    const hasOther = OTHER_SIDO.some((s) => tags.includes(s));
+    const hasMine = tags.includes("세종") || tags.includes("전국");
+    if (hasOther && !hasMine) continue;
+
+    const urlPath = x.pblancUrl || x.pblancurl || "";
+    const textAll = [title, x.bsnsSumryCn, x.pldirSportRealmLclasCodeNm, tags].join(" ");
+    items.push({
+      id: `bizinfo-${x.pblancId || x.pblancSn || title.replace(/\s/g, "").slice(0, 40)}`,
+      source: "bizinfo",
+      title,
+      org: [x.jrsdInsttNm, x.excInsttNm].filter(Boolean).join(" · "),
+      category: x.pldirSportRealmLclasCodeNm || "",
+      region: hasMine && tags.includes("세종") && !tags.includes("전국") ? "세종" : "전국",
+      target: x.trgetNm || "",
+      applyStart: start,
+      applyEnd: end,
+      alwaysOpen: !end,
+      status: upcoming ? "upcoming" : "open",
+      url: urlPath.startsWith("http") ? urlPath : `https://www.bizinfo.go.kr${urlPath}`,
+      summary: stripHtml(x.bsnsSumryCn).slice(0, 300),
+      foodBio: hasFoodBio(textAll),
+      youngOk: null,
+      enyyOk: null,
+      privateHost: false,
+    });
+  }
+  return { items };
+}
+
+// ---------- 병합·중복 제거·정렬 ----------
+function dedupeKey(title) {
+  return title.replace(/[\s\[\]()「」『』<>【】·.,\-~]/g, "").toLowerCase();
+}
+
+async function main() {
+  // 이전 수집분의 최초 확인일(firstSeen) 보존 → NEW 뱃지 판별용
+  const prevSeen = new Map();
+  if (existsSync(OUT_PATH)) {
+    try {
+      const prev = JSON.parse(readFileSync(OUT_PATH, "utf8"));
+      for (const it of prev.items || []) prevSeen.set(it.id, it.firstSeen);
+    } catch { /* 손상된 파일은 무시하고 새로 생성 */ }
+  }
+
+  const [kst, biz] = await Promise.all([
+    fetchKstartup().catch((e) => ({ items: [], error: String(e.message || e) })),
+    fetchBizinfo().catch((e) => ({ items: [], error: String(e.message || e) })),
+  ]);
+
+  const merged = new Map();
+  for (const it of [...kst.items, ...biz.items]) {
+    it.firstSeen = prevSeen.get(it.id) || TODAY;
+    const key = dedupeKey(it.title);
+    const exist = merged.get(key);
+    if (!exist) {
+      merged.set(key, { ...it, sources: [it.source] });
+    } else {
+      // 동일 공고가 양쪽에 있으면 자격정보가 풍부한 K-Startup 항목 우선
+      exist.sources = [...new Set([...exist.sources, it.source])];
+      if (exist.source === "bizinfo" && it.source === "kstartup") {
+        merged.set(key, { ...it, sources: exist.sources, firstSeen: exist.firstSeen < it.firstSeen ? exist.firstSeen : it.firstSeen });
+      }
+    }
+  }
+
+  const items = [...merged.values()].sort((a, b) => {
+    if (a.status !== b.status) return a.status === "open" ? -1 : 1;
+    const ae = a.alwaysOpen ? "9999-12-31" : a.applyEnd || "9999-12-31";
+    const be = b.alwaysOpen ? "9999-12-31" : b.applyEnd || "9999-12-31";
+    if (ae !== be) return ae < be ? -1 : 1;
+    return (a.applyStart || "") < (b.applyStart || "") ? 1 : -1;
+  });
+
+  const out = {
+    generatedAt: kstNow.toISOString().replace("Z", "+09:00"),
+    today: TODAY,
+    sources: {
+      kstartup: kst.error ? { error: kst.error } : { count: kst.items.length },
+      bizinfo: biz.error ? { error: biz.error } : { count: biz.items.length },
+    },
+    items,
+  };
+
+  mkdirSync(dirname(OUT_PATH), { recursive: true });
+  writeFileSync(OUT_PATH, JSON.stringify(out, null, 2), "utf8");
+
+  console.log(`[${TODAY}] 수집 완료 — 총 ${items.length}건`);
+  console.log(`  K-Startup: ${kst.error ? "오류/" + kst.error : kst.items.length + "건"}`);
+  console.log(`  기업마당 : ${biz.error ? "오류/" + biz.error : biz.items.length + "건"}`);
+
+  // 두 소스 모두 실패하면 Actions 에서 실패로 표시되도록 종료코드 1
+  if (kst.error && biz.error && kst.error !== "no-key") process.exit(1);
+}
+
+main();
