@@ -123,7 +123,17 @@ select {
 .tag.sejong { background: var(--orange-soft); color: var(--orange); }
 .tag.warn { background: var(--red-soft); color: var(--red); }
 
-/* ---- 분야별 보기 ---- */
+/* ---- 분야 버튼 바 (가로) ---- */
+.sectorbar { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 16px; }
+.sectorbar button {
+  border: 1px solid var(--line); background: var(--card); color: var(--text);
+  font: inherit; font-size: 13px; font-weight: 600; padding: 7px 13px;
+  border-radius: 999px; cursor: pointer; transition: border-color .15s;
+}
+.sectorbar button:hover { border-color: var(--accent); }
+.sectorbar button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.sectorbar button .n { font-size: 11.5px; opacity: .65; margin-left: 3px; }
+
 .sec-head { font-size: 17px; font-weight: 800; margin: 28px 0 10px; display: flex; align-items: center; gap: 8px; }
 .sec-head:first-child { margin-top: 0; }
 .sec-head .cnt { font-size: 12.5px; color: var(--muted); font-weight: 600; background: #eef2f7; border-radius: 6px; padding: 2px 8px; }
@@ -194,7 +204,6 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   <div class="viewbar">
     <div class="seg" id="viewSeg" role="tablist">
       <button data-view="list" class="active">목록</button>
-      <button data-view="group">분야별</button>
       <button data-view="cal">마감 달력</button>
     </div>
     <div class="seg" id="orgSeg">
@@ -204,6 +213,8 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       <button data-org="민간">민간</button>
     </div>
   </div>
+
+  <div class="sectorbar" id="sectorBar"></div>
 
   <div class="count-line" id="countLine"></div>
   <div id="main"></div>
@@ -234,7 +245,7 @@ const SYN = {
 
 const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
-  view: "list", org: "all", calYm: null, calDay: null, data: null,
+  view: "list", org: "all", sector: "all", calYm: null, calDay: null, data: null,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
 };
 
@@ -274,6 +285,7 @@ function expandQuery(q) {
 function matches(it, today) {
   if (state.hideIneligible && ineligible(it)) return false;
   if (state.org !== "all" && it.orgType !== state.org) return false;
+  if (state.sector !== "all" && it.sector !== state.sector) return false;
   switch (state.chip) {
     case "open": break;
     case "foodbio": if (!it.foodBio) return false; break;
@@ -331,18 +343,6 @@ function cardHtml(it, today) {
 function renderList(list, today) {
   if (!list.length) return `<div class="empty">조건에 맞는 공고가 없습니다.<br>검색어나 필터를 바꿔보세요.</div>`;
   return `<div class="cards">${list.map((it) => cardHtml(it, today)).join("")}</div>`;
-}
-
-function renderGrouped(list, today) {
-  if (!list.length) return `<div class="empty">조건에 맞는 공고가 없습니다.</div>`;
-  let html = "";
-  for (const sec of SECTOR_ORDER) {
-    const sub = list.filter((i) => i.sector === sec);
-    if (!sub.length) continue;
-    html += `<div class="sec-head">${sec} <span class="cnt">${sub.length}건</span></div>`;
-    html += `<div class="cards">${sub.map((it) => cardHtml(it, today)).join("")}</div>`;
-  }
-  return html;
 }
 
 function renderCalendar(list, today) {
@@ -424,9 +424,20 @@ function render() {
   }
   document.getElementById("countLine").textContent = `${list.length}건 표시 중 (전체 ${items.length}건)`;
 
+  // 분야 버튼 바 (가로) — 건수는 분야 외 나머지 필터를 적용한 기준
+  const base = items.filter((i) => {
+    const keep = state.sector; state.sector = "all";
+    const ok = matches(i, today); state.sector = keep;
+    return ok;
+  });
+  const secBtn = (key, label, n) =>
+    `<button data-sector="${key}" class="${state.sector === key ? "active" : ""}">${label}<span class="n">${n}</span></button>`;
+  document.getElementById("sectorBar").innerHTML =
+    secBtn("all", "전체 분야", base.length) +
+    SECTOR_ORDER.map((s) => secBtn(s, s, base.filter((i) => i.sector === s).length)).join("");
+
   const main = document.getElementById("main");
-  if (state.view === "group") main.innerHTML = renderGrouped(list, today);
-  else if (state.view === "cal") main.innerHTML = renderCalendar(list, today);
+  if (state.view === "cal") main.innerHTML = renderCalendar(list, today);
   else main.innerHTML = renderList(list, today);
 }
 
@@ -453,6 +464,8 @@ document.addEventListener("click", (e) => {
     document.querySelectorAll("#orgSeg button").forEach((b) => b.classList.toggle("active", b === org));
     render(); return;
   }
+  const sec = e.target.closest("#sectorBar button");
+  if (sec) { state.sector = sec.dataset.sector; render(); return; }
   if (e.target.closest("#calPrev")) { let [y, m] = state.calYm; m--; if (m < 0) { m = 11; y--; } state.calYm = [y, m]; state.calDay = null; render(); return; }
   if (e.target.closest("#calNext")) { let [y, m] = state.calYm; m++; if (m > 11) { m = 0; y++; } state.calYm = [y, m]; state.calDay = null; render(); return; }
   const dayEl = e.target.closest(".cal .day.has");
