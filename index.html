@@ -80,6 +80,7 @@ select {
   transition: box-shadow .15s, border-color .15s, transform .1s;
 }
 .card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(43,92,230,0.10); transform: translateY(-1px); }
+.card.sejong { border-left: 4px solid var(--orange); background: #fffdf7; }
 .c-top { display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; }
 .c-title { font-size: 16.5px; font-weight: 700; letter-spacing: -0.3px; }
 .c-title .new-badge {
@@ -127,7 +128,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   <div class="wrap">
     <div class="h-top">
       <h1>📡 ALCOFIX 지원사업 레이더</h1>
-      <span class="h-sub">세종·중앙부처 | 식품·바이오 | 초기창업·청년 맞춤</span>
+      <span class="h-sub">전국 공통 + 세종 우선 | 식품·바이오 | 초기창업·청년 맞춤</span>
     </div>
     <div class="h-meta">
       <span id="updated">데이터 불러오는 중…</span>
@@ -226,7 +227,7 @@ function render() {
     ["open", cnt.open, "모집중 공고", ""],
     ["upcoming", cnt.upcoming, "접수 예정", ""],
     ["urgent", cnt.urgent, "7일 내 마감", "urgent"],
-    ["foodbio", cnt.foodbio, "식품·바이오 관련", "fb"],
+    ["foodbio", cnt.foodbio, "식품·바이오", "fb"],
     ["new", cnt.new, "신규 (2일 내)", "new"],
   ];
   document.getElementById("stats").innerHTML = statDefs.map(([key, num, lbl, extra]) =>
@@ -263,10 +264,10 @@ function render() {
           ? (it.applyStart ? fmtDate(it.applyStart) + " ~ 상시(마감시까지)" : "상시 모집")
           : `${fmtDate(it.applyStart)} ~ ${fmtDate(it.applyEnd)}`;
 
-        return `<a class="card" href="${esc(it.url)}" target="_blank" rel="noopener">
+        return `<a class="card ${it.region === "세종" ? "sejong" : ""}" href="${esc(it.url)}" target="_blank" rel="noopener">
           <div class="c-top">
             <div>
-              <div class="c-title">${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
+              <div class="c-title">${it.region === "세종" ? "📍" : ""}${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
               <div class="c-org">${esc(it.org)}</div>
             </div>
             <div class="dday ${dd.cls}">${dd.label}</div>

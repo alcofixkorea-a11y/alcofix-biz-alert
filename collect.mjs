@@ -41,13 +41,43 @@ const FOOD_BIO_KEYWORDS = [
   "농식품", "농산물", "식음료", "F&B", "f&b", "푸드테크", "HACCP", "해썹",
   "케어푸드", "고령친화식품", "그린바이오", "레드바이오", "화이트바이오",
 ];
-// 세종 외 광역시·도 (지역 제한 공고 판별용)
+// 세종 외 지역명 (지역 제한 공고 판별용)
+// 공고 제목에 타 지역명이 들어간 공고는 사실상 해당 지역 전용이므로 제외한다.
 const OTHER_SIDO = [
   "서울", "부산", "대구", "인천", "광주", "대전", "울산", "경기", "강원",
   "충북", "충남", "전북", "전남", "경북", "경남", "제주",
   "충청북도", "충청남도", "전라북도", "전라남도", "경상북도", "경상남도",
   "경기도", "강원특별자치도", "전북특별자치도", "제주특별자치도",
 ];
+const OTHER_REGION_TOKENS = [
+  ...OTHER_SIDO,
+  // 권역명
+  "수도권", "강원권", "충청권", "호남권", "영남권", "동남권", "대경권", "부울경",
+  // 주요 시·군명
+  "수원", "성남", "용인", "고양", "부천", "안산", "안양", "화성", "평택", "시흥",
+  "김포", "광명", "군포", "하남", "오산", "이천", "안성", "의왕", "파주", "양주",
+  "구리", "남양주", "의정부", "동두천", "과천", "판교",
+  "춘천", "원주", "강릉", "속초", "동해", "삼척", "태백",
+  "청주", "충주", "제천", "옥천", "음성", "진천",
+  "천안", "아산", "서산", "당진", "공주", "보령", "논산", "계룡", "홍성", "예산",
+  "전주", "군산", "익산", "정읍", "남원", "김제", "완주",
+  "목포", "여수", "순천", "나주", "광양", "무안",
+  "포항", "경주", "김천", "안동", "구미", "영주", "영천", "상주", "문경", "경산",
+  "창원", "진주", "통영", "사천", "김해", "밀양", "거제", "양산",
+  // 서울 주요 구·지구명
+  "서초", "강남", "마포", "성수", "구로", "금천", "송파", "영등포", "종로",
+  "용산", "성동", "상암", "여의도", "홍릉",
+  // 영문 표기
+  "Seoul", "Busan", "Daegu", "Incheon", "Gwangju", "Daejeon", "Ulsan", "Jeju", "Gangwon",
+];
+
+// 제목 기준 지역 판별: 세종/전국이 명시돼 있으면 통과, 타 지역명이 있으면 지역 전용으로 간주
+function titleRegion(title) {
+  const t = (title || "").replace(/비수도권/g, ""); // "비수도권"은 세종 포함이므로 수도권 매칭에서 제외
+  if (t.includes("세종")) return "sejong";
+  if (OTHER_REGION_TOKENS.some((r) => t.includes(r))) return "other";
+  return "neutral";
+}
 
 function hasFoodBio(text) {
   if (!text) return false;
@@ -116,15 +146,20 @@ async function fetchKstartup() {
     // 지역: 전국 또는 세종 포함만
     const region = x.supt_regin || "";
     if (region && !region.includes("전국") && !region.includes("세종")) continue;
+    // 지역 필드가 전국이어도 제목에 타 지역명이 있으면 사실상 지역 전용 공고 → 제외
+    const title = decodeEntities(x.biz_pbanc_nm || "").trim();
+    const tRegion = titleRegion(title);
+    if (tRegion === "other") continue;
+    const isSejong = tRegion === "sejong" || (region.includes("세종") && !region.includes("전국"));
 
     const textAll = [x.biz_pbanc_nm, x.pbanc_ctnt, x.supt_biz_clsfc].join(" ");
     items.push({
       id: `kstartup-${x.pbanc_sn}`,
       source: "kstartup",
-      title: decodeEntities(x.biz_pbanc_nm || "").trim(),
+      title,
       org: x.pbanc_ntrp_nm || "",
       category: x.supt_biz_clsfc || "",
-      region: region.includes("전국") ? "전국" : "세종",
+      region: isSejong ? "세종" : "전국",
       target: x.aply_trgt || "",
       applyStart: start,
       applyEnd: end,
@@ -177,6 +212,9 @@ async function fetchBizinfo() {
     const hasOther = OTHER_SIDO.some((s) => tags.includes(s));
     const hasMine = tags.includes("세종") || tags.includes("전국");
     if (hasOther && !hasMine) continue;
+    // 제목에 타 지역명이 있으면 지역 전용 공고로 간주하고 제외
+    const tRegion = titleRegion(title);
+    if (tRegion === "other") continue;
 
     const urlPath = x.pblancUrl || x.pblancurl || "";
     const textAll = [title, x.bsnsSumryCn, x.pldirSportRealmLclasCodeNm, tags].join(" ");
@@ -186,7 +224,10 @@ async function fetchBizinfo() {
       title,
       org: [x.jrsdInsttNm, x.excInsttNm].filter(Boolean).join(" · "),
       category: x.pldirSportRealmLclasCodeNm || "",
-      region: hasMine && tags.includes("세종") && !tags.includes("전국") ? "세종" : "전국",
+      region:
+        tRegion === "sejong" || (tags.includes("세종") && !tags.includes("전국"))
+          ? "세종"
+          : "전국",
       target: x.trgetNm || "",
       applyStart: start,
       applyEnd: end,
@@ -241,6 +282,10 @@ async function main() {
 
   const items = [...merged.values()].sort((a, b) => {
     if (a.status !== b.status) return a.status === "open" ? -1 : 1;
+    // 세종 공고 최우선 표시
+    const aSejong = a.region === "세종" ? 0 : 1;
+    const bSejong = b.region === "세종" ? 0 : 1;
+    if (aSejong !== bSejong) return aSejong - bSejong;
     const ae = a.alwaysOpen ? "9999-12-31" : a.applyEnd || "9999-12-31";
     const be = b.alwaysOpen ? "9999-12-31" : b.applyEnd || "9999-12-31";
     if (ae !== be) return ae < be ? -1 : 1;
