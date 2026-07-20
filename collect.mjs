@@ -71,6 +71,15 @@ const OTHER_REGION_TOKENS = [
   "Seoul", "Busan", "Daegu", "Incheon", "Gwangju", "Daejeon", "Ulsan", "Jeju", "Gangwon",
 ];
 
+// 시도명 (기업마당 해시태그의 지역 나열 판별용 — 전국 공고는 17개 시도를 전부 나열함)
+const SIDO_TOKENS = [
+  "서울", "부산", "대구", "인천", "광주", "대전", "울산", "경기", "강원",
+  "충북", "충남", "전북", "전남", "경북", "경남", "제주", "세종",
+];
+function countSido(text) {
+  return SIDO_TOKENS.filter((s) => text.includes(s)).length;
+}
+
 // 제목 기준 지역 판별: 세종/전국이 명시돼 있으면 통과, 타 지역명이 있으면 지역 전용으로 간주
 function titleRegion(title) {
   const t = (title || "").replace(/비수도권/g, ""); // "비수도권"은 세종 포함이므로 수도권 매칭에서 제외
@@ -150,7 +159,10 @@ async function fetchKstartup() {
     const title = decodeEntities(x.biz_pbanc_nm || "").trim();
     const tRegion = titleRegion(title);
     if (tRegion === "other") continue;
-    const isSejong = tRegion === "sejong" || (region.includes("세종") && !region.includes("전국"));
+    // 지역 필드에 세종만 콕 집어 있을 때만 세종 공고로 취급 (여러 시도 나열은 전국성 공고)
+    const isSejong =
+      tRegion === "sejong" ||
+      (region.includes("세종") && !region.includes("전국") && countSido(region) <= 3);
 
     const textAll = [x.biz_pbanc_nm, x.pbanc_ctnt, x.supt_biz_clsfc].join(" ");
     items.push({
@@ -199,22 +211,26 @@ async function fetchBizinfo() {
   for (const x of arr) {
     const title = decodeEntities(x.pblancNm || x.pblancnm || "").trim();
     if (!title) continue;
-    // 모집기간 파싱: "20260701 ~ 20260731" 또는 "예산 소진시" 등
+    // 모집기간 파싱: "2026-07-15 ~ 2026-07-28", "20260701 ~ 20260731", "예산 소진시" 등
     const period = String(x.reqstBeginEndDe || "");
-    const m = period.match(/(\d{8})\s*~\s*(\d{8})/);
-    const start = m ? toIso(m[1]) : null;
-    const end = m ? toIso(m[2]) : null;
+    const m = period.match(/(\d{4})-?(\d{2})-?(\d{2})\s*~\s*(\d{4})-?(\d{2})-?(\d{2})/);
+    const start = m ? `${m[1]}-${m[2]}-${m[3]}` : null;
+    const end = m ? `${m[4]}-${m[5]}-${m[6]}` : null;
     if (end && end < TODAY) continue; // 마감 공고 제외
     const upcoming = start && start > TODAY;
 
-    // 지역: hashtags 에 타 시도만 있고 세종/전국이 없으면 제외
+    // 지역 판별. 기업마당 해시태그는 지원 가능 지역을 나열한다:
+    //   - 17개 시도 전부(또는 다수) 나열 = 전국 공고
+    //   - 세종 없이 일부 시도만 나열 = 타 지역 전용 → 제외
+    //   - 세종만(또는 소수와 함께) 나열 = 세종 대상 공고
     const tags = String(x.hashtags || "");
-    const hasOther = OTHER_SIDO.some((s) => tags.includes(s));
-    const hasMine = tags.includes("세종") || tags.includes("전국");
-    if (hasOther && !hasMine) continue;
+    const sidoCount = countSido(tags);
+    const hasSejongTag = tags.includes("세종");
+    if (sidoCount > 0 && !hasSejongTag && !tags.includes("전국")) continue;
     // 제목에 타 지역명이 있으면 지역 전용 공고로 간주하고 제외
     const tRegion = titleRegion(title);
     if (tRegion === "other") continue;
+    const isSejong = tRegion === "sejong" || (hasSejongTag && sidoCount <= 3);
 
     const urlPath = x.pblancUrl || x.pblancurl || "";
     const textAll = [title, x.bsnsSumryCn, x.pldirSportRealmLclasCodeNm, tags].join(" ");
@@ -224,10 +240,7 @@ async function fetchBizinfo() {
       title,
       org: [x.jrsdInsttNm, x.excInsttNm].filter(Boolean).join(" · "),
       category: x.pldirSportRealmLclasCodeNm || "",
-      region:
-        tRegion === "sejong" || (tags.includes("세종") && !tags.includes("전국"))
-          ? "세종"
-          : "전국",
+      region: isSejong ? "세종" : "전국",
       target: x.trgetNm || "",
       applyStart: start,
       applyEnd: end,
