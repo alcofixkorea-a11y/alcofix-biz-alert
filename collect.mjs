@@ -108,6 +108,33 @@ function stripHtml(s) {
     .trim();
 }
 
+// 통합 분야 분류 (기업마당 lclas + K-Startup 분류를 하나의 체계로)
+function sectorOf(category) {
+  const c = category || "";
+  if (/금융|융자/.test(c)) return "자금·융자";
+  if (/기술|R&D/.test(c)) return "기술·R&D";
+  if (/창업|사업화/.test(c)) return "창업·사업화";
+  if (/수출|내수|판로|글로벌|해외/.test(c)) return "판로·수출";
+  if (/시설|공간|보육/.test(c)) return "시설·공간";
+  if (/멘토링|컨설팅|교육/.test(c)) return "교육·컨설팅";
+  if (/행사|네트워크/.test(c)) return "행사·네트워크";
+  if (/인력/.test(c)) return "인력";
+  return "경영·기타";
+}
+
+// 기관 유형: 지자체 / 중앙부처·공공 / 민간
+const LOCAL_GOV_TOKENS = [
+  "서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시",
+  "대전광역시", "울산광역시", "세종특별자치시", "경기도", "강원특별자치도",
+  "강원도", "충청북도", "충청남도", "전북특별자치도", "전라북도", "전라남도",
+  "경상북도", "경상남도", "제주특별자치도", "도청", "시청", "군청", "구청",
+];
+function orgTypeOf(org, privateHost) {
+  if (privateHost) return "민간";
+  if (LOCAL_GOV_TOKENS.some((t) => (org || "").includes(t))) return "지자체";
+  return "중앙부처·공공";
+}
+
 // 업력 요건: 알코픽스는 2025.8 창업 → 업력 1년 미만
 function checkEnyy(s) {
   if (!s) return null;
@@ -171,6 +198,8 @@ async function fetchKstartup() {
       title,
       org: x.pbanc_ntrp_nm || "",
       category: x.supt_biz_clsfc || "",
+      sector: sectorOf(x.supt_biz_clsfc),
+      orgType: orgTypeOf(x.pbanc_ntrp_nm, x.sprv_inst === "민간"),
       region: isSejong ? "세종" : "전국",
       target: x.aply_trgt || "",
       applyStart: start,
@@ -240,6 +269,8 @@ async function fetchBizinfo() {
       title,
       org: [x.jrsdInsttNm, x.excInsttNm].filter(Boolean).join(" · "),
       category: x.pldirSportRealmLclasCodeNm || "",
+      sector: sectorOf(x.pldirSportRealmLclasCodeNm),
+      orgType: orgTypeOf([x.jrsdInsttNm, x.excInsttNm].filter(Boolean).join(" "), false),
       region: isSejong ? "세종" : "전국",
       target: x.trgetNm || "",
       applyStart: start,

@@ -45,7 +45,7 @@ h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
 .src-warn { background: rgba(28,92,56,0.10); border-radius: 6px; padding: 2px 8px; }
 
 /* ---- 요약 통계 ---- */
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 22px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 22px; }
 .stat {
   background: var(--card); border: 1px solid var(--line); border-radius: 12px;
   padding: 14px 16px; cursor: pointer; transition: box-shadow .15s, border-color .15s;
@@ -57,9 +57,10 @@ h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
 .stat.urgent .num { color: var(--red); }
 .stat.fb .num { color: var(--green); }
 .stat.new .num { color: var(--purple); }
+.stat.fav .num { color: var(--orange); }
 
 /* ---- 컨트롤 ---- */
-.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
 .search {
   flex: 1 1 240px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px;
   font: inherit; font-size: 14px; background: var(--card);
@@ -71,6 +72,15 @@ select {
 }
 .toggle { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--muted); cursor: pointer; user-select: none; }
 .toggle input { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
+
+.viewbar { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.seg { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 2px; flex-wrap: wrap; }
+.seg button {
+  border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 600;
+  color: var(--muted); padding: 7px 14px; border-radius: 8px; cursor: pointer;
+}
+.seg button.active { background: var(--accent); color: #fff; }
+.seg button:focus-visible { outline: 2px solid var(--accent); }
 
 /* ---- 카드 ---- */
 .count-line { font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
@@ -88,8 +98,11 @@ select {
   display: inline-block; background: var(--purple); color: #fff; font-size: 10.5px; font-weight: 800;
   border-radius: 5px; padding: 1px 6px; margin-left: 6px; vertical-align: 2px;
 }
+.c-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.favbtn { border: 0; background: transparent; font-size: 21px; line-height: 1; cursor: pointer; color: #cbd5e1; padding: 1px 3px; }
+.favbtn.on { color: #f59e0b; }
 .dday {
-  flex-shrink: 0; font-size: 13px; font-weight: 800; border-radius: 8px; padding: 5px 11px; white-space: nowrap;
+  font-size: 13px; font-weight: 800; border-radius: 8px; padding: 5px 11px; white-space: nowrap;
   background: var(--accent-soft); color: var(--accent);
 }
 .dday.urgent { background: var(--red-soft); color: var(--red); }
@@ -110,6 +123,29 @@ select {
 .tag.sejong { background: var(--orange-soft); color: var(--orange); }
 .tag.warn { background: var(--red-soft); color: var(--red); }
 
+/* ---- 분야별 보기 ---- */
+.sec-head { font-size: 17px; font-weight: 800; margin: 28px 0 10px; display: flex; align-items: center; gap: 8px; }
+.sec-head:first-child { margin-top: 0; }
+.sec-head .cnt { font-size: 12.5px; color: var(--muted); font-weight: 600; background: #eef2f7; border-radius: 6px; padding: 2px 8px; }
+
+/* ---- 달력 보기 ---- */
+.cal-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.cal-nav button { border: 1px solid var(--line); background: var(--card); border-radius: 8px; font: inherit; font-size: 14px; padding: 6px 12px; cursor: pointer; }
+.cal-nav button:hover { border-color: var(--accent); }
+.cal-title { font-size: 16px; font-weight: 800; }
+.cal-hint { font-size: 12.5px; color: var(--muted); margin-left: auto; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 18px; }
+.cal .dow { text-align: center; font-size: 12px; color: var(--muted); font-weight: 700; padding: 4px 0; }
+.cal .day { background: var(--card); border: 1px solid var(--line); border-radius: 10px; min-height: 76px; padding: 6px; font-size: 11px; overflow: hidden; }
+.cal .day.blank { background: transparent; border: 0; }
+.cal .day.has { cursor: pointer; }
+.cal .day.has:hover, .cal .day.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+.cal .day .dn { font-size: 12px; font-weight: 700; color: var(--muted); }
+.cal .day.today .dn { color: var(--accent); text-decoration: underline; }
+.cal .day .db { margin-top: 3px; display: inline-block; background: var(--red-soft); color: var(--red); font-weight: 800; border-radius: 6px; padding: 0 6px; font-size: 11px; }
+.cal .day .t { color: #475569; margin-top: 2px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+@media (max-width: 640px) { .cal .day { min-height: 50px; } .cal .day .t { display: none; } }
+
 .empty { text-align: center; color: var(--muted); padding: 60px 0; font-size: 14.5px; }
 .notice {
   background: #fffbeb; border: 1px solid #fde68a; color: #92400e;
@@ -118,7 +154,8 @@ select {
 footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.8; }
 @media (max-width: 640px) {
   h1 { font-size: 21px; }
-  .c-top { flex-direction: column; }
+  .c-top { flex-direction: column-reverse; }
+  .c-right { align-self: flex-end; }
   .stat .num { font-size: 20px; }
 }
 </style>
@@ -146,7 +183,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   </div>
 
   <div class="controls">
-    <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 (예: 숙취, 바이오, 마케팅)">
+    <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 — 유의어 자동 확장 (예: 자금 → 융자·보증·대출)">
     <select id="sort">
       <option value="deadline">마감 임박순</option>
       <option value="newest">최신 등록순</option>
@@ -154,21 +191,57 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
     <label class="toggle"><input type="checkbox" id="hideIneligible" checked> 자격 미달 공고 숨기기</label>
   </div>
 
+  <div class="viewbar">
+    <div class="seg" id="viewSeg" role="tablist">
+      <button data-view="list" class="active">목록</button>
+      <button data-view="group">분야별</button>
+      <button data-view="cal">마감 달력</button>
+    </div>
+    <div class="seg" id="orgSeg">
+      <button data-org="all" class="active">전체 기관</button>
+      <button data-org="중앙부처·공공">중앙부처·공공</button>
+      <button data-org="지자체">지자체</button>
+      <button data-org="민간">민간</button>
+    </div>
+  </div>
+
   <div class="count-line" id="countLine"></div>
-  <div class="cards" id="cards"></div>
+  <div id="main"></div>
 
   <footer>
     출처: <a href="https://www.k-startup.go.kr" target="_blank">K-Startup 창업지원포털</a> ·
     <a href="https://www.bizinfo.go.kr" target="_blank">기업마당</a> — 매일 아침 자동 업데이트<br>
-    ALCOFIX 내부용 · 공고 카드를 클릭하면 원문 페이지로 이동합니다
+    ALCOFIX 내부용 · 공고 카드를 클릭하면 원문 페이지로 이동합니다 · ⭐ 스크랩은 이 브라우저에 저장됩니다
   </footer>
 </div>
 
 <script>
-const state = { q: "", chip: "open", sort: "deadline", hideIneligible: true, data: null };
+const SECTOR_ORDER = ["자금·융자", "기술·R&D", "창업·사업화", "판로·수출", "시설·공간", "교육·컨설팅", "행사·네트워크", "인력", "경영·기타"];
+
+// 유의어 사전: 검색어를 자동 확장한다
+const SYN = {
+  "자금": ["융자", "대출", "보증", "금융", "정책자금", "출연"],
+  "수출": ["해외", "글로벌", "무역", "바이어", "해외진출"],
+  "판로": ["마케팅", "유통", "입점", "홈쇼핑", "온라인몰", "판매"],
+  "식품": ["푸드", "F&B", "외식", "음료", "농식품"],
+  "바이오": ["헬스케어", "제약", "의약", "백신"],
+  "교육": ["아카데미", "스쿨", "캠프", "멘토링", "컨설팅", "특강"],
+  "인증": ["HACCP", "해썹", "ISO", "벤처확인", "이노비즈"],
+  "특허": ["지식재산", "IP", "상표", "지재권", "디자인권"],
+  "채용": ["인건비", "일자리", "고용", "인력", "청년내일"],
+  "투자": ["VC", "IR", "펀딩", "투자유치", "엔젤"],
+};
+
+const state = {
+  q: "", chip: "open", sort: "deadline", hideIneligible: true,
+  view: "list", org: "all", calYm: null, calDay: null, data: null,
+  favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
+};
 
 const fmtDate = (iso) => iso ? iso.replace(/-/g, ".").slice(2) : "";
 const esc = (s) => (s || "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function saveFavs() { localStorage.setItem("alcofix_favs", JSON.stringify([...state.favs])); }
 
 function dday(it, today) {
   if (it.status === "upcoming") return { cls: "upcoming", label: "접수예정 " + fmtDate(it.applyStart) + "~" };
@@ -182,13 +255,25 @@ function dday(it, today) {
 function isNew(it, today) {
   return (new Date(today) - new Date(it.firstSeen)) / 86400000 <= 2;
 }
-
 function ineligible(it) {
   return it.youngOk === false || it.enyyOk === false;
 }
 
+// 검색어 → 유의어 포함 검색어 배열
+function expandQuery(q) {
+  const terms = new Set([q]);
+  for (const [key, list] of Object.entries(SYN)) {
+    if (q === key || q.includes(key) || list.some((s) => q.toLowerCase() === s.toLowerCase())) {
+      terms.add(key);
+      list.forEach((s) => terms.add(s));
+    }
+  }
+  return [...terms].map((t) => t.toLowerCase());
+}
+
 function matches(it, today) {
   if (state.hideIneligible && ineligible(it)) return false;
+  if (state.org !== "all" && it.orgType !== state.org) return false;
   switch (state.chip) {
     case "open": break;
     case "foodbio": if (!it.foodBio) return false; break;
@@ -198,15 +283,108 @@ function matches(it, today) {
       if (d > 7) return false; break;
     }
     case "new": if (!isNew(it, today)) return false; break;
-    case "sejong": if (it.region !== "세종") return false; break;
+    case "fav": if (!state.favs.has(it.id)) return false; break;
     case "upcoming": if (it.status !== "upcoming") return false; break;
   }
   if (state.q) {
-    const q = state.q.toLowerCase();
-    const hay = (it.title + " " + it.org + " " + it.summary + " " + it.category).toLowerCase();
-    if (!hay.includes(q)) return false;
+    const hay = (it.title + " " + it.org + " " + it.summary + " " + it.category + " " + it.sector).toLowerCase();
+    const terms = expandQuery(state.q.trim());
+    if (!terms.some((t) => hay.includes(t))) return false;
   }
   return true;
+}
+
+function cardHtml(it, today) {
+  const dd = dday(it, today);
+  const fav = state.favs.has(it.id);
+  const tags = [];
+  tags.push(`<span class="tag ${it.region === "세종" ? "sejong" : ""}">${it.region}</span>`);
+  tags.push(`<span class="tag">${esc(it.sector)}</span>`);
+  tags.push(`<span class="tag">${esc(it.orgType)}</span>`);
+  if (it.foodBio) tags.push(`<span class="tag fb">식품·바이오</span>`);
+  if (it.enyyOk === true) tags.push(`<span class="tag ok">업력 1년미만 가능</span>`);
+  if (it.youngOk === true) tags.push(`<span class="tag ok">청년 대상 포함</span>`);
+  if (ineligible(it)) tags.push(`<span class="tag warn">자격요건 확인 필요</span>`);
+  tags.push(`<span class="tag">${it.sources && it.sources.includes("bizinfo") && it.sources.includes("kstartup") ? "K-Startup·기업마당" : it.source === "bizinfo" ? "기업마당" : "K-Startup"}</span>`);
+
+  const period = it.alwaysOpen
+    ? (it.applyStart ? fmtDate(it.applyStart) + " ~ 상시(마감시까지)" : "상시 모집")
+    : `${fmtDate(it.applyStart)} ~ ${fmtDate(it.applyEnd)}`;
+
+  return `<a class="card ${it.region === "세종" ? "sejong" : ""}" href="${esc(it.url)}" target="_blank" rel="noopener">
+    <div class="c-top">
+      <div>
+        <div class="c-title">${it.region === "세종" ? "📍" : ""}${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
+        <div class="c-org">${esc(it.org)}</div>
+      </div>
+      <div class="c-right">
+        <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
+        <div class="dday ${dd.cls}">${dd.label}</div>
+      </div>
+    </div>
+    <div class="c-period"><span class="p-label">모집기간</span> ${period}</div>
+    ${it.summary ? `<div class="c-summary">${esc(it.summary)}</div>` : ""}
+    <div class="c-tags">${tags.join("")}</div>
+  </a>`;
+}
+
+function renderList(list, today) {
+  if (!list.length) return `<div class="empty">조건에 맞는 공고가 없습니다.<br>검색어나 필터를 바꿔보세요.</div>`;
+  return `<div class="cards">${list.map((it) => cardHtml(it, today)).join("")}</div>`;
+}
+
+function renderGrouped(list, today) {
+  if (!list.length) return `<div class="empty">조건에 맞는 공고가 없습니다.</div>`;
+  let html = "";
+  for (const sec of SECTOR_ORDER) {
+    const sub = list.filter((i) => i.sector === sec);
+    if (!sub.length) continue;
+    html += `<div class="sec-head">${sec} <span class="cnt">${sub.length}건</span></div>`;
+    html += `<div class="cards">${sub.map((it) => cardHtml(it, today)).join("")}</div>`;
+  }
+  return html;
+}
+
+function renderCalendar(list, today) {
+  const [y, m] = state.calYm; // m: 0-11
+  const first = new Date(Date.UTC(y, m, 1));
+  const daysInMonth = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+  const startDow = first.getUTCDay();
+  const ymStr = `${y}-${String(m + 1).padStart(2, "0")}`;
+
+  const byDay = {};
+  for (const it of list) {
+    if (!it.applyEnd || !it.applyEnd.startsWith(ymStr)) continue;
+    const d = Number(it.applyEnd.slice(8, 10));
+    (byDay[d] = byDay[d] || []).push(it);
+  }
+
+  let html = `<div class="cal-nav">
+    <button id="calPrev" aria-label="이전 달">←</button>
+    <span class="cal-title">${y}년 ${m + 1}월 마감 일정</span>
+    <button id="calNext" aria-label="다음 달">→</button>
+    <span class="cal-hint">날짜를 클릭하면 해당일 마감 공고가 아래에 표시됩니다</span>
+  </div><div class="cal">`;
+  for (const d of ["일", "월", "화", "수", "목", "금", "토"]) html += `<div class="dow">${d}</div>`;
+  for (let i = 0; i < startDow; i++) html += `<div class="day blank"></div>`;
+  for (let d = 1; d <= daysInMonth; d++) {
+    const items = byDay[d] || [];
+    const iso = `${ymStr}-${String(d).padStart(2, "0")}`;
+    const cls = ["day", items.length ? "has" : "", iso === today ? "today" : "", state.calDay === iso ? "sel" : ""].join(" ");
+    html += `<div class="${cls}" ${items.length ? `data-day="${iso}"` : ""}>
+      <div class="dn">${d}</div>
+      ${items.length ? `<span class="db">${items.length}건 마감</span>` : ""}
+      ${items.slice(0, 2).map((i) => `<div class="t">${esc(i.title.slice(0, 16))}</div>`).join("")}
+    </div>`;
+  }
+  html += `</div>`;
+
+  if (state.calDay) {
+    const sel = list.filter((i) => i.applyEnd === state.calDay);
+    html += `<div class="sec-head">${state.calDay.replace(/-/g, ".")} 마감 <span class="cnt">${sel.length}건</span></div>`;
+    html += `<div class="cards">${sel.map((it) => cardHtml(it, today)).join("")}</div>`;
+  }
+  return html;
 }
 
 function render() {
@@ -214,6 +392,7 @@ function render() {
   if (!d) return;
   const today = d.today;
   const items = d.items;
+  if (!state.calYm) state.calYm = [Number(today.slice(0, 4)), Number(today.slice(5, 7)) - 1];
 
   // 통계
   const open = items.filter((i) => i.status === "open");
@@ -223,6 +402,7 @@ function render() {
     urgent: open.filter((i) => !i.alwaysOpen && (new Date(i.applyEnd) - new Date(today)) / 86400000 <= 7).length,
     foodbio: items.filter((i) => i.foodBio).length,
     new: items.filter((i) => isNew(i, today)).length,
+    fav: items.filter((i) => state.favs.has(i.id)).length,
   };
   const statDefs = [
     ["open", cnt.open, "모집중 공고", ""],
@@ -230,62 +410,60 @@ function render() {
     ["urgent", cnt.urgent, "7일 내 마감", "urgent"],
     ["foodbio", cnt.foodbio, "식품·바이오", "fb"],
     ["new", cnt.new, "신규 (2일 내)", "new"],
+    ["fav", cnt.fav, "⭐ 스크랩", "fav"],
   ];
   document.getElementById("stats").innerHTML = statDefs.map(([key, num, lbl, extra]) =>
     `<div class="stat ${extra} ${state.chip === key ? "active" : ""}" data-chip="${key}">
       <div class="num">${num}</div><div class="lbl">${lbl}</div></div>`
   ).join("");
-  document.querySelectorAll(".stat").forEach((el) =>
-    el.addEventListener("click", () => { state.chip = el.dataset.chip; render(); })
-  );
 
-  // 목록
+  // 목록 계산
   let list = items.filter((i) => matches(i, today));
-  if (state.sort === "newest") {
+  if (state.sort === "newest" && state.view !== "cal") {
     list = [...list].sort((a, b) => (a.firstSeen < b.firstSeen ? 1 : -1));
   }
-  document.getElementById("countLine").textContent =
-    `${list.length}건 표시 중 (전체 ${items.length}건)`;
+  document.getElementById("countLine").textContent = `${list.length}건 표시 중 (전체 ${items.length}건)`;
 
-  document.getElementById("cards").innerHTML = list.length === 0
-    ? `<div class="empty">조건에 맞는 공고가 없습니다.<br>검색어나 필터를 바꿔보세요.</div>`
-    : list.map((it) => {
-        const dd = dday(it, today);
-        const tags = [];
-        tags.push(`<span class="tag ${it.region === "세종" ? "sejong" : ""}">${it.region}</span>`);
-        if (it.category) tags.push(`<span class="tag">${esc(it.category)}</span>`);
-        if (it.foodBio) tags.push(`<span class="tag fb">식품·바이오</span>`);
-        if (it.enyyOk === true) tags.push(`<span class="tag ok">업력 1년미만 가능</span>`);
-        if (it.youngOk === true) tags.push(`<span class="tag ok">청년 대상 포함</span>`);
-        if (ineligible(it)) tags.push(`<span class="tag warn">자격요건 확인 필요</span>`);
-        if (it.privateHost) tags.push(`<span class="tag">민간 주관</span>`);
-        tags.push(`<span class="tag">${it.sources && it.sources.includes("bizinfo") && it.sources.includes("kstartup") ? "K-Startup·기업마당" : it.source === "bizinfo" ? "기업마당" : "K-Startup"}</span>`);
-
-        const period = it.alwaysOpen
-          ? (it.applyStart ? fmtDate(it.applyStart) + " ~ 상시(마감시까지)" : "상시 모집")
-          : `${fmtDate(it.applyStart)} ~ ${fmtDate(it.applyEnd)}`;
-
-        return `<a class="card ${it.region === "세종" ? "sejong" : ""}" href="${esc(it.url)}" target="_blank" rel="noopener">
-          <div class="c-top">
-            <div>
-              <div class="c-title">${it.region === "세종" ? "📍" : ""}${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
-              <div class="c-org">${esc(it.org)}</div>
-            </div>
-            <div class="dday ${dd.cls}">${dd.label}</div>
-          </div>
-          <div class="c-period"><span class="p-label">모집기간</span> ${period}</div>
-          ${it.summary ? `<div class="c-summary">${esc(it.summary)}</div>` : ""}
-          <div class="c-tags">${tags.join("")}</div>
-        </a>`;
-      }).join("");
+  const main = document.getElementById("main");
+  if (state.view === "group") main.innerHTML = renderGrouped(list, today);
+  else if (state.view === "cal") main.innerHTML = renderCalendar(list, today);
+  else main.innerHTML = renderList(list, today);
 }
+
+// ---- 이벤트 (위임) ----
+document.addEventListener("click", (e) => {
+  const fav = e.target.closest(".favbtn");
+  if (fav) {
+    e.preventDefault(); e.stopPropagation();
+    const id = fav.dataset.fav;
+    state.favs.has(id) ? state.favs.delete(id) : state.favs.add(id);
+    saveFavs(); render(); return;
+  }
+  const stat = e.target.closest(".stat");
+  if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; render(); return; }
+  const seg = e.target.closest("#viewSeg button");
+  if (seg) {
+    state.view = seg.dataset.view; state.calDay = null;
+    document.querySelectorAll("#viewSeg button").forEach((b) => b.classList.toggle("active", b === seg));
+    render(); return;
+  }
+  const org = e.target.closest("#orgSeg button");
+  if (org) {
+    state.org = org.dataset.org;
+    document.querySelectorAll("#orgSeg button").forEach((b) => b.classList.toggle("active", b === org));
+    render(); return;
+  }
+  if (e.target.closest("#calPrev")) { let [y, m] = state.calYm; m--; if (m < 0) { m = 11; y--; } state.calYm = [y, m]; state.calDay = null; render(); return; }
+  if (e.target.closest("#calNext")) { let [y, m] = state.calYm; m++; if (m > 11) { m = 0; y++; } state.calYm = [y, m]; state.calDay = null; render(); return; }
+  const dayEl = e.target.closest(".cal .day.has");
+  if (dayEl) { state.calDay = state.calDay === dayEl.dataset.day ? null : dayEl.dataset.day; render(); return; }
+});
 
 async function init() {
   try {
     const res = await fetch("data/programs.json?t=" + Date.now());
     const d = await res.json();
     state.data = d;
-    const t = new Date(d.generatedAt);
     document.getElementById("updated").textContent =
       `마지막 업데이트: ${d.generatedAt.slice(0, 16).replace("T", " ")} (매일 아침 자동 갱신)`;
     const warn = [];
@@ -296,7 +474,7 @@ async function init() {
       ? `<span class="src-warn">⚠ ${warn.join(" · ")}</span>` : "";
     render();
   } catch (e) {
-    document.getElementById("cards").innerHTML =
+    document.getElementById("main").innerHTML =
       `<div class="empty">데이터를 불러오지 못했습니다.<br>${esc(String(e))}</div>`;
   }
 }
