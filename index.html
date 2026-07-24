@@ -399,28 +399,38 @@ function ceoAge(profile, today) {
   if (!profile || !profile.birthYear) return null;
   return Number(today.slice(0, 4)) - Number(profile.birthYear);
 }
-// 업력 요건 텍스트(예: "1년미만", "예비창업자") 를 실제 창업일 기준으로 재판정
+// 업력 요건 텍스트는 "예비창업자,1년미만,3년미만,7년미만" 처럼 여러 구간이 콤마로 나열될 수 있음(트랙별 선택지) →
+// 실제 창업일 기준 업력이 나열된 구간 중 하나라도 만족하면 지원 가능
 function evalEnyy(raw, months) {
   if (months == null || !raw) return null;
-  const t = raw.replace(/\s/g, "");
-  const m = t.match(/(\d+)년미만/);
-  if (m) return months < Number(m[1]) * 12;
-  if (t.includes("예비창업")) return false;
-  if (t.includes("제한없음") || t.includes("전체")) return true;
-  return null;
+  const clauses = raw.split(",").map((s) => s.replace(/\s/g, ""));
+  let sawBound = false;
+  for (const c of clauses) {
+    if (c.includes("제한없음") || c.includes("전체")) return true;
+    const m = c.match(/(\d+)년미만/);
+    if (m) { sawBound = true; if (months < Number(m[1]) * 12) return true; continue; }
+    if (c.includes("예비창업")) sawBound = true; // 이미 창업했으므로 이 구간 자체로는 미충족
+  }
+  return sawBound ? false : null;
 }
-// 연령 요건 텍스트(예: "만 39세 이하") 를 실제 대표자 나이 기준으로 재판정
+// 연령 요건 텍스트도 "만 20세 이상 ~ 만 39세 이하,만 40세 이상" 처럼 여러 구간이 콤마로 나열될 수 있음 →
+// 대표자 나이가 나열된 구간 중 하나라도 만족하면 지원 가능
 function evalAge(raw, age) {
   if (age == null || !raw) return null;
-  const t = raw.replace(/\s/g, "");
-  if (t.includes("제한없음") || t.includes("전체")) return true;
-  const under = t.match(/만(\d+)세이하/);
-  const over = t.match(/만(\d+)세이상/);
-  if (!under && !over) return null;
-  let ok = true;
-  if (under) ok = ok && age <= Number(under[1]);
-  if (over) ok = ok && age >= Number(over[1]);
-  return ok;
+  const clauses = raw.split(",").map((s) => s.replace(/\s/g, ""));
+  let sawBound = false;
+  for (const c of clauses) {
+    if (c.includes("제한없음") || c.includes("전체")) return true;
+    const under = c.match(/만(\d+)세이하/);
+    const over = c.match(/만(\d+)세이상/);
+    if (!under && !over) continue;
+    sawBound = true;
+    let ok = true;
+    if (under) ok = ok && age <= Number(under[1]);
+    if (over) ok = ok && age >= Number(over[1]);
+    if (ok) return true;
+  }
+  return sawBound ? false : null;
 }
 // 공고별 실효 자격 판정: 기업 정보가 입력돼 있으면 원문 텍스트로 재계산, 없으면 기본값 사용
 function effEligibility(it, today) {
