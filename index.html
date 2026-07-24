@@ -159,6 +159,18 @@ select {
 .sec-head { font-size: 17px; font-weight: 800; margin: 28px 0 10px; display: flex; align-items: center; gap: 8px; }
 .sec-head:first-child { margin-top: 0; }
 .sec-head .cnt { font-size: 12.5px; color: var(--muted); font-weight: 600; background: var(--bg); border-radius: 6px; padding: 2px 8px; }
+.bs-note { font-size: 12px; color: var(--muted); margin: -4px 0 8px; }
+
+/* ---- 페이지네이션 ---- */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 4px; margin-top: 18px; flex-wrap: wrap; }
+.pagination button {
+  border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit;
+  font-size: 13px; font-weight: 600; min-width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+}
+.pagination button:hover:not(:disabled) { border-color: var(--accent); }
+.pagination button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pagination button:disabled { color: var(--line); cursor: default; }
+.pagination .pg-ellipsis { color: var(--muted); font-size: 13px; padding: 0 4px; }
 
 /* ---- 달력 보기 ---- */
 .cal-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
@@ -284,6 +296,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       <div class="sec-head">전체 공고</div>
       <div class="count-line" id="countLine"></div>
       <div id="main"></div>
+      <div id="pagination"></div>
     </main>
 
     <aside class="sidebar">
@@ -394,13 +407,15 @@ const SYN = {
   "투자": ["VC", "IR", "펀딩", "투자유치", "엔젤"],
 };
 
+const PAGE_SIZE = 10;
 const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
-  view: "list", org: "all", sector: "all", calYm: null, calDay: null, data: null,
+  view: "list", org: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
   decided: new Set(JSON.parse(localStorage.getItem("alcofix_decided") || "[]")),
   profile: null,
 };
+function resetPage() { state.page = 1; }
 
 // ---- 비밀번호 잠금 (완전한 보안이 아닌 최소한의 접근 잠금입니다) ----
 const GATE_HASH = "d0c3d13dd69feede8d4b7c2d4191919ee3e38976c5d64e3ec4af5f5fe2803726";
@@ -506,6 +521,17 @@ function ineligible(it, today) {
   const eff = effEligibility(it, today);
   return eff.youngOk === false || eff.enyyOk === false;
 }
+// 알코픽스 조건(자격요건·세종·식품바이오) 부합도 점수. 자격 미달이 확인되면 추천에서 제외(null)
+function fitScore(it, today) {
+  if (ineligible(it, today)) return null;
+  const eff = effEligibility(it, today);
+  let score = 0;
+  if (eff.enyyOk === true) score += 2;
+  if (eff.youngOk === true) score += 2;
+  if (it.region === "세종") score += 3;
+  if (it.foodBio) score += 2;
+  return score;
+}
 
 // 검색어 → 유의어 포함 검색어 배열
 function expandQuery(q) {
@@ -578,12 +604,30 @@ function rowHtml(it, today, opts) {
   </a>`;
 }
 
-function bannerSectionHtml(label, list, today) {
+function bannerSectionHtml(label, list, today, note) {
   if (!list.length) return "";
   return `<section class="banner-section">
     <div class="bs-head"><h2>${label}</h2><span class="bs-count">${list.length}건</span></div>
+    ${note ? `<div class="bs-note">${note}</div>` : ""}
     <div class="row-list">${list.map((it) => rowHtml(it, today, { compact: true })).join("")}</div>
   </section>`;
+}
+
+function paginationHtml(current, total) {
+  if (total <= 1) return "";
+  const pages = [1];
+  const win = 2;
+  if (current - win > 2) pages.push("…");
+  for (let p = Math.max(2, current - win); p <= Math.min(total - 1, current + win); p++) pages.push(p);
+  if (current + win < total - 1) pages.push("…");
+  if (total > 1) pages.push(total);
+  return `<div class="pagination">
+    <button data-page="${current - 1}" ${current === 1 ? "disabled" : ""} aria-label="이전 페이지">←</button>
+    ${pages.map((p) => p === "…"
+      ? `<span class="pg-ellipsis">…</span>`
+      : `<button data-page="${p}" class="${p === current ? "active" : ""}">${p}</button>`).join("")}
+    <button data-page="${current + 1}" ${current === total ? "disabled" : ""} aria-label="다음 페이지">→</button>
+  </div>`;
 }
 
 function renderList(list, today) {
@@ -676,7 +720,7 @@ function render() {
       </div>`
     : "";
 
-  // 배너 섹션 (세종우선 / 마감임박 / 신규) — 필터링 없이 항상 최신 상위 항목만 보여줌
+  // 배너 섹션 (추천 / 마감임박 / 신규) — 필터링 없이 항상 최신 상위 항목만 보여줌
   const showBanners = state.view === "list" && !state.q && state.chip === "open";
   let bannersHtml = "";
   if (showBanners) {
@@ -685,22 +729,34 @@ function render() {
       const be = b.alwaysOpen ? "9999-12-31" : b.applyEnd || "9999-12-31";
       return ae < be ? -1 : 1;
     };
-    const sejongTop = open.filter((i) => i.region === "세종").sort(byDeadline).slice(0, 6);
+    const recommended = open
+      .map((i) => ({ i, s: fitScore(i, today) }))
+      .filter((x) => x.s !== null && x.s > 0)
+      .sort((a, b) => b.s - a.s || byDeadline(a.i, b.i))
+      .slice(0, 6)
+      .map((x) => x.i);
     const urgentTop = open.filter((i) => !i.alwaysOpen && i.applyEnd).sort(byDeadline).slice(0, 6);
     const newTop = items.filter((i) => isNew(i, today)).sort(byDeadline).slice(0, 6);
     bannersHtml =
-      bannerSectionHtml("세종 우선 공고", sejongTop, today) +
+      bannerSectionHtml("추천 지원사업", recommended, today,
+        state.profile ? "입력하신 기업 정보 기준으로 자격·세종·식품바이오 부합도가 높은 순" : "세종·식품바이오 기준 추천 — 기업 정보를 입력하면 자격요건까지 반영됩니다") +
       bannerSectionHtml("마감 임박", urgentTop, today) +
       bannerSectionHtml("신규 공고", newTop, today);
   }
   document.getElementById("bannerSections").innerHTML = bannersHtml;
 
-  // 목록 계산
+  // 목록 계산 + 페이지네이션 (10건씩)
   let list = items.filter((i) => matches(i, today));
   if (state.sort === "newest" && state.view !== "cal") {
     list = [...list].sort((a, b) => (a.firstSeen < b.firstSeen ? 1 : -1));
   }
-  document.getElementById("countLine").textContent = `${list.length}건 표시 중 (전체 ${items.length}건)`;
+  const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+  if (state.page > totalPages) state.page = totalPages;
+  if (state.page < 1) state.page = 1;
+  const pageList = state.view === "cal" ? list : list.slice((state.page - 1) * PAGE_SIZE, state.page * PAGE_SIZE);
+  document.getElementById("countLine").textContent = state.view === "cal"
+    ? `${list.length}건 표시 중 (전체 ${items.length}건)`
+    : `${list.length}건 중 ${list.length ? (state.page - 1) * PAGE_SIZE + 1 : 0}-${Math.min(state.page * PAGE_SIZE, list.length)}건 표시 (전체 ${items.length}건)`;
 
   // 분야 버튼 바 (가로) — 건수는 분야 외 나머지 필터를 적용한 기준
   const base = items.filter((i) => {
@@ -715,8 +771,13 @@ function render() {
     SECTOR_ORDER.map((s) => secBtn(s, s, base.filter((i) => i.sector === s).length)).join("");
 
   const main = document.getElementById("main");
-  if (state.view === "cal") main.innerHTML = renderCalendar(list, today);
-  else main.innerHTML = renderList(list, today);
+  if (state.view === "cal") {
+    main.innerHTML = renderCalendar(list, today);
+    document.getElementById("pagination").innerHTML = "";
+  } else {
+    main.innerHTML = renderList(pageList, today);
+    document.getElementById("pagination").innerHTML = paginationHtml(state.page, totalPages);
+  }
 }
 
 // ---- 이벤트 (위임) ----
@@ -736,9 +797,9 @@ document.addEventListener("click", (e) => {
     saveDecided(); render(); return;
   }
   const stat = e.target.closest(".stat");
-  if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; render(); return; }
+  if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; resetPage(); render(); return; }
   const alert = e.target.closest(".new-alert");
-  if (alert) { state.chip = alert.dataset.chip; render(); return; }
+  if (alert) { state.chip = alert.dataset.chip; resetPage(); render(); return; }
   const seg = e.target.closest("#viewSeg button");
   if (seg) {
     state.view = seg.dataset.view; state.calDay = null;
@@ -747,12 +808,18 @@ document.addEventListener("click", (e) => {
   }
   const org = e.target.closest("#orgSeg button");
   if (org) {
-    state.org = org.dataset.org;
+    state.org = org.dataset.org; resetPage();
     document.querySelectorAll("#orgSeg button").forEach((b) => b.classList.toggle("active", b === org));
     render(); return;
   }
   const sec = e.target.closest("#sectorBar button");
-  if (sec) { state.sector = sec.dataset.sector; render(); return; }
+  if (sec) { state.sector = sec.dataset.sector; resetPage(); render(); return; }
+  const pg = e.target.closest(".pagination button[data-page]");
+  if (pg && !pg.disabled) {
+    state.page = Number(pg.dataset.page); render();
+    document.querySelector(".main-col").scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
   if (e.target.closest("#calPrev")) { let [y, m] = state.calYm; m--; if (m < 0) { m = 11; y--; } state.calYm = [y, m]; state.calDay = null; render(); return; }
   if (e.target.closest("#calNext")) { let [y, m] = state.calYm; m++; if (m > 11) { m = 0; y++; } state.calYm = [y, m]; state.calDay = null; render(); return; }
   const dayEl = e.target.closest(".cal .day.has");
@@ -779,9 +846,9 @@ async function init() {
   }
 }
 
-document.getElementById("q").addEventListener("input", (e) => { state.q = e.target.value.trim(); render(); });
-document.getElementById("sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
-document.getElementById("hideIneligible").addEventListener("change", (e) => { state.hideIneligible = e.target.checked; render(); });
+document.getElementById("q").addEventListener("input", (e) => { state.q = e.target.value.trim(); resetPage(); render(); });
+document.getElementById("sort").addEventListener("change", (e) => { state.sort = e.target.value; resetPage(); render(); });
+document.getElementById("hideIneligible").addEventListener("change", (e) => { state.hideIneligible = e.target.checked; resetPage(); render(); });
 
 // ---- 기업 정보 모달 ----
 const PROFILE_FIELDS = [
@@ -807,12 +874,14 @@ document.getElementById("pfSave").addEventListener("click", () => {
   PROFILE_FIELDS.forEach(([id, key]) => { p[key] = document.getElementById(id).value || null; });
   saveProfile(p);
   state.profile = p;
+  resetPage();
   closeProfileModal();
   render();
 });
 document.getElementById("pfClear").addEventListener("click", () => {
   clearProfile();
   state.profile = null;
+  resetPage();
   closeProfileModal();
   render();
 });
