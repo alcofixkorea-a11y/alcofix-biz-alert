@@ -164,6 +164,20 @@ function checkAge(s) {
   return s.includes("만 20세 이상") || s.replace(/\s/g, "").includes("만39세이하");
 }
 
+// 일시적 네트워크 오류 대응: 최대 3회, 점진적 대기 후 재시도
+async function fetchWithRetry(url, opts, tries = 3) {
+  let lastErr;
+  for (let i = 0; i < tries; i++) {
+    try {
+      return await fetch(url, opts);
+    } catch (e) {
+      lastErr = e;
+      if (i < tries - 1) await new Promise((r) => setTimeout(r, 1500 * (i + 1)));
+    }
+  }
+  throw lastErr;
+}
+
 // ---------- K-Startup 수집 ----------
 async function fetchKstartup() {
   if (!KSTARTUP_KEY) return { items: [], error: "no-key" };
@@ -175,7 +189,7 @@ async function fetchKstartup() {
     const url =
       `https://nidapi.k-startup.go.kr/api/kisedKstartupService/v1/getAnnouncementInformation` +
       `?serviceKey=${KSTARTUP_KEY}&page=${page}&perPage=${perPage}&returnType=json`;
-    const res = await fetch(url);
+    const res = await fetchWithRetry(url);
     if (!res.ok) throw new Error(`K-Startup API HTTP ${res.status}`);
     const j = await res.json();
     const data = j.data || [];
@@ -245,7 +259,7 @@ async function fetchBizinfo() {
   const url =
     `https://www.bizinfo.go.kr/uss/rss/bizinfoApi.do` +
     `?crtfcKey=${BIZINFO_KEY}&dataType=json&searchCnt=800`;
-  const res = await fetch(url);
+  const res = await fetchWithRetry(url);
   const text = await res.text();
   let j;
   try {
