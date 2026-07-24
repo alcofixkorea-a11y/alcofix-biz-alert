@@ -44,36 +44,61 @@ h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
 .h-meta { margin-top: 10px; font-size: 13px; opacity: 0.8; display: flex; gap: 14px; flex-wrap: wrap; }
 .src-warn { background: rgba(28,92,56,0.10); border-radius: 6px; padding: 2px 8px; }
 
-/* ---- 요약 통계 ---- */
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 22px; }
+/* ---- 좌/우 레이아웃: 좌측 목록, 우측 조건 사이드바 ---- */
+.layout { display: grid; grid-template-columns: 1fr 280px; gap: 22px; align-items: start; }
+.main-col { min-width: 0; }
+.sidebar {
+  position: sticky; top: 16px; background: var(--card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 18px;
+  max-height: calc(100vh - 32px); overflow-y: auto;
+}
+.sidebar h4 {
+  font-size: 11.5px; font-weight: 800; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .4px; margin-bottom: 8px;
+}
+.sidebar-block { display: flex; flex-direction: column; gap: 8px; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; order: -1; max-height: none; }
+}
+
+/* ---- 요약 통계 (사이드바용 소형 그리드) ---- */
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .stat {
-  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-  padding: 14px 16px; cursor: pointer; transition: box-shadow .15s, border-color .15s;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
+  padding: 9px 10px; cursor: pointer; transition: box-shadow .15s, border-color .15s;
 }
 .stat:hover { border-color: var(--accent); }
 .stat.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
-.stat .num { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
-.stat .lbl { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.stat .num { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+.stat .lbl { font-size: 11px; color: var(--muted); margin-top: 1px; }
 .stat.urgent .num { color: var(--red); }
 .stat.fb .num { color: var(--green); }
 .stat.new .num { color: var(--purple); }
 .stat.fav .num { color: var(--orange); }
 
+/* ---- 가장 임박 한 줄 요약 ---- */
+.side-urgent {
+  display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;
+  background: var(--red-soft); border-radius: 10px; padding: 8px 10px; font-size: 12.5px;
+}
+.side-urgent b { color: var(--red); font-size: 12px; flex-shrink: 0; }
+.side-urgent span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 /* ---- 컨트롤 ---- */
-.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
 .search {
-  flex: 1 1 240px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px;
+  width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px;
   font: inherit; font-size: 14px; background: var(--card);
 }
 .search:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
 select {
-  padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px;
+  width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px;
   font: inherit; font-size: 13.5px; background: var(--card); cursor: pointer;
 }
 .toggle { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--muted); cursor: pointer; user-select: none; }
 .toggle input { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
 
-.viewbar { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.viewbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
 .seg { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 2px; flex-wrap: wrap; }
 .seg button {
   border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 600;
@@ -123,8 +148,8 @@ select {
 .tag.sejong { background: var(--orange-soft); color: var(--orange); }
 .tag.warn { background: var(--red-soft); color: var(--red); }
 
-/* ---- 분야 버튼 바 (가로) ---- */
-.sectorbar { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 16px; }
+/* ---- 분야 버튼 바 ---- */
+.sectorbar { display: flex; gap: 7px; flex-wrap: wrap; }
 .sectorbar button {
   border: 1px solid var(--line); background: var(--card); color: var(--text);
   font: inherit; font-size: 13px; font-weight: 600; padding: 7px 13px;
@@ -177,31 +202,9 @@ select {
 }
 .gate-err { color: var(--red); font-size: 12.5px; margin-top: 8px; min-height: 16px; }
 
-/* ---- 신규 공고 배너 ---- */
-.new-banner {
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  background: var(--purple-soft); border: 1px solid #d9c8fb; color: #5b21b6;
-  border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; cursor: pointer;
-  font-size: 14px; font-weight: 700;
-}
-.new-banner:hover { border-color: var(--purple); }
-.new-banner .arrow { font-weight: 800; }
-
-/* ---- 마감 임박 하이라이트 ---- */
-.top-urgent { margin-bottom: 22px; }
-.top-urgent .th { font-size: 14.5px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-.tu-list { display: flex; flex-direction: column; gap: 8px; }
-.tu-item {
-  display: flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--line);
-  border-left: 4px solid var(--red); border-radius: 10px; padding: 10px 14px; text-decoration: none; color: inherit;
-}
-.tu-item:hover { border-color: var(--red); }
-.tu-item .tu-dd { flex-shrink: 0; font-size: 12.5px; font-weight: 800; color: var(--red); background: var(--red-soft); border-radius: 7px; padding: 4px 9px; }
-.tu-item .tu-title { font-size: 13.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
 /* ---- 기업 정보 모달 ---- */
 .profile-btn {
-  border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit;
+  width: 100%; border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit;
   font-size: 13.5px; font-weight: 600; padding: 10px 14px; border-radius: 10px; cursor: pointer;
 }
 .profile-btn:hover { border-color: var(--accent); }
@@ -268,42 +271,60 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 </header>
 
 <div class="wrap">
-  <div class="stats" id="stats"></div>
-
   <div class="notice">
     ⚠️ 모집기간이 지난 공고는 자동 제외됩니다. 지원 자격·수행기간 등 세부 요건은 <b>반드시 공고 원문</b>에서 최종 확인하세요.
   </div>
 
-  <div class="controls">
-    <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 — 유의어 자동 확장 (예: 자금 → 융자·보증·대출)">
-    <select id="sort">
-      <option value="deadline">마감 임박순</option>
-      <option value="newest">최신 등록순</option>
-    </select>
-    <label class="toggle"><input type="checkbox" id="hideIneligible" checked> 자격 미달 공고 숨기기</label>
-    <button class="profile-btn" id="profileBtn">🏢 기업 정보</button>
+  <div class="layout">
+    <main class="main-col">
+      <div class="viewbar">
+        <div class="seg" id="viewSeg" role="tablist">
+          <button data-view="list" class="active">목록</button>
+          <button data-view="cal">마감 달력</button>
+        </div>
+      </div>
+      <div class="count-line" id="countLine"></div>
+      <div id="main"></div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <h4>검색</h4>
+        <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 (예: 자금 → 융자·보증)">
+      </div>
+
+      <div class="sidebar-block">
+        <h4>현황</h4>
+        <div class="stats" id="stats"></div>
+        <div id="sideUrgent"></div>
+      </div>
+
+      <div class="sidebar-block">
+        <h4>정렬 · 필터</h4>
+        <select id="sort">
+          <option value="deadline">마감 임박순</option>
+          <option value="newest">최신 등록순</option>
+        </select>
+        <label class="toggle"><input type="checkbox" id="hideIneligible" checked> 자격 미달 공고 숨기기</label>
+        <button class="profile-btn" id="profileBtn">🏢 기업 정보</button>
+      </div>
+
+      <div class="sidebar-block">
+        <h4>기관 유형</h4>
+        <div class="seg" id="orgSeg" style="width:100%">
+          <button data-org="all" class="active">전체</button>
+          <button data-org="중앙부처·공공">중앙부처·공공</button>
+          <button data-org="지자체">지자체</button>
+          <button data-org="민간">민간</button>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <h4>분야</h4>
+        <div class="sectorbar" id="sectorBar"></div>
+      </div>
+    </aside>
   </div>
-
-  <div class="viewbar">
-    <div class="seg" id="viewSeg" role="tablist">
-      <button data-view="list" class="active">목록</button>
-      <button data-view="cal">마감 달력</button>
-    </div>
-    <div class="seg" id="orgSeg">
-      <button data-org="all" class="active">전체 기관</button>
-      <button data-org="중앙부처·공공">중앙부처·공공</button>
-      <button data-org="지자체">지자체</button>
-      <button data-org="민간">민간</button>
-    </div>
-  </div>
-
-  <div class="sectorbar" id="sectorBar"></div>
-
-  <div id="newBanner"></div>
-  <div id="topUrgent"></div>
-
-  <div class="count-line" id="countLine"></div>
-  <div id="main"></div>
 
   <div class="modal-overlay" id="profileModal" style="display:none">
     <div class="modal">
@@ -615,26 +636,14 @@ function render() {
   document.getElementById("profileBtn").classList.toggle("set", !!state.profile);
   document.getElementById("profileBtn").textContent = state.profile ? "🏢 기업 정보 (입력됨)" : "🏢 기업 정보";
 
-  // 신규 공고 배너
-  document.getElementById("newBanner").innerHTML = cnt.new
-    ? `<div class="new-banner" data-chip="new">🆕 오늘 새로 올라온 지원사업 ${cnt.new}건이 있어요 <span class="arrow">보러가기 →</span></div>`
-    : "";
-
-  // 마감 임박 TOP3 하이라이트
-  const urgentTop = open
+  // 가장 임박한 마감 한 줄 요약 (사이드바)
+  const nextUrgent = open
     .filter((i) => !i.alwaysOpen && i.applyEnd)
-    .sort((a, b) => (a.applyEnd < b.applyEnd ? -1 : 1))
-    .slice(0, 3);
-  document.getElementById("topUrgent").innerHTML = urgentTop.length && state.chip === "open" && !state.q
-    ? `<div class="top-urgent"><div class="th">⏰ 마감이 가장 임박한 공고</div><div class="tu-list">${
-        urgentTop.map((it) => {
-          const dd = dday(it, today);
-          return `<a class="tu-item" href="${esc(it.url)}" target="_blank" rel="noopener">
-            <span class="tu-dd">${dd.label}</span>
-            <span class="tu-title">${it.region === "세종" ? "📍" : ""}${esc(it.title)}</span>
-          </a>`;
-        }).join("")
-      }</div></div>`
+    .sort((a, b) => (a.applyEnd < b.applyEnd ? -1 : 1))[0];
+  document.getElementById("sideUrgent").innerHTML = nextUrgent
+    ? `<a class="side-urgent" href="${esc(nextUrgent.url)}" target="_blank" rel="noopener">
+        <b>${dday(nextUrgent, today).label}</b><span>${esc(nextUrgent.title)}</span>
+      </a>`
     : "";
 
   // 목록 계산
@@ -672,8 +681,6 @@ document.addEventListener("click", (e) => {
   }
   const stat = e.target.closest(".stat");
   if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; render(); return; }
-  const banner = e.target.closest(".new-banner");
-  if (banner) { state.chip = banner.dataset.chip; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
   const seg = e.target.closest("#viewSeg button");
   if (seg) {
     state.view = seg.dataset.view; state.calDay = null;
