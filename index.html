@@ -735,11 +735,15 @@ function render() {
       .sort((a, b) => b.s - a.s || byDeadline(a.i, b.i))
       .slice(0, 6)
       .map((x) => x.i);
+    const sejongTop = open.filter((i) => i.region === "세종").sort(byDeadline).slice(0, 6);
+    const foodBioTop = open.filter((i) => i.foodBio).sort(byDeadline).slice(0, 6);
     const urgentTop = open.filter((i) => !i.alwaysOpen && i.applyEnd).sort(byDeadline).slice(0, 6);
     const newTop = items.filter((i) => isNew(i, today)).sort(byDeadline).slice(0, 6);
     bannersHtml =
       bannerSectionHtml("추천 지원사업", recommended, today,
         state.profile ? "입력하신 기업 정보 기준으로 자격·세종·식품바이오 부합도가 높은 순" : "세종·식품바이오 기준 추천 — 기업 정보를 입력하면 자격요건까지 반영됩니다") +
+      bannerSectionHtml("세종 지원사업", sejongTop, today) +
+      bannerSectionHtml("바이오·식품 관련 지원사업", foodBioTop, today) +
       bannerSectionHtml("마감 임박", urgentTop, today) +
       bannerSectionHtml("신규 공고", newTop, today);
   }
