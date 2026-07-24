@@ -41,9 +41,7 @@ header .wrap { padding-bottom: 0; }
 .h-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .ci-logo { height: 34px; width: auto; display: block; }
 .h-tagline { font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-top: 12px; }
-.h-sub { font-size: 14px; opacity: 0.85; margin-top: 3px; }
-.h-meta { margin-top: 10px; font-size: 13px; opacity: 0.8; display: flex; gap: 14px; flex-wrap: wrap; }
-.src-warn { background: rgba(28,92,56,0.10); border-radius: 6px; padding: 2px 8px; }
+.src-warn { background: var(--red-soft); color: var(--red); border-radius: 6px; padding: 2px 8px; }
 
 /* ---- 좌/우 레이아웃: 좌측 목록, 우측 조건 사이드바 ---- */
 .layout { display: grid; grid-template-columns: 1fr 280px; gap: 22px; align-items: start; }
@@ -276,11 +274,6 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       <img class="ci-logo" src="assets/ci_alcofix.png" alt="ALCOFIX">
     </div>
     <div class="h-tagline">지원사업 통합 안내 사이트</div>
-    <div class="h-sub">전국 공통 + 세종 우선 | 식품·바이오 | 초기창업·청년 맞춤</div>
-    <div class="h-meta">
-      <span id="updated">데이터 불러오는 중…</span>
-      <span id="src-status"></span>
-    </div>
   </div>
 </header>
 
@@ -386,7 +379,8 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 
   <footer>
     출처: <a href="https://www.k-startup.go.kr" target="_blank">K-Startup 창업지원포털</a> ·
-    <a href="https://www.bizinfo.go.kr" target="_blank">기업마당</a> — 매일 아침 자동 업데이트<br>
+    <a href="https://www.bizinfo.go.kr" target="_blank">기업마당</a><br>
+    <span id="updated">데이터 불러오는 중…</span> <span id="src-status"></span><br>
     ALCOFIX 내부용 · 공고 카드를 클릭하면 원문 페이지로 이동합니다 · ⭐ 스크랩은 이 브라우저에 저장됩니다
   </footer>
 </div>
