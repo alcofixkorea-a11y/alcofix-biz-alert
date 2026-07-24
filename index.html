@@ -156,6 +156,76 @@ select {
 .cal .day .t { color: #475569; margin-top: 2px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 @media (max-width: 640px) { .cal .day { min-height: 50px; } .cal .day .t { display: none; } }
 
+/* ---- 비밀번호 잠금 ---- */
+.gate {
+  position: fixed; inset: 0; background: #16321f; z-index: 999;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.gate-box {
+  background: var(--card); border-radius: 16px; padding: 32px 28px; width: 100%; max-width: 340px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25); text-align: center;
+}
+.gate-box h2 { font-size: 18px; margin-bottom: 6px; }
+.gate-box p { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+.gate-box input {
+  width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px;
+  font: inherit; font-size: 15px; margin-bottom: 10px; text-align: center;
+}
+.gate-box button {
+  width: 100%; padding: 11px; border: 0; border-radius: 10px; background: var(--green);
+  color: #fff; font: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer;
+}
+.gate-err { color: var(--red); font-size: 12.5px; margin-top: 8px; min-height: 16px; }
+
+/* ---- 신규 공고 배너 ---- */
+.new-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: var(--purple-soft); border: 1px solid #d9c8fb; color: #5b21b6;
+  border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; cursor: pointer;
+  font-size: 14px; font-weight: 700;
+}
+.new-banner:hover { border-color: var(--purple); }
+.new-banner .arrow { font-weight: 800; }
+
+/* ---- 마감 임박 하이라이트 ---- */
+.top-urgent { margin-bottom: 22px; }
+.top-urgent .th { font-size: 14.5px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.tu-list { display: flex; flex-direction: column; gap: 8px; }
+.tu-item {
+  display: flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--line);
+  border-left: 4px solid var(--red); border-radius: 10px; padding: 10px 14px; text-decoration: none; color: inherit;
+}
+.tu-item:hover { border-color: var(--red); }
+.tu-item .tu-dd { flex-shrink: 0; font-size: 12.5px; font-weight: 800; color: var(--red); background: var(--red-soft); border-radius: 7px; padding: 4px 9px; }
+.tu-item .tu-title { font-size: 13.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- 기업 정보 모달 ---- */
+.profile-btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit;
+  font-size: 13.5px; font-weight: 600; padding: 10px 14px; border-radius: 10px; cursor: pointer;
+}
+.profile-btn:hover { border-color: var(--accent); }
+.profile-btn.set { border-color: var(--green); color: var(--green); }
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(15,20,30,0.45); z-index: 900;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.modal { background: var(--card); border-radius: 16px; padding: 26px 26px 20px; width: 100%; max-width: 380px; }
+.modal h3 { font-size: 17px; margin-bottom: 6px; }
+.modal .modal-desc { font-size: 12.5px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+.modal label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; margin-top: 12px; }
+.modal label:first-of-type { margin-top: 0; }
+.modal input, .modal select {
+  width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px; font: inherit; font-size: 14px;
+}
+.modal-actions { display: flex; gap: 8px; margin-top: 22px; }
+.modal-actions button {
+  flex: 1; padding: 10px; border-radius: 9px; font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; border: 0;
+}
+.modal-actions .mb-save { background: var(--accent); color: #fff; }
+.modal-actions .mb-clear { background: var(--red-soft); color: var(--red); }
+.modal-actions .mb-close { background: #eef2f7; color: var(--muted); }
+
 .empty { text-align: center; color: var(--muted); padding: 60px 0; font-size: 14.5px; }
 .notice {
   background: #fffbeb; border: 1px solid #fde68a; color: #92400e;
@@ -171,6 +241,18 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 </style>
 </head>
 <body>
+
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <h2>🔒 ALCOFIX 지원사업 알리미</h2>
+    <p>내부 열람용 페이지입니다. 비밀번호를 입력하세요.</p>
+    <form id="gateForm">
+      <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="off" autofocus>
+      <button type="submit">입장</button>
+      <div class="gate-err" id="gateErr"></div>
+    </form>
+  </div>
+</div>
 
 <header>
   <div class="wrap">
@@ -199,6 +281,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       <option value="newest">최신 등록순</option>
     </select>
     <label class="toggle"><input type="checkbox" id="hideIneligible" checked> 자격 미달 공고 숨기기</label>
+    <button class="profile-btn" id="profileBtn">🏢 기업 정보</button>
   </div>
 
   <div class="viewbar">
@@ -216,8 +299,35 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 
   <div class="sectorbar" id="sectorBar"></div>
 
+  <div id="newBanner"></div>
+  <div id="topUrgent"></div>
+
   <div class="count-line" id="countLine"></div>
   <div id="main"></div>
+
+  <div class="modal-overlay" id="profileModal" style="display:none">
+    <div class="modal">
+      <h3>🏢 기업 정보 입력</h3>
+      <p class="modal-desc">입력한 정보는 <b>이 브라우저에만 저장</b>되며 외부로 전송되지 않습니다. 창업일·대표자 출생연도를 입력하면 공고별 자격요건(업력·연령)이 자동으로 다시 계산됩니다.</p>
+      <label>창업일</label>
+      <input type="date" id="pfFounded">
+      <label>대표자 출생연도</label>
+      <input type="number" id="pfBirthYear" placeholder="예: 1997" min="1900" max="2100">
+      <label>사업자 형태</label>
+      <select id="pfBizType">
+        <option value="">선택 안 함</option>
+        <option value="법인">법인사업자</option>
+        <option value="개인">개인사업자</option>
+      </select>
+      <label>상시근로자 수</label>
+      <input type="number" id="pfEmployees" min="0" placeholder="예: 1">
+      <div class="modal-actions">
+        <button class="mb-save" id="pfSave">저장</button>
+        <button class="mb-clear" id="pfClear">초기화</button>
+        <button class="mb-close" id="pfClose">닫기</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     출처: <a href="https://www.k-startup.go.kr" target="_blank">K-Startup 창업지원포털</a> ·
@@ -247,7 +357,80 @@ const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
   view: "list", org: "all", sector: "all", calYm: null, calDay: null, data: null,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
+  profile: null,
 };
+
+// ---- 비밀번호 잠금 (완전한 보안이 아닌 최소한의 접근 잠금입니다) ----
+const GATE_HASH = "d0c3d13dd69feede8d4b7c2d4191919ee3e38976c5d64e3ec4af5f5fe2803726";
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+function setupGate() {
+  const gate = document.getElementById("gate");
+  if (sessionStorage.getItem("alcofix_gate_ok") === "1") { gate.style.display = "none"; return; }
+  document.getElementById("gateForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const val = document.getElementById("gatePw").value;
+    if ((await sha256Hex(val)) === GATE_HASH) {
+      sessionStorage.setItem("alcofix_gate_ok", "1");
+      gate.style.display = "none";
+    } else {
+      document.getElementById("gateErr").textContent = "비밀번호가 올바르지 않습니다.";
+      document.getElementById("gatePw").value = "";
+      document.getElementById("gatePw").focus();
+    }
+  });
+}
+
+// ---- 기업 정보 (localStorage 저장, 자격요건 자동 재계산) ----
+function loadProfile() {
+  try { return JSON.parse(localStorage.getItem("alcofix_profile") || "null"); } catch { return null; }
+}
+function saveProfile(p) { localStorage.setItem("alcofix_profile", JSON.stringify(p)); }
+function clearProfile() { localStorage.removeItem("alcofix_profile"); }
+
+function bizAgeMonths(profile, today) {
+  if (!profile || !profile.founded) return null;
+  const f = new Date(profile.founded), t = new Date(today);
+  return (t.getFullYear() - f.getFullYear()) * 12 + (t.getMonth() - f.getMonth());
+}
+function ceoAge(profile, today) {
+  if (!profile || !profile.birthYear) return null;
+  return Number(today.slice(0, 4)) - Number(profile.birthYear);
+}
+// 업력 요건 텍스트(예: "1년미만", "예비창업자") 를 실제 창업일 기준으로 재판정
+function evalEnyy(raw, months) {
+  if (months == null || !raw) return null;
+  const t = raw.replace(/\s/g, "");
+  const m = t.match(/(\d+)년미만/);
+  if (m) return months < Number(m[1]) * 12;
+  if (t.includes("예비창업")) return false;
+  if (t.includes("제한없음") || t.includes("전체")) return true;
+  return null;
+}
+// 연령 요건 텍스트(예: "만 39세 이하") 를 실제 대표자 나이 기준으로 재판정
+function evalAge(raw, age) {
+  if (age == null || !raw) return null;
+  const t = raw.replace(/\s/g, "");
+  if (t.includes("제한없음") || t.includes("전체")) return true;
+  const under = t.match(/만(\d+)세이하/);
+  const over = t.match(/만(\d+)세이상/);
+  if (!under && !over) return null;
+  let ok = true;
+  if (under) ok = ok && age <= Number(under[1]);
+  if (over) ok = ok && age >= Number(over[1]);
+  return ok;
+}
+// 공고별 실효 자격 판정: 기업 정보가 입력돼 있으면 원문 텍스트로 재계산, 없으면 기본값 사용
+function effEligibility(it, today) {
+  if (!state.profile) return { enyyOk: it.enyyOk, youngOk: it.youngOk };
+  const months = bizAgeMonths(state.profile, today);
+  const age = ceoAge(state.profile, today);
+  const e = it.enyyRaw ? evalEnyy(it.enyyRaw, months) : it.enyyOk;
+  const y = it.ageRaw ? evalAge(it.ageRaw, age) : it.youngOk;
+  return { enyyOk: e, youngOk: y };
+}
 
 const fmtDate = (iso) => iso ? iso.replace(/-/g, ".").slice(2) : "";
 const esc = (s) => (s || "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -266,8 +449,9 @@ function dday(it, today) {
 function isNew(it, today) {
   return (new Date(today) - new Date(it.firstSeen)) / 86400000 <= 2;
 }
-function ineligible(it) {
-  return it.youngOk === false || it.enyyOk === false;
+function ineligible(it, today) {
+  const eff = effEligibility(it, today);
+  return eff.youngOk === false || eff.enyyOk === false;
 }
 
 // 검색어 → 유의어 포함 검색어 배열
@@ -283,7 +467,7 @@ function expandQuery(q) {
 }
 
 function matches(it, today) {
-  if (state.hideIneligible && ineligible(it)) return false;
+  if (state.hideIneligible && ineligible(it, today)) return false;
   if (state.org !== "all" && it.orgType !== state.org) return false;
   if (state.sector !== "all" && it.sector !== state.sector) return false;
   switch (state.chip) {
@@ -309,14 +493,15 @@ function matches(it, today) {
 function cardHtml(it, today) {
   const dd = dday(it, today);
   const fav = state.favs.has(it.id);
+  const eff = effEligibility(it, today);
   const tags = [];
   tags.push(`<span class="tag ${it.region === "세종" ? "sejong" : ""}">${it.region}</span>`);
   tags.push(`<span class="tag">${esc(it.sector)}</span>`);
   tags.push(`<span class="tag">${esc(it.orgType)}</span>`);
   if (it.foodBio) tags.push(`<span class="tag fb">식품·바이오</span>`);
-  if (it.enyyOk === true) tags.push(`<span class="tag ok">업력 1년미만 가능</span>`);
-  if (it.youngOk === true) tags.push(`<span class="tag ok">청년 대상 포함</span>`);
-  if (ineligible(it)) tags.push(`<span class="tag warn">자격요건 확인 필요</span>`);
+  if (eff.enyyOk === true) tags.push(`<span class="tag ok">${state.profile ? "업력 요건 충족" : "업력 1년미만 가능"}</span>`);
+  if (eff.youngOk === true) tags.push(`<span class="tag ok">${state.profile ? "연령 요건 충족" : "청년 대상 포함"}</span>`);
+  if (ineligible(it, today)) tags.push(`<span class="tag warn">자격요건 확인 필요</span>`);
   tags.push(`<span class="tag">${it.sources && it.sources.includes("bizinfo") && it.sources.includes("kstartup") ? "K-Startup·기업마당" : it.source === "bizinfo" ? "기업마당" : "K-Startup"}</span>`);
 
   const period = it.alwaysOpen
@@ -417,6 +602,31 @@ function render() {
       <div class="num">${num}</div><div class="lbl">${lbl}</div></div>`
   ).join("");
 
+  document.getElementById("profileBtn").classList.toggle("set", !!state.profile);
+  document.getElementById("profileBtn").textContent = state.profile ? "🏢 기업 정보 (입력됨)" : "🏢 기업 정보";
+
+  // 신규 공고 배너
+  document.getElementById("newBanner").innerHTML = cnt.new
+    ? `<div class="new-banner" data-chip="new">🆕 오늘 새로 올라온 지원사업 ${cnt.new}건이 있어요 <span class="arrow">보러가기 →</span></div>`
+    : "";
+
+  // 마감 임박 TOP3 하이라이트
+  const urgentTop = open
+    .filter((i) => !i.alwaysOpen && i.applyEnd)
+    .sort((a, b) => (a.applyEnd < b.applyEnd ? -1 : 1))
+    .slice(0, 3);
+  document.getElementById("topUrgent").innerHTML = urgentTop.length && state.chip === "open" && !state.q
+    ? `<div class="top-urgent"><div class="th">⏰ 마감이 가장 임박한 공고</div><div class="tu-list">${
+        urgentTop.map((it) => {
+          const dd = dday(it, today);
+          return `<a class="tu-item" href="${esc(it.url)}" target="_blank" rel="noopener">
+            <span class="tu-dd">${dd.label}</span>
+            <span class="tu-title">${it.region === "세종" ? "📍" : ""}${esc(it.title)}</span>
+          </a>`;
+        }).join("")
+      }</div></div>`
+    : "";
+
   // 목록 계산
   let list = items.filter((i) => matches(i, today));
   if (state.sort === "newest" && state.view !== "cal") {
@@ -452,6 +662,8 @@ document.addEventListener("click", (e) => {
   }
   const stat = e.target.closest(".stat");
   if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; render(); return; }
+  const banner = e.target.closest(".new-banner");
+  if (banner) { state.chip = banner.dataset.chip; render(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
   const seg = e.target.closest("#viewSeg button");
   if (seg) {
     state.view = seg.dataset.view; state.calDay = null;
@@ -495,6 +707,44 @@ async function init() {
 document.getElementById("q").addEventListener("input", (e) => { state.q = e.target.value.trim(); render(); });
 document.getElementById("sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
 document.getElementById("hideIneligible").addEventListener("change", (e) => { state.hideIneligible = e.target.checked; render(); });
+
+// ---- 기업 정보 모달 ----
+function openProfileModal() {
+  const p = state.profile || {};
+  document.getElementById("pfFounded").value = p.founded || "";
+  document.getElementById("pfBirthYear").value = p.birthYear || "";
+  document.getElementById("pfBizType").value = p.bizType || "";
+  document.getElementById("pfEmployees").value = p.employees ?? "";
+  document.getElementById("profileModal").style.display = "flex";
+}
+function closeProfileModal() { document.getElementById("profileModal").style.display = "none"; }
+
+document.getElementById("profileBtn").addEventListener("click", openProfileModal);
+document.getElementById("pfClose").addEventListener("click", closeProfileModal);
+document.getElementById("profileModal").addEventListener("click", (e) => {
+  if (e.target.id === "profileModal") closeProfileModal();
+});
+document.getElementById("pfSave").addEventListener("click", () => {
+  const p = {
+    founded: document.getElementById("pfFounded").value || null,
+    birthYear: document.getElementById("pfBirthYear").value || null,
+    bizType: document.getElementById("pfBizType").value || null,
+    employees: document.getElementById("pfEmployees").value || null,
+  };
+  saveProfile(p);
+  state.profile = p;
+  closeProfileModal();
+  render();
+});
+document.getElementById("pfClear").addEventListener("click", () => {
+  clearProfile();
+  state.profile = null;
+  closeProfileModal();
+  render();
+});
+
+state.profile = loadProfile();
+setupGate();
 init();
 </script>
 </body>

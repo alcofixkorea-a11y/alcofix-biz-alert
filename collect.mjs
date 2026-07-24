@@ -213,6 +213,8 @@ async function fetchKstartup() {
       foodBio: hasFoodBio(textAll),
       youngOk: checkAge(x.biz_trgt_age),
       enyyOk: checkEnyy(x.biz_enyy),
+      ageRaw: x.biz_trgt_age || "",
+      enyyRaw: x.biz_enyy || "",
       privateHost: x.sprv_inst === "민간",
     });
   }
@@ -282,6 +284,8 @@ async function fetchBizinfo() {
       foodBio: hasFoodBio(textAll),
       youngOk: null,
       enyyOk: null,
+      ageRaw: "",
+      enyyRaw: "",
       privateHost: false,
     });
   }
