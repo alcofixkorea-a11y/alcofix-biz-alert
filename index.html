@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALCOFIX 지원사업 알리미</title>
+<title>지원사업 통합 안내 사이트</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📢</text></svg>">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
@@ -39,8 +39,9 @@ header {
 }
 header .wrap { padding-bottom: 0; }
 .h-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
-.h-sub { font-size: 14px; opacity: 0.85; }
+.ci-logo { height: 34px; width: auto; display: block; }
+.h-tagline { font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-top: 12px; }
+.h-sub { font-size: 14px; opacity: 0.85; margin-top: 3px; }
 .h-meta { margin-top: 10px; font-size: 13px; opacity: 0.8; display: flex; gap: 14px; flex-wrap: wrap; }
 .src-warn { background: rgba(28,92,56,0.10); border-radius: 6px; padding: 2px 8px; }
 
@@ -76,6 +77,7 @@ h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
 .stat.fb .num { color: var(--green); }
 .stat.new .num { color: var(--purple); }
 .stat.fav .num { color: var(--orange); }
+.stat.decided .num { color: var(--green); }
 
 /* ---- 가장 임박 한 줄 요약 ---- */
 .side-urgent {
@@ -123,9 +125,14 @@ select {
   display: inline-block; background: var(--purple); color: #fff; font-size: 10.5px; font-weight: 800;
   border-radius: 5px; padding: 1px 6px; margin-left: 6px; vertical-align: 2px;
 }
-.c-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.c-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
 .favbtn { border: 0; background: transparent; font-size: 21px; line-height: 1; cursor: pointer; color: #cbd5e1; padding: 1px 3px; }
 .favbtn.on { color: #f59e0b; }
+.decidebtn {
+  border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer;
+  font: inherit; font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 4px 10px; white-space: nowrap;
+}
+.decidebtn.on { border-color: var(--green); background: var(--green-soft); color: var(--green); }
 .dday {
   font-size: 13px; font-weight: 800; border-radius: 8px; padding: 5px 11px; white-space: nowrap;
   background: var(--accent-soft); color: var(--accent);
@@ -213,11 +220,16 @@ select {
   position: fixed; inset: 0; background: rgba(15,20,30,0.45); z-index: 900;
   display: flex; align-items: center; justify-content: center; padding: 20px;
 }
-.modal { background: var(--card); border-radius: 16px; padding: 26px 26px 20px; width: 100%; max-width: 380px; }
+.modal { background: var(--card); border-radius: 16px; padding: 26px 26px 20px; width: 100%; max-width: 380px; max-height: calc(100vh - 60px); overflow-y: auto; }
+.modal.modal-wide { max-width: 560px; }
 .modal h3 { font-size: 17px; margin-bottom: 6px; }
-.modal .modal-desc { font-size: 12.5px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
-.modal label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; margin-top: 12px; }
-.modal label:first-of-type { margin-top: 0; }
+.modal .modal-desc { font-size: 12.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+.modal-h4 { font-size: 12px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .3px; margin: 18px 0 8px; }
+.modal-h4:first-of-type { margin-top: 0; }
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+.modal-grid .span2 { grid-column: 1 / -1; }
+@media (max-width: 480px) { .modal-grid { grid-template-columns: 1fr; } }
+.modal label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 5px; }
 .modal input, .modal select {
   width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px; font: inherit; font-size: 14px;
 }
@@ -236,7 +248,8 @@ select {
 }
 footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.8; }
 @media (max-width: 640px) {
-  h1 { font-size: 21px; }
+  .ci-logo { height: 26px; }
+  .h-tagline { font-size: 15px; }
   .c-top { flex-direction: column-reverse; }
   .c-right { align-self: flex-end; }
   .stat .num { font-size: 20px; }
@@ -247,7 +260,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 
 <div class="gate" id="gate">
   <div class="gate-box">
-    <h2>🔒 ALCOFIX 지원사업 알리미</h2>
+    <h2>🔒 지원사업 통합 안내 사이트</h2>
     <p>내부 열람용 페이지입니다. 비밀번호를 입력하세요.</p>
     <form id="gateForm">
       <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="off" autofocus>
@@ -260,9 +273,10 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 <header>
   <div class="wrap">
     <div class="h-top">
-      <h1>📢 ALCOFIX 지원사업 알리미</h1>
-      <span class="h-sub">전국 공통 + 세종 우선 | 식품·바이오 | 초기창업·청년 맞춤</span>
+      <img class="ci-logo" src="assets/ci_alcofix.png" alt="ALCOFIX">
     </div>
+    <div class="h-tagline">지원사업 통합 안내 사이트</div>
+    <div class="h-sub">전국 공통 + 세종 우선 | 식품·바이오 | 초기창업·청년 맞춤</div>
     <div class="h-meta">
       <span id="updated">데이터 불러오는 중…</span>
       <span id="src-status"></span>
@@ -327,21 +341,41 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   </div>
 
   <div class="modal-overlay" id="profileModal" style="display:none">
-    <div class="modal">
+    <div class="modal modal-wide">
       <h3>🏢 기업 정보 입력</h3>
-      <p class="modal-desc">입력한 정보는 <b>이 브라우저에만 저장</b>되며 외부로 전송되지 않습니다. 창업일·대표자 출생연도를 입력하면 공고별 자격요건(업력·연령)이 자동으로 다시 계산됩니다.</p>
-      <label>창업일</label>
-      <input type="date" id="pfFounded">
-      <label>대표자 출생연도</label>
-      <input type="number" id="pfBirthYear" placeholder="예: 1997" min="1900" max="2100">
-      <label>사업자 형태</label>
-      <select id="pfBizType">
-        <option value="">선택 안 함</option>
-        <option value="법인">법인사업자</option>
-        <option value="개인">개인사업자</option>
-      </select>
-      <label>상시근로자 수</label>
-      <input type="number" id="pfEmployees" min="0" placeholder="예: 1">
+      <p class="modal-desc">입력한 정보는 <b>이 브라우저에만 저장</b>되며 외부로 전송되지 않습니다. 창업일·대표자 출생연도를 입력하면 공고별 자격요건(업력·연령)이 자동으로 다시 계산되고, 나머지 항목은 추후 지원사업 서류 작성 시 참고용으로 이 브라우저에 보관됩니다.</p>
+
+      <h4 class="modal-h4">기본 정보</h4>
+      <div class="modal-grid">
+        <div><label>회사명</label><input type="text" id="pfName" placeholder="주식회사 알코픽스"></div>
+        <div><label>대표자명</label><input type="text" id="pfCeoName" placeholder="예: 홍길동"></div>
+        <div><label>창업일</label><input type="date" id="pfFounded"></div>
+        <div><label>대표자 출생연도</label><input type="number" id="pfBirthYear" placeholder="예: 1997" min="1900" max="2100"></div>
+        <div><label>사업자 형태</label>
+          <select id="pfBizType">
+            <option value="">선택 안 함</option>
+            <option value="법인">법인사업자</option>
+            <option value="개인">개인사업자</option>
+          </select>
+        </div>
+        <div><label>상시근로자 수</label><input type="number" id="pfEmployees" min="0" placeholder="예: 1"></div>
+      </div>
+
+      <h4 class="modal-h4">사업자 등록 정보</h4>
+      <div class="modal-grid">
+        <div><label>사업자등록번호</label><input type="text" id="pfBizNo" placeholder="000-00-00000"></div>
+        <div><label>법인등록번호</label><input type="text" id="pfCorpNo" placeholder="000000-0000000"></div>
+        <div><label>업태</label><input type="text" id="pfBizCategory" placeholder="예: 제조업"></div>
+        <div><label>업종(코드)</label><input type="text" id="pfBizCode" placeholder="예: 식품첨가물 및 화학첨가물 제조업"></div>
+        <div class="span2"><label>사업장 소재지</label><input type="text" id="pfAddress" placeholder="예: 세종특별자치시 …"></div>
+      </div>
+
+      <h4 class="modal-h4">사업 내용</h4>
+      <div class="modal-grid">
+        <div class="span2"><label>주요 아이템/제품명</label><input type="text" id="pfItem" placeholder="예: Wakie - 액상형 숙취해소 음료"></div>
+        <div class="span2"><label>보유 인증·지식재산권</label><input type="text" id="pfCerts" placeholder="예: HACCP 신청중, 특허출원 1건"></div>
+      </div>
+
       <div class="modal-actions">
         <button class="mb-save" id="pfSave">저장</button>
         <button class="mb-clear" id="pfClear">초기화</button>
@@ -378,6 +412,7 @@ const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
   view: "list", org: "all", sector: "all", calYm: null, calDay: null, data: null,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
+  decided: new Set(JSON.parse(localStorage.getItem("alcofix_decided") || "[]")),
   profile: null,
 };
 
@@ -467,6 +502,7 @@ const fmtDate = (iso) => iso ? iso.replace(/-/g, ".").slice(2) : "";
 const esc = (s) => (s || "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 function saveFavs() { localStorage.setItem("alcofix_favs", JSON.stringify([...state.favs])); }
+function saveDecided() { localStorage.setItem("alcofix_decided", JSON.stringify([...state.decided])); }
 
 function dday(it, today) {
   if (it.status === "upcoming") return { cls: "upcoming", label: "접수예정 " + fmtDate(it.applyStart) + "~" };
@@ -511,6 +547,7 @@ function matches(it, today) {
     }
     case "new": if (!isNew(it, today)) return false; break;
     case "fav": if (!state.favs.has(it.id)) return false; break;
+    case "decided": if (!state.decided.has(it.id)) return false; break;
     case "upcoming": if (it.status !== "upcoming") return false; break;
   }
   if (state.q) {
@@ -524,6 +561,7 @@ function matches(it, today) {
 function cardHtml(it, today) {
   const dd = dday(it, today);
   const fav = state.favs.has(it.id);
+  const decided = state.decided.has(it.id);
   const eff = effEligibility(it, today);
   const tags = [];
   tags.push(`<span class="tag ${it.region === "세종" ? "sejong" : ""}">${it.region}</span>`);
@@ -546,6 +584,7 @@ function cardHtml(it, today) {
         <div class="c-org">${esc(it.org)}</div>
       </div>
       <div class="c-right">
+        <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "✅ 지원결정" : "지원 결정"}</button>
         <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
         <div class="dday ${dd.cls}">${dd.label}</div>
       </div>
@@ -619,6 +658,7 @@ function render() {
     foodbio: items.filter((i) => i.foodBio).length,
     new: items.filter((i) => isNew(i, today)).length,
     fav: items.filter((i) => state.favs.has(i.id)).length,
+    decided: items.filter((i) => state.decided.has(i.id)).length,
   };
   const statDefs = [
     ["open", cnt.open, "모집중 공고", ""],
@@ -627,6 +667,7 @@ function render() {
     ["foodbio", cnt.foodbio, "식품·바이오", "fb"],
     ["new", cnt.new, "신규 (2일 내)", "new"],
     ["fav", cnt.fav, "⭐ 스크랩", "fav"],
+    ["decided", cnt.decided, "✅ 지원 결정", "decided"],
   ];
   document.getElementById("stats").innerHTML = statDefs.map(([key, num, lbl, extra]) =>
     `<div class="stat ${extra} ${state.chip === key ? "active" : ""}" data-chip="${key}">
@@ -679,6 +720,13 @@ document.addEventListener("click", (e) => {
     state.favs.has(id) ? state.favs.delete(id) : state.favs.add(id);
     saveFavs(); render(); return;
   }
+  const decide = e.target.closest(".decidebtn");
+  if (decide) {
+    e.preventDefault(); e.stopPropagation();
+    const id = decide.dataset.decide;
+    state.decided.has(id) ? state.decided.delete(id) : state.decided.add(id);
+    saveDecided(); render(); return;
+  }
   const stat = e.target.closest(".stat");
   if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; render(); return; }
   const seg = e.target.closest("#viewSeg button");
@@ -726,12 +774,15 @@ document.getElementById("sort").addEventListener("change", (e) => { state.sort =
 document.getElementById("hideIneligible").addEventListener("change", (e) => { state.hideIneligible = e.target.checked; render(); });
 
 // ---- 기업 정보 모달 ----
+const PROFILE_FIELDS = [
+  ["pfName", "name"], ["pfCeoName", "ceoName"], ["pfFounded", "founded"], ["pfBirthYear", "birthYear"],
+  ["pfBizType", "bizType"], ["pfEmployees", "employees"],
+  ["pfBizNo", "bizNo"], ["pfCorpNo", "corpNo"], ["pfBizCategory", "bizCategory"], ["pfBizCode", "bizCode"], ["pfAddress", "address"],
+  ["pfItem", "item"], ["pfCerts", "certs"],
+];
 function openProfileModal() {
   const p = state.profile || {};
-  document.getElementById("pfFounded").value = p.founded || "";
-  document.getElementById("pfBirthYear").value = p.birthYear || "";
-  document.getElementById("pfBizType").value = p.bizType || "";
-  document.getElementById("pfEmployees").value = p.employees ?? "";
+  PROFILE_FIELDS.forEach(([id, key]) => { document.getElementById(id).value = p[key] ?? ""; });
   document.getElementById("profileModal").style.display = "flex";
 }
 function closeProfileModal() { document.getElementById("profileModal").style.display = "none"; }
@@ -742,12 +793,8 @@ document.getElementById("profileModal").addEventListener("click", (e) => {
   if (e.target.id === "profileModal") closeProfileModal();
 });
 document.getElementById("pfSave").addEventListener("click", () => {
-  const p = {
-    founded: document.getElementById("pfFounded").value || null,
-    birthYear: document.getElementById("pfBirthYear").value || null,
-    bizType: document.getElementById("pfBizType").value || null,
-    employees: document.getElementById("pfEmployees").value || null,
-  };
+  const p = {};
+  PROFILE_FIELDS.forEach(([id, key]) => { p[key] = document.getElementById(id).value || null; });
   saveProfile(p);
   state.profile = p;
   closeProfileModal();

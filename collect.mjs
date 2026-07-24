@@ -71,6 +71,23 @@ const OTHER_REGION_TOKENS = [
   "Seoul", "Busan", "Daegu", "Incheon", "Gwangju", "Daejeon", "Ulsan", "Jeju", "Gangwon",
 ];
 
+// 알코픽스(숙취해소 음료·건강기능식품, 식품·바이오)와 무관한 산업 전용 공고 제외용 문구.
+// 짧고 흔한 단어(환경/조선 등)는 "환경공단 ESG 지원사업"·"조선일보 상생협력 프로그램"처럼
+// 무관한 맥락에서도 매칭될 수 있어 실제 데이터에서 확인된 구체적인 구·문장 단위로만 등록한다.
+const OFF_TOPIC_TOKENS = [
+  "해양수산", "해양˙수산", "해양·수산", "해양수산부", "수산업", "수산물", "어업인", "임업인", "산림소득",
+  "자동차부품", "미래자동차", "조선업", "조선소",
+  "반도체", "로봇도입", "서비스로봇", "규제혁신 로봇", "로봇 실증",
+  "교통ㆍ환경 챌린지", "교통환경챌린지", "교통 분야", "무탄소에너지", "재생에너지", "그린ㆍ에너지", "해상풍력",
+  "스포츠산업", "K-뷰티", "뷰티 팝업",
+  "항공기", "우주발사체", "우주항공", "관광벤처", "관광두레", "문화콘텐츠", "웹툰", "게임산업",
+  "섬유패션", "섬유산업", "건설업", "부동산개발",
+];
+function isOffTopic(title, category) {
+  const t = (title || "") + " " + (category || "");
+  return OFF_TOPIC_TOKENS.some((k) => t.includes(k));
+}
+
 // 시도명 (기업마당 해시태그의 지역 나열 판별용 — 전국 공고는 17개 시도를 전부 나열함)
 const SIDO_TOKENS = [
   "서울", "부산", "대구", "인천", "광주", "대전", "울산", "경기", "강원",
@@ -186,6 +203,7 @@ async function fetchKstartup() {
     const title = decodeEntities(x.biz_pbanc_nm || "").trim();
     const tRegion = titleRegion(title);
     if (tRegion === "other") continue;
+    if (isOffTopic(title, x.supt_biz_clsfc)) continue;
     // 지역 필드에 세종만 콕 집어 있을 때만 세종 공고로 취급 (여러 시도 나열은 전국성 공고)
     const isSejong =
       tRegion === "sejong" ||
@@ -261,6 +279,7 @@ async function fetchBizinfo() {
     // 제목에 타 지역명이 있으면 지역 전용 공고로 간주하고 제외
     const tRegion = titleRegion(title);
     if (tRegion === "other") continue;
+    if (isOffTopic(title, x.pldirSportRealmLclasCodeNm)) continue;
     const isSejong = tRegion === "sejong" || (hasSejongTag && sidoCount <= 3);
 
     const urlPath = x.pblancUrl || x.pblancurl || "";
