@@ -1,26 +1,94 @@
-## 📬 2026-07-23 신규 지원사업 공고 19건
+## 📬 2026-07-24 신규 지원사업 공고 242건
 
-### ⭐ 세종·식품바이오 관련 (6건)
+### ⭐ 세종·식품바이오 관련 (55건)
+- 📍**[세종]** [[세종] 2027년 산림소득분야 지원사업 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123280) — 세종특별자치시 · 직접수행 (마감 2026-07-24)
 - 📍**[세종]** [[대전ㆍ세종] 2026년 1차 글로벌 진출 전략 프로그램 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124653) — 대전광역시 · 대전ㆍ세종지방중소벤처기업청 (마감 2026-07-27)
+- 📍**[세종]** [[세종] 2026년 지역기업 성장사다리 지원사업 연계 성장브릿지(정부과제 기획지원)사업 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124475) — 중소벤처기업부 · 세종테크노파크 (마감 2026-07-30)
+- 📍**[세종]** [[충남ㆍ충북ㆍ대전ㆍ세종] 2026년 3차 기업 지원 프로그램(비R&D) 지원대상 모집 공고(미래차 산업 혁신 지원사업)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124353) — 충청남도 · 충남테크노파크 (마감 2026-07-30)
+- 📍**[세종]** [[세종] 2026년 3차 지식재산 긴급지원 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124385) — 세종특별자치시 · 세종지식재산센터 (마감 2026-07-30)
+- 📍**[세종]** [2026년 2차 세종 스타트업 혁신제품 선(先)보급 지원사업 참여 스타트업 모집 공고(제품상용화 지원사업)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124552) — 세종특별자치시 · 세종창조경제혁신센터 (마감 2026-08-17)
+- 📍**[세종]** [[세종] 2026년 EMS 해외물류비 지원사업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121756) — 세종특별자치시 · 세종일자리경제진흥원 (상시)
+- 📍**[세종]** [2026년 창업BuS in 세종 수요투자 라운드 참여기업 상시 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122229) — 중소벤처기업부 · 세종창조경제혁신센터 (상시)
+- 📍**[세종]** [2026년 세종테크밸리 첨단기업 유치 임차료 지원사업 희망기업(임차기업) 모집 수정 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122893) — 세종특별자치시 · 세종테크노파크 (상시)
+- 📍**[세종]** [[세종] 2026년 디지털 콘텐츠 산업 규제개혁 어드바이저 참여기업 모집 공고(SW융합클러스터2.0(특화산업 강화))](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122907) — 세종특별자치시 · 세종테크노파크 (상시)
+- 📍**[세종]** [[세종] 조달청 다수공급자계약(MAS) 활용 컨설팅 지원사업 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122942) — 세종특별자치시 · 세종상공회의소 (상시)
+- 📍**[세종]** [[대전ㆍ세종ㆍ충북ㆍ충남] 2026년 충청권 지역특화산업 취ㆍ창업 CDP지원 프로그램 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123536) — 과학기술정보통신부 · 대한상공회의소충남인력개발원 (상시)
+- [2026년 식물백신 품질고도화 지원사업(제품상용화지원) 수혜기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124394) — 농림축산식품부 · 포항테크노파크 (마감 2026-07-24) `식품·바이오`
+- [2026년 글로벌 오픈이노베이션 위크 바이오헬스 파트너링 참가기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124230) — 보건복지부 · 한국보건산업진흥원 (마감 2026-07-24) `식품·바이오`
+- [바이오ㆍ메디컬 투자 브릿지 프로그램 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123809) — 경기도 · 동국대학교 (마감 2026-07-24) `식품·바이오`
+- [2026년 농식품 데이터 활용 컨설팅 및 구매 지원사업 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123759) — 농림축산식품부 · 한국농수산식품유통공사 (마감 2026-07-26) `식품·바이오`
+- [2026년 장수군 4차 레드푸드 전ㆍ후방기업 경쟁력 강화 및 스마트 농업 활성화 지원 사업 지원기업 모집 공고(시군구연고산업육성 협업프로젝트)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124519) — 중소벤처기업부 · 전북테크노파크 (마감 2026-07-29) `식품·바이오`
+- [2026년 1차 중국 스마트팜 로드쇼 참가기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124517) — 농림축산식품부 · 대한무역투자진흥공사 (마감 2026-07-29) `식품·바이오`
+- [2026년 디지털 치과 의료기기 기술개발 및 시장 진출 지원 사업 연장 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124435) — 산업통상부 · 한국산업기술시험원 (마감 2026-07-29) `식품·바이오`
+- [2026년 산업 AI 도입ㆍ실증 지원사업 참여기업 모집 재공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124598) — 산업통상부 · 충북과학기술혁신원 (마감 2026-07-30) `식품·바이오`
 - [중국 국제 중소기업 박람회 한국관 참가기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124630) — 산업통상부 · 대한무역투자진흥공사 (마감 2026-07-30) `식품·바이오`
-- [일본 후쿠오카 진출 지원 Plug in: Fukuoka #13 참가 스타트업 모집 공고(~ 7/31 18:00)](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178640) — (재)부산창조경제혁신센터 대표이사 (마감 2026-07-31) `식품·바이오`
+- [2026년 세계폐암학회(WCLC) 참가 지원 사업 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124417) — 보건복지부 · 한국보건산업진흥원 (마감 2026-07-30) `식품·바이오`
+- [Plug  in: Fukuoka #13 참가 스타트업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124584) — 부산광역시 · 부산창조경제혁신센터 (마감 2026-07-31) `식품·바이오`
+- [2026년 1차 동물세포기반 백신 공공 CDMO 전략적 육성 및 바이오텍 생산지원 사업 수혜기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124312) — 산업통상부 · 동물세포실증지원센터 (마감 2026-07-31) `식품·바이오`
+- [2026년 The London Food&Drink Festival 전시회 연계 K-푸드 영국시장 진출 융복합사업 참가 신청 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124316) — 산업통상부 · 대한무역투자진흥공사 (마감 2026-07-31) `식품·바이오`
+- [2026년 바이오유럽(BIO-Europe) 참가지원 사업 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124420) — 보건복지부 · 한국보건산업진흥원 (마감 2026-07-31) `식품·바이오`
+- [2026년 ESMO(유럽종양학회) 사절단 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124125) — 보건복지부 · 한국보건산업진흥원 (마감 2026-07-31) `식품·바이오`
+- [2026년 디지털 랩온어칩 국내외 전시회 참가 지원기업 추가 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124608) — 강원특별자치도 · 춘천바이오산업진흥원 (마감 2026-08-05) `식품·바이오`
 - [2026년 K-브랜드 융복합 KDAY TOKYO 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124627) — 문화체육관광부 · 한국국제문화교류진흥원 (마감 2026-08-05) `식품·바이오`
+- [2026년 농림축산식품부 혁신제품 지정기간 연장(2차 연장) 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124520) — 농림축산식품부 · 농림식품기술기획평가원 (마감 2026-08-06) `식품·바이오`
 - [2026년 제조전문형 메이커 스페이스 사업 제조 AI 기술 사업화 지원 수혜기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124637) — 중소벤처기업부 · 경북대학교 스타트업지원센터 (마감 2026-08-07) `식품·바이오`
+- [2026년 농업ㆍ농촌형 예비사회적기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124478) — 농림축산식품부 · 한국사회적기업진흥원 (마감 2026-08-07) `식품·바이오`
+- [2026년 창업기업 오프라인 팝업스토어 및 기획전 입점기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124541) — 중소벤처기업부 · 한국중소벤처기업유통원 (마감 2026-08-07) `식품·바이오`
+- [2026년 GIF 창업 아이디어 경진대회 참가자 모집 안내](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123556) — 대구광역시 · 대구창조경제혁신센터 (마감 2026-08-07) `식품·바이오`
+- [2026년 산업통상부-삼성전자 기술나눔 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124601) — 산업통상부 · 한국산업기술진흥원 (마감 2026-08-26) `식품·바이오`
+- [해외규격인증 취득 절차 심층 컨설팅 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124518) — 산업통상부 · 대한무역투자진흥공사 (마감 2026-08-31) `식품·바이오`
+- [2026년 디지털트윈 플랫폼 활용 수요기업 모집 수정 공고(디지털트윈 융합 의료혁신 선도사업)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121718) — 과학기술정보통신부 · 강원테크노파크 (상시) `식품·바이오`
+- [2026년 2차 메카노바이오활성소재 혁신의료기기 실증 기반구축 생물학적 시험평가인증 지원사업 공고(산업혁신기반구축사업)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122268) — 산업통상부 · 국가독성과학연구소 (상시) `식품·바이오`
+- [2026년 바이오 의료기기 해외 진출 지원 제로트러스트 기반구축사업 참여기업 상시 지원 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122309) — 산업통상부 · 한국산업기술시험원 (상시) `식품·바이오`
+- [2026년 수출기업 맞춤형 조사 지원사업 추가 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122801) — 농림축산식품부 · 한국농수산식품유통공사 (상시) `식품·바이오`
+- [2026년 바이오프린팅 활용 첨단바이오 활성화 지원사업(시설ㆍ장비 활용) 수혜기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123119) — 경상북도 · 포항테크노파크 (상시) `식품·바이오`
+- [해외 K-푸드 전시ㆍ홍보 사업 참여 제품 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123138) — 농림축산식품부 · 한국농수산식품유통공사 (상시) `식품·바이오`
+- [AI기반 Age-Tech 산업 중심의 디지털의료제품 지원 바이오데이터 및 알고리즘 실증 기술서비스 모집 상시 공고(산업혁신기반구축ㆍ2차년도)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123203) — 산업통상부 · 한국산업기술시험원 (상시) `식품·바이오`
+- [바이오의약품 소재부품장비 기업지원 프로그램 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123451) — 산업통상부 · 충북테크노파크 (상시) `식품·바이오`
+- [2026년 바이오헬스 글로벌 수출부대비용 지원 신청 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123523) — 보건복지부 · 한국보건산업진흥원 (상시) `식품·바이오`
+- [AI융합 의료기기 신뢰성 강화 및 성능 평가ㆍ실증 사업 수혜기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123764) — 산업통상부 · 충북테크노파크 (상시) `식품·바이오`
+- [2026년 바이오ㆍ메디컬 패키지지원 프로그램 참여기업 모집 공고(특화역량 BI 지원사업)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123858) — 중소벤처기업부 · 동국대학교 (상시) `식품·바이오`
+- [2026년 2차 물리ㆍ화학적 시험평가인증 지원사업 공고(메카노바이오활성소재 혁신의료기기 실증 기반구축)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124043) — 산업통상부 · 전북대학교산학협력단 (상시) `식품·바이오`
+- [2026년 중소기업 정보보호 특화지원사업 수요기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124174) — 인천광역시 · 인천테크노파크 (상시) `식품·바이오`
+- [2026년 그린바이오 소재 첨단분석시스템 활성화 지원사업(장비 활용) 수혜기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124274) — 경상북도 · 포항테크노파크 (상시) `식품·바이오`
+- [2026년 베트남 복합형 거점 물류센터(DC) 지원사업 이용업체 수시 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124484) — 농림축산식품부 · 한국농수산식품유통공사 (상시) `식품·바이오`
+- [글로벌 B2B 한국식품관 입점기업 수시 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124544) — 농림축산식품부 · 한국농수산식품유통공사 (상시) `식품·바이오`
 - [2026년 우체국쇼핑 창구전시판매 히트상품 공개모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124666) — 과학기술정보통신부 · 한국우편사업진흥원 (마감 2026-08-14) `식품·바이오`
+- [2026년 하반기 농림식품신기술(NET) 인증제 시행계획 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124576) — 농림축산식품부 · 농림식품기술기획평가원 (마감 2026-08-20) `식품·바이오`
+- [2026년 3차 고령친화우수식품 신규지정 계획 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124085) — 농림축산식품부 · 한국식품산업클러스터진흥원 (마감 2026-08-26) `식품·바이오`
 
-### 일반 (13건)
-- [[무료 웨비나] 글로벌 시장을 위한 AI 마이크로 서비스 제작 실전](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178625) — The Bridge Circle (TBC) (마감 2026-07-30)
-- [자카르타 스타트업 테크서밋 참가기업 모집 연장 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124646) — 충청남도 · 충남창조경제혁신센터 (마감 2026-07-31)
-- [2026년 영월군 석탄산업전환지역 주민주도형 활성화 지원 공모 추가모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124647) — 강원특별자치도 · 강원특별자치도경제진흥원 (마감 2026-07-31)
-- [2026년 교통 분야 원스톱(One-Stop) 수출환경 구축사업 참여기업(창업기업) 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124660) — 강원특별자치도 · 한국도로교통공단 (마감 2026-07-31)
-- [2026년 5차 클라우드 엑스포 코리아 전시기업 지원 추가 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124670) — 과학기술정보통신부 · 부산정보산업진흥원 (마감 2026-07-31)
-- [2026년 2차 온라인수출플랫폼 사업 고비즈 수출지원 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124634) — 중소벤처기업부 · 중소벤처기업진흥공단 (마감 2026-07-31)
-- [26년 국토교통 창업지원센터 입주기업 추가 모집공고](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178639) — 국토교통과학기술진흥원 (마감 2026-08-04)
-- [KAIST 딥테크 유망랩 라운드테이블](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178645) — (주)아이비유 (마감 2026-08-07)
-- [2026년 WEROUND 공유형 공간 신규 입주기업 상시 모집](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178636) — 서강대학교 판교캠퍼스사업단 (마감 2026-08-07)
-- [2026년 하반기 환경분야 혁신제품 신규지정 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124636) — 기후에너지환경부 · 한국환경산업기술원 (마감 2026-08-21)
-- [2026년 3차 ESG공시 규제 대응 중소ㆍ중견 기업의 자발적 환경정보공개 지원사업 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124641) — 기후에너지환경부 · 한국환경산업기술원 (마감 2026-08-31)
-- [Stand-alone 고출력 EUV 검사기 장비 기술 및  EUV 검사기 인프라 구축 사업 기술지원기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124635) — 산업통상부 · 대전테크노파크 (마감 2026-11-20)
-- [특화 인공지능 파운데이션 모델 개발(사이버보안분야) 사업 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124664) — 과학기술정보통신부 · 정보통신산업진흥원 (마감 2026-08-21)
+### 일반 (187건)
+- [2026년 해외 수출등록 및 인증 지원 사업 모집 재공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124440) — 충청북도 · 제천한방천연물산업진흥재단 (마감 2026-07-24)
+- [2026년 3차 성능인증(EPC) 신규신청 접수 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124285) — 중소벤처기업부 · 한국중소벤처기업유통원 (마감 2026-07-24)
+- [2026년 소프트웨어 산업발전 유공자 포상계획 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124109) — 과학기술정보통신부 · 정보통신산업진흥원 (마감 2026-07-24)
+- [2026년 KOTRA-쇼피 파워셀러 1단계 입점교육 3기 참가기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124057) — 산업통상부 · 대한무역투자진흥공사 (마감 2026-07-24)
+- [2026년 미국 시카고 방사선 의료기기 전시회(RSNA 2026) 한국관 참가기업 추가모집 재공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124060) — 산업통상부 · 대한무역투자진흥공사 (마감 2026-07-24)
+- [2026년 7차 정보보호 인증제품 조달청 벤처나라 추천 희망기업 모집 공고(7월 추천)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124034) — 과학기술정보통신부 · 한국인터넷진흥원 (마감 2026-07-24)
+- [2026년 기상기후테크 기업 투자유치 활성화 지원 프로그램 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123930) — 기상청 · 한국기상산업기술원 (마감 2026-07-24)
+- [2026년 중소기업 R&D 우수성과 50선 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123772) — 중소벤처기업부 · 중소기업기술정보진흥원 (마감 2026-07-24)
+- [2026년 기술사업화 유공자 포상 신청 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123699) — 산업통상부 · 한국산업기술진흥원 (마감 2026-07-24)
+- [2026년 해양수산형 예비사회적기업 지정계획 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123735) — 해양수산부 · 한국사회적기업진흥원 (마감 2026-07-24)
+- [2026년 4차 재취업지원서비스 기업컨설팅 지원 사업장 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123815) — 고용노동부 · 노사발전재단 (마감 2026-07-24)
+- [자동차부품기업 사이버보안 컨설팅 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123681) — 산업통상부 · 인천테크노파크 (마감 2026-07-24)
+- [2026년 2차 디자인 침해 모니터링 참여 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124014) — 지식재산처 · 한국지식재산보호원 (마감 2026-07-24)
+- [2026년 하반기 재난안전제품 인증 신규신청 및 유효기간 연장신청 접수 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123623) — 행정안전부 · 한국산업기술진흥협회 (마감 2026-07-24)
+- [2026년 제31회 한국유통대상 정부포상(개인부문) 계획 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123344) — 산업통상부 · 대한상공회의소 (마감 2026-07-24)
+- [2026년 제31회 한국유통대상  정부포상(단체부문) 계획 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123345) — 산업통상부 · 대한상공회의소 (마감 2026-07-24)
+- [DB손해보험 교통ㆍ환경 챌린지 8기 소셜벤처 창업기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123631) — 기후에너지환경부 · 환경재단 (마감 2026-07-26)
+- [2026년 2차 KICET 기술이전조건부사업화지원사업 수혜기업 추가 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124610) — 산업통상부 · 한국세라믹기술원 (마감 2026-07-27)
+- [2026년 해양수산 기술인증기업 제품화 지원사업 모집 연장 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124604) — 해양수산부 · 해양수산과학기술진흥원 (마감 2026-07-27)
+- [2026년 콘텐츠 스타트업 글로벌 엑셀러레이팅 프로그램(론치패드) 참가기업(UAE, 싱가포르) 추가 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124365) — 문화체육관광부 · 한국콘텐츠진흥원 (마감 2026-07-27)
+- [2026년 방사선이용 기술개발사업 (방사선 기반 소재ㆍ장비 기술 혁신화) 신규과제 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124543) — 과학기술정보통신부 · 한국연구재단 (마감 2026-07-27)
+- [2026년 반도체 첨단패키징 실증센터 구축사업 기업지원 수혜기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124305) — 산업통상부 · 광주테크노파크 (마감 2026-07-27)
+- [2026년 스웨덴 게임 컨퍼런스(Sweden Game Conference) 참가기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124258) — 문화체육관광부 · 한국콘텐츠진흥원 (마감 2026-07-27)
+- [2026년 ATF(Asia TV ForumㆍMarket) 한국공동관 애니메이션 참가기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124283) — 문화체육관광부 · 한국콘텐츠진흥원 (마감 2026-07-27)
+- [2026년 양자정보과학 인적기반조성사업 리더급 연구역량강화(전략기술형) 신규과제 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124548) — 과학기술정보통신부 · 한국연구재단 (마감 2026-07-27)
+- [2026년 공공구매 유공자포상 연장 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124510) — 중소벤처기업부 · 한국중소벤처기업유통원 (마감 2026-07-27)
+- [2026년 중견기업-공공연 개방형 혁신 지원 사업 신규과제 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123680) — 산업통상부 · 한국산업기술진흥원 (마감 2026-07-27)
+- [호주 그린ㆍ에너지 시장개척단 참가기업 추가모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124603) — 기후에너지환경부 · 한국환경산업협회 (마감 2026-07-28)
+- [2026년 3분기 중소기업간 협업지원사업 운영요령에 따른 협업기업 신청 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124355) — 중소벤처기업부 · 중소기업융합중앙회 (마감 2026-07-28)
+- [2026년 AI 활용 콘텐츠 제작 지원사업 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124320) — 중소벤처기업부 · 한국중소벤처기업유통원 (마감 2026-07-28)
+
+…외 157건
 
 👉 전체 공고 보기: https://alcofixkorea-a11y.github.io/alcofix-biz-alert/
