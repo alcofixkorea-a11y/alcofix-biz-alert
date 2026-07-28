@@ -330,6 +330,31 @@ function dedupeKey(title) {
   return title.replace(/[\s\[\]()「」『』<>【】·.,\-~]/g, "").toLowerCase();
 }
 
+// ---------- 첨부파일(공고문·신청서) 링크 수집 ----------
+// API 응답에는 첨부파일이 없어 상세페이지 HTML을 직접 열어봐야 함. 정부 서버 부담을 줄이기 위해
+// 세종·식품바이오 관련 공고에 한해서만 수행한다 (main()에서 대상 필터링).
+const BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+async function fetchAttachments(it) {
+  try {
+    const res = await fetchWithRetry(it.url, { headers: { "User-Agent": BROWSER_UA } }, 2);
+    if (!res.ok) return [];
+    const html = await res.text();
+    const out = [];
+    let m;
+    if (it.source === "kstartup") {
+      const re = /<a class="file_bg"[^>]*title="\[첨부파일\] ([^"]+)"[\s\S]{0,400}?<a href="(\/afile\/fileDownload\/[^"]+)" class="btn_down"/g;
+      while ((m = re.exec(html))) out.push({ name: decodeEntities(m[1]), url: "https://www.k-startup.go.kr" + m[2] });
+    } else {
+      const re = /<a href="(\/cmm\/fms\/fileDown\.do\?atchFileId=[^"]+)"[^>]*title="첨부파일 ([^"]+) 다운로드"/g;
+      while ((m = re.exec(html))) out.push({ name: decodeEntities(m[2]), url: "https://www.bizinfo.go.kr" + m[1].replace(/&amp;/g, "&") });
+    }
+    // 포스터 이미지 등 신청 서류로 보기 어려운 파일은 제외하고 문서류만 남긴다
+    return out.filter((a) => /\.(pdf|hwp|hwpx|docx?|xlsx?|pptx?|zip)$/i.test(a.name)).slice(0, 6);
+  } catch {
+    return [];
+  }
+}
+
 async function main() {
   // 이전 수집분의 최초 확인일(firstSeen) 보존 → NEW 뱃지 판별용
   const prevSeen = new Map();
@@ -372,6 +397,14 @@ async function main() {
     if (ae !== be) return ae < be ? -1 : 1;
     return (a.applyStart || "") < (b.applyStart || "") ? 1 : -1;
   });
+
+  // 첨부파일 수집 (세종·식품바이오 공고만 — 정부 서버에 매일 335건씩 추가 요청을 보내지 않기 위함)
+  const attachTargets = items.filter((it) => it.region === "세종" || it.foodBio);
+  for (const it of attachTargets) {
+    it.attachments = await fetchAttachments(it);
+    await new Promise((r) => setTimeout(r, 250));
+  }
+  console.log(`첨부파일 수집 대상 ${attachTargets.length}건 중 ${attachTargets.filter((it) => it.attachments.length).length}건에서 파일 발견`);
 
   const out = {
     generatedAt: kstNow.toISOString().replace("Z", "+09:00"),

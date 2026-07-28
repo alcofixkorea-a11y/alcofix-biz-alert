@@ -129,6 +129,14 @@ select {
   font-size: 12.5px; color: var(--muted); margin-top: 6px;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
 }
+.row-attach { display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 12px; margin-top: 6px; }
+.row-attach .att-lbl { font-size: 11.5px; color: var(--muted); flex-shrink: 0; }
+.attach-link {
+  border: 0; background: transparent; padding: 0; font: inherit; font-size: 11.5px; color: var(--accent);
+  cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
+  max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.attach-link:hover { color: var(--text); }
 .row-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; margin-left: auto; }
 .row-dd { font-size: 12.5px; font-weight: 800; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .row-dd.urgent { color: var(--red); }
@@ -593,6 +601,9 @@ function rowHtml(it, today, opts) {
       <div class="row-title">${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
       <div class="row-meta">${metaHtml}</div>
       ${!opts.compact && it.summary ? `<div class="row-summary">${esc(it.summary)}</div>` : ""}
+      ${it.attachments && it.attachments.length ? `<div class="row-attach"><span class="att-lbl">첨부</span>${it.attachments.map((a) =>
+        `<button class="attach-link" data-url="${esc(a.url)}" title="${esc(a.name)}">${esc(a.name.length > 26 ? a.name.slice(0, 24) + "…" : a.name)}</button>`
+      ).join("")}</div>` : ""}
     </div>
     <div class="row-side">
       <span class="row-dd ${dd.cls === "urgent" ? "urgent" : ""}">${dd.label}</span>
@@ -793,6 +804,8 @@ document.addEventListener("click", (e) => {
     state.favs.has(id) ? state.favs.delete(id) : state.favs.add(id);
     saveFavs(); render(); return;
   }
+  const att = e.target.closest(".attach-link");
+  if (att) { e.preventDefault(); e.stopPropagation(); window.open(att.dataset.url, "_blank", "noopener"); return; }
   const decide = e.target.closest(".decidebtn");
   if (decide) {
     e.preventDefault(); e.stopPropagation();
