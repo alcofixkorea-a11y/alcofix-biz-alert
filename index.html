@@ -343,6 +343,11 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
         <h4>분야</h4>
         <div class="sectorbar" id="sectorBar"></div>
       </div>
+
+      <div class="sidebar-block">
+        <h4>공용 자료</h4>
+        <a class="profile-btn" style="display:block; text-align:center; text-decoration:none;" href="plan.html">사업계획서 작성 (팀 공용)</a>
+      </div>
     </aside>
   </div>
 
@@ -610,6 +615,7 @@ function rowHtml(it, today, opts) {
       ${!opts.compact ? `<span class="row-actions">
         <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "지원결정 ✓" : "지원결정"}</button>
         <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
+        ${decided ? `<button class="attach-link" data-goto="plan.html?title=${encodeURIComponent(it.title)}" title="사업계획서 초안 작성 페이지로 이동">초안 작성</button>` : ""}
       </span>` : ""}
     </div>
   </a>`;
@@ -805,7 +811,11 @@ document.addEventListener("click", (e) => {
     saveFavs(); render(); return;
   }
   const att = e.target.closest(".attach-link");
-  if (att) { e.preventDefault(); e.stopPropagation(); window.open(att.dataset.url, "_blank", "noopener"); return; }
+  if (att) {
+    e.preventDefault(); e.stopPropagation();
+    window.open(att.dataset.goto || att.dataset.url, "_blank", "noopener");
+    return;
+  }
   const decide = e.target.closest(".decidebtn");
   if (decide) {
     e.preventDefault(); e.stopPropagation();

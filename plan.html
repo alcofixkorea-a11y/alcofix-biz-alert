@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공용 기업정보 · 사업계획서 초안</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📢</text></svg>">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #eef1f3; --card: #ffffff; --text: #151a20; --muted: #5c6773; --line: #e1e6ea;
+  --accent: #0f6f5c; --accent-soft: #e3f1ee; --red: #b3261e; --red-soft: #fbe9e7;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.55;
+}
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+header { background: var(--card); border-bottom: 1px solid var(--line); padding: 20px 0; margin-bottom: 24px; }
+header .wrap { padding-bottom: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.h-title { font-size: 16px; font-weight: 800; }
+.back-link { font-size: 13px; color: var(--muted); text-decoration: none; }
+.back-link:hover { color: var(--accent); }
+
+.gate {
+  position: fixed; inset: 0; background: #12181f; z-index: 999;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.gate-box { background: var(--card); border-radius: 16px; padding: 32px 28px; width: 100%; max-width: 340px; text-align: center; }
+.gate-box h2 { font-size: 18px; margin-bottom: 6px; }
+.gate-box p { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+.gate-box input { width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 15px; margin-bottom: 10px; text-align: center; }
+.gate-box button { width: 100%; padding: 11px; border: 0; border-radius: 10px; background: var(--accent); color: #fff; font: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer; }
+.gate-err { color: var(--red); font-size: 12.5px; margin-top: 8px; min-height: 16px; }
+
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; margin-bottom: 22px; }
+.panel h2 { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+.panel .desc { font-size: 12.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+.panel .meta { font-size: 11.5px; color: var(--muted); margin-top: 14px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+.grid .span2 { grid-column: 1 / -1; }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 5px; }
+input, select, textarea {
+  width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px;
+  font: inherit; font-size: 14px; background: var(--card); color: var(--text);
+}
+textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+.field { margin-bottom: 12px; }
+.save-btn {
+  border: 0; background: var(--accent); color: #fff; font: inherit; font-size: 13.5px; font-weight: 700;
+  padding: 10px 18px; border-radius: 9px; cursor: pointer;
+}
+.save-btn:hover { opacity: .92; }
+.save-btn:disabled { opacity: .5; cursor: default; }
+.ghost-btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit; font-size: 13px;
+  font-weight: 600; padding: 9px 14px; border-radius: 9px; cursor: pointer;
+}
+.ghost-btn:hover { border-color: var(--accent); }
+
+.plan-picker { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.plan-picker input { flex: 1 1 260px; }
+.saved-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px; }
+.saved-item {
+  display: flex; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 8px;
+  border: 1px solid transparent; cursor: pointer; font-size: 13px;
+}
+.saved-item:hover { border-color: var(--line); background: var(--bg); }
+.saved-item.active { border-color: var(--accent); background: var(--accent-soft); }
+.saved-item .st-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.saved-item .st-time { color: var(--muted); font-size: 11.5px; flex-shrink: 0; }
+
+.overview-box {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+  font-size: 12.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.6;
+}
+.overview-box b { color: var(--text); }
+.status-line { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 12px; color: var(--muted); }
+.status-line .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.status-line.saving .dot { background: var(--red); }
+.notice {
+  background: #fffbeb; border: 1px solid #fde68a; color: #92400e;
+  border-radius: 10px; padding: 10px 14px; font-size: 12.5px; margin-bottom: 18px; line-height: 1.5;
+}
+@media print {
+  header, .no-print { display: none !important; }
+  .panel { border: 0; box-shadow: none; padding: 0; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <h2>🔒 지원사업 통합 안내 사이트</h2>
+    <p>내부 열람용 페이지입니다. 비밀번호를 입력하세요.</p>
+    <form id="gateForm">
+      <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="off" autofocus>
+      <button type="submit">입장</button>
+      <div class="gate-err" id="gateErr"></div>
+    </form>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="h-title">공용 기업정보 · 사업계획서 초안</div>
+    <a class="back-link" href="index.html">← 공고 목록으로</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="notice">
+    ⚠️ 이 페이지는 팀 전체가 함께 보고 수정하는 <b>공용 저장소</b>입니다. 링크(config)를 아는 사람은 누구나 읽고 쓸 수 있는 가벼운 보호 수준이니, 민감한 개인정보(주민등록번호 등)는 입력하지 마세요.
+  </div>
+
+  <div class="panel">
+    <h2>공용 기업정보</h2>
+    <div class="desc">여기서 저장한 정보는 팀 전체에 공유되며, 아래 사업계획서 초안 작성 시 자동으로 참고됩니다.</div>
+
+    <div class="grid">
+      <div class="field"><label>회사명</label><input type="text" id="pfName" placeholder="주식회사 알코픽스"></div>
+      <div class="field"><label>대표자명</label><input type="text" id="pfCeoName" placeholder="예: 홍길동"></div>
+      <div class="field"><label>창업일</label><input type="date" id="pfFounded"></div>
+      <div class="field"><label>대표자 출생연도</label><input type="number" id="pfBirthYear" placeholder="예: 1997"></div>
+      <div class="field"><label>사업자 형태</label>
+        <select id="pfBizType">
+          <option value="">선택 안 함</option>
+          <option value="법인">법인사업자</option>
+          <option value="개인">개인사업자</option>
+        </select>
+      </div>
+      <div class="field"><label>상시근로자 수</label><input type="number" id="pfEmployees" placeholder="예: 1"></div>
+      <div class="field"><label>사업자등록번호</label><input type="text" id="pfBizNo" placeholder="000-00-00000"></div>
+      <div class="field"><label>법인등록번호</label><input type="text" id="pfCorpNo" placeholder="000000-0000000"></div>
+      <div class="field"><label>업태</label><input type="text" id="pfBizCategory" placeholder="예: 제조업"></div>
+      <div class="field"><label>업종(코드)</label><input type="text" id="pfBizCode" placeholder="예: 식품첨가물 제조업"></div>
+      <div class="field span2"><label>사업장 소재지</label><input type="text" id="pfAddress" placeholder="예: 세종특별자치시 …"></div>
+      <div class="field span2"><label>주요 아이템/제품명</label><input type="text" id="pfItem" placeholder="예: Wakie - 액상형 숙취해소 음료"></div>
+      <div class="field span2"><label>보유 인증·지식재산권</label><input type="text" id="pfCerts" placeholder="예: HACCP 신청중, 특허출원 1건"></div>
+    </div>
+
+    <button class="save-btn no-print" id="pfSave">공용 기업정보 저장</button>
+    <div class="meta" id="pfMeta">불러오는 중…</div>
+  </div>
+
+  <div class="panel">
+    <h2>사업계획서 초안</h2>
+    <div class="desc">지원할 공고명을 입력(또는 공고 목록에서 "초안 작성"으로 넘어오면 자동 입력)하고 항목을 채우면 자동 저장됩니다. 여러 명이 같은 공고를 같이 작성할 수 있습니다.</div>
+
+    <div class="plan-picker no-print">
+      <input type="text" id="planTitle" placeholder="지원할 공고명을 입력하세요 (예: 2026년 청년창업사관학교)">
+      <button class="ghost-btn" id="planNew">새 초안 시작</button>
+    </div>
+
+    <div id="savedList" class="saved-list no-print"></div>
+
+    <div id="editorArea" style="display:none">
+      <div class="overview-box" id="overviewBox"></div>
+
+      <div class="field"><label>제품/서비스 개요 (요약)</label>
+        <textarea id="secOverview" placeholder="핵심 기능, 타깃 고객, 차별화 포인트를 요약해서 적어주세요"></textarea></div>
+      <div class="field"><label>사업성 — 문제인식 · 필요성 · 기술적 특성</label>
+        <textarea id="secBiz" placeholder="어떤 문제를 해결하는지, 제품/서비스의 핵심 기술은 무엇인지"></textarea></div>
+      <div class="field"><label>성장성 — 시장분석 · 비즈니스모델 · 경쟁우위</label>
+        <textarea id="secGrowth" placeholder="타깃 시장 규모, 수익 구조, 경쟁사 대비 우위 요소"></textarea></div>
+      <div class="field"><label>인력 역량 — 팀 구성 · 협력 현황</label>
+        <textarea id="secTeam" placeholder="대표자·핵심인력의 역량, 외부 협력기관 현황"></textarea></div>
+      <div class="field"><label>자금운용계획 (선택)</label>
+        <textarea id="secBudget" placeholder="지원금 사용 계획, 항목별 예산"></textarea></div>
+      <div class="field"><label>기타 / 비고</label>
+        <textarea id="secEtc" placeholder="그 외 참고할 내용"></textarea></div>
+
+      <div class="no-print" style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+        <button class="save-btn" id="planSave">저장</button>
+        <button class="ghost-btn" id="planPrint">인쇄 / PDF로 저장</button>
+      </div>
+      <div class="status-line" id="planStatus"><span class="dot"></span><span id="planStatusText">불러오는 중…</span></div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {
+  getFirestore, doc, getDoc, setDoc, collection, query, orderBy, limit, getDocs, serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCSacTSDK_R8O-fp7ASLY1r7ASODlsqh8g",
+  authDomain: "alcofix-59755.firebaseapp.com",
+  projectId: "alcofix-59755",
+  storageBucket: "alcofix-59755.firebasestorage.app",
+  messagingSenderId: "903711899207",
+  appId: "1:903711899207:web:9ff8b39aa12ee8594d3b62",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// ---- 비밀번호 잠금 (index.html과 동일한 방식) ----
+const GATE_HASH = "d0c3d13dd69feede8d4b7c2d4191919ee3e38976c5d64e3ec4af5f5fe2803726";
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+function setupGate() {
+  const gate = document.getElementById("gate");
+  if (sessionStorage.getItem("alcofix_gate_ok") === "1") { gate.style.display = "none"; return; }
+  document.getElementById("gateForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const val = document.getElementById("gatePw").value;
+    if ((await sha256Hex(val)) === GATE_HASH) {
+      sessionStorage.setItem("alcofix_gate_ok", "1");
+      gate.style.display = "none";
+    } else {
+      document.getElementById("gateErr").textContent = "비밀번호가 올바르지 않습니다.";
+      document.getElementById("gatePw").value = "";
+    }
+  });
+}
+setupGate();
+
+const esc = (s) => (s || "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmtTime = (ts) => {
+  if (!ts) return "";
+  const d = ts.toDate ? ts.toDate() : new Date(ts);
+  return d.toLocaleString("ko-KR", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" });
+};
+
+// ---- 공용 기업정보 ----
+const PROFILE_FIELDS = [
+  ["pfName", "name"], ["pfCeoName", "ceoName"], ["pfFounded", "founded"], ["pfBirthYear", "birthYear"],
+  ["pfBizType", "bizType"], ["pfEmployees", "employees"],
+  ["pfBizNo", "bizNo"], ["pfCorpNo", "corpNo"], ["pfBizCategory", "bizCategory"], ["pfBizCode", "bizCode"],
+  ["pfAddress", "address"], ["pfItem", "item"], ["pfCerts", "certs"],
+];
+let currentProfile = {};
+
+async function loadProfile() {
+  try {
+    const snap = await getDoc(doc(db, "company_profile", "main"));
+    currentProfile = snap.exists() ? snap.data() : {};
+    PROFILE_FIELDS.forEach(([id, key]) => { document.getElementById(id).value = currentProfile[key] || ""; });
+    document.getElementById("pfMeta").textContent = currentProfile.updatedAt
+      ? `마지막 수정: ${fmtTime(currentProfile.updatedAt)}` : "아직 저장된 정보가 없습니다.";
+    renderOverview();
+  } catch (e) {
+    document.getElementById("pfMeta").textContent = "불러오기 실패: " + e.message;
+  }
+}
+document.getElementById("pfSave").addEventListener("click", async () => {
+  const btn = document.getElementById("pfSave");
+  btn.disabled = true; btn.textContent = "저장 중…";
+  const p = {};
+  PROFILE_FIELDS.forEach(([id, key]) => { p[key] = document.getElementById(id).value || null; });
+  p.updatedAt = serverTimestamp();
+  try {
+    await setDoc(doc(db, "company_profile", "main"), p);
+    currentProfile = p;
+    document.getElementById("pfMeta").textContent = "방금 저장됨";
+    renderOverview();
+  } catch (e) {
+    document.getElementById("pfMeta").textContent = "저장 실패: " + e.message;
+  }
+  btn.disabled = false; btn.textContent = "공용 기업정보 저장";
+});
+
+function renderOverview() {
+  const p = currentProfile;
+  document.getElementById("overviewBox").innerHTML =
+    `<b>${esc(p.name || "(회사명 미입력)")}</b> · 대표 ${esc(p.ceoName || "-")} · 창업일 ${esc(p.founded || "-")} · ` +
+    `사업자번호 ${esc(p.bizNo || "-")} · 아이템 ${esc(p.item || "-")}<br>` +
+    `※ 위 정보는 "공용 기업정보"에서 불러온 것으로, 이 초안에는 별도 저장되지 않습니다. 수정은 위 기업정보 패널에서 해주세요.`;
+}
+
+// ---- 사업계획서 초안 ----
+const SECTION_FIELDS = [
+  ["secOverview", "overview"], ["secBiz", "business"], ["secGrowth", "growth"],
+  ["secTeam", "team"], ["secBudget", "budget"], ["secEtc", "etc"],
+];
+let currentPlanId = null;
+let saveTimer = null;
+
+function planIdFromTitle(title) {
+  return "p_" + title.trim().replace(/[\/#\[\]*~]/g, "_").slice(0, 120);
+}
+
+async function openPlan(id, title) {
+  currentPlanId = id;
+  document.getElementById("planTitle").value = title;
+  document.getElementById("editorArea").style.display = "block";
+  document.getElementById("planStatusText").textContent = "불러오는 중…";
+  try {
+    const snap = await getDoc(doc(db, "business_plans", id));
+    const data = snap.exists() ? snap.data() : {};
+    SECTION_FIELDS.forEach(([elId, key]) => { document.getElementById(elId).value = data[key] || ""; });
+    document.getElementById("planStatusText").textContent = data.updatedAt
+      ? `마지막 저장: ${fmtTime(data.updatedAt)}` : "새 초안 — 아직 저장 전";
+  } catch (e) {
+    document.getElementById("planStatusText").textContent = "불러오기 실패: " + e.message;
+  }
+  renderSavedList();
+}
+
+async function savePlan() {
+  if (!currentPlanId) return;
+  const statusEl = document.getElementById("planStatus");
+  const statusText = document.getElementById("planStatusText");
+  statusEl.classList.add("saving");
+  statusText.textContent = "저장 중…";
+  const data = { title: document.getElementById("planTitle").value.trim(), updatedAt: serverTimestamp() };
+  SECTION_FIELDS.forEach(([elId, key]) => { data[key] = document.getElementById(elId).value; });
+  try {
+    await setDoc(doc(db, "business_plans", currentPlanId), data, { merge: true });
+    statusText.textContent = "방금 저장됨";
+  } catch (e) {
+    statusText.textContent = "저장 실패: " + e.message;
+  }
+  statusEl.classList.remove("saving");
+  renderSavedList();
+}
+document.getElementById("planSave").addEventListener("click", savePlan);
+document.getElementById("planPrint").addEventListener("click", () => window.print());
+
+SECTION_FIELDS.forEach(([elId]) => {
+  document.getElementById(elId).addEventListener("input", () => {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(savePlan, 1500);
+  });
+});
+
+document.getElementById("planNew").addEventListener("click", () => {
+  const title = document.getElementById("planTitle").value.trim();
+  if (!title) { alert("공고명을 입력해주세요."); return; }
+  const id = planIdFromTitle(title);
+  SECTION_FIELDS.forEach(([elId]) => { document.getElementById(elId).value = ""; });
+  openPlan(id, title);
+});
+
+async function renderSavedList() {
+  const listEl = document.getElementById("savedList");
+  try {
+    const q = query(collection(db, "business_plans"), orderBy("updatedAt", "desc"), limit(15));
+    const snap = await getDocs(q);
+    const rows = [];
+    snap.forEach((d) => rows.push({ id: d.id, ...d.data() }));
+    listEl.innerHTML = rows.length
+      ? rows.map((r) => `<div class="saved-item ${r.id === currentPlanId ? "active" : ""}" data-id="${esc(r.id)}" data-title="${esc(r.title || "")}">
+          <span class="st-title">${esc(r.title || "(제목 없음)")}</span><span class="st-time">${fmtTime(r.updatedAt)}</span>
+        </div>`).join("")
+      : `<div style="font-size:12.5px;color:var(--muted)">아직 작성된 초안이 없습니다.</div>`;
+  } catch (e) {
+    listEl.innerHTML = `<div style="font-size:12.5px;color:var(--red)">목록 불러오기 실패: ${esc(e.message)}</div>`;
+  }
+}
+document.getElementById("savedList").addEventListener("click", (e) => {
+  const item = e.target.closest(".saved-item");
+  if (item) openPlan(item.dataset.id, item.dataset.title);
+});
+
+// ---- 초기화 ----
+loadProfile();
+renderSavedList();
+
+const params = new URLSearchParams(location.search);
+const qTitle = params.get("title");
+if (qTitle) {
+  document.getElementById("planTitle").value = qTitle;
+  openPlan(planIdFromTitle(qTitle), qTitle);
+}
+</script>
+</body>
+</html>
