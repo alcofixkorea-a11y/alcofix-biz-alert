@@ -110,64 +110,57 @@ select {
 }
 .bs-head .bs-more:hover { text-decoration: underline; }
 
-/* ---- 배너 섹션 전용 초경량 1줄 행 ---- */
-.row-compact { display: flex; align-items: center; gap: 10px; padding: 7px 4px; border-bottom: 0 !important; }
-.row-compact .row-swatch { margin-top: 0; }
-.row-title-1line {
-  flex: 1; min-width: 0; font-size: 13px; font-weight: 600; color: var(--text);
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-.row-compact .row-dd { flex-shrink: 0; }
-.row-compact:hover .row-title-1line { color: var(--accent); }
-.banner-section .row-list { background: transparent; border: 0; }
-
-/* ---- 목록 행 (전체 공고·배너 섹션 공용) ---- */
+/* ---- 카드 그리드 (전체 공고·배너 섹션·달력 상세 공용) ---- */
 .count-line { font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
-.row-list { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.row {
-  display: flex; align-items: flex-start; gap: 14px; padding: 14px 18px;
-  text-decoration: none; color: inherit; border-bottom: 1px solid var(--line);
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
+.banner-section .card-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.card2 {
+  display: flex; flex-direction: column; gap: 8px; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px; text-decoration: none; color: inherit;
+  transition: border-color .15s, box-shadow .15s, transform .1s;
 }
-.row-list .row:last-child { border-bottom: 0; }
-.row:hover { background: var(--bg); }
-.row-swatch { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 7px; flex-shrink: 0; }
-.row-swatch.urgent { background: var(--red); }
-.row-body { flex: 1; min-width: 0; }
-.row-title { font-size: 14.5px; font-weight: 700; line-height: 1.45; }
-.row-title .new-badge {
+.card2:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(15,23,42,.07); transform: translateY(-1px); }
+.c2-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.c2-dd {
+  font-size: 11.5px; font-weight: 800; color: var(--muted); background: var(--bg);
+  border-radius: 6px; padding: 3px 9px; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.c2-dd.urgent { color: var(--red); background: var(--red-soft); }
+.c2-actions { display: flex; align-items: center; gap: 4px; }
+.c2-title {
+  font-size: 14.5px; font-weight: 700; line-height: 1.42;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.c2-title .new-badge {
   display: inline-block; font-size: 10px; font-weight: 800; color: var(--red); border: 1px solid var(--red);
-  border-radius: 4px; padding: 0 5px; margin-left: 6px; vertical-align: 2px;
+  border-radius: 4px; padding: 0 5px; margin-left: 5px; vertical-align: 2px;
 }
-.row-meta { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
-.row-meta .warn { color: var(--red); font-weight: 700; }
-.row-meta .ok { color: var(--accent); font-weight: 700; }
-.row-summary {
-  font-size: 12.5px; color: var(--muted); margin-top: 6px;
-  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+.c2-meta { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.c2-meta .warn { color: var(--red); font-weight: 700; }
+.c2-meta .ok { color: var(--accent); font-weight: 700; }
+.c2-summary {
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.row-attach { display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 12px; margin-top: 6px; }
-.row-attach .att-lbl { font-size: 11.5px; color: var(--muted); flex-shrink: 0; }
+.row-attach { display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 10px; }
+.row-attach .att-lbl { font-size: 11px; color: var(--muted); flex-shrink: 0; }
 .attach-link {
-  border: 0; background: transparent; padding: 0; font: inherit; font-size: 11.5px; color: var(--accent);
+  border: 0; background: transparent; padding: 0; font: inherit; font-size: 11px; color: var(--accent);
   cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
-  max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .attach-link:hover { color: var(--text); }
-.row-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; margin-left: auto; }
-.row-dd { font-size: 12.5px; font-weight: 800; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.row-dd.urgent { color: var(--red); }
-.row-actions { display: flex; align-items: center; gap: 6px; }
-.favbtn { border: 0; background: transparent; font-size: 19px; line-height: 1; cursor: pointer; color: #c7cdd3; padding: 1px 2px; }
+.favbtn { border: 0; background: transparent; font-size: 18px; line-height: 1; cursor: pointer; color: #c7cdd3; padding: 1px 2px; }
 .favbtn.on { color: var(--star); }
 .decidebtn {
   border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer;
-  font: inherit; font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 4px 10px; white-space: nowrap;
+  font: inherit; font-size: 11px; font-weight: 700; border-radius: 999px; padding: 3px 9px; white-space: nowrap;
 }
 .decidebtn.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
-@media (max-width: 560px) {
-  .row { flex-wrap: wrap; }
-  .row-side { flex-direction: row; align-items: center; margin-left: 0; width: 100%; justify-content: space-between; margin-top: 8px; }
-}
+
+/* ---- 배너 섹션 전용 소형 카드 ---- */
+.card2-mini { padding: 12px 14px; gap: 6px; }
+.card2-mini .c2-title { font-size: 13px; -webkit-line-clamp: 2; }
 
 /* ---- 분야 버튼 바 ---- */
 .sectorbar { display: flex; gap: 7px; flex-wrap: wrap; }
@@ -591,10 +584,19 @@ function matches(it, today) {
   return true;
 }
 
-// 목록 행 (전체 공고·배너 섹션 공용). opts.compact = true면 요약·액션 버튼 생략(배너 섹션용)
-function rowHtml(it, today, opts) {
+// 공고 카드 (전체 공고·배너 섹션·달력 상세 공용). opts.compact = true면 소형 카드(배너 섹션용)
+function cardHtml(it, today, opts) {
   opts = opts || {};
   const dd = dday(it, today);
+  const ddCls = dd.cls === "urgent" ? "urgent" : "";
+
+  if (opts.compact) {
+    return `<a class="card2 card2-mini" href="${esc(it.url)}" target="_blank" rel="noopener">
+      <div class="c2-top"><span class="c2-dd ${ddCls}">${dd.label}</span></div>
+      <div class="c2-title">${esc(it.title)}</div>
+    </a>`;
+  }
+
   const fav = state.favs.has(it.id);
   const decided = state.decided.has(it.id);
   const eff = effEligibility(it, today);
@@ -608,32 +610,21 @@ function rowHtml(it, today, opts) {
   if (isIneligible) metaHtml += ` · <span class="warn">자격요건 확인 필요</span>`;
   else if (eff.enyyOk === true || eff.youngOk === true) metaHtml += ` · <span class="ok">${state.profile ? "요건 충족" : "청년·초기창업 가능"}</span>`;
 
-  if (opts.compact) {
-    return `<a class="row row-compact" href="${esc(it.url)}" target="_blank" rel="noopener" title="${esc(it.title)}">
-      <span class="row-swatch ${dd.cls === "urgent" ? "urgent" : ""}"></span>
-      <span class="row-title-1line">${esc(it.title)}</span>
-      <span class="row-dd ${dd.cls === "urgent" ? "urgent" : ""}">${dd.label}</span>
-    </a>`;
-  }
-
-  return `<a class="row" href="${esc(it.url)}" target="_blank" rel="noopener">
-    <span class="row-swatch ${dd.cls === "urgent" ? "urgent" : ""}"></span>
-    <div class="row-body">
-      <div class="row-title">${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
-      <div class="row-meta">${metaHtml}</div>
-      ${it.summary ? `<div class="row-summary">${esc(it.summary)}</div>` : ""}
-      ${it.attachments && it.attachments.length ? `<div class="row-attach"><span class="att-lbl">첨부</span>${it.attachments.map((a) =>
-        `<button class="attach-link" data-url="${esc(a.url)}" title="${esc(a.name)}">${esc(a.name.length > 26 ? a.name.slice(0, 24) + "…" : a.name)}</button>`
-      ).join("")}</div>` : ""}
-    </div>
-    <div class="row-side">
-      <span class="row-dd ${dd.cls === "urgent" ? "urgent" : ""}">${dd.label}</span>
-      <span class="row-actions">
+  return `<a class="card2" href="${esc(it.url)}" target="_blank" rel="noopener">
+    <div class="c2-top">
+      <span class="c2-dd ${ddCls}">${dd.label}</span>
+      <span class="c2-actions">
         <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "지원결정 ✓" : "지원결정"}</button>
         <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
-        ${decided ? `<button class="attach-link" data-goto="plan.html?title=${encodeURIComponent(it.title)}" title="사업계획서 초안 작성 페이지로 이동">초안 작성</button>` : ""}
       </span>
     </div>
+    <div class="c2-title">${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
+    <div class="c2-meta">${metaHtml}</div>
+    ${it.summary ? `<div class="c2-summary">${esc(it.summary)}</div>` : ""}
+    ${it.attachments && it.attachments.length ? `<div class="row-attach"><span class="att-lbl">첨부</span>${it.attachments.map((a) =>
+      `<button class="attach-link" data-url="${esc(a.url)}" title="${esc(a.name)}">${esc(a.name.length > 20 ? a.name.slice(0, 18) + "…" : a.name)}</button>`
+    ).join("")}</div>` : ""}
+    ${decided ? `<button class="attach-link" data-goto="plan.html?title=${encodeURIComponent(it.title)}" title="사업계획서 초안 작성 페이지로 이동">📝 초안 작성</button>` : ""}
   </a>`;
 }
 
@@ -642,7 +633,7 @@ function bannerSectionHtml(label, list, today, chip, note) {
   return `<section class="banner-section">
     <div class="bs-head"><h2>${label}</h2><span class="bs-count">${list.length}건</span>${chip ? `<button class="bs-more" data-chip="${chip}">전체 보기 →</button>` : ""}</div>
     ${note ? `<div class="bs-note">${note}</div>` : ""}
-    <div class="row-list">${list.map((it) => rowHtml(it, today, { compact: true })).join("")}</div>
+    <div class="card-grid">${list.map((it) => cardHtml(it, today, { compact: true })).join("")}</div>
   </section>`;
 }
 
@@ -665,7 +656,7 @@ function paginationHtml(current, total) {
 
 function renderList(list, today) {
   if (!list.length) return `<div class="empty">조건에 맞는 공고가 없습니다.<br>검색어나 필터를 바꿔보세요.</div>`;
-  return `<div class="row-list">${list.map((it) => rowHtml(it, today)).join("")}</div>`;
+  return `<div class="card-grid">${list.map((it) => cardHtml(it, today)).join("")}</div>`;
 }
 
 function renderCalendar(list, today) {
@@ -705,7 +696,7 @@ function renderCalendar(list, today) {
   if (state.calDay) {
     const sel = list.filter((i) => i.applyEnd === state.calDay);
     html += `<div class="sec-head">${state.calDay.replace(/-/g, ".")} 마감 <span class="cnt">${sel.length}건</span></div>`;
-    html += `<div class="row-list">${sel.map((it) => rowHtml(it, today)).join("")}</div>`;
+    html += `<div class="card-grid">${sel.map((it) => cardHtml(it, today)).join("")}</div>`;
   }
   return html;
 }
