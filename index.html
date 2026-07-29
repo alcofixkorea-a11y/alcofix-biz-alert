@@ -99,11 +99,27 @@ select {
 .seg button.active { background: var(--accent); color: #fff; }
 .seg button:focus-visible { outline: 2px solid var(--accent); }
 
-/* ---- 배너 섹션 (세종우선/마감임박/신규) ---- */
-.banner-section { margin-bottom: 20px; }
-.bs-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+/* ---- 배너 섹션 (추천/세종/식품바이오/마감임박/신규) ---- */
+.banner-section { margin-bottom: 10px; }
+.bs-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
 .bs-head h2 { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .bs-head .bs-count { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+.bs-head .bs-more {
+  margin-left: auto; border: 0; background: transparent; color: var(--accent); font: inherit;
+  font-size: 11.5px; font-weight: 700; cursor: pointer; padding: 0;
+}
+.bs-head .bs-more:hover { text-decoration: underline; }
+
+/* ---- 배너 섹션 전용 초경량 1줄 행 ---- */
+.row-compact { display: flex; align-items: center; gap: 10px; padding: 7px 4px; border-bottom: 0 !important; }
+.row-compact .row-swatch { margin-top: 0; }
+.row-title-1line {
+  flex: 1; min-width: 0; font-size: 13px; font-weight: 600; color: var(--text);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.row-compact .row-dd { flex-shrink: 0; }
+.row-compact:hover .row-title-1line { color: var(--accent); }
+.banner-section .row-list { background: transparent; border: 0; }
 
 /* ---- 목록 행 (전체 공고·배너 섹션 공용) ---- */
 .count-line { font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
@@ -315,12 +331,8 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       </div>
 
       <div class="sidebar-block">
-        <h4>검색</h4>
+        <h4>검색 · 정렬</h4>
         <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 (예: 자금 → 융자·보증)">
-      </div>
-
-      <div class="sidebar-block">
-        <h4>정렬 · 필터</h4>
         <select id="sort">
           <option value="deadline">마감 임박순</option>
           <option value="newest">최신 등록순</option>
@@ -330,18 +342,14 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       </div>
 
       <div class="sidebar-block">
-        <h4>기관 유형</h4>
+        <h4>필터</h4>
         <div class="seg" id="orgSeg" style="width:100%">
           <button data-org="all" class="active">전체</button>
           <button data-org="중앙부처·공공">중앙부처·공공</button>
           <button data-org="지자체">지자체</button>
           <button data-org="민간">민간</button>
         </div>
-      </div>
-
-      <div class="sidebar-block">
-        <h4>분야</h4>
-        <div class="sectorbar" id="sectorBar"></div>
+        <div class="sectorbar" id="sectorBar" style="margin-top:8px"></div>
       </div>
 
       <div class="sidebar-block">
@@ -600,31 +608,39 @@ function rowHtml(it, today, opts) {
   if (isIneligible) metaHtml += ` · <span class="warn">자격요건 확인 필요</span>`;
   else if (eff.enyyOk === true || eff.youngOk === true) metaHtml += ` · <span class="ok">${state.profile ? "요건 충족" : "청년·초기창업 가능"}</span>`;
 
+  if (opts.compact) {
+    return `<a class="row row-compact" href="${esc(it.url)}" target="_blank" rel="noopener" title="${esc(it.title)}">
+      <span class="row-swatch ${dd.cls === "urgent" ? "urgent" : ""}"></span>
+      <span class="row-title-1line">${esc(it.title)}</span>
+      <span class="row-dd ${dd.cls === "urgent" ? "urgent" : ""}">${dd.label}</span>
+    </a>`;
+  }
+
   return `<a class="row" href="${esc(it.url)}" target="_blank" rel="noopener">
     <span class="row-swatch ${dd.cls === "urgent" ? "urgent" : ""}"></span>
     <div class="row-body">
       <div class="row-title">${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
       <div class="row-meta">${metaHtml}</div>
-      ${!opts.compact && it.summary ? `<div class="row-summary">${esc(it.summary)}</div>` : ""}
+      ${it.summary ? `<div class="row-summary">${esc(it.summary)}</div>` : ""}
       ${it.attachments && it.attachments.length ? `<div class="row-attach"><span class="att-lbl">첨부</span>${it.attachments.map((a) =>
         `<button class="attach-link" data-url="${esc(a.url)}" title="${esc(a.name)}">${esc(a.name.length > 26 ? a.name.slice(0, 24) + "…" : a.name)}</button>`
       ).join("")}</div>` : ""}
     </div>
     <div class="row-side">
       <span class="row-dd ${dd.cls === "urgent" ? "urgent" : ""}">${dd.label}</span>
-      ${!opts.compact ? `<span class="row-actions">
+      <span class="row-actions">
         <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "지원결정 ✓" : "지원결정"}</button>
         <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
         ${decided ? `<button class="attach-link" data-goto="plan.html?title=${encodeURIComponent(it.title)}" title="사업계획서 초안 작성 페이지로 이동">초안 작성</button>` : ""}
-      </span>` : ""}
+      </span>
     </div>
   </a>`;
 }
 
-function bannerSectionHtml(label, list, today, note) {
+function bannerSectionHtml(label, list, today, chip, note) {
   if (!list.length) return "";
   return `<section class="banner-section">
-    <div class="bs-head"><h2>${label}</h2><span class="bs-count">${list.length}건</span></div>
+    <div class="bs-head"><h2>${label}</h2><span class="bs-count">${list.length}건</span>${chip ? `<button class="bs-more" data-chip="${chip}">전체 보기 →</button>` : ""}</div>
     ${note ? `<div class="bs-note">${note}</div>` : ""}
     <div class="row-list">${list.map((it) => rowHtml(it, today, { compact: true })).join("")}</div>
   </section>`;
@@ -750,19 +766,19 @@ function render() {
       .map((i) => ({ i, s: fitScore(i, today) }))
       .filter((x) => x.s !== null && x.s > 0)
       .sort((a, b) => b.s - a.s || byDeadline(a.i, b.i))
-      .slice(0, 6)
+      .slice(0, 4)
       .map((x) => x.i);
-    const sejongTop = open.filter((i) => i.region === "세종").sort(byDeadline).slice(0, 6);
-    const foodBioTop = open.filter((i) => i.foodBio).sort(byDeadline).slice(0, 6);
-    const urgentTop = open.filter((i) => !i.alwaysOpen && i.applyEnd).sort(byDeadline).slice(0, 6);
-    const newTop = items.filter((i) => isNew(i, today)).sort(byDeadline).slice(0, 6);
+    const sejongTop = open.filter((i) => i.region === "세종").sort(byDeadline).slice(0, 4);
+    const foodBioTop = open.filter((i) => i.foodBio).sort(byDeadline).slice(0, 4);
+    const urgentTop = open.filter((i) => !i.alwaysOpen && i.applyEnd).sort(byDeadline).slice(0, 4);
+    const newTop = items.filter((i) => isNew(i, today)).sort(byDeadline).slice(0, 4);
     bannersHtml =
-      bannerSectionHtml("추천 지원사업", recommended, today,
+      bannerSectionHtml("추천 지원사업", recommended, today, null,
         state.profile ? "입력하신 기업 정보 기준으로 자격·세종·식품바이오 부합도가 높은 순" : "세종·식품바이오 기준 추천 — 기업 정보를 입력하면 자격요건까지 반영됩니다") +
       bannerSectionHtml("세종 지원사업", sejongTop, today) +
-      bannerSectionHtml("바이오·식품 관련 지원사업", foodBioTop, today) +
-      bannerSectionHtml("마감 임박", urgentTop, today) +
-      bannerSectionHtml("신규 공고", newTop, today);
+      bannerSectionHtml("바이오·식품 관련 지원사업", foodBioTop, today, "foodbio") +
+      bannerSectionHtml("마감 임박", urgentTop, today, "urgent") +
+      bannerSectionHtml("신규 공고", newTop, today, "new");
   }
   document.getElementById("bannerSections").innerHTML = bannersHtml;
 
@@ -827,6 +843,12 @@ document.addEventListener("click", (e) => {
   if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; resetPage(); render(); return; }
   const alert = e.target.closest(".new-alert");
   if (alert) { state.chip = alert.dataset.chip; resetPage(); render(); return; }
+  const bsMore = e.target.closest(".bs-more");
+  if (bsMore) {
+    state.chip = bsMore.dataset.chip; resetPage(); render();
+    document.querySelector(".main-col").scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
   const seg = e.target.closest("#viewSeg button");
   if (seg) {
     state.view = seg.dataset.view; state.calDay = null;
