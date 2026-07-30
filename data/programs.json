@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-29T17:01:49.359+09:00",
-  "today": "2026-07-29",
+  "generatedAt": "2026-07-30T16:41:27.368+09:00",
+  "today": "2026-07-30",
   "sources": {
     "kstartup": {
-      "count": 106
+      "count": 117
     },
     "bizinfo": {
-      "count": 232
+      "count": 237
     }
   },
   "items": [
@@ -171,6 +171,43 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000124882",
+      "source": "bizinfo",
+      "title": "[세종] 2026년 여성친화인증 기업 모집 공고",
+      "org": "세종특별자치시 · 직접수행",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "지자체",
+      "region": "세종",
+      "target": "중소기업",
+      "applyStart": "2026-07-29",
+      "applyEnd": "2026-08-12",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124882",
+      "summary": "세종특별자치시에서는 양성평등한 고용환경을 갖추고, 근로자의 일ㆍ생활 균형을 위해 노력하는 기업을 세종형 여성친화기업으로 인증ㆍ지원하고자 하오니 관심 있는 기업의 많은 참여 바랍니다. ☞ 공고일 기준 관내에서 기업경영 2년 이상(본사 또는 사업장)인「중소기업기본법」제2조에 따른 중소기업 ※ 상시근로자 5인~100인 미만 기업 중 여성근로자 비율이 30% 이상 ☞ 여성친화기업 상호협약 및 인증현판 수여, 기업환경개선 사업비 지원(개소당 2,000천원) - 찾아가는 성평등 교육 및 폭력예방 교육 지원, 여성고용지원(새일여성인턴) 및 기업",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "제출서류(서식).hwpx",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766776&fileSn=1"
+        },
+        {
+          "name": "2026년 세종형 여성친화인증 기업 모집 공고.hwpx",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766775&fileSn=1"
+        }
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124552",
       "source": "bizinfo",
       "title": "2026년 2차 세종 스타트업 혁신제품 선(先)보급 지원사업 참여 스타트업 모집 공고(제품상용화 지원사업)",
@@ -204,39 +241,6 @@
         {
           "name": "공고문_f.pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765315&fileSn=1"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122229",
-      "source": "bizinfo",
-      "title": "2026년 창업BuS in 세종 수요투자 라운드 참여기업 상시 모집 공고",
-      "org": "중소벤처기업부 · 세종창조경제혁신센터",
-      "category": "창업",
-      "sector": "창업·사업화",
-      "orgType": "중앙부처·공공",
-      "region": "세종",
-      "target": "창업벤처",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122229",
-      "summary": "세종창조경제혁신센터는 성장 가능성 있는 창업기업을 발굴하고, 투자유치 역량 강화를 지원하기 위해 「2026 창업-BuS in 세종 수요투자라운드」 참여기업을 상시 모집 합니다. ☞ 창업 7년 이내 투자유치 희망기업 ※ AI-빅데이터, GovTech 등 딥테크 우대 ☞ 전문가 진단 및 맞춤형 멘토링, IR 피칭 기회 및 투자 미팅, 후속 성장 사업화 및 투자 검토 지원 ※ 기업 역량에 따라 단계별 맞춤형 지원 가능",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "[세종창조경제혁신센터] 2026 창업-BuS in 세종 수요투자라운드(미니IR피칭) 신청 안내.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756367&fileSn=0"
         }
       ]
     },
@@ -381,336 +385,28 @@
       ]
     },
     {
-      "id": "bizinfo-PBLN_000000000124590",
-      "source": "bizinfo",
-      "title": "2026년 4차 정형ㆍ재활 의료기기 사업화 인증 및 실증 지원 사업 수혜 기업 모집 공고",
-      "org": "산업통상부 · 대구경북첨단의료산업진흥재단",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-07-22",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124590",
-      "summary": "2026년도 산업통상자원부「정형ㆍ재활의료기기 사업화 인증 및 실증 지원」사업의 기업지원 프로그램을 안내하오니, 해당 프로그램 참여를 희망하는 기업의 많은 신청 바랍니다. ☞ 정형ㆍ재활의료기기 제품의 성능 개선 및 고도화를 통해 해외 시장 진출을 하고자 하는 중소ㆍ중견기업 ☞ 정형ㆍ재활 의료기기 운송밸리데이션 지원(해외규제대응패키지), 제품 시장 진출 지원(국내)",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000124519",
-      "source": "bizinfo",
-      "title": "2026년 장수군 4차 레드푸드 전ㆍ후방기업 경쟁력 강화 및 스마트 농업 활성화 지원 사업 지원기업 모집 공고(시군구연고산업육성 협업프로젝트)",
-      "org": "중소벤처기업부 · 전북테크노파크",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-07-20",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124519",
-      "summary": "2026년도 중소벤처기업부와 전북특별자치도 및 장수군이 지원하는 시군구연고산업육성 협업프로젝트 수행자로 선정된 주관기관별 지원 프로그램을 안내하오니, 해당 프로그램 참여를 희망하는 장수군 지역 중소기업의 많은 신청 바랍니다. ☞ 공고일 기준 장수군 소재 (본사, 지사, 기업부설연구소, 공장등록 기준) 레드푸드(사과, 토마토, 오미자)산업ㆍ스마트 농업 전ㆍ후방 연관 중소기업 ※ 현재 타지역 소재 기업이나, 본 사업 수행 기간 내 장수군으로 사업장을 이전하여 사업자 등록(지점 포함)을 하기로 확약한 기업 ※ 자세한 지원대상 공고문 참조",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "[붙임2]제출서류양식일체_4차.zip",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765202&fileSn=1"
-        },
-        {
-          "name": "[붙임3]신청기업사용자매뉴얼(RMS).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765202&fileSn=2"
-        },
-        {
-          "name": "[붙임1]장수군시군구연고산업육성사업(부처협업프로젝트)기업지원4차모집공고문+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765201&fileSn=1"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000124517",
-      "source": "bizinfo",
-      "title": "2026년 1차 중국 스마트팜 로드쇼 참가기업 모집 공고",
-      "org": "농림축산식품부 · 대한무역투자진흥공사",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-07-16",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124517",
-      "summary": "KOTRA와 농림축산식품부는 스마트팜 기업의 중국 지역 진출을 지원하고자 칭다오, 우한 정부부처와 협업하여 2026 중국 스마트팜 로드쇼를 개최하오니 우리 기업들의 많은 신청 바랍니다. ☞ 스마트팜 관련 국내기업/기관 - 스마트 생육 환경 통합제어 (수직농장ㆍ식물공장 포함) - 토양 IoT 기반 정밀 양액ㆍ관개 자동제어 - AI 기반 병해충ㆍ생육 이상 모니터링 - 농업 자동화 로봇ㆍ첨단농기계 ☞ 현지 세미나 및 수출상담회 참가 지원 - 상담회, 수출상담회 통역 지원 - 현지 내 단체이동 및 간담회 지원",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "2026 중국 스마트팜 로드쇼 참가신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765192&fileSn=0"
-        },
-        {
-          "name": "2026 중국 스마트팜 로드쇼 참가기업 1차 모집 안내.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765191&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "kstartup-178585",
+      "id": "kstartup-178688",
       "source": "kstartup",
-      "title": "[국민대학교 캠퍼스타운사업단] 2026 지역 현안 문제해결 연계 '성북 ON 창업교육 프로그램' 참가자 모집 (~7/29)",
-      "org": "국민대학교 캠퍼스타운사업단",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,일반기업,1인 창조기업",
-      "applyStart": "2026-07-16",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178585",
-      "summary": "성북구청과 국민대학교 캠퍼스타운사업단은 지역 현안 문제해결과 연계하여 지역 기반 창업자를 발굴하고자 「성북 ON 창업교육 프로그램」에 참여할 예비·초기 창업팀을 모집합니다. 예비·초기 창업자를 위한 로컬 문제 해결형 창업 아이디어를 발굴하고, AI 기반 실습 및 고객 수요 검증을 통해 사업화 역량을 강화하는 프로그램을 제공합니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,3년미만",
-      "privateHost": true,
-      "firstSeen": "2026-07-21",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000124435",
-      "source": "bizinfo",
-      "title": "2026년 디지털 치과 의료기기 기술개발 및 시장 진출 지원 사업 연장 공고",
-      "org": "산업통상부 · 한국산업기술시험원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-07-15",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124435",
-      "summary": "한국산업기술시험원에서는 산업통상부와 대구광역시의 지원으로 바이오산업기술개발사업 「디지털 치과 생태계 확산을 위한 초연결 치과산업 플랫폼 개발 및 실증」 과제를 수행하고 있습니다. 이와 관련하여 디지털 치과 의료기기 기술개발 및 시장 진출 지원 사업을 추진하오니, 관심 있는 기업들의 많은 신청 바랍니다. ☞ 의료 데이터 기반의 기술 개발 또는 제품의 시험평가 및 인허가 기술 지원을 통한 공인시험성적서, 기술문서 등 관련 자료 확보를 통하여 시장에 진출하고자 계획 중인 기업으로 아래 사항 중 1개 이상 해당 기업 - 부가가치세법 제8조",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "붙임+2.+지원+신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000764835&fileSn=1"
-        },
-        {
-          "name": "붙임+3.+신청+관련+제출서류+양식.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000764835&fileSn=2"
-        },
-        {
-          "name": "붙임+1.+『2026년도+디지털+치과+의료기기+기술개발+및+시장+진출+지원』+사업+공고문+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000764834&fileSn=1"
-        }
-      ]
-    },
-    {
-      "id": "kstartup-178630",
-      "source": "kstartup",
-      "title": "메이커스페이스 3D프린팅 교육/실습",
-      "org": "관악구청",
-      "category": "창업교육",
-      "sector": "창업·사업화",
-      "orgType": "지자체",
-      "region": "전국",
-      "target": "대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-07-15",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178630",
-      "summary": "3D 프린팅을 활용해 내 아이디어를 실물로 만들기!",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 이상 ~ 만 39세 이하",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": false,
-      "firstSeen": "2026-07-22",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000124317",
-      "source": "bizinfo",
-      "title": "2026년 백년소상공인 모집(재지정) 공고",
-      "org": "중소벤처기업부 · 소상공인시장진흥공단",
-      "category": "기타",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "소상공인",
-      "applyStart": "2026-07-14",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124317",
-      "summary": "장기간 사업을 운영하면서 사회에 기여한 바가 크고, 축적한 경험을 바탕으로 지속적인 성장이 기대되는「백년소상공인(백년가게ㆍ백년소공인)」재지정 신청을 다음과 같이 안내하오니, 지정기간 만료가 도래한 백년소상공인의 많은 신청 바랍니다. ☞ ‘26년 9~12월 지정만료 백년소상공인 371개사 중 신청일 기준 소상공인 법적 기준에 충족하는 사업자 ☞ 백년소상공인(백년가게ㆍ백년소공인) 재지정, 백년소상공인의 다양한 홍보 활동 및 연계 지원 - 홍보지원 : 백년소상공인 지정서 제공, 온ㆍ오프라인 홍보 지원 - 연계지원 : 공단이 진행하는소상공",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "kstartup-178525",
-      "source": "kstartup",
-      "title": "2026년 G-Space 입주기업 발굴·육성사업 입주기업 추가 모집 공고",
-      "org": "(재)경남창조경제혁신센터",
-      "category": "시설ㆍ공간ㆍ보육",
-      "sector": "시설·공간",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "일반인,대학,1인 창조기업",
-      "applyStart": "2026-07-13",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178525",
-      "summary": "경상남도와 양산시가 설립하고 경남창조경제혁신센터에서 운영하는 경상남도 동부권 스타트업지원 거점센터“G-Space@East”에서 성장가능성 있는 유망 스타트업을 대상으로 입주 희망 기업을 모집 하오니 역량 있는 창업자의 많은 신청 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "7년미만",
-      "privateHost": false,
-      "firstSeen": "2026-07-20",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000124200",
-      "source": "bizinfo",
-      "title": "2026년 콘텐츠 해외 투자유치 지원 프로그램 U-KNOCK 2026 in USA 참가기업 모집 공고",
-      "org": "문화체육관광부 · 한국콘텐츠진흥원",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-07-08",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124200",
-      "summary": "한국콘텐츠진흥원에서「콘텐츠 해외 투자유치 지원 프로그램 U-KNOCK 2026 in USA」 참가기업 모집을 공고합니다. ☞ IP 해외사업 이력 보유 및 미국 또는 해외 투자유치 및 사업개발, 확장이 준비된 IP 창ㆍ제작 및 IP기반 엔터테인먼트 법인사업자 - 프로젝트/IP 파이낸싱(Track A) : 원천 IP 및 2차 저작권 보유 기업 - 스케일업 (Track B) : 검증된 BM과 성장성을 가진 스튜디오/엔터사/플랫폼/미디어 기업 등 - IP 라이브러리(Track C) : 수익창출 가능한 완성 IP 보유 기업 ☞ 파트너스 및 ",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "kstartup-178368",
-      "source": "kstartup",
-      "title": "( ?투자금 3억원!?)제8회 창업투자경진대회 B-스타트업챌린지",
-      "org": "(재)부산기술창업투자원",
+      "title": "⌈재도전응원본부 정책포럼⌋ 개최",
+      "org": "한국청년기업가정신재단",
       "category": "행사ㆍ네트워크",
       "sector": "행사·네트워크",
-      "orgType": "중앙부처·공공",
+      "orgType": "민간",
       "region": "전국",
-      "target": "대학생,일반인,일반기업,1인 창조기업",
-      "applyStart": "2026-07-01",
-      "applyEnd": "2026-07-29",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-27",
+      "applyEnd": "2026-07-30",
       "alwaysOpen": false,
       "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178368",
-      "summary": "부산시, BNK부산은행, 부산문화방송(MBC)가 공동으로 주최하고 부산기술창업투자원, BNK벤처투자가 주관하는 제8회 B-스타트업챌린지가 전국의 혁신 스타트업을 기다립니다.",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178688",
+      "summary": "'재도전의 시작, 새롭게 정의하는 재도전' ⌈재도전응원본부 정책포럼⌋에 초대합니다. 실패는 멈춤이 아니라 다음 도전을 준비하는 과정입니다. 경험은 쌓이고, 관점은 넓어지고, 다시 시작할 힘은 그 안에서 만들어집니다. 이번 포럼에서는 재도전을 바라보는 새로운 시각과, 그 시작을 든든하게 뒷받침할 방향을 현장의 창업가분들, 창업지원 관계자분들과 함께 그려보려 합니다. 여러분의 의견을 남겨주시면, 포럼에서 함께 나눌 이야기에 담도록 하겠습니다. 많은 관심과 참여 부탁드립니다.",
       "foodBio": false,
       "youngOk": true,
       "enyyOk": true,
       "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만",
-      "privateHost": false,
-      "firstSeen": "2026-07-20",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-178241",
-      "source": "kstartup",
-      "title": "강동 K-ISS멘토링센터 전담멘티 3기 모집",
-      "org": "주식회사 이노시아",
-      "category": "멘토링ㆍ컨설팅ㆍ교육",
-      "sector": "교육·컨설팅",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-06-24",
-      "applyEnd": "2026-07-29",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178241",
-      "summary": "예비창업자와 창업·벤처기업의 창업활동 및 성장을 지원하는 『강동 K-ISS멘토링센터의 멘토링 지원』에 참여할 2026년 전담 멘티(3기)를 모집하오니 많은 관심과 지원 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
       "privateHost": true,
-      "firstSeen": "2026-07-20",
+      "firstSeen": "2026-07-30",
       "sources": [
         "kstartup"
       ]
@@ -851,33 +547,6 @@
           "name": "(해외전시회 연계 융복합) 중국 국제 중소기업 박람회 한국관 및 전시상담회.pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765687&fileSn=0"
         }
-      ]
-    },
-    {
-      "id": "kstartup-178625",
-      "source": "kstartup",
-      "title": "[무료 웨비나] 글로벌 시장을 위한 AI 마이크로 서비스 제작 실전",
-      "org": "The Bridge Circle (TBC)",
-      "category": "창업교육",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-07-21",
-      "applyEnd": "2026-07-30",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178625",
-      "summary": "글로벌 시장을 위한 AI 마이크로 서비스 제작 실전 창업교육을 진행하오니, AI를 활용한 빠른 서비스 개발과 글로벌 시장 검증에 관심 있는 분들의 많은 참여 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-07-23",
-      "sources": [
-        "kstartup"
       ]
     },
     {
@@ -1175,6 +844,60 @@
       "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
       "privateHost": false,
       "firstSeen": "2026-07-20",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
+      "id": "kstartup-178692",
+      "source": "kstartup",
+      "title": "(기간연장) [창업보육] 2026년 체육인 직업안정사업(창업새싹) 참여자 추가 모집(~7.31.)",
+      "org": "국민체육진흥공단",
+      "category": "사업화",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-07-31",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178692",
+      "summary": "체육인의 직업 전환을 지원하여 생활 불안정성을 완화하고, 역량별 맞춤 지원을 통해 창업 성공률을 높이며 진로 선택의 폭을 확대하고자 「2026년 체육인 직업안정 사업(창업지원) 창업보육과정(새싹)」 참여자를 다음과 같이 모집하오니 많은 관심과 참여 바랍니다. ※ 체육인 복지 시행지침 개정으로 체육인 인정 대회 범위 확대(경기 단체 주관 전국대회 출전 경력도 포함)",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": false,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자",
+      "privateHost": true,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
+      "id": "kstartup-178691",
+      "source": "kstartup",
+      "title": "2026년 연구개발특구 과학기술특성화대학 기술창업 경진대회 모집 공고",
+      "org": "연구개발특구진흥재단",
+      "category": "행사ㆍ네트워크",
+      "sector": "행사·네트워크",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "대학",
+      "applyStart": "2026-07-27",
+      "applyEnd": "2026-07-31",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178691",
+      "summary": "연구개발특구 소재 과기특성화대 혁신자원을 활용한 국가전략기술분야 기술창업 활성화를 위한「2026년 연구개발특구 과기특성화대학 기술창업투자 경진대회」를 개최하고자 하오니, (예비)창업기업의 많은 관심과 참여를 부탁드립니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,7년미만",
+      "privateHost": true,
+      "firstSeen": "2026-07-30",
       "sources": [
         "kstartup"
       ]
@@ -3618,6 +3341,34 @@
       ]
     },
     {
+      "id": "kstartup-178681",
+      "source": "kstartup",
+      "title": "2026 빅웨이브 글로벌(일본4차) - 글로벌 오픈이노베이션 세미나 및 밋업(일본 츄가이제약) 참여기업 모집",
+      "org": "인천창조경제혁신센터 대표이사",
+      "category": "글로벌",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-20",
+      "applyEnd": "2026-08-05",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178681",
+      "summary": "인천창조경제혁신센터에서는 국내 바이오 스타트업과 일본 글로벌 제약기업 츄가이제약(Chugai Pharmaceutical) 간 오픈이노베이션 및 기술협력 기회를 마련하고자 「2026 글로벌 오픈이노베이션 밋업(츄가이제약)」을 개최합니다. 일본 글로벌 제약기업과의 공동연구, 기술협력, 라이선싱, 오픈이노베이션에 관심 있는 바이오 스타트업의 많은 신청 바랍니다.",
+      "foodBio": true,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ],
+      "attachments": []
+    },
+    {
       "id": "bizinfo-PBLN_000000000124627",
       "source": "bizinfo",
       "title": "2026년 K-브랜드 융복합 KDAY TOKYO 참여기업 모집 공고",
@@ -4028,6 +3779,33 @@
       ]
     },
     {
+      "id": "kstartup-178699",
+      "source": "kstartup",
+      "title": "라이콘 창업 경진대회 참여팀 모집(로컬 창업 아이디어톤)",
+      "org": "유원대학교 충남 앵커사업단",
+      "category": "사업화",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "대학생,일반인,일반기업,1인 창조기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-07",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178699",
+      "summary": "유원대학교 충남 앵커사업단에서는 라이콘 스타트업의 지속가능한 성장을 지원하기 위한「라이콘 창업 경진대회」참여기업을 모집합니다. 본 프로그램은 예비창업자 및 기창업자를 대상으로 로컬 창업 아이디어톤으로 운영되며, 로컬 & 라이프스타일, 콘텐츠 분야 창업자의 많은 참여 바랍니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만",
+      "privateHost": true,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124746",
       "source": "bizinfo",
       "title": "2026년 K-브랜드 챌린지 참여기업 모집 공고",
@@ -4237,6 +4015,43 @@
         {
           "name": "2026 멜버른 한류박람회 (KBEE 2026 MELBOURNE).pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766198&fileSn=0"
+        }
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124898",
+      "source": "bizinfo",
+      "title": "2026년 3차 해남 김ㆍ고구마 대박상품 개발 지원사업 수혜기업 모집 공고",
+      "org": "전남광주통합특별시 · 전남바이오진흥원",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-24",
+      "applyEnd": "2026-08-07",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124898",
+      "summary": "해남군 대표 농수산물인 김ㆍ고구마를 이용한 상품개발과 제품 표준화 및 고도화 등 제조기반 기술경쟁력 강화를 위하여「해남 김ㆍ고구마 대박상품 개발지원」사업을 다음과 같이 공고하오니 해남군에 사업장을 둔 김ㆍ고구마 산업 전ㆍ후방 연관 제품의 사업화를 추진 중이신 기업들의 많은 참여 바랍니다. ☞ 해남군에 1개 이상의 본사, 공장, 지점, 연구소 등 사업장을 두거나 사업 신청전까지 이전 완료한 중소기업 ☞ 해남 김ㆍ고구마 대박상품 개발, 국내 박람회 통합 참가, 국내ㆍ외 상담회 참가, 전문가 기술교육 지원",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "해남 김. 고구마 대박상품 개발 지원사업 제출 서류 서식.hwp",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766830&fileSn=1"
+        },
+        {
+          "name": "2026 해남 김.고구마 대박상품 개발지원 사업 수혜기업 3차 모집공고 계획(안).pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766829&fileSn=1"
         }
       ]
     },
@@ -4717,6 +4532,33 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000124900",
+      "source": "bizinfo",
+      "title": "2026년 3분기 자랑스러운 중소기업인 접수 공고",
+      "org": "중소벤처기업부 · 중소기업중앙회",
+      "category": "내수",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-08",
+      "applyEnd": "2026-08-07",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124900",
+      "summary": "중소기업중앙회는 중소기업 및 국가산업 발전에 기여한 중소기업인의 공적을 가리고, 모범적인 중소기업인상을 확산하기 위해 다음과 같이 '자랑스러운 중소기업인'을 선정하고 잇습니다. 이와 관련하여, 모범적인 중소기업인들의 많은 관심과 신청 바랍니다. ☞ 5년이상 중소기업을 경영한 대표자(중소기업 대표자만 신청 가능) ☞ 표창장, 기념패, 회원패 수여, 동 수상자 모임 (사)자중회 회원으로 활동하며 기업간 네트워킹, 주요 언론 업체 홍보용 보도자료 배포 지원",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124038",
       "source": "bizinfo",
       "title": "2026년 NCS 기업활용 우수사례 경진대회 공고",
@@ -4956,6 +4798,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-07-28",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124885",
+      "source": "bizinfo",
+      "title": "2026년 예술분야 예비창업 프로그램 참여자 모집 공고",
+      "org": "문화체육관광부 · 예술경영지원센터",
+      "category": "창업",
+      "sector": "창업·사업화",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "창업벤처",
+      "applyStart": "2026-07-27",
+      "applyEnd": "2026-08-10",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124885",
+      "summary": "문화체육관광부와 (재)예술경영지원센터는 예술분야 예비창업자ㆍ초기기업을 대상으로 비즈니스모델의 시장검증 기반 사업역량을 강화하고, 체계적 지원을 통해 예술기업을 육성하는 <2026 예술분야 예비창업 프로그램>을 진행합니다. 예술 전문성 및 적극적인 실행능력을 겸비한 예비 창업자 및 예술분야 창업기업을 다음과 같이 모집하오니 많은 관심과 참여 바랍니다. ☞ 공고일 기준('26.7.27(월)) 예술분야 예비창업자 또는 업력 3년 미만의 예술분야 창업기업(개인 및 법인사업자) ☞ 고객x시장검증 간접 지원(5백만원 상당) 및 역량 강화 교육",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
       "sources": [
         "bizinfo"
       ]
@@ -5285,6 +5154,60 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000124895",
+      "source": "bizinfo",
+      "title": "2026년 GP USA 시카고 참가기업 모집 공고",
+      "org": "산업통상부 · 대한무역투자진흥공사",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-29",
+      "applyEnd": "2026-08-11",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124895",
+      "summary": "미국 통상정책에 따른 현지 공급망 다변화(듀얼소실, 온ㆍ니어쇼어링) 수요확대에 대응하여, KOTRA는 우리 기업들의 미국 밸류체인 진출을 지원하고자 합니다. 미국 전통ㆍ첨단 제조 시장 내 신규 수요를 선점허고자 하는 국내 소부장 제조기업들의 많은 참여 바랍니다. ☞ 국내 소재ㆍ부품ㆍ장비 제조기업 - 주요품목 : 기계/중장비, 농기계, 이차전지, 자동화 시스템 등의 소재ㆍ부품ㆍ장비 분야 ☞ 1:1 상담회, 미국 진출전략 세미나, 헬프데스크 등 지원",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124933",
+      "source": "bizinfo",
+      "title": "2026년 소프트웨어 산업발전 유공자 포상계획 연장 공고",
+      "org": "과학기술정보통신부 · 정보통신산업진흥원",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-29",
+      "applyEnd": "2026-08-11",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124933",
+      "summary": "과학기술정보통신부는 국내 소프트웨어 산업발전에 기여한 유공자를 포상하고자 다음과 같이 「2026년도 소프트웨어 산업발전 유공자 포상계획」을 연장 공고하오니 많은 참여 바랍니다. ☞ SW신기술(인공지능, 클라우드, 가상융합기반산업 등) 기반으로 혁신적인 비즈니스를 통해 소프트웨어 산업 성장에 기여한 자 - 인공지능 등 SW 신기술을 활용하여 자동차, 제조, 로봇 등 다양한 산업에서의 혁신적 서비스를 창출을 통해 AX 혁신에 기여한 자 - 우수 AIㆍ소프트웨어를 통한 수출증대 및 해외시장 개척에 기여한 자 - 초ㆍ중ㆍ고, 대학생, 일반",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124836",
       "source": "bizinfo",
       "title": "2027년 UAE 두바이 국제 의료기기 전시회(WHX Dubai) 케이메디허브관 참가기업 모집 수정 공고",
@@ -5307,6 +5230,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-07-29",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124886",
+      "source": "bizinfo",
+      "title": "2026년 우수 기업부설연구소 리바운드 컨설팅 지원사업 재공고",
+      "org": "과학기술정보통신부 · 한국산업기술진흥협회",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-11",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124886",
+      "summary": "기업부설연구소의 경쟁력 제고와 질적 성장 견인을 위해 '우수 기업부설연구소' 지정 심사에서 미지정된 기업을 대상으로 「우수 기업부설연구소 리바운드 컨설팅」을 지원하고자 하오니 희망하시는 기업은 관련 절차에 따라 신청하여 주시기 바랍니다. ☞ 기업부설연구소등의 연구개발 지원에 관한 법률 제조에 따라 인정 받아 이상 운영한 기업부설연구소를 보유한 기업 - 중소ㆍ중견 기업의 부설연구소로 기술혁신 성과가 우수하며, '23~'26년 기간에 우수 기업부설연구소 지정신청 및 미지정 기록이 있는 기업부설연구소 ☞ 기업 연구역량 컨설팅 지원 - 우",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
       "sources": [
         "bizinfo"
       ]
@@ -5555,6 +5505,43 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000124892",
+      "source": "bizinfo",
+      "title": "2026년 2차 생분해성 플라스틱 표준개발 및 평가 기반구축 기업지원사업 공고",
+      "org": "전남광주통합특별시 · 전남테크노파크",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-14",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124892",
+      "summary": "생분해성 플라스틱 및 바이오플라스틱 산업 지원을 위한 프로그램을 안내하오니, 해당 프로그램 참여를 희망하는 기업의 많은 신청 바랍니다. ☞ 화학물질 및 플라스틱 제조업 등록을 한 중소ㆍ중견기업 - 생분해 및 바이오 플라스틱을 활용한 소재ㆍ제품 제조 기업 - 생분해 및 바이오 플라스틱 산업으로 전환 희망하는 제조업 - 상기 기술에 대한 기술이전을 통해 신규사업으로 전환하고자 하는 기업 ☞ 시생산기반(시제품 제작), 기술서비스기반(기술사업화, 기술 자문) 총 3개 프로그램(기업당 3개 프로그램 신청 가능) 지원 - 시제품제작 : 제품 ",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "2. 사업신청서_생분해 플라스틱 표준개발 및 평가 기반구축사업 기업지원.hwp",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766802&fileSn=1"
+        },
+        {
+          "name": "1. 공고문(안)_생분해 플라스틱 표준개발 및 평가 기반구축사업 기업지원+.pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766801&fileSn=2"
+        }
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124666",
       "source": "bizinfo",
       "title": "2026년 우체국쇼핑 창구전시판매 히트상품 공개모집 공고",
@@ -5620,6 +5607,43 @@
       "firstSeen": "2026-07-27",
       "sources": [
         "bizinfo"
+      ]
+    },
+    {
+      "id": "kstartup-178682",
+      "source": "kstartup",
+      "title": "[투자 및 TIPS 추천] 한림대학교 Station C 연계 창업기업 투자·육성 지원 프로그램 참가 안내",
+      "org": "한국바이오투자파트너스",
+      "category": "사업화",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-27",
+      "applyEnd": "2026-08-14",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178682",
+      "summary": "한림대학교(Station C)와 한국바이오투자파트너스가 협력하여 성장 잠재력이 우수한 창업 예정자 ~ 창업기업을 대상으로 직접투자 및 TIPS 추천과 성공 창업 교육, 기술사업화, IR, 스케일업 등 종합적인 경쟁력 강화 프로그램을 지원할 창업기업(자)을 모집하오니 많은 관심과 참여를 바랍니다.",
+      "foodBio": true,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "10년미만",
+      "privateHost": true,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ],
+      "attachments": [
+        {
+          "name": "26년스테이션C투자및팁스추천프로그램공고내용.hwp",
+          "url": "https://www.k-startup.go.kr/afile/fileDownload/jr0Ln"
+        },
+        {
+          "name": "26년스테이션C투자및팁스추천프로그램신청서및개인정보동의서.hwp",
+          "url": "https://www.k-startup.go.kr/afile/fileDownload/Vr0Ln"
+        }
       ]
     },
     {
@@ -5778,6 +5802,60 @@
           "name": "2026년도 농촌 사회연대경제 서비스 협력모델 발굴 지원사업 모집공고.pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766110&fileSn=0"
         }
+      ]
+    },
+    {
+      "id": "kstartup-178683",
+      "source": "kstartup",
+      "title": "2026년 제1회 테크플러스 스테이지 입주기업 모집 공고",
+      "org": "(재)광주테크노파크",
+      "category": "시설ㆍ공간ㆍ보육",
+      "sector": "시설·공간",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-22",
+      "applyEnd": "2026-08-14",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178683",
+      "summary": "광주테크노파크는 우수한 기술력을 갖춘 창업기업 등의 성장을 지원하기 위해 테크플러스 스테이지 입주기업을 모집하오니 입주를 희망하는 기업들의 많은 신청 바랍니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
+      "id": "kstartup-178684",
+      "source": "kstartup",
+      "title": "기술창업 성장패키지 지원 참여기업 모집공고",
+      "org": "(재)광주테크노파크",
+      "category": "사업화",
+      "sector": "창업·사업화",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "일반기업,1인 창조기업",
+      "applyStart": "2026-07-22",
+      "applyEnd": "2026-08-14",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178684",
+      "summary": "(재)광주테크노파크에서는 이노플러스 스테이지 및 테크플러스 스테이지 입주기업(입주예정 기업 포함)을 대상으로 보유 제품ㆍ서비스의 사업화 및 기술고도화, 시장진출 역량 강화를 지원하여 기업의 지속가능한 성장을 촉진하고자 「기술창업 성장 패키지 지원」참여기업을 다음과 모집하오니 많은 관심과 참여 바랍니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
       ]
     },
     {
@@ -6078,6 +6156,33 @@
       ]
     },
     {
+      "id": "kstartup-178632",
+      "source": "kstartup",
+      "title": "제13회 기업가정신 교육 우수사례 경진대회 참가자 모집",
+      "org": "한국청년기업가정신재단",
+      "category": "창업교육",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-06-22",
+      "applyEnd": "2026-08-14",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178632",
+      "summary": "기업가정신 교육콘텐츠 개발 및 활용 노하우를 교육현장의 동료들과 공유하고자 하는 교육자 여러분의 많은 참여를 바랍니다. 또한 국내 기업가정신교육 환경의 지속적 발전을 위한 신규 콘텐츠 개발 및 교육자 역량 강화 프로그램 마련의 기반이 되는 본 경진대회에 많은 관심 부탁드립니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": true,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124858",
       "source": "bizinfo",
       "title": "2026년 소프트웨어 인재키움사업 바이브코딩 창업교육 교육생 통합모집 공고",
@@ -6127,6 +6232,87 @@
       "enyyRaw": "1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
       "privateHost": true,
       "firstSeen": "2026-07-20",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124908",
+      "source": "bizinfo",
+      "title": "모두의 창업: 사회혁신 소셜벤처 리그 모집 공고",
+      "org": "중소벤처기업부 · 기술보증기금",
+      "category": "창업",
+      "sector": "창업·사업화",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "창업벤처",
+      "applyStart": "2026-07-30",
+      "applyEnd": "2026-08-19",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124908",
+      "summary": "혁신적인 기술 또는 아이디어로 사회문제를 해결하는 소셜벤처기업을 발굴ㆍ육성하기 위해「모두의 창업 : 사회혁신 소셜벤처 리그」도전자를 다음과 같이 모집합니다. ☞ 사회문제를 해결할 수 있는 혁신적인 기술 또는 아이디어를 보유한 예비창업자 또는 창업 후 7년 이내 기업 ☞ (서류평가 선정기업) 사회적 문제 구체화, 비즈니스 모델(BM) 고도화 등 임팩트 활동 지원(기업당 200만원) - (발표평가 선정기업) 솔루션 고도화, 현장 적용성 검토, 공공데이터 활용, 사업화 전략, 투자ㆍ판로 연계 등 멘토링 지원(기업당 500만원), 보증이용",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124925",
+      "source": "bizinfo",
+      "title": "2026년 기술사업화 유공자 포상 신청 연장 공고",
+      "org": "산업통상부 · 한국산업기술진흥원",
+      "category": "내수",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-29",
+      "applyEnd": "2026-08-19",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124925",
+      "summary": "공공 및 민간부문 연구개발(R&D) 결과물이 기업에 이전ㆍ사업화 되어 산업 전반의 기술경쟁력을 강화하고 新산업을 창출하도록 기여하는 선도적인 기술이전ㆍ거래, 기술사업화, 기술나눔 분야의 공로자에게 포상을 실시하고자 하오니 많은 참여 바랍니다. ☞ 3년 이상 국내 기술사업화 분야 발전에 기여한 공이 인정되는 자로 「정부포상업무지침」 및 「산업통상자원부 장관포상 및 후원명칭 처리지침」에 의한 결격사유에 해당되지 않는 자 - 포상분야 : 기술이전ㆍ거래, 기술사업화(공공, 민간), 기술나눔 ※ 자세한 신청자격 공고문 참조 ☞ 장관상, 한국",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "kstartup-178708",
+      "source": "kstartup",
+      "title": "2026년 제3차 창업지원센터 입주기업 모집공고(~8/19, 수 16시까지)",
+      "org": "용인시산업진흥원",
+      "category": "시설ㆍ공간ㆍ보육",
+      "sector": "시설·공간",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "일반인,일반기업,1인 창조기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-19",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178708",
+      "summary": "용인시산업진흥원에서 창업지원센터와 함께 성장하고자 하는 우수하고 유망한 입주기업을 모집하오니 많은 신청 바랍니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,7년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
       "sources": [
         "kstartup"
       ]
@@ -6547,6 +6733,33 @@
       ]
     },
     {
+      "id": "kstartup-178704",
+      "source": "kstartup",
+      "title": "'스타트업 SEO 마케팅 전략' 비대면 교육 모집",
+      "org": "서울핀테크랩",
+      "category": "멘토링ㆍ컨설팅ㆍ교육",
+      "sector": "교육·컨설팅",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-27",
+      "applyEnd": "2026-08-23",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178704",
+      "summary": "서울핀테크랩에서는 스타트업의 AI 시대 마케팅 경쟁력 강화를 실무 교육으로 「스타트업을 위한 SEO 마케팅 전략」교육을 운영합니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124853",
       "source": "bizinfo",
       "title": "2026년 3차 마케팅 구매상담회 참여기업 모집 공고",
@@ -6569,6 +6782,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-07-29",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124891",
+      "source": "bizinfo",
+      "title": "2026년 2차 에너지수요관리핵심기술개발사업 신규지원대상 연구개발과제 공고",
+      "org": "기후에너지환경부 · 한국에너지기술평가원",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-24",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124891",
+      "summary": "에너지수요관리핵심기술개발사업의 2026년 2차 신규지원 대상 연구개발과제를 다음과 같이 공고하오니 해당 기술개발과제를 수행하고자 하는 자는 관련 규정에 따라 신청하여 주시기 바랍니다. ☞ 기업, 대학, 연구기관, 연구조합, 사업자단체, 의료기관 등 ☞ 에너지수요관리핵심기술개발(수요관리기반기술개발) 지원 ※ '4. 제출서류 및 참고(최종)'는 출처 바로가기 내 첨부파일 참고",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
       "sources": [
         "bizinfo"
       ]
@@ -6625,6 +6865,33 @@
       "firstSeen": "2026-07-20",
       "sources": [
         "kstartup"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124910",
+      "source": "bizinfo",
+      "title": "2026년 환경형 예비사회적기업 지정계획 공고",
+      "org": "기후에너지환경부 · 한국사회적기업진흥원",
+      "category": "기타",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "사회적기업",
+      "applyStart": "2026-07-29",
+      "applyEnd": "2026-08-25",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124910",
+      "summary": "환경분야에 특화된 예비사회적기업 발굴ㆍ육성을 위하여 「환경형 예비사회적기업 지정제도 및 사회적기업 인증추천제도 운영지침(2026.7, 기후에너지환경부)」,「2026년도 사회적기업 인증 업무지침(2026.1, 고용노동부)」에 따라 2026년 환경형 예비사회적기업 지정계획을 다음과 같이 공고합니다. ☞「사회적기업 육성법」제8조 및 같은 법 시행령 제8조에 따른 조직형태를 갖추고 환경분야에서 사회적 목적 실현을 추구하는 기업 ※ 자세한 지원대상 공고문 참조 ☞ 지정서 발급일로부터 3년 지정 지원 - 지정기간은 3년으로 하며, 부처형ㆍ지역",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
       ]
     },
     {
@@ -6746,6 +7013,60 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000124927",
+      "source": "bizinfo",
+      "title": "2026년 3차 산업기술R&D연구기획사업 신규지원 대상과제 공고",
+      "org": "산업통상부 · 한국산업기술기획평가원",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-29",
+      "applyEnd": "2026-08-27",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124927",
+      "summary": "산업기술R&D연구기획사업의 2026년도 제3차 신규지원 대상과제를 다음과 같이 공고하오니 동 사업에 참여를 희망하는 기관(기업)에서는 신청하여 주시기 바랍니다. ☞ 기업, 대학, 연구기관, 연구조합, 사업자단체, 의료기관 등 - 「산업기술혁신촉진법」 제11조 제2항 및 같은 법 시행령 제11조, 「산업기술혁신사업 공통 운영요령」 제2조제1항제3호, 제4호 및 제4의2호, 9의2부터 9의5에 해당하는 기관 ☞ 산업기술분야 신규 R&D 사업기획 연구개발비 지원 - 대형사업기획 : 총사업비 1천억(국비 500억) 이상인 대형규모 R&D ",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "kstartup-178710",
+      "source": "kstartup",
+      "title": "창업 초보를 위한 창업 A-Z 교육",
+      "org": "하우그로우 원격평생교육원",
+      "category": "멘토링ㆍ컨설팅ㆍ교육",
+      "sector": "교육·컨설팅",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "일반인,일반기업,1인 창조기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-27",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178710",
+      "summary": "하우그로우 원격평생교육원에서는 8월 창업 교육에 참여할 참여자를 모집 중에 있으니 많은 신청 바랍니다. 참여를 원하시는 분은 첨부드린 링크의 구글폼을 제출하여 신청 부탁드리겠습니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124508",
       "source": "bizinfo",
       "title": "2026년 3차 공급망안정화지원 지원사업 참여기업 모집 공고",
@@ -6797,6 +7118,33 @@
       "firstSeen": "2026-07-28",
       "sources": [
         "bizinfo"
+      ]
+    },
+    {
+      "id": "kstartup-178686",
+      "source": "kstartup",
+      "title": "2026년 2차 28청춘창업소 신규 입주기업 모집",
+      "org": "고양산업진흥원",
+      "category": "시설ㆍ공간ㆍ보육",
+      "sector": "시설·공간",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "대학생,일반인,일반기업",
+      "applyStart": "2026-07-27",
+      "applyEnd": "2026-08-28",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178686",
+      "summary": "28청춘창업소는 고양특례시 대표 청년창업공간입니다. 고양산업진흥원이 운영하는 고양시 대표 청년 창업공간인 28청춘창업소에서「2026년 2차 28청춘창업소 신규 입주기업」신청자를 아래와 같이 모집하오니 관심 있는 고양시 청년 창업가들의 많은 참여 바랍니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 이상 ~ 만 39세 이하",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
       ]
     },
     {
@@ -6876,6 +7224,101 @@
       "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
       "privateHost": false,
       "firstSeen": "2026-07-20",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124881",
+      "source": "bizinfo",
+      "title": "2026년 3차 IoT제품 개발 및 데이터분석 과제기획 수요기업 모집 공고",
+      "org": "산업통상부 · 한국전자정보통신산업진흥회",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-31",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124881",
+      "summary": "한국전자정보통신산업진흥회(KEA) 디지털혁신실에서는 \"IoT 제품 개발을 준비중이거나 IoT제품은 만들었는데 데이터는 어떻게 써야 할지 막막하다\", \"데이터는 쌓이는데 서비스나 사업으로 연결이 안 된다\" 이런 고민을 가진 기업을 위해 KEA가 IoT 제품 개발부터 데이터 분석ㆍ활용까지 실무 중심으로 무상 지원합니다. 위 지원사업과 관련하여 상담을 희망하시는 기업은 아래 신청서를 작성해 주시길 바랍니다. ☞ IoT제품 개발 및 데이터 분석이 필요한 기업 - IoT 가전ㆍ전자ㆍ디바이스 제품 개발을 준비중이거나 보유한 기업 - 제품 데이",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124884",
+      "source": "bizinfo",
+      "title": "2026년 한국식품연구원 식품기술대상 모집 공고",
+      "org": "농림축산식품부 · 한국식품연구원",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-31",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124884",
+      "summary": "연구개발과 기술혁신을 적극적으로 추진하여 식품산업의 발전에 기여한 식품업체 종사자에 포상을 실시함으로써 제품개발에 대한 동기 부여 및 우리 식품기술의 우수성을 확산하고자「2026년 한국식품연구원 식품기술대상 모집」을 실시 합니다. 관심 있는 기업의 많은 참여를 바랍니다. ☞ 국내 식품산업체 - 대상제품 : 국내에서 생산 및 출시되는 식품 전 부문(김치류 제외) ☞ 과학기술정보통신부장관상 및 농림축산식품부장관상 수여 지원 ※ 자세한 지원내용 공고문 참조",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "2026 한국식품연구원 식품기술대상 모집공고.hwp",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766780&fileSn=1"
+        },
+        {
+          "name": "2026 식품기술대상 포스터.pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766780&fileSn=2"
+        },
+        {
+          "name": "2026 한국식품연구원 식품기술대상 모집공고+.pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766779&fileSn=1"
+        }
+      ]
+    },
+    {
+      "id": "kstartup-178693",
+      "source": "kstartup",
+      "title": "(기간연장)[창업점검] 2026년 체육인 직업안정사업(창업열매) 참여자 추가 모집_(~8.31마감시)",
+      "org": "국민체육진흥공단",
+      "category": "사업화",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-28",
+      "applyEnd": "2026-08-31",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178693",
+      "summary": "체육인의 직업 전환을 지원하여 생활 불안정성을 완화하고, 역량별 맞춤 지원을 통해 창업 성공률을 높이며 진로 선택의 폭을 확대하고자 「2026년 체육인 직업안정 사업(창업지원) 창업점검과정(열매)」 참여자를 다음과 같이 모집하오니 많은 관심과 참여 바랍니다. ※ 체육인 복지 시행지침 개정으로 체육인 인정 대회 범위 확대(경기 단체 주관 전국대회 출전 경력도 포함)",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": true,
+      "firstSeen": "2026-07-30",
       "sources": [
         "kstartup"
       ]
@@ -7211,6 +7654,33 @@
       ]
     },
     {
+      "id": "kstartup-178633",
+      "source": "kstartup",
+      "title": "「2026 기업가정신 확산 및 진흥 유공」 포상 신청 공고",
+      "org": "한국청년기업가정신재단",
+      "category": "창업교육",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-07-13",
+      "applyEnd": "2026-09-11",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178633",
+      "summary": "기업가정신 생태계 구축과 문화조성에 기여한 공적이 있는 단체 또는 개인의 성과와 노고를 격려하기 위한 「2026 기업가정신 확산 및 진흥 유공」 포상 신청·접수를 아래와 같이 공고하오니 많은 참여 바랍니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": true,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124473",
       "source": "bizinfo",
       "title": "2026년 2차 온라인수출 중소기업 물류 지원 사업 참여기업 모집 공고",
@@ -7260,6 +7730,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-07-27",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124883",
+      "source": "bizinfo",
+      "title": "제33회 기업혁신대상 모집 공고",
+      "org": "산업통상부 · 대한상공회의소",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-07-29",
+      "applyEnd": "2026-09-23",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124883",
+      "summary": "대한상공회의소는 1994년부터 산업통상부와 공동으로「기업혁신대상」을 개최하고 있습니다. 올해 33회째를 맞이하는「기업혁신대상」은 우리 기업의 경영혁신과 ESG경영 모범사례 발굴ㆍ시상을 통해 기업들의 큰 호평을 받고 있습니다. 이번 시상에서는 특히 AI 등 첨단 기술의 산업 융합과 실질적인 ESG 가치 창출을 이루어낸 현장의 혁신 사례를 집중 조명하고자 합니다. 이에 대한민국 산업계를 선도할「기업혁신대상」의 새로운 주인공을 찾기 위해 다음과 같이 응모와 심사를 진행하오니 혁신 경영과 ESG 경영 실천을 주도하는 국내 우수 기업들의 많",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
       "sources": [
         "bizinfo"
       ]
@@ -7815,33 +8312,6 @@
       ]
     },
     {
-      "id": "bizinfo-PBLN_000000000122273",
-      "source": "bizinfo",
-      "title": "2026년 찾아가는 1:1 디지털 교육 소상공인 모집 공고",
-      "org": "중소벤처기업부 · 소상공인시장진흥공단",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "소상공인",
-      "applyStart": "2026-05-20",
-      "applyEnd": "2026-11-30",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122273",
-      "summary": "소상공인의 온라인 판로 진출 및 디지털 전환 실현을 위한「’26년 찾아가는 1:1 디지털 교육」에 참여를 희망하는 소상공인을 모집합니다. ☞ 온라인 진출의사가 있으나, 디지털 활용 수준 및 경영여건으로 집체교육 참여가 어려운 디지털 취약계층 소상공인 - ｢소상공인 기본법｣ 제2조에 따른 소상공인으로, 신청일 현재 정상적으로 영업 중인 점포 ☞ 집합교육 참여가 어려운 소상공인을 대상으로 온라인 플랫폼 입점 및 홍보 방법 등 찾아가는 1:1 디지털 교육 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
       "id": "kstartup-177563",
       "source": "kstartup",
       "title": "2026년 수출 중소·중견기업을 위한 ESG 공급망 컨설팅 지원사업",
@@ -8304,196 +8774,6 @@
       "firstSeen": "2026-07-20",
       "sources": [
         "kstartup"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122121",
-      "source": "bizinfo",
-      "title": "2026년 해외 상표 무단선점 심층조사 지원사업 공고",
-      "org": "지식재산처 · 한국지식재산보호원",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122121",
-      "summary": "해외에서 국내 상표의 무단선점 피해를 예방하고 피해 발생 시 맞춤형 대응 전략을 제공하는 「해외 상표 무단선점 심층조사 지원사업」을 다음과 같이 공고합니다. ☞ 국내 사업자로 등록된 기업으로 해외에서 상표 무단선점 피해가 발생하였거나 피해가 예상되는 중소(개인사업자 포함)ㆍ중견기업 ☞ 전문수행기관을 통한 해외 상표 무단선점 종합분석 보고서 및 맞춤형 온라인 상담 지원 ※ 자세한 지원내용 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122145",
-      "source": "bizinfo",
-      "title": "2026년 미래내일 일경험 사업 참여기업 모집 공고(인턴형)",
-      "org": "고용노동부 · 전남인력개발원",
-      "category": "인력",
-      "sector": "인력",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122145",
-      "summary": "전남인력개발원은 고용노동부, 대한상공회의소와 청년 일경험 기회 제공을 위하여 「2026년 미래내일 일경험 지원사업(인턴형)」 참여기업을 다음과 같이 모집하오니 우수기업들의 많은 참여 바랍니다. ☞ 고용보험 피보험자 10인 이상 기업, 공공기관, 지방공기업, 비영리단체, 비영리법인 등 ※ 단, 벤처기업, Inno-Biz, Main-Biz, 사회적기업은 10인 미만 참여 가능 ☞ 총 8주 기준, 청년 1인당 (기업지원금) 40만원 (멘토수당) 30만원 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122147",
-      "source": "bizinfo",
-      "title": "2026년 영업비밀ㆍ기술 보호 컨설팅 모집 공고",
-      "org": "지식재산처 · 한국지식재산보호원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122147",
-      "summary": "중소ㆍ중견기업, 대학ㆍ공공연구기관의 기술유출 방지 및 영업비밀 보호 강화를 위한 「2026년 영업비밀ㆍ기술 보호 컨설팅」을 아래와 같이 변경하여 공고합니다. ☞ 중소ㆍ중견기업, 대학ㆍ공공연구기관 ☞ 단계별 컨설팅(기초ㆍ심화) 및 공공연 등 맞춤형 컨설팅 지원 ※ 자세한 지원내용 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122268",
-      "source": "bizinfo",
-      "title": "2026년 2차 메카노바이오활성소재 혁신의료기기 실증 기반구축 생물학적 시험평가인증 지원사업 공고(산업혁신기반구축사업)",
-      "org": "산업통상부 · 국가독성과학연구소",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122268",
-      "summary": "「국가독성과학연구소 전북첨단바이오연구본부 중개독성연구센터」에서는 산업통상자원부와 전북특별자치도 및 전주시가 함께 지원하는 2026년도 산업혁신 기반 구축 사업의 일환으로, 생물학적 시험평가인증 지원사업을 다음과 같이 공고하오니 의료기기 전ㆍ후방 산업군에 해당하는 중소ㆍ중견기업의 많은 참여 바랍니다. ☞ 의료기기 전ㆍ후방 산업군에 해당하는 전국의 중소ㆍ중견기업 ☞ 설치류 급성전신독성시험 지원(기업당 최대 800만 원 상당)",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "[양식] 신청서_생물학적 시험평가인증 지원사업.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=0"
-        },
-        {
-          "name": "[양식] 신청서_생물학적 시험평가인증 지원사업.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=1"
-        },
-        {
-          "name": "[공고문] 2026년 생물학적 시험평가인증 지원사업 (2차).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756541&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122309",
-      "source": "bizinfo",
-      "title": "2026년 바이오 의료기기 해외 진출 지원 제로트러스트 기반구축사업 참여기업 상시 지원 모집 공고",
-      "org": "산업통상부 · 한국산업기술시험원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122309",
-      "summary": "2026년부터 산업통상자원부가 시행하는 바이오산업기반구축사업 내「바이오의료기기 해외진출지원 제로트러스트 기반구축」과제를 수행하고 있는 건양대학교 산학협력단입니다. 본 과제는 제품의 잠재적 사용오류 및 유용성 개선 등을 통해 국내 의료기기 제품의 글로벌 인허가 대응력 강화를 위한 지원을 수행하고 있습니다. 본 사업단에서 지원하는 분야에 대한 상세 내용을 아래와 같이 공고하오니, 참여를 희망하는 역량있는 기업들의 많은 신청 바랍니다. ☞ 해외 시장 진출을 목표로 하며, 지원이 필요한 경쟁력 있는 바이오 의료기기 제조 기업(HWSW) -",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "붙임2.+2026년+바이오+의료기기+해외진출지원+제로트러스트+기반+구축+참여기업+상시+지원+모집+신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756628&fileSn=0"
-        },
-        {
-          "name": "붙임2.+2026년+바이오+의료기기+해외진출지원+제로트러스트+기반+구축+참여기업+상시+지원+모집+신청서.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756628&fileSn=1"
-        },
-        {
-          "name": "붙임1.+2026년+바이오+의료기기+해외진출지원+제로트러스트+기반+구축+참여기업+상시+지원+모집+공고.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756627&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122333",
-      "source": "bizinfo",
-      "title": "2026년 SDV 전장부품 보안 평가센터 기업지원사업 수혜기업 모집 공고",
-      "org": "산업통상부 · 지능형자동차부품진흥원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122333",
-      "summary": "지능형자동차부품진흥원에서는 SDV 지향 전장부품 기업 해외 시장 진출 촉진과 기술 경쟁력 확보를 위한 기업지원 프로그램 운영을 통한 기술 및 사업화 지원을 위해「2026년 SDV 전장부품 보안 평가센터 기업지원사업」수혜기업을 모집 공고하오니 국내 중소ㆍ중견 전장부품 기업의 많은 관심과 신청 바랍니다. ☞ 국내 중소ㆍ중견 전장부품 기업 ☞ 해외 수출 지원, 성능 평가 지원, 기술 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
       ]
     },
     {
@@ -9300,33 +9580,6 @@
       ]
     },
     {
-      "id": "bizinfo-PBLN_000000000124238",
-      "source": "bizinfo",
-      "title": "2026년 중소벤처기업부 소상공인 정책자금 융자사업 3차 변경 공고",
-      "org": "중소벤처기업부 · 소상공인시장진흥공단",
-      "category": "금융",
-      "sector": "자금·융자",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "소상공인",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124238",
-      "summary": "「소상공인 보호 및 지원에 관한 법률」 제9조에 의한 “2026년 중소벤처기업부 소상공인 정책자금 융자사업”을 다음과 같이 공고합니다. ☞ 「소상공인기본법」제2조 및 같은 법 시행령 제3조의 소상공인 ※ 세부사업별 지원대상 상이, 자세한 사항 공고문 참조 ☞ 일반경영안정자금, 특별경영안정자금, 성장기반자금 등 지원 ※ 세부사업별 지원대상 상이, 자세한 사항 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
       "id": "bizinfo-PBLN_000000000124274",
       "source": "bizinfo",
       "title": "2026년 그린바이오 소재 첨단분석시스템 활성화 지원사업(장비 활용) 수혜기업 모집 공고",
@@ -9765,6 +10018,97 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000124909",
+      "source": "bizinfo",
+      "title": "2026년 중소벤처기업부 소상공인 정책자금 융자사업 4차 변경 공고",
+      "org": "중소벤처기업부 · 소상공인시장진흥공단",
+      "category": "금융",
+      "sector": "자금·융자",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "소상공인",
+      "applyStart": null,
+      "applyEnd": null,
+      "alwaysOpen": true,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124909",
+      "summary": "「소상공인 보호 및 지원에 관한 법률」제9조에 의한 “2026년 중소벤처기업부 소상공인 정책자금 융자사업”을 다음과 같이 공고합니다. ☞ 「소상공인기본법」제2조 및 같은 법 시행령 제3조의 소상공인 ※ 세부사업별 지원대상 상이, 자세한 사항 공고문 참조 ☞ 일반경영안정자금, 특별경영안정자금, 성장기반자금 등 지원 ※ 세부사업별 지원대상 상이, 자세한 사항 공고문 참조",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124926",
+      "source": "bizinfo",
+      "title": "2026년 AI 기반 조명산업의 자원순환 및 서비스화 실증 기반구축 사업 기업지원사업 통합 상시 모집 공고",
+      "org": "산업통상부 · 인천테크노파크",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": null,
+      "applyEnd": null,
+      "alwaysOpen": true,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124926",
+      "summary": "차세대 조명기술 트렌드 및 순환경제형 조명서비스 시장 수요에 대응할 수 있는 제품ㆍ서비스 기업지원사업을 안내하오니, 참여를 희망하는 관련 기업들의 많은 신청 바랍니다. ☞ 친환경 조명 소재ㆍ부품, 모듈러LEDㆍ스마트조명, 조명서비스화 및 관련 전기ㆍ전자제품 분야 기업 ☞ 기업 애로기술, 기반구축 인프라 지원서비스 지원 - 기업 애로기술 : 제품 개발에 필요한 요소기술 전문가 지도 - 기반구축 인프라 지원 서비스 : 방진ㆍ방수 성능 확인을 위한 내환경성 시험ㆍ평가, LCA 기반 전과정 탄소 및 폐기물 발생량 검증 지원, 사이버보안 취",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124913",
+      "source": "bizinfo",
+      "title": "2026년 베트남 호치민 의료기기 전시회 참여기업 모집 공고(지능형 헬스케어제품 기반 실증ㆍ사업화 지원사업)",
+      "org": "산업통상부 · 부산테크노파크",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-08-03",
+      "applyEnd": "2026-08-11",
+      "alwaysOpen": false,
+      "status": "upcoming",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124913",
+      "summary": "산업통상부와 부산광역시에서 지원하는 바이오나노산업 개방형 생태계 조성사업 「지능형 헬스케어 제품기반 실증․사업화지원」사업의 기업지원을 공고하오니 동 사업에 참여를 희망하는 지능형 헬스케어 관련 기업의 많은 참여 바랍니다. ☞ 지능형 헬스케어 제품 관련 기업 - 지원분야 : 지능형 돌봄케어, 치료기기, 건강관리ㆍ예방관리, 리빙케어 ☞ 전시회 참가, 수출상담회 참가 지원 - 전시회 참가 : 전시부스, 부스디자인 제작, 통역, 번역 등 지원 - 수출상담회 참가 : 수출상담회 부스 임차 및 운영, 통역, 번역 등 지원 ※ 자세한 지원내용 ",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "[신청서]+베트남+호치민+의료기기+전시회(Pharmedi+2026)+수출상담회+지원_최종.hwp",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766866&fileSn=0"
+        },
+        {
+          "name": "[통합공고문]+베트남+호치민+의료기기+전시회(Pharmedi+2026)+지원(전시회+및+수출상담회)_최종.hwp",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766865&fileSn=0"
+        }
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000124576",
       "source": "bizinfo",
       "title": "2026년 하반기 농림식품신기술(NET) 인증제 시행계획 공고",
@@ -9798,33 +10142,6 @@
       ]
     },
     {
-      "id": "bizinfo-PBLN_000000000124664",
-      "source": "bizinfo",
-      "title": "특화 인공지능 파운데이션 모델 개발(사이버보안분야) 사업 공고",
-      "org": "과학기술정보통신부 · 정보통신산업진흥원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-08-07",
-      "applyEnd": "2026-08-21",
-      "alwaysOpen": false,
-      "status": "upcoming",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124664",
-      "summary": "과학기술정보통신부와 정보통신산업진흥원은 우리나라의 사이버 보안 분야에 AI 기술을 적용하여 국내 자체 보안 AI 기술 역량 축적과 보안 산업의 AX 혁신 가속화 등을 제고하기 위해 사이버 보안에 특화된 독자 AI 파운데이션 모델 개발을 지원하고자 아래와 같이 공고하오니, 많은 관심과 참여를 바랍니다. ☞ 국내 AIㆍ사이버보안 관련 기업ㆍ대학ㆍ연구기관 등(컨소시엄 가능) ☞ 국내 AIㆍ사이버보안 관련 기업ㆍ기관(컨소시엄) 대상 사이버 보안 특화 인공지능 파운데이션모델 개발에 필요한 고성능 GPU 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-07-27",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
       "id": "bizinfo-PBLN_000000000124782",
       "source": "bizinfo",
       "title": "2026년 하반기 혁신제품 지정제도 시행계획 공고",
@@ -9855,6 +10172,33 @@
           "name": "2026년도 하반기 혁신제품 지정제도 시행계획 공고.hwpx",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766302&fileSn=0"
         }
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124664",
+      "source": "bizinfo",
+      "title": "특화 인공지능 파운데이션 모델 개발(사이버보안분야) 사업 수정 공고",
+      "org": "과학기술정보통신부 · 정보통신산업진흥원",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-08-07",
+      "applyEnd": "2026-08-26",
+      "alwaysOpen": false,
+      "status": "upcoming",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124664",
+      "summary": "과학기술정보통신부와 정보통신산업진흥원은 우리나라의 사이버 보안 분야에 AI 기술을 적용하여 국내 자체 보안 AI 기술 역량 축적과 보안 산업의 AX 혁신 가속화 등을 제고하기 위해 사이버 보안에 특화된 독자 AI 파운데이션 모델 개발을 지원하고자 아래와 같이 수정 공고하오니, 많은 관심과 참여를 바랍니다. ☞ 국내 AIㆍ사이버보안 관련 기업ㆍ대학ㆍ연구기관 등(컨소시엄 가능) ☞ 국내 AIㆍ사이버보안 관련 기업ㆍ기관(컨소시엄) 대상 사이버 보안 특화 인공지능 파운데이션모델 개발에 필요한 고성능 GPU 지원",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-27",
+      "sources": [
+        "bizinfo"
       ]
     },
     {
@@ -9892,6 +10236,87 @@
           "name": "2026년 제3차 고령친화우수식품 신규지정 공고 계획 공고문+.pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000763447&fileSn=1"
         }
+      ]
+    },
+    {
+      "id": "kstartup-178687",
+      "source": "kstartup",
+      "title": "2026 신용보증기금 「혁신아이콘」제16기 모집 공고",
+      "org": "신용보증기금",
+      "category": "정책자금",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "일반기업",
+      "applyStart": "2026-08-03",
+      "applyEnd": "2026-08-26",
+      "alwaysOpen": false,
+      "status": "upcoming",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178687",
+      "summary": "신용보증기금은 혁신 생태계 활력 제고를 위해 성장 유망한 혁신기업을 발굴·지원하는 「혁신아이콘 지원 프로그램」대상기업 공모를 시행하오니, 관심 있는 기업의 적극적인 참여를 부탁드립니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "3년미만,5년미만,7년미만,10년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000124904",
+      "source": "bizinfo",
+      "title": "2026년 표준공정 기반 공정최적화 기술개발사업(공정최적화R&D) 시행계획 공고",
+      "org": "중소벤처기업부 · 중소기업기술정보진흥원",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-08-10",
+      "applyEnd": "2026-08-28",
+      "alwaysOpen": false,
+      "status": "upcoming",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124904",
+      "summary": "「2026년도 표준공정 기반 공정최적화 기술개발사업(공정최적화R&D)」의 시행계획을 다음과 같이 공고하오니, 동 사업에 참여하고자 하는 중소기업 및 연구기관은 사업안내에 따라 신청하시기 바랍니다. ☞ (주관연구개발기관) 「중소기업기본법」제2조에서 정한 중소기업 ※ 단, 공장등록증을 보유하고 있으며, (내역1) 사전연구 및 제조현장진단에서 전문연구기관의 제조현장 진단을 받은 중소제조기업에 한함 - (공동연구개발기관) 전문연구기관, 스마트제조기술기업 ※ 자세한 지원대상 공고문 참조 ☞ 공정 최적화 기술개발 과제 당 최대 2년, 10억원",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "kstartup-178709",
+      "source": "kstartup",
+      "title": "2026년 창업진흥원 정책 아이디어 공모전",
+      "org": "창업진흥원",
+      "category": "행사ㆍ네트워크",
+      "sector": "행사·네트워크",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-08-03",
+      "applyEnd": "2026-09-03",
+      "alwaysOpen": false,
+      "status": "upcoming",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178709",
+      "summary": "창업진흥원은 창업 환경을 개선할 수 있는 실현 가능성 높은 아이디어 발굴을 위해 '2026년 창업진흥원 정책 아이디어 공모전' 참여자를 아래와 같이 모집합니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": false,
+      "firstSeen": "2026-07-30",
+      "sources": [
+        "kstartup"
       ]
     }
   ]
