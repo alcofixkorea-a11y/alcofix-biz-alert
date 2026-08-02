@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-01T16:20:51.055+09:00",
-  "today": "2026-08-01",
+  "generatedAt": "2026-08-02T16:40:06.505+09:00",
+  "today": "2026-08-02",
   "sources": {
     "kstartup": {
       "count": 102
     },
     "bizinfo": {
-      "count": 230
+      "count": 229
     }
   },
   "items": [
@@ -7561,33 +7561,6 @@
       "status": "open",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121849",
       "summary": "자동차부품 관련 기업의 기술경쟁력 강화 및 미래차 산업 대응 역량 확보를 위해「xEV 보호차체 충돌안전 기업지원사업」을 다음과 같이 공고합니다. ☞ xEV 보호차체 분야 부품 제조기업 ※ xEV : 하이브리드(HEV), 전기차(EV), 수소차(PHEV) 등 전력 기반 구동차 ※ 보호차체 : 충돌안전과 관련된 차체/섀시 부품 일체 ☞ 전주기(패키지형 서비스), 시제품 제작, 설계해석, 시험평가, 현장애로기술 지원 - 전주기, 시제품 제작 지원은 기업당 1개만 신청가능",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-08-01",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000121853",
-      "source": "bizinfo",
-      "title": "2026년 업종별 임금체계 개선 지원 사업 참여기업 모집 공고",
-      "org": "고용노동부 · 한국인공지능소프트웨어산업협회",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121853",
-      "summary": "금년도 저희 협회는 급변하는 IT업계 환경 속, 연봉 협상, 보상 불균형, 인사 제도 개선 등에 어려움을 겪고 있는 기업을 지원해드리고자 IT업종 전문 컨설팅 기관(시앤피컨설팅)과 함께 「IT 업종별 임금체계 개선 컨설팅」을 실시하고 있습니다. 전문 컨설턴트가 기업의 현황을 진단하고, IT기업 특성을 반영한 실질적 임금체계개선 솔루션을 함께 설계해드립니다. ☞ 연공 중심에서 직무ㆍ성과 중심 문화로 전환하고자 하는 기업 - 체계적인 보상 시스템을 통해 인재 확보 및 유지를 고민 중인 기업 - 현 인사제도나 임금체계에 문제의식을 느끼는",
       "foodBio": false,
       "youngOk": null,
       "enyyOk": null,
