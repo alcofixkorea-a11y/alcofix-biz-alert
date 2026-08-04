@@ -13,8 +13,10 @@
   --text: #151a20;
   --muted: #5c6773;
   --line: #e1e6ea;
-  --accent: #0f6f5c;
-  --accent-soft: #e3f1ee;
+  --accent: #0a6b39;
+  --accent-soft: #e3f0e6;
+  --accent-cyan: #0f9dc4;
+  --accent-cyan-soft: #e1f2f7;
   --red: #b3261e;
   --red-soft: #fbe9e7;
   --star: #a3790f;
@@ -90,7 +92,7 @@ select {
 .toggle { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--muted); cursor: pointer; user-select: none; }
 .toggle input { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
 
-.viewbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.viewbar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; margin-bottom: 16px; }
 .seg { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 2px; flex-wrap: wrap; }
 .seg button {
   border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 600;
@@ -161,6 +163,28 @@ select {
 /* ---- 배너 섹션 전용 소형 카드 ---- */
 .card2-mini { padding: 12px 14px; gap: 6px; }
 .card2-mini .c2-title { font-size: 13px; -webkit-line-clamp: 2; }
+
+/* ---- 표(테이블) 보기 ---- */
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+.prog-table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 760px; }
+.prog-table th {
+  text-align: left; font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap;
+  background: var(--bg); position: sticky; top: 0;
+}
+.prog-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.prog-table tbody tr:last-child td { border-bottom: 0; }
+.prog-table tbody tr:hover { background: var(--bg); }
+.prog-table td.num { color: var(--muted); font-variant-numeric: tabular-nums; }
+.prog-table td.title-cell { max-width: 340px; }
+.prog-table .t-link { color: var(--text); text-decoration: none; font-weight: 600; }
+.prog-table .t-link:hover { color: var(--accent); text-decoration: underline; }
+.prog-table td.period { white-space: nowrap; }
+.prog-table .detail-link {
+  display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px;
+  border: 1px solid var(--line); border-radius: 7px; color: var(--muted); text-decoration: none; flex-shrink: 0;
+}
+.prog-table .detail-link:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ---- 분야 버튼 바 ---- */
 .sectorbar { display: flex; gap: 7px; flex-wrap: wrap; }
@@ -308,6 +332,10 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
           <button data-view="list" class="active">목록</button>
           <button data-view="cal">마감 달력</button>
         </div>
+        <div class="seg" id="listModeSeg">
+          <button data-mode="card" class="active">카드</button>
+          <button data-mode="table">표</button>
+        </div>
       </div>
       <div id="bannerSections"></div>
       <div class="sec-head">전체 공고</div>
@@ -336,9 +364,14 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 
       <div class="sidebar-block">
         <h4>필터</h4>
-        <div class="seg" id="orgSeg" style="width:100%">
-          <button data-org="all" class="active">전체</button>
-          <button data-org="중앙부처·공공">중앙부처·공공</button>
+        <div class="seg" id="regionSeg" style="width:100%">
+          <button data-region="all" class="active">전체 지역</button>
+          <button data-region="전국">전국통합</button>
+          <button data-region="세종">세종</button>
+        </div>
+        <div class="seg" id="orgSeg" style="width:100%; margin-top:6px">
+          <button data-org="all" class="active">전체 기관</button>
+          <button data-org="중앙부처·공공">중앙부처</button>
           <button data-org="지자체">지자체</button>
           <button data-org="민간">민간</button>
         </div>
@@ -407,6 +440,21 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 <script>
 const SECTOR_ORDER = ["자금·융자", "기술·R&D", "창업·사업화", "판로·수출", "시설·공간", "교육·컨설팅", "행사·네트워크", "인력", "경영·기타"];
 
+// 분야 아이콘 (Lucide 스타일 최소 SVG, currentColor 상속)
+const SVG_OPEN = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px">';
+const SECTOR_ICONS = {
+  "전체 분야": SVG_OPEN + '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
+  "자금·융자": SVG_OPEN + '<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 6v12M18 6v12"/></svg>',
+  "기술·R&D": SVG_OPEN + '<path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>',
+  "창업·사업화": SVG_OPEN + '<path d="M12 2l3 7h-6l3-7z"/><path d="M9 9v9l3 3 3-3V9"/></svg>',
+  "판로·수출": SVG_OPEN + '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+  "시설·공간": SVG_OPEN + '<path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6M4 21h16"/></svg>',
+  "교육·컨설팅": SVG_OPEN + '<path d="M4 6a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2V6z"/><path d="M20 6a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2V6z"/></svg>',
+  "행사·네트워크": SVG_OPEN + '<circle cx="6" cy="8" r="2.5"/><circle cx="18" cy="8" r="2.5"/><circle cx="12" cy="17" r="2.5"/><path d="M8 9.5L10.5 15M16 9.5L13.5 15"/></svg>',
+  "인력": SVG_OPEN + '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>',
+  "경영·기타": SVG_OPEN + '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>',
+};
+
 // 유의어 사전: 검색어를 자동 확장한다
 const SYN = {
   "자금": ["융자", "대출", "보증", "금융", "정책자금", "출연"],
@@ -424,7 +472,7 @@ const SYN = {
 const PAGE_SIZE = 10;
 const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
-  view: "list", org: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
+  view: "list", listMode: "card", org: "all", region: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
   decided: new Set(JSON.parse(localStorage.getItem("alcofix_decided") || "[]")),
   profile: null,
@@ -562,6 +610,7 @@ function expandQuery(q) {
 function matches(it, today) {
   if (state.hideIneligible && ineligible(it, today)) return false;
   if (state.org !== "all" && it.orgType !== state.org) return false;
+  if (state.region !== "all" && it.region !== state.region) return false;
   if (state.sector !== "all" && it.sector !== state.sector) return false;
   switch (state.chip) {
     case "open": break;
@@ -654,9 +703,42 @@ function paginationHtml(current, total) {
   </div>`;
 }
 
-function renderList(list, today) {
+function renderList(list, today, startNum) {
   if (!list.length) return `<div class="empty">조건에 맞는 공고가 없습니다.<br>검색어나 필터를 바꿔보세요.</div>`;
+  if (state.listMode === "table") return tableHtml(list, today, startNum || 1);
   return `<div class="card-grid">${list.map((it) => cardHtml(it, today)).join("")}</div>`;
+}
+
+// 기관마당식 표(테이블) 보기. org 필드가 "소관 · 수행" 형태로 합쳐져 있으면 분리해서 표시
+function splitOrg(org) {
+  if (!org) return { jur: "-", exec: "-" };
+  const parts = org.split(" · ");
+  return parts.length > 1 ? { jur: parts[0], exec: parts.slice(1).join(" · ") } : { jur: org, exec: org };
+}
+function tableHtml(list, today, startNum) {
+  const rows = list.map((it, i) => {
+    const dd = dday(it, today);
+    const { jur, exec } = splitOrg(it.org);
+    const period = it.alwaysOpen
+      ? (it.applyStart ? fmtDate(it.applyStart) + " ~ 상시" : "상시 모집")
+      : `${fmtDate(it.applyStart)} ~ ${fmtDate(it.applyEnd)}`;
+    return `<tr>
+      <td class="num">${startNum + i}</td>
+      <td>${esc(it.sector)}</td>
+      <td class="title-cell"><a class="t-link" href="${esc(it.url)}" target="_blank" rel="noopener">${it.region === "세종" && !it.title.includes("세종") ? "[세종] " : ""}${esc(it.title)}</a></td>
+      <td class="period"><span class="c2-dd ${dd.cls === "urgent" ? "urgent" : ""}">${dd.label}</span><br>${period}</td>
+      <td>${esc(jur)}</td>
+      <td>${esc(exec)}</td>
+      <td>${esc(it.firstSeen || "")}</td>
+      <td><a class="detail-link" href="${esc(it.url)}" target="_blank" rel="noopener" title="상세보기" aria-label="상세보기">→</a></td>
+    </tr>`;
+  }).join("");
+  return `<div class="table-wrap"><table class="prog-table">
+    <thead><tr>
+      <th>번호</th><th>지원분야</th><th>지원사업명</th><th>신청기간</th><th>소관부처·지자체</th><th>사업수행기관</th><th>등록일</th><th>상세</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>`;
 }
 
 function renderCalendar(list, today) {
@@ -793,17 +875,18 @@ function render() {
     return ok;
   });
   const secBtn = (key, label, n) =>
-    `<button data-sector="${key}" class="${state.sector === key ? "active" : ""}">${label}<span class="n">${n}</span></button>`;
+    `<button data-sector="${key}" class="${state.sector === key ? "active" : ""}">${SECTOR_ICONS[label] || ""}${label}<span class="n">${n}</span></button>`;
   document.getElementById("sectorBar").innerHTML =
     secBtn("all", "전체 분야", base.length) +
     SECTOR_ORDER.map((s) => secBtn(s, s, base.filter((i) => i.sector === s).length)).join("");
 
   const main = document.getElementById("main");
+  document.getElementById("listModeSeg").style.display = state.view === "cal" ? "none" : "inline-flex";
   if (state.view === "cal") {
     main.innerHTML = renderCalendar(list, today);
     document.getElementById("pagination").innerHTML = "";
   } else {
-    main.innerHTML = renderList(pageList, today);
+    main.innerHTML = renderList(pageList, today, (state.page - 1) * PAGE_SIZE + 1);
     document.getElementById("pagination").innerHTML = paginationHtml(state.page, totalPages);
   }
 }
@@ -850,6 +933,18 @@ document.addEventListener("click", (e) => {
   if (org) {
     state.org = org.dataset.org; resetPage();
     document.querySelectorAll("#orgSeg button").forEach((b) => b.classList.toggle("active", b === org));
+    render(); return;
+  }
+  const region = e.target.closest("#regionSeg button");
+  if (region) {
+    state.region = region.dataset.region; resetPage();
+    document.querySelectorAll("#regionSeg button").forEach((b) => b.classList.toggle("active", b === region));
+    render(); return;
+  }
+  const lm = e.target.closest("#listModeSeg button");
+  if (lm) {
+    state.listMode = lm.dataset.mode;
+    document.querySelectorAll("#listModeSeg button").forEach((b) => b.classList.toggle("active", b === lm));
     render(); return;
   }
   const sec = e.target.closest("#sectorBar button");
