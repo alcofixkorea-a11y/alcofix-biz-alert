@@ -64,9 +64,11 @@ const OTHER_REGION_TOKENS = [
   "목포", "여수", "순천", "나주", "광양", "무안",
   "포항", "경주", "김천", "안동", "구미", "영주", "영천", "상주", "문경", "경산",
   "창원", "진주", "통영", "사천", "김해", "밀양", "거제", "양산",
-  // 서울 주요 구·지구명
+  // 서울 25개 자치구
   "서초", "강남", "마포", "성수", "구로", "금천", "송파", "영등포", "종로",
   "용산", "성동", "상암", "여의도", "홍릉",
+  "강동", "강북", "강서", "관악", "광진", "노원", "도봉", "동대문", "동작",
+  "서대문", "성북", "양천", "은평", "중랑",
   // 영문 표기
   "Seoul", "Busan", "Daegu", "Incheon", "Gwangju", "Daejeon", "Ulsan", "Jeju", "Gangwon",
 ];
@@ -97,9 +99,11 @@ function countSido(text) {
   return SIDO_TOKENS.filter((s) => text.includes(s)).length;
 }
 
-// 제목 기준 지역 판별: 세종/전국이 명시돼 있으면 통과, 타 지역명이 있으면 지역 전용으로 간주
-function titleRegion(title) {
-  const t = (title || "").replace(/비수도권/g, ""); // "비수도권"은 세종 포함이므로 수도권 매칭에서 제외
+// 제목+수행기관 기준 지역 판별: 세종/전국이 명시돼 있으면 통과, 타 지역명이 있으면 지역 전용으로 간주.
+// 제목만 보면 지역이 안 드러나도(예: "OOO 챌린지 참여기업 모집") 사업수행기관이
+// "부산창조경제혁신센터"처럼 특정 지역 기관이면 사실상 그 지역 전용인 경우가 많아 org도 함께 검사한다.
+function titleRegion(title, org) {
+  const t = ((title || "") + " " + (org || "")).replace(/비수도권/g, ""); // "비수도권"은 세종 포함이므로 수도권 매칭에서 제외
   if (t.includes("세종")) return "sejong";
   if (OTHER_REGION_TOKENS.some((r) => t.includes(r))) return "other";
   return "neutral";
@@ -215,7 +219,7 @@ async function fetchKstartup() {
     if (region && !region.includes("전국") && !region.includes("세종")) continue;
     // 지역 필드가 전국이어도 제목에 타 지역명이 있으면 사실상 지역 전용 공고 → 제외
     const title = decodeEntities(x.biz_pbanc_nm || "").trim();
-    const tRegion = titleRegion(title);
+    const tRegion = titleRegion(title, x.pbanc_ntrp_nm);
     if (tRegion === "other") continue;
     if (isOffTopic(title, x.supt_biz_clsfc)) continue;
     // 지역 필드에 세종만 콕 집어 있을 때만 세종 공고로 취급 (여러 시도 나열은 전국성 공고)
@@ -290,8 +294,9 @@ async function fetchBizinfo() {
     const sidoCount = countSido(tags);
     const hasSejongTag = tags.includes("세종");
     if (sidoCount > 0 && !hasSejongTag && !tags.includes("전국")) continue;
-    // 제목에 타 지역명이 있으면 지역 전용 공고로 간주하고 제외
-    const tRegion = titleRegion(title);
+    // 제목·수행기관에 타 지역명이 있으면 지역 전용 공고로 간주하고 제외
+    const orgText = [x.jrsdInsttNm, x.excInsttNm].filter(Boolean).join(" · ");
+    const tRegion = titleRegion(title, orgText);
     if (tRegion === "other") continue;
     if (isOffTopic(title, x.pldirSportRealmLclasCodeNm)) continue;
     const isSejong = tRegion === "sejong" || (hasSejongTag && sidoCount <= 3);

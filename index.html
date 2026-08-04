@@ -19,6 +19,10 @@
   --accent-cyan-soft: #e1f2f7;
   --red: #b3261e;
   --red-soft: #fbe9e7;
+  --orange: #b45309;
+  --orange-soft: #fef3e2;
+  --green: #157a45;
+  --green-soft: #e6f4ec;
   --star: #a3790f;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -68,6 +72,7 @@ header .wrap { padding-bottom: 0; }
 .stat .num { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
 .stat .lbl { font-size: 11px; color: var(--muted); margin-top: 1px; }
 .stat.urgent .num { color: var(--red); }
+.stat.fit .num { color: var(--accent-cyan); }
 
 /* ---- 신규 공고 알림 (사이드바 최상단) ---- */
 .new-alert {
@@ -128,6 +133,12 @@ select {
   border-radius: 6px; padding: 3px 9px; font-variant-numeric: tabular-nums; white-space: nowrap;
 }
 .c2-dd.urgent { color: var(--red); background: var(--red-soft); }
+.c2-dd.soon { color: var(--orange); background: var(--orange-soft); }
+.c2-dd.open { color: var(--green); background: var(--green-soft); }
+.fit-badge {
+  font-size: 11px; font-weight: 800; color: var(--accent-cyan); background: var(--accent-cyan-soft);
+  border-radius: 6px; padding: 3px 8px; white-space: nowrap;
+}
 .c2-actions { display: flex; align-items: center; gap: 4px; }
 .c2-title {
   font-size: 14.5px; font-weight: 700; line-height: 1.42;
@@ -569,10 +580,10 @@ function saveDecided() { localStorage.setItem("alcofix_decided", JSON.stringify(
 
 function dday(it, today) {
   if (it.status === "upcoming") return { cls: "upcoming", label: "접수예정 " + fmtDate(it.applyStart) + "~" };
-  if (it.alwaysOpen) return { cls: "always", label: "상시모집" };
+  if (it.alwaysOpen) return { cls: "open", label: "상시모집" };
   const diff = Math.round((new Date(it.applyEnd) - new Date(today)) / 86400000);
   if (diff <= 0) return { cls: "urgent", label: "오늘 마감!" };
-  const cls = diff <= 3 ? "urgent" : "";
+  const cls = diff <= 3 ? "urgent" : diff <= 7 ? "soon" : "open";
   return { cls, label: "D-" + diff };
 }
 
@@ -583,16 +594,32 @@ function ineligible(it, today) {
   const eff = effEligibility(it, today);
   return eff.youngOk === false || eff.enyyOk === false;
 }
-// 알코픽스 조건(자격요건·세종·식품바이오) 부합도 점수. 자격 미달이 확인되면 추천에서 제외(null)
+// 알코픽스 관심 분야 키워드: 해외판로/수출, R&D·시제품·기술사업화, IP·특허·바우처
+const FIT_KEYWORDS = {
+  export: ["수출", "해외", "글로벌", "바이어", "진출", "일본", "중국", "동남아", "전시회", "무역"],
+  rnd: ["R&D", "기술개발", "시제품", "사업화", "기술사업화", "실증"],
+  ip: ["특허", "지식재산", "바우처", "인증", "자율심의", "상표"],
+};
+const FIT_MAX = 15; // enyy2+young2+세종3+식품바이오2+수출2+R&D2+IP1+중앙부처1
+// 알코픽스 조건(자격요건·세종·식품바이오·수출·R&D·IP·중앙부처) 부합도 점수. 자격 미달이 확인되면 추천에서 제외(null)
 function fitScore(it, today) {
   if (ineligible(it, today)) return null;
   const eff = effEligibility(it, today);
+  const hay = (it.title + " " + it.category + " " + it.sector).toLowerCase();
   let score = 0;
   if (eff.enyyOk === true) score += 2;
   if (eff.youngOk === true) score += 2;
   if (it.region === "세종") score += 3;
   if (it.foodBio) score += 2;
+  if (FIT_KEYWORDS.export.some((k) => hay.includes(k.toLowerCase()))) score += 2;
+  if (FIT_KEYWORDS.rnd.some((k) => hay.includes(k.toLowerCase()))) score += 2;
+  if (FIT_KEYWORDS.ip.some((k) => hay.includes(k.toLowerCase()))) score += 1;
+  if (it.orgType === "중앙부처·공공") score += 1;
   return score;
+}
+function fitPercent(it, today) {
+  const s = fitScore(it, today);
+  return s === null ? null : Math.min(100, Math.round((s / FIT_MAX) * 100));
 }
 
 // 검색어 → 유의어 포함 검색어 배열
@@ -624,6 +651,10 @@ function matches(it, today) {
     case "fav": if (!state.favs.has(it.id)) return false; break;
     case "decided": if (!state.decided.has(it.id)) return false; break;
     case "upcoming": if (it.status !== "upcoming") return false; break;
+    case "fit": {
+      const p = fitPercent(it, today);
+      if (p === null || p < 60) return false; break;
+    }
   }
   if (state.q) {
     const hay = (it.title + " " + it.org + " " + it.summary + " " + it.category + " " + it.sector).toLowerCase();
@@ -637,7 +668,7 @@ function matches(it, today) {
 function cardHtml(it, today, opts) {
   opts = opts || {};
   const dd = dday(it, today);
-  const ddCls = dd.cls === "urgent" ? "urgent" : "";
+  const ddCls = dd.cls;
 
   if (opts.compact) {
     return `<a class="card2 card2-mini" href="${esc(it.url)}" target="_blank" rel="noopener">
@@ -650,6 +681,7 @@ function cardHtml(it, today, opts) {
   const decided = state.decided.has(it.id);
   const eff = effEligibility(it, today);
   const isIneligible = ineligible(it, today);
+  const fitPct = fitPercent(it, today);
 
   const metaParts = [];
   if (it.region === "세종") metaParts.push("세종");
@@ -661,7 +693,10 @@ function cardHtml(it, today, opts) {
 
   return `<a class="card2" href="${esc(it.url)}" target="_blank" rel="noopener">
     <div class="c2-top">
-      <span class="c2-dd ${ddCls}">${dd.label}</span>
+      <span style="display:flex;align-items:center;gap:6px;">
+        <span class="c2-dd ${ddCls}">${dd.label}</span>
+        ${fitPct !== null && fitPct >= 60 ? `<span class="fit-badge">🔥 핏 ${fitPct}%</span>` : ""}
+      </span>
       <span class="c2-actions">
         <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "지원결정 ✓" : "지원결정"}</button>
         <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
@@ -719,14 +754,16 @@ function tableHtml(list, today, startNum) {
   const rows = list.map((it, i) => {
     const dd = dday(it, today);
     const { jur, exec } = splitOrg(it.org);
+    const fitPct = fitPercent(it, today);
     const period = it.alwaysOpen
       ? (it.applyStart ? fmtDate(it.applyStart) + " ~ 상시" : "상시 모집")
       : `${fmtDate(it.applyStart)} ~ ${fmtDate(it.applyEnd)}`;
     return `<tr>
       <td class="num">${startNum + i}</td>
+      <td>${fitPct !== null && fitPct >= 60 ? `<span class="fit-badge">🔥 ${fitPct}%</span>` : ""}</td>
       <td>${esc(it.sector)}</td>
       <td class="title-cell"><a class="t-link" href="${esc(it.url)}" target="_blank" rel="noopener">${it.region === "세종" && !it.title.includes("세종") ? "[세종] " : ""}${esc(it.title)}</a></td>
-      <td class="period"><span class="c2-dd ${dd.cls === "urgent" ? "urgent" : ""}">${dd.label}</span><br>${period}</td>
+      <td class="period"><span class="c2-dd ${dd.cls}">${dd.label}</span><br>${period}</td>
       <td>${esc(jur)}</td>
       <td>${esc(exec)}</td>
       <td>${esc(it.firstSeen || "")}</td>
@@ -735,7 +772,7 @@ function tableHtml(list, today, startNum) {
   }).join("");
   return `<div class="table-wrap"><table class="prog-table">
     <thead><tr>
-      <th>번호</th><th>지원분야</th><th>지원사업명</th><th>신청기간</th><th>소관부처·지자체</th><th>사업수행기관</th><th>등록일</th><th>상세</th>
+      <th>번호</th><th>핏</th><th>지원분야</th><th>지원사업명</th><th>신청기간</th><th>소관부처·지자체</th><th>사업수행기관</th><th>등록일</th><th>상세</th>
     </tr></thead>
     <tbody>${rows}</tbody>
   </table></div>`;
@@ -800,8 +837,10 @@ function render() {
     new: items.filter((i) => isNew(i, today)).length,
     fav: items.filter((i) => state.favs.has(i.id)).length,
     decided: items.filter((i) => state.decided.has(i.id)).length,
+    fit: open.filter((i) => { const p = fitPercent(i, today); return p !== null && p >= 60; }).length,
   };
   const statDefs = [
+    ["fit", cnt.fit, "🎯 내 맞춤", "fit"],
     ["open", cnt.open, "모집중 공고", ""],
     ["upcoming", cnt.upcoming, "접수 예정", ""],
     ["urgent", cnt.urgent, "7일 내 마감", "urgent"],
@@ -857,7 +896,9 @@ function render() {
 
   // 목록 계산 + 페이지네이션 (10건씩)
   let list = items.filter((i) => matches(i, today));
-  if (state.sort === "newest" && state.view !== "cal") {
+  if (state.chip === "fit" && state.view !== "cal") {
+    list = [...list].sort((a, b) => (fitScore(b, today) || 0) - (fitScore(a, today) || 0));
+  } else if (state.sort === "newest" && state.view !== "cal") {
     list = [...list].sort((a, b) => (a.firstSeen < b.firstSeen ? 1 : -1));
   }
   const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
