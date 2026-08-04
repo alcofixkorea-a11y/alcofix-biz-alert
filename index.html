@@ -61,18 +61,30 @@ header .wrap { padding-bottom: 0; }
   .sidebar { position: static; order: -1; max-height: none; }
 }
 
-/* ---- 요약 통계 (사이드바용 소형 그리드) ---- */
-.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+/* ---- 요약 통계: 핵심 지표(크게, 상단) ---- */
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 12px; }
 .stat {
   background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
-  padding: 9px 10px; cursor: pointer; transition: box-shadow .15s, border-color .15s;
+  padding: 12px 12px; cursor: pointer; transition: box-shadow .15s, border-color .15s;
 }
 .stat:hover { border-color: var(--accent); }
 .stat.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
-.stat .num { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
-.stat .lbl { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.stat .num { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+.stat .lbl { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
 .stat.urgent .num { color: var(--red); }
 .stat.fit .num { color: var(--accent-cyan); }
+
+/* ---- 요약 통계: 보조 지표(작게, 하단 리스트) ---- */
+.stats-secondary { display: flex; flex-direction: column; gap: 1px; margin-top: 10px; }
+.stat-mini {
+  display: flex; align-items: center; justify-content: space-between; background: transparent;
+  border: 1px solid transparent; border-radius: 7px; padding: 6px 8px !important;
+}
+.stat-mini .sm-lbl { font-size: 12px; color: var(--muted); }
+.stat-mini .sm-num { font-size: 12.5px; font-weight: 700; color: var(--text); }
+.stat-mini:hover { background: var(--bg); }
+.stat-mini.active { border-color: var(--accent); background: var(--accent-soft); }
+.stat-mini.active .sm-num { color: var(--accent); }
 
 /* ---- 신규 공고 알림 (사이드바 최상단) ---- */
 .new-alert {
@@ -106,21 +118,26 @@ select {
 .seg button.active { background: var(--accent); color: #fff; }
 .seg button:focus-visible { outline: 2px solid var(--accent); }
 
-/* ---- 배너 섹션 (추천/세종/식품바이오/마감임박/신규) ---- */
-.banner-section { margin-bottom: 10px; }
-.bs-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
-.bs-head h2 { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-.bs-head .bs-count { font-size: 11.5px; color: var(--muted); font-weight: 600; }
-.bs-head .bs-more {
-  margin-left: auto; border: 0; background: transparent; color: var(--accent); font: inherit;
-  font-size: 11.5px; font-weight: 700; cursor: pointer; padding: 0;
+/* ---- 상단 카드 탭 (추천/세종/식품바이오/마감임박/신규) ---- */
+#bannerSections { margin-bottom: 22px; }
+.bs-tabbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.btabs { display: flex; gap: 4px; flex-wrap: wrap; background: var(--bg); border-radius: 10px; padding: 3px; }
+.btab {
+  border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 12.5px; font-weight: 700;
+  padding: 7px 12px; border-radius: 8px; cursor: pointer; white-space: nowrap;
 }
-.bs-head .bs-more:hover { text-decoration: underline; }
+.btab .n { font-size: 11px; opacity: .7; margin-left: 3px; }
+.btab.active { background: var(--card); color: var(--text); box-shadow: 0 1px 3px rgba(15,23,42,.12); }
+.bs-more2 {
+  margin-left: auto; border: 0; background: transparent; color: var(--accent); font: inherit;
+  font-size: 12px; font-weight: 700; cursor: pointer; padding: 0; white-space: nowrap;
+}
+.bs-more2:hover { text-decoration: underline; }
 
 /* ---- 카드 그리드 (전체 공고·배너 섹션·달력 상세 공용) ---- */
 .count-line { font-size: 13.5px; color: var(--muted); margin-bottom: 12px; }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
-.banner-section .card-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+#bannerSections .card-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
 .card2 {
   display: flex; flex-direction: column; gap: 8px; background: var(--card); border: 1px solid var(--line);
   border-radius: 12px; padding: 16px; text-decoration: none; color: inherit;
@@ -177,18 +194,19 @@ select {
 
 /* ---- 표(테이블) 보기 ---- */
 .table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
-.prog-table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 760px; }
+.prog-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 760px; }
 .prog-table th {
   text-align: left; font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase;
-  letter-spacing: .04em; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap;
+  letter-spacing: .04em; padding: 12px; border-bottom: 1px solid var(--line); white-space: nowrap;
   background: var(--bg); position: sticky; top: 0;
 }
-.prog-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.prog-table td { padding: 15px 12px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.6; color: var(--text); }
+.prog-table tbody tr:nth-child(even) { background: var(--bg); }
 .prog-table tbody tr:last-child td { border-bottom: 0; }
-.prog-table tbody tr:hover { background: var(--bg); }
+.prog-table tbody tr:hover { background: var(--accent-soft); }
 .prog-table td.num { color: var(--muted); font-variant-numeric: tabular-nums; }
 .prog-table td.title-cell { max-width: 340px; }
-.prog-table .t-link { color: var(--text); text-decoration: none; font-weight: 600; }
+.prog-table .t-link { color: var(--text); text-decoration: none; font-weight: 700; }
 .prog-table .t-link:hover { color: var(--accent); text-decoration: underline; }
 .prog-table td.period { white-space: nowrap; }
 .prog-table .detail-link {
@@ -360,6 +378,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
         <h4>현황</h4>
         <div id="newAlert"></div>
         <div class="stats" id="stats"></div>
+        <div class="stats-secondary" id="statsSecondary"></div>
       </div>
 
       <div class="sidebar-block">
@@ -483,7 +502,7 @@ const SYN = {
 const PAGE_SIZE = 10;
 const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
-  view: "list", listMode: "card", org: "all", region: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
+  view: "list", listMode: "card", bannerTab: "fit", org: "all", region: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
   decided: new Set(JSON.parse(localStorage.getItem("alcofix_decided") || "[]")),
   profile: null,
@@ -712,15 +731,6 @@ function cardHtml(it, today, opts) {
   </a>`;
 }
 
-function bannerSectionHtml(label, list, today, chip, note) {
-  if (!list.length) return "";
-  return `<section class="banner-section">
-    <div class="bs-head"><h2>${label}</h2><span class="bs-count">${list.length}건</span>${chip ? `<button class="bs-more" data-chip="${chip}">전체 보기 →</button>` : ""}</div>
-    ${note ? `<div class="bs-note">${note}</div>` : ""}
-    <div class="card-grid">${list.map((it) => cardHtml(it, today, { compact: true })).join("")}</div>
-  </section>`;
-}
-
 function paginationHtml(current, total) {
   if (total <= 1) return "";
   const pages = [1];
@@ -839,19 +849,26 @@ function render() {
     decided: items.filter((i) => state.decided.has(i.id)).length,
     fit: open.filter((i) => { const p = fitPercent(i, today); return p !== null && p >= 60; }).length,
   };
-  const statDefs = [
-    ["fit", cnt.fit, "🎯 내 맞춤", "fit"],
+  // 핵심 지표(크게) + 보조 지표(작은 리스트)로 시각적 위계 분리
+  const primaryDefs = [
     ["open", cnt.open, "모집중 공고", ""],
-    ["upcoming", cnt.upcoming, "접수 예정", ""],
+    ["fit", cnt.fit, "🎯 내 맞춤", "fit"],
     ["urgent", cnt.urgent, "7일 내 마감", "urgent"],
-    ["foodbio", cnt.foodbio, "식품·바이오", ""],
     ["new", cnt.new, "신규 (2일 내)", ""],
-    ["fav", cnt.fav, "스크랩", ""],
-    ["decided", cnt.decided, "지원 결정", ""],
   ];
-  document.getElementById("stats").innerHTML = statDefs.map(([key, num, lbl, extra]) =>
+  const secondaryDefs = [
+    ["upcoming", cnt.upcoming, "접수 예정"],
+    ["foodbio", cnt.foodbio, "식품·바이오"],
+    ["fav", cnt.fav, "스크랩"],
+    ["decided", cnt.decided, "지원 결정"],
+  ];
+  document.getElementById("stats").innerHTML = primaryDefs.map(([key, num, lbl, extra]) =>
     `<div class="stat ${extra} ${state.chip === key ? "active" : ""}" data-chip="${key}">
       <div class="num">${num}</div><div class="lbl">${lbl}</div></div>`
+  ).join("");
+  document.getElementById("statsSecondary").innerHTML = secondaryDefs.map(([key, num, lbl]) =>
+    `<div class="stat stat-mini ${state.chip === key ? "active" : ""}" data-chip="${key}">
+      <span class="sm-lbl">${lbl}</span><span class="sm-num">${num}</span></div>`
   ).join("");
 
   document.getElementById("profileBtn").classList.toggle("set", !!state.profile);
@@ -865,7 +882,8 @@ function render() {
       </div>`
     : "";
 
-  // 배너 섹션 (추천 / 마감임박 / 신규) — 필터링 없이 항상 최신 상위 항목만 보여줌
+  // 상단 카드 탭 (추천/세종/식품바이오/마감임박/신규) — 필터링 없이 항상 최신 상위 항목만 보여줌.
+  // 선택한 탭 1개의 카드만 노출해 메인 목록까지의 스크롤을 줄인다.
   const showBanners = state.view === "list" && !state.q && state.chip === "open";
   let bannersHtml = "";
   if (showBanners) {
@@ -883,14 +901,32 @@ function render() {
     const sejongTop = open.filter((i) => i.region === "세종").sort(byDeadline).slice(0, 4);
     const foodBioTop = open.filter((i) => i.foodBio).sort(byDeadline).slice(0, 4);
     const urgentTop = open.filter((i) => !i.alwaysOpen && i.applyEnd).sort(byDeadline).slice(0, 4);
-    const newTop = items.filter((i) => isNew(i, today)).sort(byDeadline).slice(0, 4);
-    bannersHtml =
-      bannerSectionHtml("추천 지원사업", recommended, today, null,
-        state.profile ? "입력하신 기업 정보 기준으로 자격·세종·식품바이오 부합도가 높은 순" : "세종·식품바이오 기준 추천 — 기업 정보를 입력하면 자격요건까지 반영됩니다") +
-      bannerSectionHtml("세종 지원사업", sejongTop, today) +
-      bannerSectionHtml("바이오·식품 관련 지원사업", foodBioTop, today, "foodbio") +
-      bannerSectionHtml("마감 임박", urgentTop, today, "urgent") +
-      bannerSectionHtml("신규 공고", newTop, today, "new");
+    // 신규는 마감임박이 아니라 "최근 등록일" 기준 최신순으로 — 이전엔 byDeadline을 써서 마감임박과 내용이 겹쳤음
+    const newTop = [...items].filter((i) => isNew(i, today)).sort((a, b) => (a.firstSeen < b.firstSeen ? 1 : -1)).slice(0, 4);
+
+    const TABS = [
+      { key: "fit", label: "추천 지원사업", list: recommended, chip: "fit" },
+      { key: "sejong", label: "세종 지원사업", list: sejongTop, region: "세종" },
+      { key: "foodbio", label: "바이오·식품", list: foodBioTop, chip: "foodbio" },
+      { key: "urgent", label: "마감 임박", list: urgentTop, chip: "urgent" },
+      { key: "new", label: "신규 공고", list: newTop, chip: "new" },
+    ];
+    const activeTab = TABS.find((t) => t.key === state.bannerTab) || TABS[0];
+    const tabBar = TABS.map((t) =>
+      `<button class="btab ${t.key === activeTab.key ? "active" : ""}" data-tab="${t.key}">${t.label}<span class="n">${t.list.length}</span></button>`
+    ).join("");
+    const moreAttrs = `data-chip="${activeTab.chip || ""}" data-region="${activeTab.region || ""}"`;
+    const note = activeTab.key === "fit"
+      ? (state.profile ? "입력하신 기업 정보 기준으로 자격·세종·식품바이오·수출·R&D 부합도가 높은 순" : "세종·식품바이오 등 기준 추천 — 기업 정보를 입력하면 더 정확해집니다")
+      : "";
+    bannersHtml = `<div class="bs-tabbar">
+        <div class="btabs">${tabBar}</div>
+        ${activeTab.list.length ? `<button class="bs-more2" ${moreAttrs}>전체 보기 →</button>` : ""}
+      </div>
+      ${note ? `<div class="bs-note">${note}</div>` : ""}
+      ${activeTab.list.length
+        ? `<div class="card-grid">${activeTab.list.map((it) => cardHtml(it, today, { compact: true })).join("")}</div>`
+        : `<div class="empty" style="padding:24px 0">해당하는 공고가 없습니다.</div>`}`;
   }
   document.getElementById("bannerSections").innerHTML = bannersHtml;
 
@@ -958,9 +994,16 @@ document.addEventListener("click", (e) => {
   if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; resetPage(); render(); return; }
   const alert = e.target.closest(".new-alert");
   if (alert) { state.chip = alert.dataset.chip; resetPage(); render(); return; }
-  const bsMore = e.target.closest(".bs-more");
-  if (bsMore) {
-    state.chip = bsMore.dataset.chip; resetPage(); render();
+  const btab = e.target.closest(".btab");
+  if (btab) { state.bannerTab = btab.dataset.tab; render(); return; }
+  const bsMore2 = e.target.closest(".bs-more2");
+  if (bsMore2) {
+    if (bsMore2.dataset.chip) state.chip = bsMore2.dataset.chip;
+    if (bsMore2.dataset.region) {
+      state.region = bsMore2.dataset.region;
+      document.querySelectorAll("#regionSeg button").forEach((b) => b.classList.toggle("active", b.dataset.region === state.region));
+    }
+    resetPage(); render();
     document.querySelector(".main-col").scrollIntoView({ behavior: "smooth", block: "start" });
     return;
   }
