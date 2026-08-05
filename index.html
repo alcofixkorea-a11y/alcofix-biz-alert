@@ -385,10 +385,11 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
 <div class="gate" id="gate">
   <div class="gate-box">
     <h2>🔒 지원사업 통합 안내 사이트</h2>
-    <p>내부 열람용 페이지입니다. 비밀번호를 입력하세요.</p>
+    <p>내부 열람용 페이지입니다. 로그인이 필요합니다.</p>
     <form id="gateForm">
-      <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="off" autofocus>
-      <button type="submit">입장</button>
+      <input type="email" id="gateEmail" placeholder="이메일" autocomplete="username" autofocus>
+      <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="current-password">
+      <button type="submit">로그인</button>
       <div class="gate-err" id="gateErr"></div>
     </form>
   </div>
@@ -398,6 +399,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   <div class="wrap">
     <div class="h-top">
       <img class="ci-logo" src="assets/ci_alcofix.png" alt="ALCOFIX">
+      <button id="logoutBtn" type="button" style="margin-left:auto;border:0;background:none;cursor:pointer;font:inherit;font-size:12.5px;color:var(--muted)">로그아웃</button>
     </div>
     <div class="h-tagline">지원사업 통합 안내 사이트</div>
   </div>
@@ -527,7 +529,23 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   </footer>
 </div>
 
-<script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {
+  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCSacTSDK_R8O-fp7ASLY1r7ASODlsqh8g",
+  authDomain: "alcofix-59755.firebaseapp.com",
+  projectId: "alcofix-59755",
+  storageBucket: "alcofix-59755.firebasestorage.app",
+  messagingSenderId: "903711899207",
+  appId: "1:903711899207:web:9ff8b39aa12ee8594d3b62",
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
 const SECTOR_ORDER = ["자금·융자", "기술·R&D", "창업·사업화", "판로·수출", "시설·공간", "교육·컨설팅", "행사·네트워크", "인력", "경영·기타"];
 
 // 분야 아이콘 (Lucide 스타일 최소 SVG, currentColor 상속)
@@ -570,26 +588,26 @@ const state = {
 function resetPage() { state.page = 1; }
 
 // ---- 비밀번호 잠금 (완전한 보안이 아닌 최소한의 접근 잠금입니다) ----
-const GATE_HASH = "d0c3d13dd69feede8d4b7c2d4191919ee3e38976c5d64e3ec4af5f5fe2803726";
-async function sha256Hex(str) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
-}
 function setupGate() {
   const gate = document.getElementById("gate");
-  if (sessionStorage.getItem("alcofix_gate_ok") === "1") { gate.style.display = "none"; return; }
+  const errEl = document.getElementById("gateErr");
+  onAuthStateChanged(auth, (user) => {
+    gate.style.display = user ? "none" : "flex";
+  });
   document.getElementById("gateForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const val = document.getElementById("gatePw").value;
-    if ((await sha256Hex(val)) === GATE_HASH) {
-      sessionStorage.setItem("alcofix_gate_ok", "1");
-      gate.style.display = "none";
-    } else {
-      document.getElementById("gateErr").textContent = "비밀번호가 올바르지 않습니다.";
+    errEl.textContent = "";
+    const email = document.getElementById("gateEmail").value.trim();
+    const pw = document.getElementById("gatePw").value;
+    try {
+      await signInWithEmailAndPassword(auth, email, pw);
+    } catch (err) {
+      errEl.textContent = "이메일 또는 비밀번호가 올바르지 않습니다.";
       document.getElementById("gatePw").value = "";
       document.getElementById("gatePw").focus();
     }
   });
+  document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
 }
 
 // ---- 기업 정보 (localStorage 저장, 자격요건 자동 재계산) ----

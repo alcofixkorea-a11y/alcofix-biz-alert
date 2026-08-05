@@ -96,10 +96,11 @@ textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
 <div class="gate" id="gate">
   <div class="gate-box">
     <h2>🔒 지원사업 통합 안내 사이트</h2>
-    <p>내부 열람용 페이지입니다. 비밀번호를 입력하세요.</p>
+    <p>내부 열람용 페이지입니다. 로그인이 필요합니다.</p>
     <form id="gateForm">
-      <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="off" autofocus>
-      <button type="submit">입장</button>
+      <input type="email" id="gateEmail" placeholder="이메일" autocomplete="username" autofocus>
+      <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="current-password">
+      <button type="submit">로그인</button>
       <div class="gate-err" id="gateErr"></div>
     </form>
   </div>
@@ -108,7 +109,10 @@ textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
 <header>
   <div class="wrap">
     <div class="h-title">공용 기업정보 · 사업계획서 초안</div>
-    <a class="back-link" href="index.html">← 공고 목록으로</a>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a class="back-link" href="index.html">← 공고 목록으로</a>
+      <button id="logoutBtn" class="back-link" type="button" style="border:0;background:none;cursor:pointer;font:inherit;padding:0">로그아웃</button>
+    </div>
   </div>
 </header>
 
@@ -188,6 +192,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/fireba
 import {
   getFirestore, doc, getDoc, setDoc, collection, query, orderBy, limit, getDocs, serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import {
+  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCSacTSDK_R8O-fp7ASLY1r7ASODlsqh8g",
@@ -199,27 +206,28 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
-// ---- 비밀번호 잠금 (index.html과 동일한 방식) ----
-const GATE_HASH = "d0c3d13dd69feede8d4b7c2d4191919ee3e38976c5d64e3ec4af5f5fe2803726";
-async function sha256Hex(str) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
-}
+// ---- 로그인 게이트 (Firebase Authentication) ----
 function setupGate() {
   const gate = document.getElementById("gate");
-  if (sessionStorage.getItem("alcofix_gate_ok") === "1") { gate.style.display = "none"; return; }
+  const errEl = document.getElementById("gateErr");
+  onAuthStateChanged(auth, (user) => {
+    gate.style.display = user ? "none" : "flex";
+  });
   document.getElementById("gateForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const val = document.getElementById("gatePw").value;
-    if ((await sha256Hex(val)) === GATE_HASH) {
-      sessionStorage.setItem("alcofix_gate_ok", "1");
-      gate.style.display = "none";
-    } else {
-      document.getElementById("gateErr").textContent = "비밀번호가 올바르지 않습니다.";
+    errEl.textContent = "";
+    const email = document.getElementById("gateEmail").value.trim();
+    const pw = document.getElementById("gatePw").value;
+    try {
+      await signInWithEmailAndPassword(auth, email, pw);
+    } catch (err) {
+      errEl.textContent = "이메일 또는 비밀번호가 올바르지 않습니다.";
       document.getElementById("gatePw").value = "";
     }
   });
+  document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
 }
 setupGate();
 
