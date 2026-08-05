@@ -30,7 +30,7 @@ body {
   font-family: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
   background: var(--bg); color: var(--text); line-height: 1.55;
 }
-.wrap { max-width: 1440px; margin: 0 auto; padding: 0 28px 60px; }
+.wrap { max-width: 1600px; margin: 0 auto; padding: 0 32px 60px; }
 
 /* ---- 헤더 ---- */
 header {
@@ -44,7 +44,7 @@ header .wrap { padding-bottom: 0; }
 .src-warn { background: var(--red-soft); color: var(--red); border-radius: 6px; padding: 2px 8px; }
 
 /* ---- 좌/우 레이아웃: 좌측 목록, 우측 조건 사이드바 ---- */
-.layout { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; }
+.layout { display: grid; grid-template-columns: 1fr 264px; gap: 32px; align-items: start; }
 .main-col { min-width: 0; }
 .sidebar {
   position: sticky; top: 16px; background: var(--card); border: 1px solid var(--line);
@@ -60,6 +60,25 @@ header .wrap { padding-bottom: 0; }
   .layout { grid-template-columns: 1fr; }
   .sidebar { position: static; order: -1; max-height: none; }
 }
+
+/* ---- 상단 통합 컨트롤 바: 분야칩(1순위) + 검색·정렬·보기전환 + 지역·기관(2차, 접힘) ---- */
+.topbar { margin-bottom: 22px; }
+.topbar .sectorbar { margin-bottom: 12px; }
+.topbar-row2 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.topbar-row2 .search { width: auto; flex: 1 1 260px; }
+.topbar-row2 select { width: auto; flex: 0 0 auto; min-width: 130px; }
+.filter-toggle {
+  border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit;
+  font-size: 13px; font-weight: 600; padding: 10px 14px; border-radius: 10px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+}
+.filter-toggle:hover { border-color: var(--accent); }
+.filter-toggle.active { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.secondary-filters {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 10px;
+  padding-top: 12px; border-top: 1px dashed var(--line);
+}
+.secondary-filters .seg { width: auto; }
 
 /* ---- 요약 통계: 핵심 지표(크게, 상단) ---- */
 .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 12px; }
@@ -109,7 +128,6 @@ select {
 .toggle { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--muted); cursor: pointer; user-select: none; }
 .toggle input { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
 
-.viewbar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; margin-bottom: 16px; }
 .seg { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 2px; flex-wrap: wrap; }
 .seg button {
   border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 600;
@@ -379,18 +397,42 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
     ⚠️ 모집기간이 지난 공고는 자동 제외됩니다. 지원 자격·수행기간 등 세부 요건은 <b>반드시 공고 원문</b>에서 최종 확인하세요.
   </div>
 
+  <div class="topbar">
+    <div class="sectorbar" id="sectorBar"></div>
+    <div class="topbar-row2">
+      <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 (예: 자금 → 융자·보증)">
+      <select id="sort">
+        <option value="deadline">마감 임박순</option>
+        <option value="newest">최신 등록순</option>
+      </select>
+      <div class="seg" id="viewSeg" role="tablist">
+        <button data-view="list" class="active">목록</button>
+        <button data-view="cal">마감 달력</button>
+      </div>
+      <div class="seg" id="listModeSeg">
+        <button data-mode="list" class="active">리스트</button>
+        <button data-mode="table">표</button>
+      </div>
+      <button class="filter-toggle" id="secFilterToggle">지역·기관 <span id="secFilterChevron">▾</span></button>
+    </div>
+    <div class="secondary-filters" id="secondaryFilters" style="display:none">
+      <div class="seg" id="regionSeg">
+        <button data-region="all" class="active">전체 지역</button>
+        <button data-region="전국">전국통합</button>
+        <button data-region="세종">세종</button>
+      </div>
+      <div class="seg" id="orgSeg">
+        <button data-org="all" class="active">전체 기관</button>
+        <button data-org="중앙부처·공공">중앙부처</button>
+        <button data-org="지자체">지자체</button>
+        <button data-org="민간">민간</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="hideIneligible" checked> 자격 미달 공고 숨기기</label>
+    </div>
+  </div>
+
   <div class="layout">
     <main class="main-col">
-      <div class="viewbar">
-        <div class="seg" id="viewSeg" role="tablist">
-          <button data-view="list" class="active">목록</button>
-          <button data-view="cal">마감 달력</button>
-        </div>
-        <div class="seg" id="listModeSeg">
-          <button data-mode="list" class="active">리스트</button>
-          <button data-mode="table">표</button>
-        </div>
-      </div>
       <div id="bannerSections"></div>
       <div class="sec-head">전체 공고</div>
       <div class="count-line" id="countLine"></div>
@@ -407,30 +449,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       </div>
 
       <div class="sidebar-block">
-        <h4>검색 · 정렬</h4>
-        <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 (예: 자금 → 융자·보증)">
-        <select id="sort">
-          <option value="deadline">마감 임박순</option>
-          <option value="newest">최신 등록순</option>
-        </select>
-        <label class="toggle"><input type="checkbox" id="hideIneligible" checked> 자격 미달 공고 숨기기</label>
         <button class="profile-btn" id="profileBtn">기업 정보</button>
-      </div>
-
-      <div class="sidebar-block">
-        <h4>필터</h4>
-        <div class="seg" id="regionSeg" style="width:100%">
-          <button data-region="all" class="active">전체 지역</button>
-          <button data-region="전국">전국통합</button>
-          <button data-region="세종">세종</button>
-        </div>
-        <div class="seg" id="orgSeg" style="width:100%; margin-top:6px">
-          <button data-org="all" class="active">전체 기관</button>
-          <button data-org="중앙부처·공공">중앙부처</button>
-          <button data-org="지자체">지자체</button>
-          <button data-org="민간">민간</button>
-        </div>
-        <div class="sectorbar" id="sectorBar" style="margin-top:8px"></div>
       </div>
 
       <div class="sidebar-block">
@@ -934,6 +953,9 @@ function render() {
   document.getElementById("profileBtn").classList.toggle("set", !!state.profile);
   document.getElementById("profileBtn").textContent = state.profile ? "기업 정보 (입력됨)" : "기업 정보";
 
+  const secActive = state.region !== "all" || state.org !== "all" || !state.hideIneligible;
+  document.getElementById("secFilterToggle").classList.toggle("active", secActive);
+
   // 신규 공고 알림 (사이드바 최상단)
   document.getElementById("newAlert").innerHTML = cnt.new
     ? `<div class="new-alert" data-chip="new">
@@ -1095,6 +1117,14 @@ document.addEventListener("click", (e) => {
     state.listMode = lm.dataset.mode;
     document.querySelectorAll("#listModeSeg button").forEach((b) => b.classList.toggle("active", b === lm));
     render(); return;
+  }
+  const secToggle = e.target.closest("#secFilterToggle");
+  if (secToggle) {
+    const panel = document.getElementById("secondaryFilters");
+    const open = panel.style.display !== "flex";
+    panel.style.display = open ? "flex" : "none";
+    document.getElementById("secFilterChevron").textContent = open ? "▴" : "▾";
+    return;
   }
   const sec = e.target.closest("#sectorBar button");
   if (sec) { state.sector = sec.dataset.sector; resetPage(); render(); return; }
