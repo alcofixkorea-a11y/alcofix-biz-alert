@@ -165,13 +165,8 @@ select {
   display: inline-block; font-size: 10px; font-weight: 800; color: var(--red); border: 1px solid var(--red);
   border-radius: 4px; padding: 0 5px; margin-left: 5px; vertical-align: 2px;
 }
-.c2-meta { font-size: 12px; color: var(--muted); line-height: 1.5; }
-.c2-meta .warn { color: var(--red); font-weight: 700; }
-.c2-meta .ok { color: var(--accent); font-weight: 700; }
-.c2-summary {
-  font-size: 12px; color: var(--muted); line-height: 1.5;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-}
+.warn { color: var(--red); font-weight: 700; }
+.ok { color: var(--accent); font-weight: 700; }
 .row-attach { display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 10px; }
 .row-attach .att-lbl { font-size: 11px; color: var(--muted); flex-shrink: 0; }
 .attach-link {
@@ -187,6 +182,36 @@ select {
   font: inherit; font-size: 11px; font-weight: 700; border-radius: 999px; padding: 3px 9px; white-space: nowrap;
 }
 .decidebtn.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+
+/* ---- 전체 공고·달력 상세: 가로형 리스트 ---- */
+.plist { display: flex; flex-direction: column; gap: 10px; }
+.prow {
+  display: flex; align-items: center; gap: 18px; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: border-color .15s, box-shadow .15s;
+}
+.prow:hover { border-color: var(--accent); box-shadow: 0 2px 10px rgba(15,23,42,.06); }
+.pr-left { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex-shrink: 0; width: 168px; }
+.pr-dates { font-size: 11px; color: var(--muted); line-height: 1.4; }
+.pr-center { flex: 1; min-width: 0; }
+.pr-title {
+  font-size: 15px; font-weight: 700; line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.pr-title .new-badge {
+  display: inline-block; font-size: 10px; font-weight: 800; color: var(--red); border: 1px solid var(--red);
+  border-radius: 4px; padding: 0 5px; margin-left: 5px; vertical-align: 2px;
+}
+.pr-tags { font-size: 12px; color: var(--muted); margin-top: 5px; }
+.pr-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+@media (max-width: 680px) {
+  .prow { flex-wrap: wrap; }
+  .pr-left { flex-direction: row; align-items: center; width: auto; gap: 10px; }
+  .pr-right { width: 100%; justify-content: flex-end; margin-top: 4px; }
+}
+
+/* ---- 공고 상세 모달 ---- */
+.dm-period { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted); margin: 12px 0; }
+.dm-summary { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 14px; }
 
 /* ---- 배너 섹션 전용 소형 카드 ---- */
 .card2-mini { padding: 12px 14px; gap: 6px; }
@@ -362,7 +387,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
           <button data-view="cal">마감 달력</button>
         </div>
         <div class="seg" id="listModeSeg">
-          <button data-mode="card" class="active">카드</button>
+          <button data-mode="list" class="active">리스트</button>
           <button data-mode="table">표</button>
         </div>
       </div>
@@ -413,6 +438,10 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
         <a class="profile-btn" style="display:block; text-align:center; text-decoration:none;" href="plan.html">사업계획서 작성 (팀 공용)</a>
       </div>
     </aside>
+  </div>
+
+  <div class="modal-overlay" id="detailModal" style="display:none">
+    <div class="modal modal-wide" id="detailModalBody"></div>
   </div>
 
   <div class="modal-overlay" id="profileModal" style="display:none">
@@ -502,7 +531,7 @@ const SYN = {
 const PAGE_SIZE = 10;
 const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
-  view: "list", listMode: "card", bannerTab: "fit", org: "all", region: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
+  view: "list", listMode: "list", bannerTab: "fit", org: "all", region: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
   decided: new Set(JSON.parse(localStorage.getItem("alcofix_decided") || "[]")),
   profile: null,
@@ -683,53 +712,84 @@ function matches(it, today) {
   return true;
 }
 
-// 공고 카드 (전체 공고·배너 섹션·달력 상세 공용). opts.compact = true면 소형 카드(배너 섹션용)
-function cardHtml(it, today, opts) {
-  opts = opts || {};
+// 상단 배너 탭용 소형 카드 (제목+D-day만)
+function cardHtml(it, today) {
   const dd = dday(it, today);
-  const ddCls = dd.cls;
+  return `<a class="card2 card2-mini" href="${esc(it.url)}" target="_blank" rel="noopener">
+    <div class="c2-top"><span class="c2-dd ${dd.cls}">${dd.label}</span></div>
+    <div class="c2-title">${esc(it.title)}</div>
+  </a>`;
+}
 
-  if (opts.compact) {
-    return `<a class="card2 card2-mini" href="${esc(it.url)}" target="_blank" rel="noopener">
-      <div class="c2-top"><span class="c2-dd ${ddCls}">${dd.label}</span></div>
-      <div class="c2-title">${esc(it.title)}</div>
-    </a>`;
-  }
-
+// 전체 공고·달력 상세용 가로형 리스트 행. 클릭하면 상세 모달이 열리고(원문 링크는 모달 안에서),
+// 요약·첨부파일 목록 같은 부가정보는 리스트에서 빼서 시각 노이즈를 줄인다.
+function progRowHtml(it, today) {
+  const dd = dday(it, today);
   const fav = state.favs.has(it.id);
   const decided = state.decided.has(it.id);
-  const eff = effEligibility(it, today);
   const isIneligible = ineligible(it, today);
   const fitPct = fitPercent(it, today);
 
-  const metaParts = [];
-  if (it.region === "세종") metaParts.push("세종");
-  metaParts.push(esc(it.org), esc(it.sector), esc(it.orgType));
-  if (it.foodBio) metaParts.push("식품·바이오");
-  let metaHtml = metaParts.filter(Boolean).join(" · ");
-  if (isIneligible) metaHtml += ` · <span class="warn">자격요건 확인 필요</span>`;
-  else if (eff.enyyOk === true || eff.youngOk === true) metaHtml += ` · <span class="ok">${state.profile ? "요건 충족" : "청년·초기창업 가능"}</span>`;
+  const tagParts = [];
+  if (it.region === "세종") tagParts.push("세종");
+  tagParts.push(esc(it.sector), esc(it.orgType));
+  if (it.foodBio) tagParts.push("식품·바이오");
+  let tagsHtml = tagParts.filter(Boolean).join(" · ");
+  if (isIneligible) tagsHtml += ` · <span class="warn">자격요건 확인 필요</span>`;
 
-  return `<a class="card2" href="${esc(it.url)}" target="_blank" rel="noopener">
-    <div class="c2-top">
-      <span style="display:flex;align-items:center;gap:6px;">
-        <span class="c2-dd ${ddCls}">${dd.label}</span>
-        ${fitPct !== null && fitPct >= 60 ? `<span class="fit-badge">🔥 핏 ${fitPct}%</span>` : ""}
-      </span>
-      <span class="c2-actions">
-        <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "지원결정 ✓" : "지원결정"}</button>
-        <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
-      </span>
+  const period = it.alwaysOpen ? "상시모집" : `등록 ${fmtDate(it.firstSeen)} ~ 마감 ${fmtDate(it.applyEnd)}`;
+
+  return `<div class="prow" data-detail="${esc(it.id)}">
+    <div class="pr-left">
+      <span class="c2-dd ${dd.cls}">${dd.label}</span>
+      <div class="pr-dates">${period}</div>
     </div>
-    <div class="c2-title">${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
-    <div class="c2-meta">${metaHtml}</div>
-    ${it.summary ? `<div class="c2-summary">${esc(it.summary)}</div>` : ""}
-    ${it.attachments && it.attachments.length ? `<div class="row-attach"><span class="att-lbl">첨부</span>${it.attachments.map((a) =>
-      `<button class="attach-link" data-url="${esc(a.url)}" title="${esc(a.name)}">${esc(a.name.length > 20 ? a.name.slice(0, 18) + "…" : a.name)}</button>`
-    ).join("")}</div>` : ""}
-    ${decided ? `<button class="attach-link" data-goto="plan.html?title=${encodeURIComponent(it.title)}" title="사업계획서 초안 작성 페이지로 이동">📝 초안 작성</button>` : ""}
-  </a>`;
+    <div class="pr-center">
+      <div class="pr-title">${esc(it.title)}${isNew(it, today) ? '<span class="new-badge">NEW</span>' : ""}</div>
+      <div class="pr-tags">${tagsHtml}</div>
+    </div>
+    <div class="pr-right">
+      ${fitPct !== null && fitPct >= 60 ? `<span class="fit-badge">🔥 ${fitPct}%</span>` : ""}
+      <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "지원결정 ✓" : "지원결정"}</button>
+      <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
+    </div>
+  </div>`;
 }
+
+function openDetailModal(id) {
+  const it = state.data.items.find((i) => i.id === id);
+  if (!it) return;
+  const today = state.data.today;
+  const dd = dday(it, today);
+  const eff = effEligibility(it, today);
+  const isIneligible = ineligible(it, today);
+  const decided = state.decided.has(it.id);
+  const metaParts = [it.region, it.org, it.sector, it.orgType];
+  if (it.foodBio) metaParts.push("식품·바이오");
+  const period = it.alwaysOpen
+    ? (it.applyStart ? fmtDate(it.applyStart) + " ~ 상시(마감시까지)" : "상시 모집")
+    : `${fmtDate(it.applyStart)} ~ ${fmtDate(it.applyEnd)}`;
+  let eligHtml = "";
+  if (isIneligible) eligHtml = `<span class="warn">자격요건 확인 필요</span>`;
+  else if (eff.enyyOk === true || eff.youngOk === true) eligHtml = `<span class="ok">${state.profile ? "요건 충족" : "청년·초기창업 가능"}</span>`;
+
+  document.getElementById("detailModalBody").innerHTML = `
+    <h3>${esc(it.title)}</h3>
+    <p class="modal-desc">${metaParts.filter(Boolean).map(esc).join(" · ")}${eligHtml ? " · " + eligHtml : ""}</p>
+    <div class="dm-period"><span class="c2-dd ${dd.cls}">${dd.label}</span><span>등록 ${fmtDate(it.firstSeen)} · 모집기간 ${period}</span></div>
+    ${it.summary ? `<p class="dm-summary">${esc(it.summary)}</p>` : ""}
+    ${it.attachments && it.attachments.length ? `<div class="row-attach"><span class="att-lbl">첨부</span>${it.attachments.map((a) =>
+      `<button class="attach-link" data-url="${esc(a.url)}" title="${esc(a.name)}">${esc(a.name)}</button>`
+    ).join("")}</div>` : ""}
+    <div class="modal-actions">
+      <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" style="flex:1">${decided ? "지원결정 ✓" : "지원 결정"}</button>
+      ${decided ? `<button class="attach-link" data-goto="plan.html?title=${encodeURIComponent(it.title)}" style="flex:1">📝 초안 작성</button>` : ""}
+      <a class="mb-save" style="flex:1;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center;" href="${esc(it.url)}" target="_blank" rel="noopener">원문 보기 ↗</a>
+      <button class="mb-close" id="dmClose" style="flex:1">닫기</button>
+    </div>`;
+  document.getElementById("detailModal").style.display = "flex";
+}
+function closeDetailModal() { document.getElementById("detailModal").style.display = "none"; }
 
 function paginationHtml(current, total) {
   if (total <= 1) return "";
@@ -751,7 +811,7 @@ function paginationHtml(current, total) {
 function renderList(list, today, startNum) {
   if (!list.length) return `<div class="empty">조건에 맞는 공고가 없습니다.<br>검색어나 필터를 바꿔보세요.</div>`;
   if (state.listMode === "table") return tableHtml(list, today, startNum || 1);
-  return `<div class="card-grid">${list.map((it) => cardHtml(it, today)).join("")}</div>`;
+  return `<div class="plist">${list.map((it) => progRowHtml(it, today)).join("")}</div>`;
 }
 
 // 기관마당식 표(테이블) 보기. org 필드가 "소관 · 수행" 형태로 합쳐져 있으면 분리해서 표시
@@ -825,7 +885,7 @@ function renderCalendar(list, today) {
   if (state.calDay) {
     const sel = list.filter((i) => i.applyEnd === state.calDay);
     html += `<div class="sec-head">${state.calDay.replace(/-/g, ".")} 마감 <span class="cnt">${sel.length}건</span></div>`;
-    html += `<div class="card-grid">${sel.map((it) => cardHtml(it, today)).join("")}</div>`;
+    html += `<div class="plist">${sel.map((it) => progRowHtml(it, today)).join("")}</div>`;
   }
   return html;
 }
@@ -925,7 +985,7 @@ function render() {
       </div>
       ${note ? `<div class="bs-note">${note}</div>` : ""}
       ${activeTab.list.length
-        ? `<div class="card-grid">${activeTab.list.map((it) => cardHtml(it, today, { compact: true })).join("")}</div>`
+        ? `<div class="card-grid">${activeTab.list.map((it) => cardHtml(it, today)).join("")}</div>`
         : `<div class="empty" style="padding:24px 0">해당하는 공고가 없습니다.</div>`}`;
   }
   document.getElementById("bannerSections").innerHTML = bannersHtml;
@@ -988,8 +1048,13 @@ document.addEventListener("click", (e) => {
     e.preventDefault(); e.stopPropagation();
     const id = decide.dataset.decide;
     state.decided.has(id) ? state.decided.delete(id) : state.decided.add(id);
-    saveDecided(); render(); return;
+    saveDecided(); render();
+    if (document.getElementById("detailModal").style.display === "flex") openDetailModal(id);
+    return;
   }
+  const prow = e.target.closest(".prow");
+  if (prow) { openDetailModal(prow.dataset.detail); return; }
+  if (e.target.closest("#dmClose")) { closeDetailModal(); return; }
   const stat = e.target.closest(".stat");
   if (stat) { state.chip = state.chip === stat.dataset.chip ? "open" : stat.dataset.chip; resetPage(); render(); return; }
   const alert = e.target.closest(".new-alert");
@@ -1087,6 +1152,9 @@ document.getElementById("profileBtn").addEventListener("click", openProfileModal
 document.getElementById("pfClose").addEventListener("click", closeProfileModal);
 document.getElementById("profileModal").addEventListener("click", (e) => {
   if (e.target.id === "profileModal") closeProfileModal();
+});
+document.getElementById("detailModal").addEventListener("click", (e) => {
+  if (e.target.id === "detailModal") closeDetailModal();
 });
 document.getElementById("pfSave").addEventListener("click", () => {
   const p = {};
