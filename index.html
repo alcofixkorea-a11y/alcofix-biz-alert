@@ -174,6 +174,7 @@ select {
   font-size: 11px; font-weight: 800; color: var(--accent-cyan); background: var(--accent-cyan-soft);
   border-radius: 6px; padding: 3px 8px; white-space: nowrap;
 }
+.fit-badge.hi { color: var(--orange); background: var(--orange-soft); }
 .c2-actions { display: flex; align-items: center; gap: 4px; }
 .c2-title {
   font-size: 14.5px; font-weight: 700; line-height: 1.42;
@@ -257,6 +258,16 @@ select {
   border: 1px solid var(--line); border-radius: 7px; color: var(--muted); text-decoration: none; flex-shrink: 0;
 }
 .prog-table .detail-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---- 상단 퀵칩 (전체/맞춤/신규/중앙부처·전국/세종·충청) — 분야보다 한 단계 위, 상태·지역 빠른 진입 ---- */
+.quickchips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.quickchips button {
+  border: 1px solid var(--line); background: var(--card); color: var(--text);
+  font: inherit; font-size: 13.5px; font-weight: 700; padding: 9px 15px;
+  border-radius: 999px; cursor: pointer; transition: border-color .15s, box-shadow .15s;
+}
+.quickchips button:hover { border-color: var(--accent); }
+.quickchips button.active { background: var(--text); border-color: var(--text); color: #fff; }
 
 /* ---- 분야 버튼 바 ---- */
 .sectorbar { display: flex; gap: 7px; flex-wrap: wrap; }
@@ -398,6 +409,7 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   </div>
 
   <div class="topbar">
+    <div class="quickchips" id="quickChips"></div>
     <div class="sectorbar" id="sectorBar"></div>
     <div class="topbar-row2">
       <input class="search" id="q" type="search" placeholder="공고명·기관·내용 검색 (예: 자금 → 융자·보증)">
@@ -688,6 +700,13 @@ function fitPercent(it, today) {
   const s = fitScore(it, today);
   return s === null ? null : Math.min(100, Math.round((s / FIT_MAX) * 100));
 }
+// 90% 이상 🔥(강한 추천), 60~89% 🎯(추천). 60% 미만은 배지 없음
+function fitBadgeHtml(pct) {
+  if (pct === null || pct < 60) return "";
+  return pct >= 90
+    ? `<span class="fit-badge hi">🔥 Fit ${pct}%</span>`
+    : `<span class="fit-badge">🎯 Fit ${pct}%</span>`;
+}
 
 // 검색어 → 유의어 포함 검색어 배열
 function expandQuery(q) {
@@ -768,7 +787,7 @@ function progRowHtml(it, today) {
       <div class="pr-tags">${tagsHtml}</div>
     </div>
     <div class="pr-right">
-      ${fitPct !== null && fitPct >= 60 ? `<span class="fit-badge">🔥 ${fitPct}%</span>` : ""}
+      ${fitBadgeHtml(fitPct)}
       <button class="decidebtn ${decided ? "on" : ""}" data-decide="${esc(it.id)}" title="지원 결정">${decided ? "지원결정 ✓" : "지원결정"}</button>
       <button class="favbtn ${fav ? "on" : ""}" data-fav="${esc(it.id)}" title="스크랩" aria-label="스크랩">${fav ? "★" : "☆"}</button>
     </div>
@@ -849,7 +868,7 @@ function tableHtml(list, today, startNum) {
       : `${fmtDate(it.applyStart)} ~ ${fmtDate(it.applyEnd)}`;
     return `<tr>
       <td class="num">${startNum + i}</td>
-      <td>${fitPct !== null && fitPct >= 60 ? `<span class="fit-badge">🔥 ${fitPct}%</span>` : ""}</td>
+      <td>${fitBadgeHtml(fitPct)}</td>
       <td>${esc(it.sector)}</td>
       <td class="title-cell"><a class="t-link" href="${esc(it.url)}" target="_blank" rel="noopener">${it.region === "세종" && !it.title.includes("세종") ? "[세종] " : ""}${esc(it.title)}</a></td>
       <td class="period"><span class="c2-dd ${dd.cls}">${dd.label}</span><br>${period}</td>
@@ -1027,6 +1046,18 @@ function render() {
     ? `${list.length}건 표시 중 (전체 ${items.length}건)`
     : `${list.length}건 중 ${list.length ? (state.page - 1) * PAGE_SIZE + 1 : 0}-${Math.min(state.page * PAGE_SIZE, list.length)}건 표시 (전체 ${items.length}건)`;
 
+  // 상단 퀵칩: 전체/맞춤/신규/중앙부처·전국/세종·충청 — 상태+지역을 한 번에 정하는 최상위 진입점
+  const QUICK_CHIPS = [
+    { key: "reset", label: "전체 공고", active: state.chip === "open" && state.region === "all" && state.org === "all" },
+    { key: "fit", label: "🎯 알코픽스 맞춤", active: state.chip === "fit" },
+    { key: "new", label: "🔥 오늘 등록 신규", active: state.chip === "new" },
+    { key: "central", label: "🏛️ 중앙부처·전국", active: state.chip === "open" && state.region === "전국" },
+    { key: "sejong", label: "📍 세종·충청", active: state.chip === "open" && state.region === "세종" },
+  ];
+  document.getElementById("quickChips").innerHTML = QUICK_CHIPS.map((c) =>
+    `<button data-quick="${c.key}" class="${c.active ? "active" : ""}">${c.label}</button>`
+  ).join("");
+
   // 분야 버튼 바 (가로) — 건수는 분야 외 나머지 필터를 적용한 기준
   const base = items.filter((i) => {
     const keep = state.sector; state.sector = "all";
@@ -1128,6 +1159,17 @@ document.addEventListener("click", (e) => {
   }
   const sec = e.target.closest("#sectorBar button");
   if (sec) { state.sector = sec.dataset.sector; resetPage(); render(); return; }
+  const quick = e.target.closest("#quickChips button");
+  if (quick) {
+    state.chip = "open"; state.region = "all"; state.org = "all";
+    if (quick.dataset.quick === "fit") state.chip = "fit";
+    else if (quick.dataset.quick === "new") state.chip = "new";
+    else if (quick.dataset.quick === "central") state.region = "전국";
+    else if (quick.dataset.quick === "sejong") state.region = "세종";
+    document.querySelectorAll("#regionSeg button").forEach((b) => b.classList.toggle("active", b.dataset.region === state.region));
+    document.querySelectorAll("#orgSeg button").forEach((b) => b.classList.toggle("active", b.dataset.org === state.org));
+    resetPage(); render(); return;
+  }
   const pg = e.target.closest(".pagination button[data-page]");
   if (pg && !pg.disabled) {
     state.page = Number(pg.dataset.page); render();
