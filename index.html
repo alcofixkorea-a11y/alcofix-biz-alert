@@ -24,6 +24,10 @@
   --green: #157a45;
   --green-soft: #e6f4ec;
   --star: #a3790f;
+  --blue: #1d4ed8;
+  --blue-soft: #e7edfd;
+  --gray: #5c6773;
+  --gray-soft: #eceff2;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -367,6 +371,65 @@ select {
 .modal-actions .mb-clear { background: var(--red-soft); color: var(--red); }
 .modal-actions .mb-close { background: var(--bg); color: var(--muted); }
 
+/* ---- 상단 페이지 내비게이션 ---- */
+.mainnav { display: flex; gap: 6px; margin-top: 14px; }
+.mainnav-btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--muted); font: inherit;
+  font-size: 13.5px; font-weight: 700; padding: 9px 16px; border-radius: 10px 10px 0 0; cursor: pointer;
+}
+.mainnav-btn.active { border-color: var(--accent); border-bottom: 2px solid var(--card); color: var(--accent); background: var(--accent-soft); }
+
+/* ---- 마이페이지 ---- */
+.mypage-grid { display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: start; }
+@media (max-width: 900px) { .mypage-grid { grid-template-columns: 1fr; } }
+.mypage-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.mypage-card h3 { font-size: 15px; margin-bottom: 4px; }
+.mypage-card .desc { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+.profile-summary-row { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
+.profile-summary-row:last-of-type { border-bottom: 0; }
+.profile-summary-row .k { color: var(--muted); }
+.profile-summary-row .v { font-weight: 600; text-align: right; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 18px; }
+@media (max-width: 760px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+.kpi-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; text-align: center; }
+.kpi-card .kn { font-size: 22px; font-weight: 800; }
+.kpi-card .kl { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.kpi-card.k-prep .kn { color: var(--orange); }
+.kpi-card.k-submitted .kn { color: var(--blue); }
+.kpi-card.k-selected .kn { color: var(--green); }
+.kpi-card.k-rejected .kn { color: var(--gray); }
+
+.apptrack-toolbar { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+.add-app-btn {
+  border: 0; background: var(--accent); color: #fff; font: inherit; font-size: 13px; font-weight: 700;
+  padding: 9px 16px; border-radius: 9px; cursor: pointer;
+}
+.add-app-btn:hover { opacity: .92; }
+
+.app-row {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+  margin-bottom: 8px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.app-row .a-main { flex: 1 1 260px; min-width: 0; }
+.app-row .a-title { font-size: 14.5px; font-weight: 700; margin-bottom: 3px; }
+.app-row .a-meta { font-size: 12px; color: var(--muted); }
+.app-row .a-actions { display: flex; gap: 6px; align-items: center; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700;
+  padding: 4px 10px; border-radius: 999px; border: 0; cursor: pointer; font-family: inherit;
+}
+.status-badge.st-prep { background: var(--orange-soft); color: var(--orange); }
+.status-badge.st-submitted { background: var(--blue-soft); color: var(--blue); }
+.status-badge.st-selected { background: var(--green-soft); color: var(--green); }
+.status-badge.st-rejected { background: var(--gray-soft); color: var(--gray); }
+.app-edit-btn, .app-del-btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--muted); font: inherit; font-size: 12px;
+  padding: 6px 10px; border-radius: 8px; cursor: pointer;
+}
+.app-edit-btn:hover { border-color: var(--accent); color: var(--accent); }
+.app-del-btn:hover { border-color: var(--red); color: var(--red); }
+
 .empty { text-align: center; color: var(--muted); padding: 60px 0; font-size: 14.5px; }
 .notice {
   background: #fffbeb; border: 1px solid #fde68a; color: #92400e;
@@ -402,10 +465,15 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       <button id="logoutBtn" type="button" style="margin-left:auto;border:0;background:none;cursor:pointer;font:inherit;font-size:12.5px;color:var(--muted)">로그아웃</button>
     </div>
     <div class="h-tagline">지원사업 통합 안내 사이트</div>
+    <div class="mainnav" id="mainNav">
+      <button class="mainnav-btn active" data-mainview="programs">📢 전체 공고</button>
+      <button class="mainnav-btn" data-mainview="mypage">👤 마이페이지 · 지원 관리</button>
+    </div>
   </div>
 </header>
 
 <div class="wrap">
+  <div id="programsView">
   <div class="notice">
     ⚠️ 모집기간이 지난 공고는 자동 제외됩니다. 지원 자격·수행기간 등 세부 요건은 <b>반드시 공고 원문</b>에서 최종 확인하세요.
   </div>
@@ -472,9 +540,61 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
       </div>
     </aside>
   </div>
+  </div>
+
+  <div id="mypageView" style="display:none">
+    <div class="sec-head">마이페이지 · 지원 관리</div>
+    <div class="mypage-grid">
+      <div class="mypage-card">
+        <h3>기업 정보</h3>
+        <div class="desc">Fit(맞춤) 점수 계산에 쓰이는 정보입니다. 상세 입력·수정은 아래 버튼에서 진행하세요.</div>
+        <div id="profileSummary"></div>
+        <button class="profile-btn" style="margin-top:14px;width:100%" id="mypageProfileBtn">기업 정보 입력·수정</button>
+      </div>
+
+      <div>
+        <div class="kpi-row" id="appKpiRow"></div>
+        <div class="apptrack-toolbar">
+          <button class="add-app-btn" id="addAppBtn">+ 지원사업 추가</button>
+        </div>
+        <div id="appList"></div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-overlay" id="detailModal" style="display:none">
     <div class="modal modal-wide" id="detailModalBody"></div>
+  </div>
+
+  <div class="modal-overlay" id="appModal" style="display:none">
+    <div class="modal modal-wide">
+      <h3 id="appModalTitle">지원사업 추가</h3>
+      <div class="modal-grid">
+        <div class="span2"><label>지원사업명</label><input type="text" id="apTitle" placeholder="예: 2026년 청년창업사관학교"></div>
+        <div><label>소관부처/기관</label><input type="text" id="apOrg" placeholder="예: 중소벤처기업진흥공단"></div>
+        <div>
+          <label>지원 분야</label>
+          <select id="apSector"><option value="">선택 안 함</option></select>
+        </div>
+        <div><label>신청/마감일</label><input type="date" id="apDeadline"></div>
+        <div><label>지원 금액</label><input type="text" id="apAmount" placeholder="예: 최대 1억원"></div>
+        <div>
+          <label>진행 상태</label>
+          <select id="apStatus">
+            <option value="prep">📝 작성/준비 중</option>
+            <option value="submitted">🚀 제출 완료</option>
+            <option value="selected">🎉 최종 선정</option>
+            <option value="rejected">❌ 미선정/탈락</option>
+          </select>
+        </div>
+        <div class="span2"><label>메모</label><textarea id="apMemo" rows="3" style="width:100%;resize:vertical;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;font-size:14px"></textarea></div>
+      </div>
+      <div class="modal-actions">
+        <button class="mb-save" id="apSave">저장</button>
+        <button class="mb-clear" id="apDelete" style="display:none">삭제</button>
+        <button class="mb-close" id="apClose">닫기</button>
+      </div>
+    </div>
   </div>
 
   <div class="modal-overlay" id="profileModal" style="display:none">
@@ -534,6 +654,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/fireba
 import {
   getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {
+  getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, getDocs, query, orderBy, serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCSacTSDK_R8O-fp7ASLY1r7ASODlsqh8g",
@@ -545,6 +668,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const SECTOR_ORDER = ["자금·융자", "기술·R&D", "창업·사업화", "판로·수출", "시설·공간", "교육·컨설팅", "행사·네트워크", "인력", "경영·기타"];
 
@@ -577,10 +701,18 @@ const SYN = {
   "투자": ["VC", "IR", "펀딩", "투자유치", "엔젤"],
 };
 
+const APP_STATUS = {
+  prep: { label: "📝 작성/준비 중", cls: "st-prep" },
+  submitted: { label: "🚀 제출 완료", cls: "st-submitted" },
+  selected: { label: "🎉 최종 선정", cls: "st-selected" },
+  rejected: { label: "❌ 미선정/탈락", cls: "st-rejected" },
+};
+
 const PAGE_SIZE = 10;
 const state = {
   q: "", chip: "open", sort: "deadline", hideIneligible: true,
   view: "list", listMode: "list", bannerTab: "fit", org: "all", region: "all", sector: "all", calYm: null, calDay: null, data: null, page: 1,
+  mainView: "programs", apps: [], appEditId: null,
   favs: new Set(JSON.parse(localStorage.getItem("alcofix_favs") || "[]")),
   decided: new Set(JSON.parse(localStorage.getItem("alcofix_decided") || "[]")),
   profile: null,
@@ -842,7 +974,8 @@ function openDetailModal(id) {
       ${decided ? `<button class="attach-link" data-goto="plan.html?title=${encodeURIComponent(it.title)}" style="flex:1">📝 초안 작성</button>` : ""}
       <a class="mb-save" style="flex:1;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center;" href="${esc(it.url)}" target="_blank" rel="noopener">원문 보기 ↗</a>
       <button class="mb-close" id="dmClose" style="flex:1">닫기</button>
-    </div>`;
+    </div>
+    <button class="app-edit-btn" data-track="${esc(it.id)}" style="width:100%;margin-top:8px">👤 지원 관리에 추가</button>`;
   document.getElementById("detailModal").style.display = "flex";
 }
 function closeDetailModal() { document.getElementById("detailModal").style.display = "none"; }
@@ -1198,6 +1331,27 @@ document.addEventListener("click", (e) => {
   if (e.target.closest("#calNext")) { let [y, m] = state.calYm; m++; if (m > 11) { m = 0; y++; } state.calYm = [y, m]; state.calDay = null; render(); return; }
   const dayEl = e.target.closest(".cal .day.has");
   if (dayEl) { state.calDay = state.calDay === dayEl.dataset.day ? null : dayEl.dataset.day; render(); return; }
+
+  const nav = e.target.closest(".mainnav-btn");
+  if (nav) { switchMainView(nav.dataset.mainview); return; }
+  const track = e.target.closest("[data-track]");
+  if (track) {
+    const it = state.data.items.find((i) => i.id === track.dataset.track);
+    closeDetailModal();
+    if (it) openAppModal(null, { title: it.title, org: it.org, sector: it.sector, deadline: it.applyEnd || "" });
+    switchMainView("mypage");
+    return;
+  }
+  const appCycle = e.target.closest(".status-badge[data-app-cycle]");
+  if (appCycle) { cycleAppStatus(appCycle.dataset.appCycle); return; }
+  const appEdit = e.target.closest("[data-app-edit]");
+  if (appEdit) {
+    const a = state.apps.find((x) => x.id === appEdit.dataset.appEdit);
+    if (a) openAppModal(a.id, a);
+    return;
+  }
+  const appDel = e.target.closest("[data-app-del]");
+  if (appDel) { deleteApp(appDel.dataset.appDel); return; }
 });
 
 async function init() {
@@ -1262,6 +1416,120 @@ document.getElementById("pfClear").addEventListener("click", () => {
   closeProfileModal();
   render();
 });
+
+// ---- 마이페이지: 상단 내비게이션 ----
+function switchMainView(view) {
+  state.mainView = view;
+  document.querySelectorAll(".mainnav-btn").forEach((b) => b.classList.toggle("active", b.dataset.mainview === view));
+  document.getElementById("programsView").style.display = view === "programs" ? "" : "none";
+  document.getElementById("mypageView").style.display = view === "mypage" ? "" : "none";
+  if (view === "mypage") { renderProfileSummary(); loadApps(); }
+}
+document.getElementById("mypageProfileBtn").addEventListener("click", openProfileModal);
+
+const PROFILE_SUMMARY_ROWS = [
+  ["name", "회사명"], ["ceoName", "대표자명"], ["address", "소재지"], ["item", "주요 아이템"], ["certs", "보유 인증·IP"],
+];
+function renderProfileSummary() {
+  const p = state.profile;
+  const box = document.getElementById("profileSummary");
+  if (!p) { box.innerHTML = `<div style="font-size:12.5px;color:var(--muted)">아직 입력된 기업 정보가 없습니다.</div>`; return; }
+  box.innerHTML = PROFILE_SUMMARY_ROWS.filter(([k]) => p[k]).map(([k, label]) =>
+    `<div class="profile-summary-row"><span class="k">${esc(label)}</span><span class="v">${esc(p[k])}</span></div>`
+  ).join("") || `<div style="font-size:12.5px;color:var(--muted)">아직 입력된 기업 정보가 없습니다.</div>`;
+}
+
+// ---- 마이페이지: 지원사업 트래킹 (Firestore 공용) ----
+const appsCol = collection(db, "applications");
+async function loadApps() {
+  const listEl = document.getElementById("appList");
+  listEl.innerHTML = `<div class="empty">불러오는 중…</div>`;
+  try {
+    const snap = await getDocs(query(appsCol, orderBy("createdAt", "desc")));
+    state.apps = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    renderApps();
+  } catch (e) {
+    listEl.innerHTML = `<div class="empty">불러오기 실패: ${esc(e.message)}</div>`;
+  }
+}
+function renderApps() {
+  const counts = { prep: 0, submitted: 0, selected: 0, rejected: 0 };
+  state.apps.forEach((a) => { if (counts[a.status] !== undefined) counts[a.status]++; });
+  document.getElementById("appKpiRow").innerHTML = `
+    <div class="kpi-card"><div class="kn">${state.apps.length}</div><div class="kl">전체 관리 건수</div></div>
+    <div class="kpi-card k-prep"><div class="kn">${counts.prep}</div><div class="kl">준비 중</div></div>
+    <div class="kpi-card k-submitted"><div class="kn">${counts.submitted}</div><div class="kl">제출 완료</div></div>
+    <div class="kpi-card k-selected"><div class="kn">${counts.selected}</div><div class="kl">🎉 최종 선정</div></div>
+    <div class="kpi-card k-rejected"><div class="kn">${counts.rejected}</div><div class="kl">불합격/마감</div></div>`;
+
+  const listEl = document.getElementById("appList");
+  if (!state.apps.length) { listEl.innerHTML = `<div class="empty">아직 관리 중인 지원사업이 없습니다.<br>공고 상세에서 "지원 관리에 추가"를 누르거나, 위 버튼으로 직접 추가하세요.</div>`; return; }
+  listEl.innerHTML = state.apps.map((a) => {
+    const st = APP_STATUS[a.status] || APP_STATUS.prep;
+    const meta = [a.org, a.sector, a.deadline ? `마감 ${a.deadline}` : "", a.amount].filter(Boolean).join(" · ");
+    return `<div class="app-row">
+      <div class="a-main">
+        <div class="a-title">${esc(a.title || "(제목 없음)")}</div>
+        <div class="a-meta">${esc(meta)}</div>
+      </div>
+      <div class="a-actions">
+        <button class="status-badge ${st.cls}" data-app-cycle="${esc(a.id)}">${st.label}</button>
+        <button class="app-edit-btn" data-app-edit="${esc(a.id)}">수정</button>
+        <button class="app-del-btn" data-app-del="${esc(a.id)}">삭제</button>
+      </div>
+    </div>`;
+  }).join("");
+}
+const APP_STATUS_ORDER = ["prep", "submitted", "selected", "rejected"];
+async function cycleAppStatus(id) {
+  const a = state.apps.find((x) => x.id === id);
+  if (!a) return;
+  const next = APP_STATUS_ORDER[(APP_STATUS_ORDER.indexOf(a.status) + 1) % APP_STATUS_ORDER.length];
+  a.status = next;
+  renderApps();
+  await updateDoc(doc(db, "applications", id), { status: next, updatedAt: serverTimestamp() });
+}
+async function deleteApp(id) {
+  if (!confirm("이 지원사업 관리 항목을 삭제할까요?")) return;
+  await deleteDoc(doc(db, "applications", id));
+  state.apps = state.apps.filter((a) => a.id !== id);
+  renderApps();
+}
+
+const APP_FIELDS = [["apTitle", "title"], ["apOrg", "org"], ["apSector", "sector"], ["apDeadline", "deadline"], ["apAmount", "amount"], ["apStatus", "status"], ["apMemo", "memo"]];
+function openAppModal(editId, prefill) {
+  state.appEditId = editId;
+  document.getElementById("appModalTitle").textContent = editId ? "지원사업 수정" : "지원사업 추가";
+  document.getElementById("apDelete").style.display = editId ? "block" : "none";
+  const p = prefill || {};
+  APP_FIELDS.forEach(([id, key]) => { document.getElementById(id).value = p[key] ?? (key === "status" ? "prep" : ""); });
+  document.getElementById("appModal").style.display = "flex";
+}
+function closeAppModal() { document.getElementById("appModal").style.display = "none"; }
+document.getElementById("addAppBtn").addEventListener("click", () => openAppModal(null, null));
+document.getElementById("apClose").addEventListener("click", closeAppModal);
+document.getElementById("appModal").addEventListener("click", (e) => { if (e.target.id === "appModal") closeAppModal(); });
+document.getElementById("apDelete").addEventListener("click", async () => {
+  if (state.appEditId) await deleteApp(state.appEditId);
+  closeAppModal();
+});
+document.getElementById("apSave").addEventListener("click", async () => {
+  const data = {};
+  APP_FIELDS.forEach(([id, key]) => { data[key] = document.getElementById(id).value || null; });
+  if (!data.title) { alert("지원사업명을 입력해주세요."); return; }
+  data.updatedAt = serverTimestamp();
+  if (state.appEditId) {
+    await updateDoc(doc(db, "applications", state.appEditId), data);
+  } else {
+    data.createdAt = serverTimestamp();
+    await addDoc(appsCol, data);
+  }
+  closeAppModal();
+  loadApps();
+});
+
+document.getElementById("apSector").innerHTML =
+  `<option value="">선택 안 함</option>` + SECTOR_ORDER.map((s) => `<option value="${esc(s)}">${esc(s)}</option>`).join("");
 
 state.profile = loadProfile();
 setupGate();
