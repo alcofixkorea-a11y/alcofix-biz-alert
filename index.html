@@ -371,13 +371,13 @@ select {
 .modal-actions .mb-clear { background: var(--red-soft); color: var(--red); }
 .modal-actions .mb-close { background: var(--bg); color: var(--muted); }
 
-/* ---- 상단 페이지 내비게이션 ---- */
-.mainnav { display: flex; gap: 6px; margin-top: 14px; }
-.mainnav-btn {
-  border: 1px solid var(--line); background: var(--card); color: var(--muted); font: inherit;
-  font-size: 13.5px; font-weight: 700; padding: 9px 16px; border-radius: 10px 10px 0 0; cursor: pointer;
+/* ---- 상단 페이지 내비게이션 (헤더 우측 버튼) ---- */
+.mypage-toggle-btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit;
+  font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 9px; cursor: pointer;
 }
-.mainnav-btn.active { border-color: var(--accent); border-bottom: 2px solid var(--card); color: var(--accent); background: var(--accent-soft); }
+.mypage-toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
+.mypage-toggle-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
 /* ---- 마이페이지 ---- */
 .mypage-grid { display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: start; }
@@ -462,13 +462,10 @@ footer { margin-top: 40px; font-size: 12.5px; color: var(--muted); text-align: c
   <div class="wrap">
     <div class="h-top">
       <img class="ci-logo" src="assets/ci_alcofix.png" alt="ALCOFIX">
-      <button id="logoutBtn" type="button" style="margin-left:auto;border:0;background:none;cursor:pointer;font:inherit;font-size:12.5px;color:var(--muted)">로그아웃</button>
+      <button class="mypage-toggle-btn" id="mypageToggleBtn" type="button" style="margin-left:auto" data-mainview="programs">👤 마이페이지</button>
+      <button id="logoutBtn" type="button" style="border:0;background:none;cursor:pointer;font:inherit;font-size:12.5px;color:var(--muted)">로그아웃</button>
     </div>
     <div class="h-tagline">지원사업 통합 안내 사이트</div>
-    <div class="mainnav" id="mainNav">
-      <button class="mainnav-btn active" data-mainview="programs">📢 전체 공고</button>
-      <button class="mainnav-btn" data-mainview="mypage">👤 마이페이지 · 지원 관리</button>
-    </div>
   </div>
 </header>
 
@@ -1332,8 +1329,8 @@ document.addEventListener("click", (e) => {
   const dayEl = e.target.closest(".cal .day.has");
   if (dayEl) { state.calDay = state.calDay === dayEl.dataset.day ? null : dayEl.dataset.day; render(); return; }
 
-  const nav = e.target.closest(".mainnav-btn");
-  if (nav) { switchMainView(nav.dataset.mainview); return; }
+  const nav = e.target.closest("#mypageToggleBtn");
+  if (nav) { switchMainView(state.mainView === "mypage" ? "programs" : "mypage"); return; }
   const track = e.target.closest("[data-track]");
   if (track) {
     const it = state.data.items.find((i) => i.id === track.dataset.track);
@@ -1420,7 +1417,9 @@ document.getElementById("pfClear").addEventListener("click", () => {
 // ---- 마이페이지: 상단 내비게이션 ----
 function switchMainView(view) {
   state.mainView = view;
-  document.querySelectorAll(".mainnav-btn").forEach((b) => b.classList.toggle("active", b.dataset.mainview === view));
+  const toggleBtn = document.getElementById("mypageToggleBtn");
+  toggleBtn.classList.toggle("active", view === "mypage");
+  toggleBtn.textContent = view === "mypage" ? "📢 전체 공고로" : "👤 마이페이지";
   document.getElementById("programsView").style.display = view === "programs" ? "" : "none";
   document.getElementById("mypageView").style.display = view === "mypage" ? "" : "none";
   if (view === "mypage") { renderProfileSummary(); loadApps(); }
