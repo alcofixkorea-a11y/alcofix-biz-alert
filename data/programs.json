@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-09T08:02:47.541+09:00",
-  "today": "2026-08-09",
+  "generatedAt": "2026-08-10T08:04:04.570+09:00",
+  "today": "2026-08-10",
   "sources": {
     "kstartup": {
-      "count": 67
+      "count": 65
     },
     "bizinfo": {
       "error": "fetch failed"
@@ -41,60 +41,6 @@
           "name": "(붙임)세종 스타트업 원스톱 지원센터 아카데미 2차.hwp",
           "url": "https://www.k-startup.go.kr/afile/fileDownload/7i0Ln"
         }
-      ]
-    },
-    {
-      "id": "kstartup-178584",
-      "source": "kstartup",
-      "title": "2026 북경대창업훈련캠프 글로벌 창업대회",
-      "org": "BoxLadder",
-      "category": "행사ㆍ네트워크",
-      "sector": "행사·네트워크",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-07-16",
-      "applyEnd": "2026-08-09",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178584",
-      "summary": "북경대창업훈련캠프, 중국 지방 정부, 글로벌 투자유치 플랫폼 박스레더가 함께하는 2026 북경대창업훈련캠프 글로벌 창업대회를 추진합니다. 북경대창업훈련캠프 명의의 상장, 상금 수여와 함께 중국 지방 정부에서 지원하는 중국 진출 및 투자유치 기회를 확보할 수 있는 기회를 제공하오니 중국 투자유치, 중국 시장 진출, 중국 지방 정부로부터 다양한 정책 자금에 관심있는 스타트업들의 많은 관심과 지원 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-07-20",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-178371",
-      "source": "kstartup",
-      "title": "[윤민창의투자재단] 굿스타터 20기 모집",
-      "org": "재단법인 윤민창의투자재단",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,일반기업,1인 창조기업",
-      "applyStart": "2026-07-01",
-      "applyEnd": "2026-08-09",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178371",
-      "summary": "윤민창의투자재단의 굿스타터는 매년 2회 선발하는 스타트업 투자, 육성 공모 프로그램으로, 창의적인 아이디어, 도전정신을 가진 창업자들이 꿈을 펼칠 수 있도록 ‘시작’을 함께합니다. 굿스타터에 선발된 스타트업에게는 최대 2억원의 투자금과 TIPS 및 입주 기회를 제공합니다",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-07-20",
-      "sources": [
-        "kstartup"
       ]
     },
     {
@@ -1135,6 +1081,33 @@
       ]
     },
     {
+      "id": "kstartup-178788",
+      "source": "kstartup",
+      "title": "2026 경제계 주도 대국민 창업·육성 프로젝트 「더하기 창업」 참가팀 모집",
+      "org": "머스트액셀러레이터",
+      "category": "사업화",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-08-10",
+      "applyEnd": "2026-08-28",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178788",
+      "summary": "한국경제인협회(FKI)가 창립 65주년을 맞아 추진하는 「2026 경제계 주도 대국민 창업·육성 프로 젝트 - 더하기 창업」 참가팀을 모집합니다. 예비창업자와 초기창업기업을 대상으로 총 100개 팀을 선발하여, 12주간 성장단계별 액셀러레이팅과 한국경제인협회 회원사 연계를 지원할 예정입니다. 관심 있으신 창업자 여러분의 많은 신청을 부탁드립니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": true,
+      "firstSeen": "2026-08-07",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "kstartup-178284",
       "source": "kstartup",
       "title": "2026년 벤처나라제품 발굴 및 추천 지원 공고",
@@ -1825,33 +1798,6 @@
       "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
       "privateHost": false,
       "firstSeen": "2026-07-20",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-178788",
-      "source": "kstartup",
-      "title": "2026 경제계 주도 대국민 창업·육성 프로젝트 「더하기 창업」 참가팀 모집",
-      "org": "머스트액셀러레이터",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-08-10",
-      "applyEnd": "2026-08-28",
-      "alwaysOpen": false,
-      "status": "upcoming",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178788",
-      "summary": "한국경제인협회(FKI)가 창립 65주년을 맞아 추진하는 「2026 경제계 주도 대국민 창업·육성 프로 젝트 - 더하기 창업」 참가팀을 모집합니다. 예비창업자와 초기창업기업을 대상으로 총 100개 팀을 선발하여, 12주간 성장단계별 액셀러레이팅과 한국경제인협회 회원사 연계를 지원할 예정입니다. 관심 있으신 창업자 여러분의 많은 신청을 부탁드립니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-08-07",
       "sources": [
         "kstartup"
       ]
