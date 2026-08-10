@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>알코픽스 재무 관리 시스템</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+:root {
+  --bg: #f1f5f9; --card: #ffffff; --text: #0f172a; --muted: #64748b; --line: #e2e8f0;
+  --teal: #0f766e; --teal-soft: #ccfbf1;
+  --green: #059669; --green-soft: #d1fae5;
+  --red: #dc2626; --red-soft: #fee2e2;
+  --amber: #d97706; --amber-soft: #fef3c7;
+  --indigo: #4f46e5; --indigo-soft: #e0e7ff;
+  --purple: #7c3aed; --purple-soft: #ede9fe;
+  --slate-900: #0f172a; --slate-800: #1e293b; --slate-50: #f8fafc;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic", sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.55;
+}
+
+/* ---- 로그인 게이트 ---- */
+.gate {
+  position: fixed; inset: 0; background: var(--slate-900); z-index: 999;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.gate-box { background: var(--card); border-radius: 16px; padding: 32px 28px; width: 100%; max-width: 360px; text-align: center; }
+.gate-logo { display: flex; align-items: center; gap: 10px; justify-content: center; margin-bottom: 6px; }
+.gate-logo .logo-icon { width: 36px; height: 36px; background: var(--teal); color: #fff; font-weight: 800; font-size: 18px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.gate-logo .logo-text { text-align: left; }
+.gate-logo .logo-text span:first-child { font-size: 18px; font-weight: 900; letter-spacing: 1px; display: block; }
+.gate-logo .logo-text span:last-child { font-size: 9px; color: var(--teal); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.gate-box .sub { font-size: 13px; color: var(--muted); margin: 10px 0 20px; }
+.gate-box input { width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 15px; margin-bottom: 10px; }
+.gate-box button { width: 100%; padding: 12px; border: 0; border-radius: 10px; background: var(--teal); color: #fff; font: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer; }
+.gate-box button:hover { opacity: .92; }
+.gate-err { color: var(--red); font-size: 12.5px; margin-top: 8px; min-height: 16px; }
+
+/* ---- 헤더 ---- */
+header {
+  background: var(--card); border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 10; box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  height: 60px; display: flex; align-items: center; justify-content: space-between;
+}
+.h-logo { display: flex; align-items: center; gap: 10px; }
+.h-logo .logo-icon { width: 34px; height: 34px; background: var(--teal); color: #fff; font-weight: 800; font-size: 17px; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(15,118,110,.25); }
+.h-logo .logo-name { font-size: 17px; font-weight: 900; letter-spacing: 1px; }
+.h-logo .logo-sub { font-size: 9px; color: var(--teal); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+nav { display: flex; gap: 4px; }
+nav button {
+  padding: 8px 16px; border-radius: 8px; font: inherit; font-size: 13px; font-weight: 600;
+  border: none; cursor: pointer; transition: all .15s;
+  background: transparent; color: var(--muted);
+}
+nav button:hover { background: var(--slate-50); color: var(--text); }
+nav button.active { background: var(--teal); color: #fff; }
+.h-right { display: flex; align-items: center; gap: 10px; }
+.back-link { font-size: 12px; color: var(--muted); text-decoration: none; }
+.back-link:hover { color: var(--teal); }
+.logout-btn { font-size: 11.5px; color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; font-family: inherit; }
+.logout-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ---- 메인 ---- */
+main { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; }
+
+/* ---- 요약 카드 그리드 ---- */
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+.stat-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,.03); }
+.stat-card .label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+.stat-card .value { font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
+.stat-card.dark { background: linear-gradient(135deg, var(--slate-900), var(--slate-800)); color: #fff; border: none; }
+.stat-card.dark .label { color: #94a3b8; }
+.stat-card.dark .value { color: #5eead4; font-size: 17px; }
+.c-green { color: var(--green); }
+.c-red { color: var(--red); }
+.c-amber { color: var(--amber); }
+.c-teal { color: var(--teal); }
+
+/* ---- 패널 ---- */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.03); }
+.panel h2 { font-size: 16px; font-weight: 800; margin-bottom: 16px; }
+
+/* ---- 폼 ---- */
+.form-grid { display: grid; gap: 10px; }
+.form-grid.cols2 { grid-template-columns: 1fr 1fr; }
+.form-grid.cols3 { grid-template-columns: 1fr 1fr 1fr; }
+.form-grid.cols4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.form-grid .span2 { grid-column: span 2; }
+.form-grid .span3 { grid-column: span 3; }
+.form-grid .span4 { grid-column: 1 / -1; }
+.form-grid input, .form-grid select {
+  padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px;
+  font: inherit; font-size: 13.5px; background: var(--card); color: var(--text);
+}
+.form-grid input::placeholder { color: #94a3b8; }
+.btn-primary {
+  padding: 10px 18px; border: 0; border-radius: 8px; background: var(--teal); color: #fff;
+  font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; transition: opacity .15s;
+}
+.btn-primary:hover { opacity: .9; }
+.btn-dark {
+  padding: 10px 18px; border: 0; border-radius: 8px; background: var(--slate-900); color: #fff;
+  font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; transition: opacity .15s;
+}
+.btn-dark:hover { opacity: .9; }
+
+/* ---- 엑셀 업로드 ---- */
+.upload-zone {
+  display: flex; flex-direction: column; justify-content: space-between; height: 100%;
+}
+.upload-zone p { font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+.upload-label {
+  display: block; text-align: center; padding: 14px; border: 2px dashed var(--line); border-radius: 10px;
+  background: var(--slate-50); color: var(--muted); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: all .15s;
+}
+.upload-label:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-soft); }
+.upload-label input { display: none; }
+
+/* ---- 테이블 ---- */
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th {
+  padding: 10px 12px; text-align: left; font-size: 11.5px; font-weight: 700; color: var(--muted);
+  background: var(--slate-50); border-bottom: 1px solid var(--line);
+}
+thead th.r { text-align: right; }
+tbody td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+tbody td.r { text-align: right; font-variant-numeric: tabular-nums; }
+tbody td.b { font-weight: 700; }
+tbody tr:hover { background: var(--slate-50); }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 11px; font-weight: 700;
+}
+.badge-green { background: var(--green-soft); color: var(--green); }
+.badge-red { background: var(--red-soft); color: var(--red); }
+.badge-amber { background: var(--amber-soft); color: var(--amber); }
+.badge-indigo { background: var(--indigo-soft); color: var(--indigo); }
+.badge-purple { background: var(--purple-soft); color: var(--purple); }
+.settle-btn {
+  padding: 4px 12px; border-radius: 99px; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; border: none; transition: all .15s;
+}
+.settle-btn.pending { background: var(--red); color: #fff; }
+.settle-btn.pending:hover { background: #b91c1c; }
+.settle-btn.done { background: var(--line); color: var(--muted); }
+.settle-btn.done:hover { background: #cbd5e1; }
+.del-btn {
+  background: none; border: none; color: var(--muted); cursor: pointer; font-size: 13px; padding: 2px 6px; border-radius: 4px;
+}
+.del-btn:hover { background: var(--red-soft); color: var(--red); }
+
+/* ---- 대시보드 ---- */
+.dash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.dash-box { background: var(--slate-50); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+.dash-box h3 { font-size: 14px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+.dash-box .big { font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+
+/* ---- 2열 레이아웃 ---- */
+.split { display: grid; grid-template-columns: 1fr 320px; gap: 20px; }
+.split > :first-child { min-width: 0; }
+
+/* ---- 필터 ---- */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.filters select, .filters input {
+  padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px;
+  font: inherit; font-size: 12.5px; background: var(--card);
+}
+.filters input { flex: 1; min-width: 100px; }
+.csv-btn {
+  margin-left: auto; padding: 7px 14px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--card); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text);
+}
+.csv-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+.empty { text-align: center; padding: 36px 20px; color: var(--muted); font-size: 13px; }
+.hidden { display: none !important; }
+
+/* ---- 토스트 ---- */
+.toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: var(--slate-800); color: #fff; padding: 10px 22px; border-radius: 10px;
+  font-size: 13px; font-weight: 600; z-index: 100; opacity: 0; transition: opacity .25s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; }
+
+/* ---- 반응형 ---- */
+@media (max-width: 900px) {
+  .cards { grid-template-columns: 1fr 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .dash-grid { grid-template-columns: 1fr; }
+  nav { gap: 2px; }
+  nav button { padding: 6px 10px; font-size: 12px; }
+}
+@media (max-width: 600px) {
+  .cards { grid-template-columns: 1fr; }
+  .form-grid.cols2, .form-grid.cols3, .form-grid.cols4 { grid-template-columns: 1fr; }
+  .form-grid .span2, .form-grid .span3 { grid-column: auto; }
+  .header-inner { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 8px; }
+  nav { width: 100%; overflow-x: auto; }
+  .stat-card .value { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 로그인 게이트 ===== -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-logo">
+      <div class="logo-icon">A</div>
+      <div class="logo-text"><span>ALKOFIX</span><span>Financial System</span></div>
+    </div>
+    <p class="sub">내부 재무 관리 시스템입니다.</p>
+    <form id="gateForm">
+      <input type="email" id="gateEmail" placeholder="이메일" autocomplete="username" autofocus>
+      <input type="password" id="gatePw" placeholder="비밀번호" autocomplete="current-password">
+      <button type="submit">로그인</button>
+      <div class="gate-err" id="gateErr"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== 헤더 ===== -->
+<header>
+  <div class="header-inner">
+    <div class="h-logo">
+      <div class="logo-icon">A</div>
+      <div style="display:flex;flex-direction:column;">
+        <span class="logo-name">ALKOFIX</span>
+        <span class="logo-sub">Financial System</span>
+      </div>
+    </div>
+    <nav id="tabNav">
+      <button class="active" data-tab="dashboard">대시보드</button>
+      <button data-tab="transactions">금전출납 / 카드 내역</button>
+      <button data-tab="temporary">가수금 · 가지급금 현황</button>
+    </nav>
+    <div class="h-right">
+      <a href="index.html" class="back-link">← 지원사업 안내</a>
+      <button class="logout-btn" id="logoutBtn">로그아웃</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 메인 ===== -->
+<main id="mainContent" class="hidden">
+
+  <!-- 요약 카드 -->
+  <div class="cards" style="grid-template-columns: 1fr 1fr;">
+    <div class="stat-card" style="border-left:4px solid var(--teal);">
+      <div class="label">현재 잔액 (입금 - 출금 - 카드)</div>
+      <div class="value c-teal" id="sBalance">0 원</div>
+    </div>
+    <div class="stat-card dark">
+      <div class="label">미정산 가지급 / 가수금</div>
+      <div class="value" id="sTempSummary">가지급: 0 / 가수금: 0 원</div>
+    </div>
+  </div>
+
+  <!-- ===== TAB: 대시보드 ===== -->
+  <div id="tab-dashboard">
+    <div class="panel">
+      <h2>재무 요약 현황</h2>
+      <div class="dash-grid">
+        <div class="dash-box">
+          <h3>순 수지 잔액 (입금 - 출금 - 카드)</h3>
+          <div class="big" id="dNet">0 원</div>
+        </div>
+        <div class="dash-box">
+          <h3>미정산 정산 필요 항목</h3>
+          <p id="dPending" style="font-size:13px;color:var(--muted);line-height:1.7;"></p>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>최근 입력 거래 (최신 5건)</h2>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>일자</th><th>구분</th><th>적요/내역</th><th class="r">금액</th></tr></thead>
+          <tbody id="dRecent"></tbody>
+        </table>
+        <div class="empty hidden" id="dRecentEmpty">등록된 거래가 없습니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB: 금전출납 / 카드 내역 ===== -->
+  <div id="tab-transactions" class="hidden">
+    <div class="split">
+      <!-- 직접 입력 -->
+      <div class="panel">
+        <h2>거래 내역 직접 추가</h2>
+        <form id="txForm" class="form-grid cols3">
+          <input type="date" id="txDate" required>
+          <select id="txType">
+            <option value="입금">입금 (계좌)</option>
+            <option value="출금" selected>출금 (계좌)</option>
+            <option value="카드">카드 지출</option>
+          </select>
+          <input type="text" id="txCategory" placeholder="항목 (예: 복리후생비)">
+          <input type="number" id="txAmount" placeholder="금액 (원)" required>
+          <input type="text" id="txDesc" placeholder="내역 / 적요" class="span2">
+          <button type="submit" class="btn-primary span3">거래 추가하기</button>
+        </form>
+      </div>
+      <!-- 엑셀 업로드 -->
+      <div class="panel">
+        <div class="upload-zone">
+          <div>
+            <h2>엑셀(XLSX) 내역 업로드</h2>
+            <p>은행/카드사 거래 내역 엑셀 파일을 업로드하면 자동으로 계산에 반영됩니다.</p>
+          </div>
+          <label class="upload-label">
+            파일 선택 및 계산
+            <input type="file" accept=".xlsx,.xls,.csv" id="xlsxInput">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- 전체 내역 테이블 -->
+    <div class="panel">
+      <h2>전체 출납 및 카드 내역 (<span id="txCount">0</span>건)</h2>
+      <div class="filters">
+        <select id="fMonth"><option value="">전체 기간</option></select>
+        <select id="fType">
+          <option value="">전체 구분</option>
+          <option value="입금">입금</option>
+          <option value="출금">출금</option>
+          <option value="카드">카드</option>
+        </select>
+        <input type="text" id="fSearch" placeholder="적요 검색…">
+        <button class="csv-btn" id="csvBtn">CSV 다운로드</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th>일자</th><th>구분</th><th>항목</th><th>적요/내역</th><th>결제수단</th><th class="r">금액</th><th style="width:36px"></th>
+          </tr></thead>
+          <tbody id="txBody"></tbody>
+        </table>
+        <div class="empty hidden" id="txEmpty">거래 내역이 없습니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB: 가수금 · 가지급금 ===== -->
+  <div id="tab-temporary" class="hidden">
+    <div class="panel">
+      <h2>가수금 · 가지급금 신규 등록</h2>
+      <form id="tmpForm" class="form-grid cols4">
+        <select id="tmpClass">
+          <option value="가지급금">가지급금 (회사→임직원/대표)</option>
+          <option value="가수금">가수금 (임직원/대표→회사)</option>
+        </select>
+        <input type="text" id="tmpTarget" placeholder="대상자 (예: 김대표)" required>
+        <input type="number" id="tmpAmount" placeholder="금액 (원)" required>
+        <input type="date" id="tmpDate" required>
+        <input type="date" id="tmpDue" placeholder="정산예정일">
+        <input type="text" id="tmpReason" placeholder="사유 / 적요" class="span2">
+        <button type="submit" class="btn-dark">목록에 등록</button>
+      </form>
+    </div>
+    <div class="panel">
+      <h2>가수금 · 가지급금 미정산 및 정산 현황</h2>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th>분류</th><th>대상자</th><th>발생일자</th><th>정산예정일</th><th>사유</th><th class="r">금액</th><th style="text-align:center">정산 상태</th><th style="width:36px"></th>
+          </tr></thead>
+          <tbody id="tmpBody"></tbody>
+        </table>
+        <div class="empty hidden" id="tmpEmpty">등록된 항목이 없습니다.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {
+  getFirestore, collection, addDoc, deleteDoc, updateDoc, doc, onSnapshot, query, orderBy, serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import {
+  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCSacTSDK_R8O-fp7ASLY1r7ASODlsqh8g",
+  authDomain: "alcofix-59755.firebaseapp.com",
+  projectId: "alcofix-59755",
+  storageBucket: "alcofix-59755.firebasestorage.app",
+  messagingSenderId: "903711899207",
+  appId: "1:903711899207:web:9ff8b39aa12ee8594d3b62",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+let transactions = [];
+let tempAccounts = [];
+let unsubTx = null, unsubTmp = null;
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => (s || "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = (n) => Number(n).toLocaleString("ko-KR") + " 원";
+const today = () => new Date().toISOString().slice(0, 10);
+
+// ===== 로그인 게이트 =====
+onAuthStateChanged(auth, (user) => {
+  $("gate").style.display = user ? "none" : "flex";
+  $("mainContent").classList.toggle("hidden", !user);
+  if (user && !unsubTx) startListening();
+  if (!user) { if (unsubTx) { unsubTx(); unsubTx = null; } if (unsubTmp) { unsubTmp(); unsubTmp = null; } }
+});
+
+$("gateForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  $("gateErr").textContent = "";
+  try {
+    await signInWithEmailAndPassword(auth, $("gateEmail").value.trim(), $("gatePw").value);
+  } catch {
+    $("gateErr").textContent = "이메일 또는 비밀번호가 올바르지 않습니다.";
+    $("gatePw").value = "";
+  }
+});
+$("logoutBtn").addEventListener("click", () => signOut(auth));
+
+// ===== Firestore 실시간 구독 =====
+function startListening() {
+  unsubTx = onSnapshot(
+    query(collection(db, "cashbook_tx"), orderBy("date", "desc"), orderBy("createdAt", "desc")),
+    (snap) => { transactions = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); }
+  );
+  unsubTmp = onSnapshot(
+    query(collection(db, "cashbook_temp"), orderBy("date", "desc")),
+    (snap) => { tempAccounts = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); }
+  );
+}
+
+// ===== 탭 전환 =====
+let activeTab = "dashboard";
+$("tabNav").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-tab]");
+  if (!btn) return;
+  activeTab = btn.dataset.tab;
+  $("tabNav").querySelectorAll("button").forEach(b => b.classList.toggle("active", b === btn));
+  ["dashboard", "transactions", "temporary"].forEach(t => {
+    $("tab-" + t).classList.toggle("hidden", t !== activeTab);
+  });
+});
+
+// ===== 거래 등록 =====
+$("txDate").value = today();
+$("txForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const amount = Number($("txAmount").value);
+  if (!amount || amount <= 0) { toast("금액을 입력하세요"); return; }
+  await addDoc(collection(db, "cashbook_tx"), {
+    date: $("txDate").value,
+    type: $("txType").value,
+    category: $("txCategory").value.trim(),
+    amount,
+    desc: $("txDesc").value.trim(),
+    method: $("txType").value === "카드" ? "법인카드" : "계좌이체",
+    createdAt: serverTimestamp(),
+  });
+  $("txAmount").value = ""; $("txCategory").value = ""; $("txDesc").value = "";
+  $("txDate").value = today();
+  toast("거래 등록 완료");
+});
+
+// ===== 가수금/가지급금 등록 =====
+$("tmpDate").value = today();
+$("tmpForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const amount = Number($("tmpAmount").value);
+  if (!amount || amount <= 0) { toast("금액을 입력하세요"); return; }
+  await addDoc(collection(db, "cashbook_temp"), {
+    classType: $("tmpClass").value,
+    target: $("tmpTarget").value.trim(),
+    amount,
+    date: $("tmpDate").value,
+    dueDate: $("tmpDue").value || "",
+    reason: $("tmpReason").value.trim(),
+    status: "미정산",
+    createdAt: serverTimestamp(),
+  });
+  $("tmpTarget").value = ""; $("tmpAmount").value = ""; $("tmpReason").value = "";
+  $("tmpDate").value = today(); $("tmpDue").value = "";
+  toast("등록 완료");
+});
+
+// ===== 엑셀 업로드 =====
+$("xlsxInput").addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async (evt) => {
+    const wb = XLSX.read(evt.target.result, { type: "binary" });
+    const data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+    let count = 0;
+    for (const row of data) {
+      const amount = Number(row["금액"] || row["입금액"] || row["출금액"] || 0);
+      if (!amount) continue;
+      await addDoc(collection(db, "cashbook_tx"), {
+        date: String(row["날짜"] || row["거래일자"] || today()),
+        type: row["구분"] || (row["입금액"] > 0 ? "입금" : "출금"),
+        category: row["항목"] || row["적요"] || "엑셀업로드",
+        amount: Math.abs(amount),
+        desc: row["내역"] || row["거래내용"] || "엑셀 자동등록",
+        method: row["결제수단"] || "계좌/카드",
+        createdAt: serverTimestamp(),
+      });
+      count++;
+    }
+    toast(count + "건의 거래가 추가되었습니다");
+    e.target.value = "";
+  };
+  reader.readAsBinaryString(file);
+});
+
+// ===== 삭제 =====
+window._delTx = async (id) => {
+  if (!confirm("이 거래를 삭제하시겠습니까?")) return;
+  await deleteDoc(doc(db, "cashbook_tx", id));
+  toast("삭제 완료");
+};
+window._delTmp = async (id) => {
+  if (!confirm("이 항목을 삭제하시겠습니까?")) return;
+  await deleteDoc(doc(db, "cashbook_temp", id));
+  toast("삭제 완료");
+};
+
+// ===== 정산 상태 토글 =====
+window._toggleSettle = async (id) => {
+  const item = tempAccounts.find(a => a.id === id);
+  if (!item) return;
+  await updateDoc(doc(db, "cashbook_temp", id), {
+    status: item.status === "미정산" ? "정산완료" : "미정산",
+  });
+};
+
+// ===== 필터 =====
+$("fMonth").addEventListener("change", renderTxTable);
+$("fType").addEventListener("change", renderTxTable);
+$("fSearch").addEventListener("input", renderTxTable);
+
+function getFilteredTx() {
+  const month = $("fMonth").value;
+  const type = $("fType").value;
+  const search = $("fSearch").value.trim().toLowerCase();
+  return transactions.filter(t => {
+    if (month && !t.date?.startsWith(month)) return false;
+    if (type && t.type !== type) return false;
+    if (search && !(t.desc || "").toLowerCase().includes(search) && !(t.category || "").toLowerCase().includes(search)) return false;
+    return true;
+  });
+}
+
+// ===== CSV 다운로드 =====
+$("csvBtn").addEventListener("click", () => {
+  const list = getFilteredTx();
+  if (!list.length) { toast("내보낼 내역이 없습니다"); return; }
+  const bom = "﻿";
+  let csv = bom + "날짜,구분,항목,적요,결제수단,금액\n";
+  for (const t of list) {
+    csv += [t.date, t.type, `"${esc(t.category)}"`, `"${esc(t.desc)}"`, t.method, t.amount].join(",") + "\n";
+  }
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8;" }));
+  a.download = `재무관리_ALCOFIX_${$("fMonth").value || "전체"}.csv`;
+  a.click();
+  toast("CSV 다운로드 완료");
+});
+
+// ===== 렌더링 =====
+function renderAll() {
+  renderStats();
+  renderDashboard();
+  renderTxTable();
+  renderTmpTable();
+  updateMonthFilter();
+}
+
+function renderStats() {
+  const dep = transactions.filter(t => t.type === "입금").reduce((s, t) => s + t.amount, 0);
+  const wdr = transactions.filter(t => t.type === "출금").reduce((s, t) => s + t.amount, 0);
+  const crd = transactions.filter(t => t.type === "카드").reduce((s, t) => s + t.amount, 0);
+  const pGaji = tempAccounts.filter(a => a.classType === "가지급금" && a.status === "미정산").reduce((s, a) => s + a.amount, 0);
+  const pGasu = tempAccounts.filter(a => a.classType === "가수금" && a.status === "미정산").reduce((s, a) => s + a.amount, 0);
+
+  const net = dep - wdr - crd;
+  $("sBalance").textContent = fmt(net);
+  $("sBalance").style.color = net >= 0 ? "var(--teal)" : "var(--red)";
+  $("sTempSummary").textContent = `가지급: ${fmt(pGaji)} / 가수금: ${fmt(pGasu)}`;
+
+  $("dNet").textContent = fmt(net);
+  $("dNet").style.color = (dep - wdr - crd) >= 0 ? "var(--teal)" : "var(--red)";
+
+  const gCnt = tempAccounts.filter(a => a.classType === "가지급금" && a.status === "미정산").length;
+  const sCnt = tempAccounts.filter(a => a.classType === "가수금" && a.status === "미정산").length;
+  $("dPending").innerHTML = `현재 미정산된 가지급금은 <b style="color:var(--red)">${gCnt}건</b>, 가수금은 <b style="color:var(--amber)">${sCnt}건</b>입니다.`;
+}
+
+function renderDashboard() {
+  const recent = transactions.slice(0, 5);
+  const tbody = $("dRecent");
+  $("dRecentEmpty").classList.toggle("hidden", recent.length > 0);
+  if (!recent.length) { tbody.innerHTML = ""; return; }
+  tbody.innerHTML = recent.map(t => `<tr>
+    <td>${esc(t.date)}</td>
+    <td><span class="badge ${t.type === "입금" ? "badge-green" : t.type === "출금" ? "badge-red" : "badge-amber"}">${esc(t.type)}</span></td>
+    <td style="font-weight:600">${esc(t.desc)}</td>
+    <td class="r b">${fmt(t.amount)}</td>
+  </tr>`).join("");
+}
+
+function renderTxTable() {
+  const list = getFilteredTx();
+  $("txCount").textContent = list.length;
+  $("txEmpty").classList.toggle("hidden", list.length > 0);
+  $("txBody").innerHTML = list.map(t => `<tr>
+    <td>${esc(t.date)}</td>
+    <td><span class="badge ${t.type === "입금" ? "badge-green" : t.type === "출금" ? "badge-red" : "badge-amber"}">${esc(t.type)}</span></td>
+    <td style="color:var(--muted)">${esc(t.category)}</td>
+    <td style="font-weight:600">${esc(t.desc)}</td>
+    <td style="color:var(--muted)">${esc(t.method)}</td>
+    <td class="r b">${fmt(t.amount)}</td>
+    <td><button class="del-btn" onclick="_delTx('${t.id}')" title="삭제">✕</button></td>
+  </tr>`).join("");
+}
+
+function renderTmpTable() {
+  $("tmpEmpty").classList.toggle("hidden", tempAccounts.length > 0);
+  $("tmpBody").innerHTML = tempAccounts.map(a => `<tr style="${a.status === "미정산" ? "background:rgba(254,243,199,.25)" : ""}">
+    <td><span class="badge ${a.classType === "가지급금" ? "badge-indigo" : "badge-purple"}">${esc(a.classType)}</span></td>
+    <td style="font-weight:700">${esc(a.target)}</td>
+    <td style="color:var(--muted)">${esc(a.date)}</td>
+    <td style="color:var(--muted)">${a.dueDate || "-"}</td>
+    <td>${esc(a.reason)}</td>
+    <td class="r b">${fmt(a.amount)}</td>
+    <td style="text-align:center">
+      <button class="settle-btn ${a.status === "미정산" ? "pending" : "done"}" onclick="_toggleSettle('${a.id}')">
+        ${a.status}
+      </button>
+    </td>
+    <td><button class="del-btn" onclick="_delTmp('${a.id}')" title="삭제">✕</button></td>
+  </tr>`).join("");
+}
+
+function updateMonthFilter() {
+  const sel = $("fMonth");
+  const cur = sel.value;
+  const months = [...new Set(transactions.map(t => t.date?.slice(0, 7)).filter(Boolean))].sort().reverse();
+  sel.innerHTML = '<option value="">전체 기간</option>' + months.map(m => {
+    const [y, mo] = m.split("-");
+    return `<option value="${m}">${y}년 ${parseInt(mo)}월</option>`;
+  }).join("");
+  sel.value = cur;
+}
+
+function toast(msg) {
+  const el = $("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.classList.remove("show"), 2200);
+}
+</script>
+</body>
+</html>
