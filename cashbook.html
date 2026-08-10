@@ -593,6 +593,9 @@ $("xlsxInput").addEventListener("change", async (e) => {
 
       if (!amount) continue;
 
+      const rowText = Object.values(row).join(" ");
+      if (/합계|소계|총계|이월|이전잔|전일잔|잔액합/.test(rowText)) continue;
+
       if (colType) {
         const tv = String(row[colType] || "");
         if (/입금|수입|매출|타행이체/.test(tv) && txType !== "입금") { /* keep detected */ }
