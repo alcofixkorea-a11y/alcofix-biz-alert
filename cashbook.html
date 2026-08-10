@@ -502,6 +502,32 @@ $("tmpForm").addEventListener("submit", async (e) => {
 });
 
 // ===== 엑셀 업로드 =====
+function findCol(keys, patterns) {
+  for (const p of patterns) {
+    const found = keys.find(k => k.includes(p));
+    if (found) return found;
+  }
+  return null;
+}
+function findNumericCol(row, keys) {
+  for (const k of keys) {
+    const v = Number(row[k]);
+    if (v && !isNaN(v)) return k;
+  }
+  return null;
+}
+function parseDate(val) {
+  if (!val) return today();
+  if (typeof val === "number") {
+    const d = XLSX.SSF.parse_date_code(val);
+    if (d) return `${d.y}-${String(d.m).padStart(2,"0")}-${String(d.d).padStart(2,"0")}`;
+  }
+  const s = String(val).trim();
+  const m = s.match(/(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})/);
+  if (m) return `${m[1]}-${m[2].padStart(2,"0")}-${m[3].padStart(2,"0")}`;
+  return today();
+}
+
 $("xlsxInput").addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) return;
@@ -510,31 +536,89 @@ $("xlsxInput").addEventListener("change", async (e) => {
   try {
     const buf = await file.arrayBuffer();
     const wb = XLSX.read(buf, { type: "array" });
-    const data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+    const ws = wb.Sheets[wb.SheetNames[0]];
+
+    const raw = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" });
+    const headerKeywords = ["거래일", "입금", "출금", "적요", "날짜", "금액", "이용일", "승인일"];
+    let headerIdx = 0;
+    for (let i = 0; i < Math.min(raw.length, 20); i++) {
+      const rowStr = raw[i].map(c => String(c)).join(" ");
+      if (headerKeywords.some(kw => rowStr.includes(kw))) { headerIdx = i; break; }
+    }
+
+    const headers = raw[headerIdx].map(h => String(h).trim());
+    const data = [];
+    for (let i = headerIdx + 1; i < raw.length; i++) {
+      const obj = {};
+      let hasValue = false;
+      headers.forEach((h, ci) => {
+        if (h) { obj[h] = raw[i]?.[ci] ?? ""; if (obj[h] !== "") hasValue = true; }
+      });
+      if (hasValue) data.push(obj);
+    }
+
     if (!data.length) { toast("파일에 데이터가 없습니다"); e.target.value = ""; return; }
+
+    const keys = headers.filter(Boolean);
+    const colDate = findCol(keys, ["거래일시", "거래일자", "거래일", "날짜", "일자", "이용일시", "이용일자", "이용일", "승인일자", "승인일", "사용일"]);
+    const colIn = findCol(keys, ["입금", "입금액"]);
+    const colOut = findCol(keys, ["출금", "출금액", "지출", "결제금액", "이용금액", "이용 금액", "사용금액"]);
+    const colAmt = findCol(keys, ["금액", "거래금액"]);
+    const colDesc = findCol(keys, ["적요", "내역", "거래내용", "비고", "메모", "가맹점", "가맹점명", "상호", "내용", "품목"]);
+    const colWho = findCol(keys, ["의뢰인", "수취인", "의뢰인/수취인"]);
+    const colType = findCol(keys, ["구분", "거래구분", "입출", "유형", "분류"]);
+    const colCat = findCol(keys, ["항목", "거래유형", "업종", "분류명"]);
+    const colMethod = findCol(keys, ["결제수단", "거래수단", "카드", "카드종류"]);
+
     let count = 0;
     for (const row of data) {
-      const amount = Number(row["금액"] || row["입금액"] || row["출금액"] || 0);
-      if (!amount) continue;
-      let dateVal = row["날짜"] || row["거래일자"] || row["거래일"] || row["이용일자"] || row["이용일"] || "";
-      if (typeof dateVal === "number") {
-        const d = XLSX.SSF.parse_date_code(dateVal);
-        if (d) dateVal = `${d.y}-${String(d.m).padStart(2,"0")}-${String(d.d).padStart(2,"0")}`;
+      let amount = 0;
+      let txType = "출금";
+
+      const toNum = (v) => Math.abs(Number(String(v || 0).replace(/,/g, "").replace(/\s/g, "")));
+
+      if (colIn || colOut) {
+        const inVal = colIn ? toNum(row[colIn]) : 0;
+        const outVal = colOut ? toNum(row[colOut]) : 0;
+        if (inVal > 0) { amount = inVal; txType = "입금"; }
+        else if (outVal > 0) { amount = outVal; txType = "출금"; }
+      } else if (colAmt) {
+        amount = toNum(row[colAmt]);
+      } else {
+        const fallback = findNumericCol(row, keys);
+        if (fallback) amount = toNum(row[fallback]);
       }
-      if (!dateVal) dateVal = today();
-      dateVal = String(dateVal).replace(/\./g, "-").replace(/\//g, "-").trim();
+
+      if (!amount) continue;
+
+      if (colType) {
+        const tv = String(row[colType] || "");
+        if (/입금|수입|매출|타행이체/.test(tv) && txType !== "입금") { /* keep detected */ }
+        if (/카드|신용/.test(tv)) txType = "카드";
+      }
+
+      const descParts = [];
+      if (colDesc) descParts.push(String(row[colDesc] || "").trim());
+      if (colWho && String(row[colWho] || "").trim()) descParts.push(String(row[colWho]).trim());
+      const desc = descParts.filter(Boolean).join(" / ") || "엑셀 자동등록";
+
       await addDoc(collection(db, "cashbook_tx"), {
-        date: dateVal,
-        type: row["구분"] || row["거래구분"] || row["입출구분"] || (Number(row["입금액"]) > 0 ? "입금" : "출금"),
-        category: row["항목"] || row["적요"] || row["거래유형"] || "엑셀업로드",
-        amount: Math.abs(amount),
-        desc: row["내역"] || row["거래내용"] || row["적요"] || row["비고"] || "엑셀 자동등록",
-        method: row["결제수단"] || row["거래수단"] || "계좌/카드",
+        date: parseDate(colDate ? row[colDate] : null),
+        type: txType,
+        category: (colCat ? String(row[colCat] || "").trim() : "") || (colType ? String(row[colType] || "").trim() : "") || "엑셀업로드",
+        amount,
+        desc,
+        method: (colMethod ? String(row[colMethod] || "").trim() : "") || (txType === "카드" ? "법인카드" : "계좌이체"),
         createdAt: serverTimestamp(),
       });
       count++;
     }
-    toast(count + "건의 거래가 추가되었습니다");
+
+    if (count === 0) {
+      toast("매칭 실패 — 컬럼: " + keys.join(", "));
+    } else {
+      toast(count + "건의 거래가 추가되었습니다");
+    }
   } catch (err) {
     toast("업로드 오류: " + err.message);
   }
