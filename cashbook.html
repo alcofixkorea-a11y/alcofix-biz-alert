@@ -284,7 +284,7 @@ tbody tr:hover { background: var(--slate-50); }
       <h2>최근 입력 거래 (최신 5건)</h2>
       <div class="tbl-wrap">
         <table>
-          <thead><tr><th>일자</th><th>구분</th><th>적요/내역</th><th class="r">금액</th></tr></thead>
+          <thead><tr><th>일자</th><th>적요/내역</th><th class="r">입금</th><th class="r">출금</th><th class="r">카드</th></tr></thead>
           <tbody id="dRecent"></tbody>
         </table>
         <div class="empty hidden" id="dRecentEmpty">등록된 거래가 없습니다.</div>
@@ -342,7 +342,7 @@ tbody tr:hover { background: var(--slate-50); }
       <div class="tbl-wrap">
         <table>
           <thead><tr>
-            <th>일자</th><th>구분</th><th>항목</th><th>적요/내역</th><th>결제수단</th><th class="r">금액</th><th style="width:36px"></th>
+            <th>일자</th><th>항목</th><th>적요/내역</th><th class="r">입금</th><th class="r">출금</th><th class="r">카드</th><th class="r">잔액</th><th style="width:36px"></th>
           </tr></thead>
           <tbody id="txBody"></tbody>
         </table>
@@ -673,9 +673,15 @@ $("csvBtn").addEventListener("click", () => {
   const list = getFilteredTx();
   if (!list.length) { toast("내보낼 내역이 없습니다"); return; }
   const bom = "﻿";
-  let csv = bom + "날짜,구분,항목,적요,결제수단,금액\n";
+  const sorted = [...transactions].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+  const balMap = new Map();
+  let run = 0;
+  for (const t of sorted) { run += t.type === "입금" ? t.amount : -t.amount; balMap.set(t.id, run); }
+  let csv = bom + "날짜,항목,적요,입금,출금,카드,잔액\n";
   for (const t of list) {
-    csv += [t.date, t.type, `"${esc(t.category)}"`, `"${esc(t.desc)}"`, t.method, t.amount].join(",") + "\n";
+    csv += [t.date, `"${esc(t.category)}"`, `"${esc(t.desc)}"`,
+      t.type === "입금" ? t.amount : "", t.type === "출금" ? t.amount : "", t.type === "카드" ? t.amount : "",
+      balMap.get(t.id) ?? 0].join(",") + "\n";
   }
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8;" }));
@@ -720,9 +726,10 @@ function renderDashboard() {
   if (!recent.length) { tbody.innerHTML = ""; return; }
   tbody.innerHTML = recent.map(t => `<tr>
     <td>${esc(t.date)}</td>
-    <td><span class="badge ${t.type === "입금" ? "badge-green" : t.type === "출금" ? "badge-red" : "badge-amber"}">${esc(t.type)}</span></td>
     <td style="font-weight:600">${esc(t.desc)}</td>
-    <td class="r b">${fmt(t.amount)}</td>
+    <td class="r b" style="color:var(--green)">${t.type === "입금" ? fmt(t.amount) : ""}</td>
+    <td class="r b" style="color:var(--red)">${t.type === "출금" ? fmt(t.amount) : ""}</td>
+    <td class="r b" style="color:var(--amber)">${t.type === "카드" ? fmt(t.amount) : ""}</td>
   </tr>`).join("");
 }
 
@@ -730,15 +737,29 @@ function renderTxTable() {
   const list = getFilteredTx();
   $("txCount").textContent = list.length;
   $("txEmpty").classList.toggle("hidden", list.length > 0);
-  $("txBody").innerHTML = list.map(t => `<tr>
+
+  const sorted = [...transactions].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+  const balMap = new Map();
+  let running = 0;
+  for (const t of sorted) {
+    if (t.type === "입금") running += t.amount;
+    else running -= t.amount;
+    balMap.set(t.id, running);
+  }
+
+  $("txBody").innerHTML = list.map(t => {
+    const bal = balMap.get(t.id) ?? 0;
+    return `<tr>
     <td>${esc(t.date)}</td>
-    <td><span class="badge ${t.type === "입금" ? "badge-green" : t.type === "출금" ? "badge-red" : "badge-amber"}">${esc(t.type)}</span></td>
     <td style="color:var(--muted)">${esc(t.category)}</td>
     <td style="font-weight:600">${esc(t.desc)}</td>
-    <td style="color:var(--muted)">${esc(t.method)}</td>
-    <td class="r b">${fmt(t.amount)}</td>
+    <td class="r b" style="color:var(--green)">${t.type === "입금" ? fmt(t.amount) : ""}</td>
+    <td class="r b" style="color:var(--red)">${t.type === "출금" ? fmt(t.amount) : ""}</td>
+    <td class="r b" style="color:var(--amber)">${t.type === "카드" ? fmt(t.amount) : ""}</td>
+    <td class="r b">${fmt(bal)}</td>
     <td><button class="del-btn" onclick="_delTx('${t.id}')" title="삭제">✕</button></td>
-  </tr>`).join("");
+  </tr>`;
+  }).join("");
 }
 
 function renderTmpTable() {
