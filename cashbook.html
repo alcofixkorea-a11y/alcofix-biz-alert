@@ -502,32 +502,43 @@ $("tmpForm").addEventListener("submit", async (e) => {
 });
 
 // ===== 엑셀 업로드 =====
-$("xlsxInput").addEventListener("change", (e) => {
+$("xlsxInput").addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) return;
-  const reader = new FileReader();
-  reader.onload = async (evt) => {
-    const wb = XLSX.read(evt.target.result, { type: "binary" });
+  if (typeof XLSX === "undefined") { toast("엑셀 라이브러리 로딩 중… 잠시 후 다시 시도하세요"); return; }
+  toast("파일 읽는 중…");
+  try {
+    const buf = await file.arrayBuffer();
+    const wb = XLSX.read(buf, { type: "array" });
     const data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+    if (!data.length) { toast("파일에 데이터가 없습니다"); e.target.value = ""; return; }
     let count = 0;
     for (const row of data) {
       const amount = Number(row["금액"] || row["입금액"] || row["출금액"] || 0);
       if (!amount) continue;
+      let dateVal = row["날짜"] || row["거래일자"] || row["거래일"] || row["이용일자"] || row["이용일"] || "";
+      if (typeof dateVal === "number") {
+        const d = XLSX.SSF.parse_date_code(dateVal);
+        if (d) dateVal = `${d.y}-${String(d.m).padStart(2,"0")}-${String(d.d).padStart(2,"0")}`;
+      }
+      if (!dateVal) dateVal = today();
+      dateVal = String(dateVal).replace(/\./g, "-").replace(/\//g, "-").trim();
       await addDoc(collection(db, "cashbook_tx"), {
-        date: String(row["날짜"] || row["거래일자"] || today()),
-        type: row["구분"] || (row["입금액"] > 0 ? "입금" : "출금"),
-        category: row["항목"] || row["적요"] || "엑셀업로드",
+        date: dateVal,
+        type: row["구분"] || row["거래구분"] || row["입출구분"] || (Number(row["입금액"]) > 0 ? "입금" : "출금"),
+        category: row["항목"] || row["적요"] || row["거래유형"] || "엑셀업로드",
         amount: Math.abs(amount),
-        desc: row["내역"] || row["거래내용"] || "엑셀 자동등록",
-        method: row["결제수단"] || "계좌/카드",
+        desc: row["내역"] || row["거래내용"] || row["적요"] || row["비고"] || "엑셀 자동등록",
+        method: row["결제수단"] || row["거래수단"] || "계좌/카드",
         createdAt: serverTimestamp(),
       });
       count++;
     }
     toast(count + "건의 거래가 추가되었습니다");
-    e.target.value = "";
-  };
-  reader.readAsBinaryString(file);
+  } catch (err) {
+    toast("업로드 오류: " + err.message);
+  }
+  e.target.value = "";
 });
 
 // ===== 삭제 =====
