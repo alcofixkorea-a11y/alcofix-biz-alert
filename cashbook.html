@@ -439,12 +439,14 @@ $("logoutBtn").addEventListener("click", () => signOut(auth));
 // ===== Firestore 실시간 구독 =====
 function startListening() {
   unsubTx = onSnapshot(
-    query(collection(db, "cashbook_tx"), orderBy("date", "desc"), orderBy("createdAt", "desc")),
-    (snap) => { transactions = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); }
+    query(collection(db, "cashbook_tx"), orderBy("date", "desc")),
+    (snap) => { transactions = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); },
+    (err) => { console.error("cashbook_tx listener error:", err); toast("데이터 로드 오류: " + err.message); }
   );
   unsubTmp = onSnapshot(
     query(collection(db, "cashbook_temp"), orderBy("date", "desc")),
-    (snap) => { tempAccounts = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); }
+    (snap) => { tempAccounts = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); },
+    (err) => { console.error("cashbook_temp listener error:", err); toast("데이터 로드 오류: " + err.message); }
   );
 }
 
