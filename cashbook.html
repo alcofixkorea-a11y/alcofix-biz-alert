@@ -703,8 +703,12 @@ function renderStats() {
   const dep = transactions.filter(t => t.type === "입금").reduce((s, t) => s + t.amount, 0);
   const wdr = transactions.filter(t => t.type === "출금").reduce((s, t) => s + t.amount, 0);
   const crd = transactions.filter(t => t.type === "카드").reduce((s, t) => s + t.amount, 0);
-  const pGaji = tempAccounts.filter(a => a.classType === "가지급금" && a.status === "미정산").reduce((s, a) => s + a.amount, 0);
-  const pGasu = tempAccounts.filter(a => a.classType === "가수금" && a.status === "미정산").reduce((s, a) => s + a.amount, 0);
+  const gajiOpen = tempAccounts.filter(a => a.classType === "가지급금" && a.status === "미정산" && !/반환/.test(a.reason)).reduce((s, a) => s + a.amount, 0);
+  const gajiReturn = tempAccounts.filter(a => a.classType === "가지급금" && a.status === "정산완료" && /반환/.test(a.reason)).reduce((s, a) => s + a.amount, 0);
+  const pGaji = Math.max(0, gajiOpen - gajiReturn);
+  const gasuOpen = tempAccounts.filter(a => a.classType === "가수금" && a.status === "미정산" && !/반환/.test(a.reason)).reduce((s, a) => s + a.amount, 0);
+  const gasuReturn = tempAccounts.filter(a => a.classType === "가수금" && a.status === "정산완료" && /반환/.test(a.reason)).reduce((s, a) => s + a.amount, 0);
+  const pGasu = Math.max(0, gasuOpen - gasuReturn);
 
   const net = dep - wdr - crd;
   $("sBalance").textContent = fmt(net);
