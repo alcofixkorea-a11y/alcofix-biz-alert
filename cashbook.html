@@ -72,7 +72,7 @@ nav button.active { background: var(--teal); color: #fff; }
 main { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; }
 
 /* ---- 요약 카드 그리드 ---- */
-.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
 .stat-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,.03); }
 .stat-card .label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
 .stat-card .value { font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
@@ -83,6 +83,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; }
 .c-red { color: var(--red); }
 .c-amber { color: var(--amber); }
 .c-teal { color: var(--teal); }
+.c-indigo { color: var(--indigo); }
 
 /* ---- 패널 ---- */
 .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.03); }
@@ -206,7 +207,22 @@ tbody tr:hover { background: var(--slate-50); }
   .header-inner { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 8px; }
   nav { width: 100%; overflow-x: auto; }
   .stat-card .value { font-size: 18px; }
+  .detail-inner { grid-template-columns: 1fr 1fr; }
+  .dash-grid-3 { grid-template-columns: 1fr !important; }
 }
+/* ---- 세금계산서 상세 ---- */
+.detail-row td { padding: 0 !important; border-bottom: 1px solid var(--line); }
+.detail-inner {
+  padding: 12px 20px; background: var(--slate-50);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 16px;
+  font-size: 12px; color: var(--muted); line-height: 1.6;
+}
+.detail-inner b { color: var(--text); font-weight: 700; }
+.expand-btn {
+  background: none; border: none; cursor: pointer; font-size: 11px; color: var(--muted); padding: 2px 6px; border-radius: 4px;
+}
+.expand-btn:hover { color: var(--teal); background: var(--teal-soft); }
+.dash-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
 </style>
 </head>
 <body>
@@ -242,6 +258,7 @@ tbody tr:hover { background: var(--slate-50); }
       <button class="active" data-tab="dashboard">대시보드</button>
       <button data-tab="transactions">금전출납 / 카드 내역</button>
       <button data-tab="temporary">가수금 · 가지급금 현황</button>
+      <button data-tab="invoices">매출·매입 현황</button>
     </nav>
     <div class="h-right">
       <button class="logout-btn" id="logoutBtn">로그아웃</button>
@@ -253,7 +270,7 @@ tbody tr:hover { background: var(--slate-50); }
 <main id="mainContent" class="hidden">
 
   <!-- 요약 카드 -->
-  <div class="cards" style="grid-template-columns: 1fr 1fr;">
+  <div class="cards">
     <div class="stat-card" style="border-left:4px solid var(--teal);">
       <div class="label">현재 잔액 (입금 - 출금 - 카드)</div>
       <div class="value c-teal" id="sBalance">0 원</div>
@@ -261,6 +278,10 @@ tbody tr:hover { background: var(--slate-50); }
     <div class="stat-card dark">
       <div class="label">미정산 가지급 / 가수금</div>
       <div class="value" id="sTempSummary">가지급: 0 / 가수금: 0 원</div>
+    </div>
+    <div class="stat-card" style="border-left:4px solid var(--indigo);">
+      <div class="label">매출·매입 현황</div>
+      <div class="value c-indigo" id="sInvSummary" style="font-size:14px;">매출: 0 원 / 매입: 0 원</div>
     </div>
   </div>
 
@@ -287,6 +308,23 @@ tbody tr:hover { background: var(--slate-50); }
           <tbody id="dRecent"></tbody>
         </table>
         <div class="empty hidden" id="dRecentEmpty">등록된 거래가 없습니다.</div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>매출·매입 현황</h2>
+      <div class="dash-grid-3">
+        <div class="dash-box">
+          <h3>매출 합계 (공급가액)</h3>
+          <div class="big c-green" id="dInvSales">0 원</div>
+        </div>
+        <div class="dash-box">
+          <h3>매입 합계 (공급가액)</h3>
+          <div class="big c-red" id="dInvPurchase">0 원</div>
+        </div>
+        <div class="dash-box">
+          <h3>부가세 예상 납부액</h3>
+          <div class="big c-indigo" id="dInvVat">0 원</div>
+        </div>
       </div>
     </div>
   </div>
@@ -381,6 +419,78 @@ tbody tr:hover { background: var(--slate-50); }
     </div>
   </div>
 
+  <!-- ===== TAB: 매출·매입 현황 ===== -->
+  <div id="tab-invoices" class="hidden">
+    <div class="panel">
+      <h2>세금계산서 등록</h2>
+      <form id="invForm" class="form-grid cols3">
+        <select id="invType">
+          <option value="매출">매출 (공급)</option>
+          <option value="매입">매입 (구매)</option>
+        </select>
+        <select id="invDocType">
+          <option value="전자세금계산서">전자세금계산서</option>
+          <option value="세금계산서">세금계산서 (종이)</option>
+          <option value="전자계산서">전자계산서 (면세)</option>
+          <option value="계산서">계산서 (면세·종이)</option>
+        </select>
+        <input type="date" id="invDate" required>
+        <input type="text" id="invBizName" placeholder="상호 (거래처명)" required>
+        <input type="text" id="invBizNo" placeholder="사업자등록번호 (000-00-00000)">
+        <input type="text" id="invCeo" placeholder="대표자명">
+        <input type="text" id="invBizType" placeholder="업태">
+        <input type="text" id="invBizItem" placeholder="종목">
+        <input type="email" id="invEmail" placeholder="이메일">
+        <input type="text" id="invAddr" placeholder="주소" class="span3">
+        <input type="text" id="invItem" placeholder="품목 / 적요">
+        <input type="number" id="invSupply" placeholder="공급가액 (원)" required>
+        <input type="number" id="invTax" placeholder="세액 (자동 10%)">
+        <input type="text" id="invNote" placeholder="비고" class="span2">
+        <button type="submit" class="btn-primary">계산서 등록</button>
+      </form>
+    </div>
+
+    <div class="cards" style="margin-bottom:20px;">
+      <div class="stat-card" style="border-left:4px solid var(--green);">
+        <div class="label">매출 합계 (공급가액)</div>
+        <div class="value c-green" id="invSalesTotal">0 원</div>
+      </div>
+      <div class="stat-card" style="border-left:4px solid var(--red);">
+        <div class="label">매입 합계 (공급가액)</div>
+        <div class="value c-red" id="invPurchaseTotal">0 원</div>
+      </div>
+      <div class="stat-card" style="border-left:4px solid var(--indigo);">
+        <div class="label">부가세 예상 (매출세액 − 매입세액)</div>
+        <div class="value c-indigo" id="invVatDiff">0 원</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>전체 매출·매입 내역 (<span id="invCount">0</span>건)</h2>
+      <div class="filters">
+        <select id="invFType">
+          <option value="">전체 구분</option>
+          <option value="매출">매출</option>
+          <option value="매입">매입</option>
+        </select>
+        <select id="invFMonth"><option value="">전체 기간</option></select>
+        <input type="text" id="invFSearch" placeholder="상호·품목 검색…">
+        <button class="csv-btn" id="invCsvBtn">CSV 다운로드</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th>구분</th><th>유형</th><th>발행일</th><th>상호</th><th>사업자번호</th><th>품목</th>
+            <th class="r">공급가액</th><th class="r">세액</th><th class="r">합계</th>
+            <th style="width:36px"></th><th style="width:36px"></th>
+          </tr></thead>
+          <tbody id="invBody"></tbody>
+        </table>
+        <div class="empty hidden" id="invEmpty">등록된 계산서가 없습니다.</div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <div class="toast" id="toast"></div>
@@ -408,7 +518,8 @@ const auth = getAuth(app);
 
 let transactions = [];
 let tempAccounts = [];
-let unsubTx = null, unsubTmp = null;
+let invoices = [];
+let unsubTx = null, unsubTmp = null, unsubInv = null;
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => (s || "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -420,7 +531,7 @@ onAuthStateChanged(auth, (user) => {
   $("gate").style.display = user ? "none" : "flex";
   $("mainContent").classList.toggle("hidden", !user);
   if (user && !unsubTx) startListening();
-  if (!user) { if (unsubTx) { unsubTx(); unsubTx = null; } if (unsubTmp) { unsubTmp(); unsubTmp = null; } }
+  if (!user) { if (unsubTx) { unsubTx(); unsubTx = null; } if (unsubTmp) { unsubTmp(); unsubTmp = null; } if (unsubInv) { unsubInv(); unsubInv = null; } }
 });
 
 $("gateForm").addEventListener("submit", async (e) => {
@@ -447,6 +558,11 @@ function startListening() {
     (snap) => { tempAccounts = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); },
     (err) => { console.error("cashbook_temp listener error:", err); toast("데이터 로드 오류: " + err.message); }
   );
+  unsubInv = onSnapshot(
+    query(collection(db, "cashbook_invoice"), orderBy("date", "desc")),
+    (snap) => { invoices = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderAll(); },
+    (err) => { console.error("cashbook_invoice listener error:", err); toast("계산서 로드 오류: " + err.message); }
+  );
 }
 
 // ===== 탭 전환 =====
@@ -456,7 +572,7 @@ $("tabNav").addEventListener("click", (e) => {
   if (!btn) return;
   activeTab = btn.dataset.tab;
   $("tabNav").querySelectorAll("button").forEach(b => b.classList.toggle("active", b === btn));
-  ["dashboard", "transactions", "temporary"].forEach(t => {
+  ["dashboard", "transactions", "temporary", "invoices"].forEach(t => {
     $("tab-" + t).classList.toggle("hidden", t !== activeTab);
   });
 });
@@ -500,6 +616,46 @@ $("tmpForm").addEventListener("submit", async (e) => {
   $("tmpTarget").value = ""; $("tmpAmount").value = ""; $("tmpReason").value = "";
   $("tmpDate").value = today(); $("tmpDue").value = "";
   toast("등록 완료");
+});
+
+// ===== 세금계산서 등록 =====
+$("invDate").value = today();
+$("invSupply").addEventListener("input", () => {
+  const supply = Number($("invSupply").value) || 0;
+  $("invTax").value = $("invDocType").value.includes("세금") ? Math.round(supply * 0.1) : 0;
+});
+$("invDocType").addEventListener("change", () => {
+  const supply = Number($("invSupply").value) || 0;
+  $("invTax").value = $("invDocType").value.includes("세금") ? Math.round(supply * 0.1) : 0;
+});
+$("invForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const supply = Number($("invSupply").value);
+  if (!supply || supply <= 0) { toast("공급가액을 입력하세요"); return; }
+  const tax = Number($("invTax").value) || 0;
+  await addDoc(collection(db, "cashbook_invoice"), {
+    type: $("invType").value,
+    invoiceType: $("invDocType").value,
+    date: $("invDate").value,
+    bizName: $("invBizName").value.trim(),
+    bizNo: $("invBizNo").value.trim(),
+    ceoName: $("invCeo").value.trim(),
+    bizType: $("invBizType").value.trim(),
+    bizItem: $("invBizItem").value.trim(),
+    address: $("invAddr").value.trim(),
+    email: $("invEmail").value.trim(),
+    item: $("invItem").value.trim(),
+    supply,
+    tax,
+    total: supply + tax,
+    note: $("invNote").value.trim(),
+    createdAt: serverTimestamp(),
+  });
+  $("invBizName").value = ""; $("invBizNo").value = ""; $("invCeo").value = "";
+  $("invBizType").value = ""; $("invBizItem").value = ""; $("invAddr").value = "";
+  $("invEmail").value = ""; $("invItem").value = ""; $("invSupply").value = "";
+  $("invTax").value = ""; $("invNote").value = ""; $("invDate").value = today();
+  toast("계산서 등록 완료");
 });
 
 // ===== 엑셀 업로드 =====
@@ -640,6 +796,15 @@ window._delTmp = async (id) => {
   await deleteDoc(doc(db, "cashbook_temp", id));
   toast("삭제 완료");
 };
+window._delInv = async (id) => {
+  if (!confirm("이 계산서를 삭제하시겠습니까?")) return;
+  await deleteDoc(doc(db, "cashbook_invoice", id));
+  toast("삭제 완료");
+};
+window._toggleDetail = (id) => {
+  const row = document.getElementById("detail-" + id);
+  if (row) row.classList.toggle("hidden");
+};
 
 // ===== 정산 상태 토글 =====
 window._toggleSettle = async (id) => {
@@ -654,6 +819,9 @@ window._toggleSettle = async (id) => {
 $("fMonth").addEventListener("change", renderTxTable);
 $("fType").addEventListener("change", renderTxTable);
 $("fSearch").addEventListener("input", renderTxTable);
+$("invFType").addEventListener("change", renderInvTable);
+$("invFMonth").addEventListener("change", renderInvTable);
+$("invFSearch").addEventListener("input", renderInvTable);
 
 function getFilteredTx() {
   const month = $("fMonth").value;
@@ -667,7 +835,38 @@ function getFilteredTx() {
   });
 }
 
+function getFilteredInv() {
+  const type = $("invFType").value;
+  const month = $("invFMonth").value;
+  const search = $("invFSearch").value.trim().toLowerCase();
+  return invoices.filter(inv => {
+    if (type && inv.type !== type) return false;
+    if (month && !inv.date?.startsWith(month)) return false;
+    if (search && !(inv.bizName || "").toLowerCase().includes(search) && !(inv.item || "").toLowerCase().includes(search)) return false;
+    return true;
+  });
+}
+
 // ===== CSV 다운로드 =====
+$("invCsvBtn").addEventListener("click", () => {
+  const list = getFilteredInv();
+  if (!list.length) { toast("내보낼 내역이 없습니다"); return; }
+  const bom = "﻿";
+  let csv = bom + "구분,유형,발행일,상호,사업자번호,대표자,업태,종목,주소,이메일,품목,공급가액,세액,합계,비고\n";
+  for (const inv of list) {
+    csv += [inv.type, inv.invoiceType, inv.date,
+      `"${esc(inv.bizName)}"`, `"${esc(inv.bizNo)}"`, `"${esc(inv.ceoName)}"`,
+      `"${esc(inv.bizType)}"`, `"${esc(inv.bizItem)}"`, `"${esc(inv.address)}"`,
+      `"${esc(inv.email)}"`, `"${esc(inv.item)}"`,
+      inv.supply, inv.tax, inv.total, `"${esc(inv.note)}"`].join(",") + "\n";
+  }
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8;" }));
+  a.download = `매출매입_ALCOFIX_${$("invFMonth").value || "전체"}.csv`;
+  a.click();
+  toast("CSV 다운로드 완료");
+});
+
 $("csvBtn").addEventListener("click", () => {
   const list = getFilteredTx();
   if (!list.length) { toast("내보낼 내역이 없습니다"); return; }
@@ -695,6 +894,7 @@ function renderAll() {
   renderDashboard();
   renderTxTable();
   renderTmpTable();
+  renderInvTable();
   updateMonthFilter();
 }
 
@@ -780,6 +980,66 @@ function renderTmpTable() {
       </button>
     </td>
     <td><button class="del-btn" onclick="_delTmp('${a.id}')" title="삭제">✕</button></td>
+  </tr>`).join("");
+}
+
+function renderInvTable() {
+  const list = getFilteredInv();
+  $("invCount").textContent = list.length;
+  $("invEmpty").classList.toggle("hidden", list.length > 0);
+
+  const sales = invoices.filter(i => i.type === "매출");
+  const purchases = invoices.filter(i => i.type === "매입");
+  const salesSupply = sales.reduce((s, i) => s + (i.supply || 0), 0);
+  const purchaseSupply = purchases.reduce((s, i) => s + (i.supply || 0), 0);
+  const salesTax = sales.reduce((s, i) => s + (i.tax || 0), 0);
+  const purchaseTax = purchases.reduce((s, i) => s + (i.tax || 0), 0);
+  const vatDiff = salesTax - purchaseTax;
+
+  $("invSalesTotal").textContent = fmt(salesSupply);
+  $("invPurchaseTotal").textContent = fmt(purchaseSupply);
+  $("invVatDiff").textContent = fmt(vatDiff);
+  $("invVatDiff").style.color = vatDiff >= 0 ? "var(--red)" : "var(--green)";
+
+  $("sInvSummary").textContent = `매출: ${fmt(salesSupply)} / 매입: ${fmt(purchaseSupply)}`;
+  $("dInvSales").textContent = fmt(salesSupply);
+  $("dInvPurchase").textContent = fmt(purchaseSupply);
+  $("dInvVat").textContent = fmt(vatDiff);
+  $("dInvVat").style.color = vatDiff >= 0 ? "var(--red)" : "var(--green)";
+
+  const sel = $("invFMonth");
+  const cur = sel.value;
+  const months = [...new Set(invoices.map(i => i.date?.slice(0, 7)).filter(Boolean))].sort().reverse();
+  sel.innerHTML = '<option value="">전체 기간</option>' + months.map(m => {
+    const [y, mo] = m.split("-");
+    return `<option value="${m}">${y}년 ${parseInt(mo)}월</option>`;
+  }).join("");
+  sel.value = cur;
+
+  $("invBody").innerHTML = list.map(inv => `<tr>
+    <td><span class="badge ${inv.type === "매출" ? "badge-green" : "badge-red"}">${esc(inv.type)}</span></td>
+    <td style="color:var(--muted);font-size:11.5px">${esc(inv.invoiceType)}</td>
+    <td>${esc(inv.date)}</td>
+    <td style="font-weight:700">${esc(inv.bizName)}</td>
+    <td style="color:var(--muted);font-size:12px">${esc(inv.bizNo)}</td>
+    <td>${esc(inv.item)}</td>
+    <td class="r b">${fmt(inv.supply)}</td>
+    <td class="r b" style="color:var(--muted)">${fmt(inv.tax)}</td>
+    <td class="r b" style="color:${inv.type === "매출" ? "var(--green)" : "var(--red)"}">${fmt(inv.total)}</td>
+    <td><button class="expand-btn" onclick="_toggleDetail('${inv.id}')" title="상세보기">▼</button></td>
+    <td><button class="del-btn" onclick="_delInv('${inv.id}')" title="삭제">✕</button></td>
+  </tr>
+  <tr id="detail-${inv.id}" class="detail-row hidden">
+    <td colspan="11">
+      <div class="detail-inner">
+        <div><span style="color:var(--muted)">대표자:</span> <b>${esc(inv.ceoName)}</b></div>
+        <div><span style="color:var(--muted)">업태:</span> <b>${esc(inv.bizType)}</b></div>
+        <div><span style="color:var(--muted)">종목:</span> <b>${esc(inv.bizItem)}</b></div>
+        <div><span style="color:var(--muted)">이메일:</span> <b>${esc(inv.email)}</b></div>
+        <div style="grid-column:span 3"><span style="color:var(--muted)">주소:</span> <b>${esc(inv.address)}</b></div>
+        <div><span style="color:var(--muted)">비고:</span> <b>${esc(inv.note)}</b></div>
+      </div>
+    </td>
   </tr>`).join("");
 }
 
