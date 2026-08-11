@@ -222,6 +222,28 @@ tbody tr:hover { background: var(--slate-50); }
   background: none; border: none; cursor: pointer; font-size: 11px; color: var(--muted); padding: 2px 6px; border-radius: 4px;
 }
 .expand-btn:hover { color: var(--teal); background: var(--teal-soft); }
+
+/* ---- 드래그&드롭 업로드 ---- */
+.drop-zone {
+  border: 2px dashed var(--line); border-radius: 14px; padding: 32px 24px;
+  text-align: center; transition: all .2s; cursor: pointer;
+  background: var(--card); position: relative;
+}
+.drop-zone:hover, .drop-zone.dragover {
+  border-color: var(--teal); background: var(--teal-soft);
+}
+.drop-zone.dragover { box-shadow: 0 0 0 4px rgba(15,118,110,.12); }
+.drop-zone .drop-icon { font-size: 36px; margin-bottom: 10px; opacity: .7; }
+.drop-zone .drop-title { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+.drop-zone .drop-sub { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+.drop-zone .drop-btn {
+  display: inline-block; padding: 9px 20px; border-radius: 8px;
+  background: var(--teal); color: #fff; font: inherit; font-size: 13px; font-weight: 700;
+  border: none; cursor: pointer; transition: opacity .15s;
+}
+.drop-zone .drop-btn:hover { opacity: .9; }
+.drop-zone input[type="file"] { display: none; }
+.drop-zone .drop-formats { font-size: 11px; color: var(--muted); margin-top: 10px; }
 .dash-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
 
 /* ---- 수정 모달 ---- */
@@ -469,6 +491,16 @@ tbody tr:hover { background: var(--slate-50); }
       </form>
     </div>
 
+    <!-- 세금계산서 파일 업로드 (드래그&드롭 + 버튼) -->
+    <div class="drop-zone" id="invDropZone">
+      <div class="drop-icon">📄</div>
+      <div class="drop-title">세금계산서 파일 업로드</div>
+      <div class="drop-sub">홈택스 엑셀 내역을 여기에 끌어다 놓거나, 아래 버튼으로 파일을 선택하세요.</div>
+      <button type="button" class="drop-btn" id="invFileBtn">파일 선택</button>
+      <input type="file" id="invFileInput" accept=".xlsx,.xls,.csv" multiple>
+      <div class="drop-formats">지원 형식: XLSX, XLS, CSV</div>
+    </div>
+
     <div class="cards" style="margin-bottom:20px;">
       <div class="stat-card" style="border-left:4px solid var(--green);">
         <div class="label">매출 합계 (공급가액)</div>
@@ -709,6 +741,124 @@ $("invForm").addEventListener("submit", async (e) => {
   $("invTax").value = ""; $("invNote").value = ""; $("invDate").value = today();
   toast("계산서 등록 완료");
 });
+
+// ===== 세금계산서 파일 업로드 (드래그&드롭 + 버튼) =====
+const dropZone = $("invDropZone");
+const invFileInput = $("invFileInput");
+
+$("invFileBtn").addEventListener("click", () => invFileInput.click());
+
+dropZone.addEventListener("dragover", (e) => { e.preventDefault(); dropZone.classList.add("dragover"); });
+dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+dropZone.addEventListener("drop", (e) => {
+  e.preventDefault();
+  dropZone.classList.remove("dragover");
+  const files = [...e.dataTransfer.files].filter(f => /\.(xlsx|xls|csv)$/i.test(f.name));
+  if (!files.length) { toast("지원하지 않는 파일 형식입니다 (XLSX/XLS/CSV만 가능)"); return; }
+  for (const f of files) processInvoiceFile(f);
+});
+invFileInput.addEventListener("change", (e) => {
+  for (const f of e.target.files) processInvoiceFile(f);
+  e.target.value = "";
+});
+
+async function processInvoiceFile(file) {
+  if (typeof XLSX === "undefined") { toast("엑셀 라이브러리 로딩 중…"); return; }
+  toast("세금계산서 파일 처리 중…");
+  try {
+    const buf = await file.arrayBuffer();
+    const wb = XLSX.read(buf, { type: "array" });
+    const ws = wb.Sheets[wb.SheetNames[0]];
+    const raw = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" });
+
+    const kwSets = ["공급가액", "세액", "상호", "사업자", "발급일", "작성일", "품목", "발행일"];
+    let headerIdx = 0;
+    for (let i = 0; i < Math.min(raw.length, 20); i++) {
+      const rowStr = raw[i].map(c => String(c)).join(" ");
+      if (kwSets.some(kw => rowStr.includes(kw))) { headerIdx = i; break; }
+    }
+    const headers = raw[headerIdx].map(h => String(h).trim());
+    const data = [];
+    for (let i = headerIdx + 1; i < raw.length; i++) {
+      const obj = {};
+      let hasVal = false;
+      headers.forEach((h, ci) => { if (h) { obj[h] = raw[i]?.[ci] ?? ""; if (obj[h] !== "") hasVal = true; } });
+      if (hasVal) data.push(obj);
+    }
+    if (!data.length) { toast("파일에 데이터가 없습니다"); return; }
+
+    const keys = headers.filter(Boolean);
+    const fc = (patterns) => { for (const p of patterns) { const f = keys.find(k => k.includes(p)); if (f) return f; } return null; };
+    const toNum = (v) => Math.abs(Number(String(v || 0).replace(/,/g, "").replace(/\s/g, "")));
+
+    const cDate = fc(["발급일", "작성일", "발행일", "일자", "날짜"]);
+    const cType = fc(["구분", "유형", "종류", "매출매입"]);
+    const cDocType = fc(["전자여부", "계산서구분", "계산서종류", "발급유형"]);
+    const cBizName = fc(["상호", "거래처", "공급자상호", "업체명"]);
+    const cBizNo = fc(["사업자등록번호", "사업자번호", "등록번호"]);
+    const cCeo = fc(["대표자", "성명", "대표"]);
+    const cBizType = fc(["업태"]);
+    const cBizItem = fc(["종목", "업종"]);
+    const cAddr = fc(["주소", "사업장"]);
+    const cEmail = fc(["이메일", "email", "메일"]);
+    const cItem = fc(["품목", "품명", "적요", "내역"]);
+    const cSupply = fc(["공급가액", "공급가", "금액"]);
+    const cTax = fc(["세액", "부가세", "부가가치세"]);
+    const cTotal = fc(["합계", "합계금액", "총액"]);
+    const cNote = fc(["비고", "메모"]);
+
+    let count = 0;
+    for (const row of data) {
+      const supply = cSupply ? toNum(row[cSupply]) : 0;
+      const total = cTotal ? toNum(row[cTotal]) : 0;
+      if (!supply && !total) continue;
+
+      const rowText = Object.values(row).join(" ");
+      if (/합계|소계|총계|건$/.test(rowText) && !String(row[cBizName] || "").trim()) continue;
+
+      let txType = "매입";
+      if (cType) {
+        const tv = String(row[cType] || "");
+        if (/매출|공급/.test(tv)) txType = "매출";
+      }
+
+      let docType = "전자세금계산서";
+      if (cDocType) {
+        const dv = String(row[cDocType] || "");
+        if (/전자.*세금|전자세금/.test(dv)) docType = "전자세금계산서";
+        else if (/세금/.test(dv)) docType = "세금계산서";
+        else if (/전자.*계산|전자계산/.test(dv)) docType = "전자계산서";
+        else if (/계산/.test(dv)) docType = "계산서";
+      }
+
+      const finalSupply = supply || (total ? Math.round(total / 1.1) : 0);
+      const tax = cTax ? toNum(row[cTax]) : (supply ? Math.round(supply * 0.1) : total - finalSupply);
+
+      await addDoc(collection(db, "cashbook_invoice"), {
+        type: txType,
+        invoiceType: docType,
+        date: cDate ? parseDate(row[cDate]) : today(),
+        bizName: String(row[cBizName] || "").trim(),
+        bizNo: String(row[cBizNo] || "").trim(),
+        ceoName: String(row[cCeo] || "").trim(),
+        bizType: String(row[cBizType] || "").trim(),
+        bizItem: String(row[cBizItem] || "").trim(),
+        address: String(row[cAddr] || "").trim(),
+        email: String(row[cEmail] || "").trim(),
+        item: String(row[cItem] || "").trim(),
+        supply: finalSupply,
+        tax,
+        total: finalSupply + tax,
+        note: String(row[cNote] || "").trim(),
+        createdAt: serverTimestamp(),
+      });
+      count++;
+    }
+    toast(count ? `${count}건의 세금계산서가 등록되었습니다` : "매칭 실패 — 컬럼: " + keys.join(", "));
+  } catch (err) {
+    toast("파일 처리 오류: " + err.message);
+  }
+}
 
 // ===== 엑셀 업로드 =====
 function findCol(keys, patterns) {
