@@ -223,6 +223,25 @@ tbody tr:hover { background: var(--slate-50); }
 }
 .expand-btn:hover { color: var(--teal); background: var(--teal-soft); }
 .dash-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+/* ---- 수정 모달 ---- */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(15,23,42,.5); z-index: 50;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.modal-box {
+  background: var(--card); border-radius: 16px; padding: 28px; width: 100%; max-width: 680px;
+  max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.2);
+}
+.modal-box h2 { font-size: 17px; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; }
+.modal-close {
+  background: none; border: none; font-size: 20px; color: var(--muted); cursor: pointer; padding: 4px 8px; border-radius: 6px;
+}
+.modal-close:hover { background: var(--red-soft); color: var(--red); }
+.edit-btn {
+  background: none; border: none; color: var(--muted); cursor: pointer; font-size: 12px; padding: 2px 6px; border-radius: 4px;
+}
+.edit-btn:hover { background: var(--indigo-soft); color: var(--indigo); }
 </style>
 </head>
 <body>
@@ -482,7 +501,7 @@ tbody tr:hover { background: var(--slate-50); }
           <thead><tr>
             <th>구분</th><th>유형</th><th>발행일</th><th>상호</th><th>사업자번호</th><th>품목</th>
             <th class="r">공급가액</th><th class="r">세액</th><th class="r">합계</th>
-            <th style="width:36px"></th><th style="width:36px"></th>
+            <th style="width:36px"></th><th style="width:36px"></th><th style="width:36px"></th>
           </tr></thead>
           <tbody id="invBody"></tbody>
         </table>
@@ -492,6 +511,39 @@ tbody tr:hover { background: var(--slate-50); }
   </div>
 
 </main>
+
+<!-- ===== 수정 모달 ===== -->
+<div class="modal-overlay hidden" id="editModal">
+  <div class="modal-box">
+    <h2>세금계산서 수정 <button class="modal-close" onclick="_closeEdit()">✕</button></h2>
+    <form id="editForm" class="form-grid cols3">
+      <input type="hidden" id="edId">
+      <select id="edType">
+        <option value="매출">매출 (공급)</option>
+        <option value="매입">매입 (구매)</option>
+      </select>
+      <select id="edDocType">
+        <option value="전자세금계산서">전자세금계산서</option>
+        <option value="세금계산서">세금계산서 (종이)</option>
+        <option value="전자계산서">전자계산서 (면세)</option>
+        <option value="계산서">계산서 (면세·종이)</option>
+      </select>
+      <input type="date" id="edDate" required>
+      <input type="text" id="edBizName" placeholder="상호 (거래처명)" required>
+      <input type="text" id="edBizNo" placeholder="사업자등록번호">
+      <input type="text" id="edCeo" placeholder="대표자명">
+      <input type="text" id="edBizType" placeholder="업태">
+      <input type="text" id="edBizItem" placeholder="종목">
+      <input type="email" id="edEmail" placeholder="이메일">
+      <input type="text" id="edAddr" placeholder="주소" class="span3">
+      <input type="text" id="edItem" placeholder="품목 / 적요">
+      <input type="number" id="edSupply" placeholder="공급가액 (원)" required>
+      <input type="number" id="edTax" placeholder="세액">
+      <input type="text" id="edNote" placeholder="비고" class="span2">
+      <button type="submit" class="btn-primary">수정 저장</button>
+    </form>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -806,6 +858,59 @@ window._toggleDetail = (id) => {
   if (row) row.classList.toggle("hidden");
 };
 
+window._openEdit = (id) => {
+  const inv = invoices.find(i => i.id === id);
+  if (!inv) return;
+  $("edId").value = id;
+  $("edType").value = inv.type || "매입";
+  $("edDocType").value = inv.invoiceType || "전자세금계산서";
+  $("edDate").value = inv.date || "";
+  $("edBizName").value = inv.bizName || "";
+  $("edBizNo").value = inv.bizNo || "";
+  $("edCeo").value = inv.ceoName || "";
+  $("edBizType").value = inv.bizType || "";
+  $("edBizItem").value = inv.bizItem || "";
+  $("edEmail").value = inv.email || "";
+  $("edAddr").value = inv.address || "";
+  $("edItem").value = inv.item || "";
+  $("edSupply").value = inv.supply || "";
+  $("edTax").value = inv.tax || "";
+  $("edNote").value = inv.note || "";
+  $("editModal").classList.remove("hidden");
+};
+window._closeEdit = () => {
+  $("editModal").classList.add("hidden");
+};
+$("editModal").addEventListener("click", (e) => {
+  if (e.target === $("editModal")) _closeEdit();
+});
+$("editForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const id = $("edId").value;
+  if (!id) return;
+  const supply = Number($("edSupply").value) || 0;
+  const tax = Number($("edTax").value) || 0;
+  await updateDoc(doc(db, "cashbook_invoice", id), {
+    type: $("edType").value,
+    invoiceType: $("edDocType").value,
+    date: $("edDate").value,
+    bizName: $("edBizName").value.trim(),
+    bizNo: $("edBizNo").value.trim(),
+    ceoName: $("edCeo").value.trim(),
+    bizType: $("edBizType").value.trim(),
+    bizItem: $("edBizItem").value.trim(),
+    address: $("edAddr").value.trim(),
+    email: $("edEmail").value.trim(),
+    item: $("edItem").value.trim(),
+    supply,
+    tax,
+    total: supply + tax,
+    note: $("edNote").value.trim(),
+  });
+  _closeEdit();
+  toast("수정 완료");
+});
+
 // ===== 정산 상태 토글 =====
 window._toggleSettle = async (id) => {
   const item = tempAccounts.find(a => a.id === id);
@@ -1027,10 +1132,11 @@ function renderInvTable() {
     <td class="r b" style="color:var(--muted)">${fmt(inv.tax)}</td>
     <td class="r b" style="color:${inv.type === "매출" ? "var(--green)" : "var(--red)"}">${fmt(inv.total)}</td>
     <td><button class="expand-btn" onclick="_toggleDetail('${inv.id}')" title="상세보기">▼</button></td>
+    <td><button class="edit-btn" onclick="_openEdit('${inv.id}')" title="수정">✎</button></td>
     <td><button class="del-btn" onclick="_delInv('${inv.id}')" title="삭제">✕</button></td>
   </tr>
   <tr id="detail-${inv.id}" class="detail-row hidden">
-    <td colspan="11">
+    <td colspan="12">
       <div class="detail-inner">
         <div><span style="color:var(--muted)">대표자:</span> <b>${esc(inv.ceoName)}</b></div>
         <div><span style="color:var(--muted)">업태:</span> <b>${esc(inv.bizType)}</b></div>
