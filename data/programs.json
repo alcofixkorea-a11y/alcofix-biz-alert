@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-29T12:24:49.527+09:00",
-  "today": "2026-08-29",
+  "generatedAt": "2026-08-30T08:40:21.883+09:00",
+  "today": "2026-08-30",
   "sources": {
     "kstartup": {
       "count": 87
     },
     "bizinfo": {
-      "count": 166
+      "count": 164
     }
   },
   "items": [
@@ -200,43 +200,6 @@
       ]
     },
     {
-      "id": "bizinfo-PBLN_000000000122907",
-      "source": "bizinfo",
-      "title": "[세종] 2026년 디지털 콘텐츠 산업 규제개혁 어드바이저 참여기업 모집 공고(SW융합클러스터2.0(특화산업 강화))",
-      "org": "세종특별자치시 · 세종테크노파크",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "지자체",
-      "region": "세종",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122907",
-      "summary": "세종테크노파크에서는 세종지역 디지털 콘텐츠 및 ICT/SW 분야 기업 성장을 위한 규제샌드박스 컨설팅 지원 참여기업을 모집하고자 하오니, 관심있는 지역 내 기업들의 많은 참여 바랍니다. ☞ 세종지역 소재 디지털 콘텐츠 관련 기업 중, 규제샌드박스 제도를 이용하고자 하는 기업 ※ 사업자등록상 소재지(본사, 지사, 연구소 등)가 세종으로 표기된 경우 지원 가능 ※ 자세한 지원대상 공고문 참조 ☞ 1개사당 최대 5회 이내 컨설팅 지원 - 규제샌드박스 컨설팅 사전 검토, 규제샌드박스 법률 전문가 컨설팅, 규제샌드박스 신청서 작성 컨설팅 등",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-08-26",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "붙임1.+규제개혁+어드바이저+신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758861&fileSn=0"
-        },
-        {
-          "name": "26년+규제개혁+어드바이저+참여기업+모집+공고문.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758810&fileSn=0"
-        }
-      ]
-    },
-    {
       "id": "bizinfo-PBLN_000000000122942",
       "source": "bizinfo",
       "title": "[세종] 조달청 다수공급자계약(MAS) 활용 컨설팅 지원사업 공고",
@@ -299,39 +262,6 @@
         {
           "name": "취·창업 CDP 지원 프로그램 [충청권 ICT 기업탐방·채용연계 참여기업 모집].pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000761287&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000125531",
-      "source": "bizinfo",
-      "title": "[세종] 2026년 식품안심업소(위생등급제) 컨설팅 지원사업 참여업소 추가 모집 공고",
-      "org": "세종특별자치시 · 직접수행",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "지자체",
-      "region": "세종",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125531",
-      "summary": "세종특별자치시에서는「식품위생법」제47조의2에 따라 영업자 위생관리 역량을 강화하고 원활한 제도 적용을 돕고자 ‘식품안심업소(위생등급제)’ 지정을 위한 맞춤형 무료 컨설팅을 추진하고 있습니다. 중도 포기업소 발생에 따라 사업 참여업소를 추가 모집하니 많은 신청 바랍니다. ☞ 일반ㆍ휴게음식점, 제과점 ※ 자세한 지원대상 공고문 참조 ☞ 사전 진단, 업소별 2~3회 방문 컨설팅, 모의평가 및 식품안심업소 지정 신청 대행 등 전 과정 종합 지원 - 진단 : 사업장 위생수준 사전진단 및 업종별 맞춤형 항목 평가 - 교육 : 부적합 항목 개선",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-08-26",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "2026년 식품안심업소(위생등급제) 컨설팅 지원사업 대상업소 추가 모집 공고.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000769494&fileSn=0"
         }
       ]
     },
@@ -5818,6 +5748,33 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000122428",
+      "source": "bizinfo",
+      "title": "2026년 콘텐츠 기업 노무 컨설팅 참가기업 모집 공고",
+      "org": "문화체육관광부 · 한국콘텐츠진흥원",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": null,
+      "applyEnd": null,
+      "alwaysOpen": true,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122428",
+      "summary": "한국콘텐츠진흥원은 일하는 방식 및 고용환경 변화에 따른 국내 콘텐츠 기업의 경쟁력 강화를 위해 기업 맞춤형 노무 컨설팅을 지원할 예정입니다. 콘텐츠 기업의 많은 관심과 참여 바랍니다. ☞ 콘텐츠 기업(개인/법인사업자) ※ 콘텐츠 기업 : 방송, 출판, 만화, 음악, 게임, 애니메이션, 캐릭터, 콘텐츠솔루션, 공연 등 ※ 상시근로자 수 : 공고 게시일로부터 제출일 이내 대표를 제외한 4대 보험 가입자명부 기준 ※ 중소기업기본법 시행령 제8조에 따른 중소기업이 아닌 경우 신청 불가 ※ 방송법 제2조 3호에 의거한 방송사업자 신청 불가 ",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-08-30",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000122497",
       "source": "bizinfo",
       "title": "2026년 SW개발자 채용기업 모집 공고(K-Digital Training 벤처ㆍ스타트업 아카데미)",
@@ -6475,33 +6432,6 @@
           "name": "[공고문]+2026년+글로벌+K-푸드페어+국제식품박람회+비대면+홍보+참여기업+모집공고.pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766134&fileSn=0"
         }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000124760",
-      "source": "bizinfo",
-      "title": "2026년 독일 하노버 국제 판금 가공 기술 전시회 수출컨소시엄 참가기업 추가모집 공고",
-      "org": "산업통상부 · 한국금형산업진흥회",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000124760",
-      "summary": "한국금형산업진흥회에서는 금형 및 기계 등 관련 기업의 해외진출을 지원 하고자 2026 독일 하노버 국제 판금 가공 기술 전시회에 국가관을 구성 참가 하고자 하오니, 참가를 원하시는 기업은 아래 내용을 참고 하시어 신청하여 주시기 바랍니다. ☞ 2026년 독일 하노버 국제 판금 가공 기술 전시회 참가를 원하는 기업 ☞ 참가비 포함 항목(부스임차료 및 장치비 70%), 운송료 1CBM 편도 100%, 통역 1인 50%, 사전마케팅 및 한국관 디렉토리 제작비 100% 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-08-26",
-      "sources": [
-        "bizinfo"
       ]
     },
     {

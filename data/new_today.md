@@ -1,32 +1,6 @@
-## 📬 2026-08-29 신규 지원사업 공고 25건
+## 📬 2026-08-30 신규 지원사업 공고 1건
 
-### ⭐ 세종·식품바이오 관련 (1건)
-- 📍**[세종]** [[충남ㆍ충북ㆍ대전ㆍ세종] 2026년 충청권 미래모빌리티 전략 사업 모빌리티 부품기업 기술박람회 참가기업  모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125894) — 충청남도 · 충남테크노파크 (마감 2026-09-07)
-
-### 일반 (24건)
-- [2026 4대 과학기술원 창업리그 통합 결선,  GRAVITY (9/3 목)](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179041) — (주)스파크랩 (마감 2026-09-02)
-- [2026년 한전KPS 창업벤처기업 육성 지원사업 참여기업 모집안내](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179062) — 한국전기산업진흥회 에너지밸리기업개발원 (마감 2026-09-04)
-- [2026년 스마트도시 특화단지 데이터바우처 지원사업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125908) — 국토교통부 · 첨단정보통신융합산업기술원 (마감 2026-09-04)
-- [[코레일유통/본사] 제11차 청년창업 제휴사업자 모집공고](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179072) — 코레일유통(주) (마감 2026-09-07)
-- [2026년 하반기 D-테스트베드 참여자 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125896) — 금융위원회 · 한국핀테크지원센터 (마감 2026-09-08)
-- [26년 AI·스마트전자제품 금형지원 기업모집](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179061) — 한국전자정보통신산업진흥회 (마감 2026-09-10)
-- [「상생형 창업벤처기업 지원사업」한전KDN 에너지 ICT 창업벤처기업 모집 공고](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179066) — 한국전기산업진흥회 에너지밸리기업개발원 (마감 2026-09-11)
-- [2026년 온디바이스AI 제품개발·제조 및 기술지원 기업모집공고](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179063) — 한국전자정보통신산업진흥회 (마감 2026-09-14)
-- [2026년 K-Lifestyle 국내ㆍ외 바이어 초청 구매상담회 참가업체 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125911) — 중소벤처기업부 · 장애인기업종합지원센터 (마감 2026-09-15)
-- [싱가포르 현지 진출 지원 국내 블록체인 기업 모집](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179068) — 한국인터넷진흥원 (마감 2026-09-16)
-- [싱가포르 현지 진출 지원 국내 블록체인 기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125934) — 과학기술정보통신부 · 한국인터넷진흥원 (마감 2026-09-16)
-- [[투자연계&사업화] 더인벤션랩 2026 엣지업 크리에이터스 4기 AX/LX Challenge  모집공고](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179038) — 더인벤션랩 (마감 2026-09-28)
-- [2026년 5차 무기체계 부품국산화개발 지원사업 (상생협력부품국산화) 과제ㆍ연구개발기관 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125935) — 방위사업청 · 국방기술진흥연구소 (마감 2026-09-29)
-- [[롯데장학재단]「2026년 제3회 신격호 롯데 청년기업가대상」모집공고 (~9/30)](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179058) — 롯데장학재단 (마감 2026-09-30)
-- [2026년 2차 글로벌기술도입지원사업(X&D) 전문가 컨설팅지원 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125917) — 산업통상부 · 한국소재부품장비투자기관협의회 (마감 2026-10-01)
-- [침해사고 예방을 위한 취약점 점검 무료 지원 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122516) — 과학기술정보통신부 · 한국인터넷진흥원 (마감 2026-12-11)
-- [2026년 제조산업 공정작업용 로봇 엔드이펙터 실증 기반 구축 사업 지원 기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122589) — 산업통상부 · 한국산업기술시험원 (마감 2026-12-18)
-- [2026년 스타트업  원스톱 지원센터 참여기업 모집공고](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=177328) — 중소벤처기업부장관 (마감 2026-12-31)
-- [2026년 SW개발자 채용기업 모집 공고(K-Digital Training 벤처ㆍ스타트업 아카데미)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122497) — 고용노동부 · 한국경영혁신중소기업협회 (상시)
-- [패션 브랜드 협업활성화 원단지원 기업 모집 공고(원단 제공기업 대상 디자인 협업 및 홍보ㆍ마케팅 지원)](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125916) — 산업통상부 · DYETEC연구원 (상시)
-- [2026년 연안하구 인간-자연시스템 관리기술 개발 사업 신규과제 선정계획 재공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125905) — 해양수산부 · 해양수산과학기술진흥원 (마감 2026-09-09)
-- [2026년 6차 예술산업보증 9월 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125914) — 문화체육관광부 · 예술경영지원센터 (마감 2026-09-10)
-- [2026년 성장기업 재무·세무 관리개선  바우처 지원사업 제1차 시행계획 공고](https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179073) — (사)한국중소기업발전협회 (마감 2026-09-15)
-- [2026년 하반기 산업융합 규제샌드박스 사업화 지원 프로그램 지원 대상과제  공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000125904) — 산업통상부 · 한국산업기술진흥원 (마감 2026-10-01)
+### 일반 (1건)
+- [2026년 콘텐츠 기업 노무 컨설팅 참가기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122428) — 문화체육관광부 · 한국콘텐츠진흥원 (상시)
 
 👉 전체 공고 보기: https://alcofixkorea-a11y.github.io/alcofix-biz-alert/
