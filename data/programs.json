@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-05T08:31:52.509+09:00",
-  "today": "2026-09-05",
+  "generatedAt": "2026-09-06T08:25:59.212+09:00",
+  "today": "2026-09-06",
   "sources": {
     "kstartup": {
-      "count": 68
+      "count": 66
     },
     "bizinfo": {
       "error": "fetch failed"
@@ -45,33 +45,6 @@
           "name": "3_2026년 AI융합창업보육센터 3차 인큐베이팅룸 입주기업 모집 신청서_사업계획서_정보동의서.hwp",
           "url": "https://www.k-startup.go.kr/afile/fileDownload/qdWLn"
         }
-      ]
-    },
-    {
-      "id": "kstartup-178575",
-      "source": "kstartup",
-      "title": "2026년「BTS」(Blueprint To Success) - 마인드 마이너 송길영 작가",
-      "org": "광운대학교 NCI창업패키지사업단",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-07-23",
-      "applyEnd": "2026-09-05",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=178575",
-      "summary": "시대와 시장의 변화 흐름을 바탕으로 예비창업자가 새로운 창업 기회를 발견하고, 선배 창업자의 실제 경험과 노하우를 통해 성공적인 창업 실행 전략을 구체화할 수 있도록 다음과 같이 「2026 BTS(Blueprint To Success)」 창업 인사이트 프로그램을 개최하오니 많은 관심과 참여 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": false,
-      "firstSeen": "2026-07-29",
-      "sources": [
-        "kstartup"
       ]
     },
     {
@@ -1787,33 +1760,6 @@
       "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
       "privateHost": true,
       "firstSeen": "2026-08-27",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-177432",
-      "source": "kstartup",
-      "title": "2026년 스타트업-중견/대기업 비즈니스 매칭 및 홍보 지원 공고",
-      "org": "룩픽",
-      "category": "판로ㆍ해외진출",
-      "sector": "판로·수출",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-07-19",
-      "applyEnd": "2026-12-31",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=177432",
-      "summary": "기창업자에게 다음과 같이 공고하오니 참여를 희망하는 창업팀은 안내 따라 신청하기 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-07-22",
       "sources": [
         "kstartup"
       ]
