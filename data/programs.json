@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-24T09:05:47.287+09:00",
-  "today": "2026-09-24",
+  "generatedAt": "2026-09-25T09:07:08.579+09:00",
+  "today": "2026-09-25",
   "sources": {
     "kstartup": {
       "count": 65
     },
     "bizinfo": {
-      "count": 162
+      "count": 163
     }
   },
   "items": [
@@ -5252,6 +5252,51 @@
       "firstSeen": "2026-09-23",
       "sources": [
         "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000122801",
+      "source": "bizinfo",
+      "title": "2026년 수출기업 맞춤형 조사 지원사업 추가 모집 공고",
+      "org": "농림축산식품부 · 한국농수산식품유통공사",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": null,
+      "applyEnd": null,
+      "alwaysOpen": true,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122801",
+      "summary": "신규 해외 수출 및 시장 확대를 준비하는 수출기업에 맞춤형 정보를 제공함으로써 농식품 수출 확대 도모하기 위한 사업입니다. 농식품(신선농산물 및 가공농산물) 수출기업 및 농가 관계자 여러분의 많은 관심과 신청 바랍니다. ☞ 농식품(신선농산물 및 가공농산물) 수출기업 및 농가 ☞ 시장분석형(Type A) 및 경쟁력분석형(Type B) 보고서 지원 ※ 자세한 지원내용 공고문 참조",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-09-25",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "(경쟁력분석형)+맞춤형+조사+지원사업+신청서2.xlsx",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=1"
+        },
+        {
+          "name": "(시장분석형)+맞춤형+조사+지원사업+신청서1.xlsx",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=2"
+        },
+        {
+          "name": "(참고)+24~25년+수출기업+맞춤형+보고서+발간+리스트1.xlsx",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=3"
+        },
+        {
+          "name": "2026년+수출기업+맞춤형+조사+지원사업+추가모집+공고문.pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758452&fileSn=0"
+        }
       ]
     },
     {
