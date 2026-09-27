@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-26T09:14:31.200+09:00",
-  "today": "2026-09-26",
+  "generatedAt": "2026-09-27T09:00:43.745+09:00",
+  "today": "2026-09-27",
   "sources": {
     "kstartup": {
-      "count": 63
+      "count": 62
     },
     "bizinfo": {
       "count": 161
@@ -296,33 +296,6 @@
           "name": "(붙임)_★_2026년_중소기업육성자금_지원계획_변경(2차)_공고문.pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770861&fileSn=0"
         }
-      ]
-    },
-    {
-      "id": "kstartup-179189",
-      "source": "kstartup",
-      "title": "앤틀러코리아 ANTLER INCEPTION  참여 기업 모집  |  Build Money-making AI",
-      "org": "앤틀러코리아",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-09-08",
-      "applyEnd": "2026-09-26",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179189",
-      "summary": "앤틀러코리아 ANTLER INCEPTION : Build Money-making AI 프로그램 참여 기업 모집을 공고하오니 창업자분들의 많은 참여 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "2년미만",
-      "privateHost": true,
-      "firstSeen": "2026-09-10",
-      "sources": [
-        "kstartup"
       ]
     },
     {
