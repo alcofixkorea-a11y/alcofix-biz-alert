@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-03T09:48:09.808+09:00",
-  "today": "2026-10-03",
+  "generatedAt": "2026-10-04T09:12:35.016+09:00",
+  "today": "2026-10-04",
   "sources": {
     "kstartup": {
       "count": 61
     },
     "bizinfo": {
-      "count": 157
+      "count": 156
     }
   },
   "items": [
@@ -6016,33 +6016,6 @@
       "status": "open",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126617",
       "summary": "한국섬유개발연구원에서는 「2026 디지털봉제클러스터맵 구축 및 활용지원」 사업의 일환으로 국내 패션브랜드 등 수요기업과 대구지역 패션제조기업 간 신규 거래를 촉진하고, 샘플 제작부터 양산까지 이어지는 실질적인 생산 연계를 지원하기 위하여 디지털봉제맵 기반 일감연계 샘플개발 지원사업을 추진하오니 많은 관심과 참여 바랍니다. ☞ (수요기업) - 공고일 현재 정상적으로 사업을 영위하고 있는 국내 패션브랜드, 디자이너 브랜드, 패션 스타트업, 크리에이터 및 의류ㆍ패션제품 기획ㆍ유통ㆍ판매기업 등 - 사업기간 내 대구지역 제조기업을 활용하여 ",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-09-23",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000126669",
-      "source": "bizinfo",
-      "title": "중동 피해기업 대상 쇼피 브라질 수출물류 지원사업 공고",
-      "org": "산업통상부 · 대한무역투자진흥공사",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126669",
-      "summary": "KOTRA 물류지원실에서는 중동 전쟁 피해기업의 중남미 대체 시장 조기 안착을 위해 글로벌 플랫폼 쇼피(Shopee)와 협업하여 「쇼피 브라질 수출물류 지원사업」참가기업을 다음과 같이 모집합니다. ☞ ’23년~’26년 對중동 22개국 수출실적 보유(또는 ’26년 수출계약 체결)중소ㆍ중견기업 중 쇼피 입점 셀러 - 신청지역 : 상파울루 무역관 ☞ 기업별 최대 2,400만원 지원 - 상파울루 무역관 협력물류사에서 ‘수출신고ㆍ인증(ANVISA)ㆍ수입대행(IOR)’ 원스톱 지원",
       "foodBio": false,
       "youngOk": null,
       "enyyOk": null,
