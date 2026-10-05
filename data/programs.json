@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-04T09:12:35.016+09:00",
-  "today": "2026-10-04",
+  "generatedAt": "2026-10-05T09:18:03.538+09:00",
+  "today": "2026-10-05",
   "sources": {
     "kstartup": {
       "count": 61
     },
     "bizinfo": {
-      "count": 156
+      "count": 155
     }
   },
   "items": [
@@ -403,33 +403,6 @@
           "name": "(붙임)_★_2026년_중소기업육성자금_지원계획_변경(2차)_공고문.pdf",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770861&fileSn=0"
         }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000126688",
-      "source": "bizinfo",
-      "title": "2026년 소방산업 해외 마케팅 홍보물 제작경비 지원사업 공고",
-      "org": "소방청 · 한국소방산업기술원",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-09-01",
-      "applyEnd": "2026-10-04",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126688",
-      "summary": "국내 소방산업체의 해외시장 진출 활성화 및 글로벌 마케팅을 지원하기 위한 「2026년 해외 마케팅 홍보물 제작경비 지원사업」을 다음과 같이 공고합니다. ☞ 기술원 인증 및 검사실적 보유 제조업체 - 형식승인/성능인증/KFI인증 업체 : 기술원 인증을 보유하고, 접수마감일 기준 1년 이내 제품검사 실적이 있을 것 - 방염성능검사업체 : 접수마감일 기준 1년 이내 방염성능검사 실적이 있을 것 - 소방장비인증(KFAC) 업체 : 접수마감일 기준 KFAC 인증이 유효할 것 ☞ 외국어 카탈로그, 사진 및 영상 등 수출 관련 마케팅 홍보물 제",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-09-23",
-      "sources": [
-        "bizinfo"
       ]
     },
     {
