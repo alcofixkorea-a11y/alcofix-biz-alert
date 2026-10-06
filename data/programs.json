@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T09:18:03.538+09:00",
-  "today": "2026-10-05",
+  "generatedAt": "2026-10-06T10:58:10.704+09:00",
+  "today": "2026-10-06",
   "sources": {
     "kstartup": {
       "count": 61
@@ -3003,6 +3003,33 @@
       "status": "open",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126705",
       "summary": "「2026년도 제3차 중소벤처기업부 혁신제품 지정기간 연장(2차)」 공고를 다음과 같이 안내하오니, 해당하는 중소기업은 신청하여 주시기 바랍니다. ☞ 중소벤처기업부가 지정한 혁신제품을 보유한 기업으로서, 1차 연장기간(1년)이 만료되는 혁신제품을 보유한 기업 ※ (지정기간) ‘22. 12. 26. ~ ‘26. 12. 25. ☞ 총 3년의 범위 내에서 지정기간 연장 지원",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-09-23",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000126445",
+      "source": "bizinfo",
+      "title": "2026년 4차 직무발명보상우수기업 인증제 신청 공고",
+      "org": "지식재산처 · 한국발명진흥회",
+      "category": "기타",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-06",
+      "applyEnd": "2026-10-30",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126445",
+      "summary": "한국발명진흥회에서 직무발명제도를 모범적으로 운영하는 중소ㆍ중견기업을 직무발명보상우수기업으로 인증하고 인증을 받은 기업에게 정부지원사업 참여 시 인센티브를 제공해드리는 사업입니다. ☞ 직무발명제도를 모범적으로 운영하는 중소ㆍ중견기업 ☞ 특허, 실용신안, 디자인 우선심사대상 자격 부여, 특허, 실용신안, 디자인 4~9년분 등록료 감면 - 기타 정부지원사업 대상자 선정시 가점 부여, SGI 서울보증 보증한도 및 보험료 혜택 지원 ※ 자세한 지원내용 첨부파일 참조",
       "foodBio": false,
       "youngOk": null,
       "enyyOk": null,
@@ -6128,33 +6155,6 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-03",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000126445",
-      "source": "bizinfo",
-      "title": "2026년 4차 직무발명보상우수기업 인증제 신청 공고",
-      "org": "지식재산처 · 한국발명진흥회",
-      "category": "기타",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-10-06",
-      "applyEnd": "2026-10-30",
-      "alwaysOpen": false,
-      "status": "upcoming",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126445",
-      "summary": "한국발명진흥회에서 직무발명제도를 모범적으로 운영하는 중소ㆍ중견기업을 직무발명보상우수기업으로 인증하고 인증을 받은 기업에게 정부지원사업 참여 시 인센티브를 제공해드리는 사업입니다. ☞ 직무발명제도를 모범적으로 운영하는 중소ㆍ중견기업 ☞ 특허, 실용신안, 디자인 우선심사대상 자격 부여, 특허, 실용신안, 디자인 4~9년분 등록료 감면 - 기타 정부지원사업 대상자 선정시 가점 부여, SGI 서울보증 보증한도 및 보험료 혜택 지원 ※ 자세한 지원내용 첨부파일 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-09-23",
       "sources": [
         "bizinfo"
       ]
