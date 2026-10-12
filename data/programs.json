@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-11T09:34:02.530+09:00",
-  "today": "2026-10-11",
+  "generatedAt": "2026-10-12T09:48:10.518+09:00",
+  "today": "2026-10-12",
   "sources": {
     "kstartup": {
-      "count": 58
+      "count": 53
     },
     "bizinfo": {
-      "count": 165
+      "count": 163
     }
   },
   "items": [
@@ -403,238 +403,6 @@
           "name": "[공고문] 2026년 중소기업 제조물배상책임(PL)보험 참여기업 모집(상시모집).hwp",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775603&fileSn=0"
         }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127001",
-      "source": "bizinfo",
-      "title": "2026년 극지 데이터 융합 스케일업 프로그램 참여기업 모집 공고",
-      "org": "해양수산부 · 한국해양과학기술원부설극지연구소",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-09-28",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127001",
-      "summary": "본 프로그램은 극지연구소가 보유한 독보적인 연구 성과, 특수 환경 데이터, 인프라를 민간의 혁신 비즈니스와 연결하는 실증(PoC) 프로젝트입니다. 단순한 아이디어 발굴을 넘어, 약 2개월이라는 압축적인 기간 내에 극지 데이터를 귀사의 실제 서비스/제품에 연동하고 비즈니스 모델을 검증(PoC)하는 것을 목표로 합니다. 우주만큼 도달하기 어려운 '극지'의 방대한 데이터(기후, 해운, 바이오, 안전 등)를 선점하여 귀사 비즈니스의 새로운 경쟁력을 창출할 실행력 있는 기업의 많은 지원을 바랍니다. ☞ 최소기능제품(MVP) 또는 상용화된 제",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-07",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "극지연구소 설명회.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775650&fileSn=0"
-        },
-        {
-          "name": "극지연구소 포스터.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775649&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "kstartup-179357",
-      "source": "kstartup",
-      "title": "2026 극지 데이터 융합 스케일업 프로그램",
-      "org": "극지연구소",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "일반기업,1인 창조기업",
-      "applyStart": "2026-09-28",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179357",
-      "summary": "본 프로그램은 극지연구소가 보유한 독보적인 연구 성과, 특수 환경 데이터, 인프라를 민간의 혁신 비즈니스와 연결하는 실증(PoC) 프로젝트입니다. 단순한 아이디어 발굴을 넘어, 약 2개월이라는 압축적인 기간 내에 극지 데이터를 귀사의 실제 서비스/제품에 연동하고 비즈니스 모델을 검증(PoC)하는 것을 목표로 합니다. 우주만큼 도달하기 어려운 '극지'의 방대한 데이터(기후, 해운, 바이오, 안전 등)를 선점하여 귀사 비즈니스의 새로운 경쟁력을 창출할 실행력 있는 기업의 많은 지원을 바랍니다.",
-      "foodBio": true,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-10-02",
-      "sources": [
-        "kstartup"
-      ],
-      "attachments": [
-        {
-          "name": "극지연구소+txt.hwp",
-          "url": "https://www.k-startup.go.kr/afile/fileDownload/SL1Ln"
-        }
-      ]
-    },
-    {
-      "id": "kstartup-179371",
-      "source": "kstartup",
-      "title": "2026년 SaaS 전환지원센터xAWS SaaS 현대화 교육 4회차 참가자 모집 공고",
-      "org": "정보통신산업진흥원, SaaS 전환지원센터",
-      "category": "멘토링ㆍ컨설팅ㆍ교육",
-      "sector": "교육·컨설팅",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-09-28",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179371",
-      "summary": "정보통신산업진흥원 SaaS 전환지원센터는 AWS와 함께 「클라우드 기반 SaaS 현대화 기술 특강 및 실습 교육」을 운영합니다. 본 교육은 SaaS 현대화를 위한 핵심 사용 사례와 최신 클라우드 기술 트렌드를 중심으로, SaaS 전환 및 서비스 고도화에 필요한 핵심 개념과 실무 방향을 공유하기 위해 마련되었습니다. 관련한 정보나 교육을 받아보고 싶으신 분들은, 신청 링크를 통한 구글폼 신청서 작성 후 제출해 주시길 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-10-02",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000126624",
-      "source": "bizinfo",
-      "title": "2026년 안전관리 우수판매사업체 인증신청 공고",
-      "org": "산업통상부 · 한국가스안전공사",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-09-21",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126624",
-      "summary": "최근 변화된 LP가스 안전관리 우수판매사업체 인증 계획을 아래와 같이 공고하오니 많은 관심과 신청 바랍니다. ☞ LPG판매사업자 중 최초 사업 개시일로부터 3년 이상 경과하고, 최근 1년간 휴업신고를 하지 않은 사업자 ☞ 인증일로부터 3년간 인증 지원 - 가스사고배상책임보험료 할인혜택 3년간 A등급(40%) 부여 - 3년간 정기검사 및 안전관리종합평가, 안전관리규정확인ㆍ평가 면제 - 정부사업 참여 가점 및 유공자 정부포상 부여 - 다양한 채널을 통한 지역 내 인증사업체 홍보 강화(현판식 및 인증수여식 추진, 지자체 우수업체 안내, ",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-09-23",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "kstartup-179323",
-      "source": "kstartup",
-      "title": "2026 제2회 반려동물 창업 아이디어 경진대회 참가자 모집",
-      "org": "(사)한국반려동물산업협회",
-      "category": "행사ㆍ네트워크",
-      "sector": "행사·네트워크",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,일반기업,1인 창조기업",
-      "applyStart": "2026-09-21",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179323",
-      "summary": "『2026 제2회 반려동물 창업 아이디어 경진대회』참가자 모집 공고 전국의 창의적인 반려동물 창업 아이디어를 발굴·육성하고, 우수 아이디어의 사업화 및 지역 산업 연계를 통해 부울경(부산·울산·경남) 반려동물 산업의 경쟁력 강화와 창업 생태계 활성화를 도모하고자 「2026 제2회 반려동물 창 업 아이디어 경진대회」를 개최하오니, 많은 관심과 참여 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-09-30",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-179295",
-      "source": "kstartup",
-      "title": "'애자일 피보팅: 시장의 변화를 기회로 만드는 기술창업 전략'",
-      "org": "주식회사 이노시아",
-      "category": "멘토링ㆍ컨설팅ㆍ교육",
-      "sector": "교육·컨설팅",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-09-17",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179295",
-      "summary": "강동K-ISS멘토링센터 특강 애자일 피보팅:시장의 변화를 기회로 만드는기술창업 전략 '애자일 피보팅: 시장의 변화를 기회로 만드는 기술창업 전략' AIDX 솔루션 공급 및 피지컬 AI 이기종 로봇 운영 플랫폼 전문 기업 강사 이원희",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-09-22",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-179399",
-      "source": "kstartup",
-      "title": "2026 DMC 이노베이션 캠프 경진대회 (DIC2026)",
-      "org": "㈜디엠씨산학진흥재단",
-      "category": "멘토링ㆍ컨설팅ㆍ교육",
-      "sector": "교육·컨설팅",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,일반기업,1인 창조기업",
-      "applyStart": "2026-09-15",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179399",
-      "summary": "㈜디엠씨산학진흥재단이 주최하고 (사)디엠씨코넷이 주관하는, 예비창업자 및 창업 3년 미만 초기창업기업의 우수 아이디어를 발굴하여 교육·멘토링 및 피칭을 통한 사업화를 지원하는 총 상금 3,800만 원 규모의 창업경진대회입니다. 예비창업자 및 창업 3년 이내 초기창업기업의 우수한 창업 아이디어와 사업모델을 발굴하고 성장을 지원하기 위한 「2026 DMC INNOVATION CAMP 창업경진대회」 참가팀을 모집합니다. 본 경진대회는 창업교육과 전문가 멘토링을 통해 사업모델을 고도화하고, IR 및 투자유치 역량 강화를 지원하는 프로그램으",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만",
-      "privateHost": true,
-      "firstSeen": "2026-10-03",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000126618",
-      "source": "bizinfo",
-      "title": "2026년 IP기반 AI활용 지원사업 참여기업 모집 공고",
-      "org": "지식재산처 · 한국경영혁신중소기업협회",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-09-01",
-      "applyEnd": "2026-10-11",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126618",
-      "summary": "한국경영혁신중소기업협회(메인비즈협회)에서는 중소ㆍ중견기업의 지식재산(IP) 기반 AI 솔루션 실무 활용 역량 강화를 위해 「2026년 IP기반 AI활용 지원사업」에 참여할 기업을 다음과 같이 모집하오니 많은 관심과 참여 바랍니다. ☞ 신제품 개발 및 특허출원을 준비하는 기업 - 경쟁사 기술 및 특허를 빠르게 분석하려는 기업 - 특허 및 IP 활용 전담부서를 신설하고자 하는 기업 ☞ IP 특화 AI서비스, IP 전문가의 기업 맞춤형 멘토링 지원 ※ 자세한 지원내용 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-09-23",
-      "sources": [
-        "bizinfo"
       ]
     },
     {
@@ -5105,6 +4873,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-09-23",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000121945",
+      "source": "bizinfo",
+      "title": "2026년 자이언트캐스팅(다이캐스팅) 부품 시험ㆍ평가ㆍ인증 및 기술지도 지원 시행 공고(자이언트캐스팅 공용센터 기반구축 사업)",
+      "org": "과학기술정보통신부 · 한국기계연구원",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": null,
+      "applyEnd": null,
+      "alwaysOpen": true,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121945",
+      "summary": "지역 자동차부품 산업의 초대형 주조기반 생산기술 확산과 다이캐스팅 부품 경쟁력 강화를 위한 「자이언트캐스팅 공용센터 기반구축사업」의 일환으로 자이언트캐스팅(다이캐스팅) 부품의 시험ㆍ평가ㆍ인증 지원 및 기술지도 지원을 공고하오니, 참여하고자 하는 기업은 아래 절차에 따라 신청하여 주시기 바랍니다. ☞ 자이언트캐스팅(다이캐스팅) 부품 관련 기술개발 및 기업지원 수요기업 ☞ 자이언트캐스팅(다이캐스팅) 부품 시험ㆍ평가ㆍ인증 지원 - 다이캐스팅 공정, 품질, 수명 관련 기술적 문제 등 중소기업의 전반적인 애로기술을 해소를 위한 전문가 매칭 ",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-12",
       "sources": [
         "bizinfo"
       ]
