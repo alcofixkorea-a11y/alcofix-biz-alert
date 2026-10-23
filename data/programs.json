@@ -1,122 +1,15 @@
 {
-  "generatedAt": "2026-10-22T09:17:24.379+09:00",
-  "today": "2026-10-22",
+  "generatedAt": "2026-10-23T09:14:16.213+09:00",
+  "today": "2026-10-23",
   "sources": {
     "kstartup": {
-      "count": 67
+      "count": 64
     },
     "bizinfo": {
-      "count": 173
+      "count": 167
     }
   },
   "items": [
-    {
-      "id": "bizinfo-PBLN_000000000127228",
-      "source": "bizinfo",
-      "title": "[대전ㆍ세종] 2026년 코리아 그랜드 페스티벌 지역 소상공인 라이브커머스 참여기업 추가 모집 공고",
-      "org": "중소벤처기업부 · 대전ㆍ세종지방중소벤처기업청",
-      "category": "내수",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "세종",
-      "target": "중소기업",
-      "applyStart": "2026-10-14",
-      "applyEnd": "2026-10-22",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127228",
-      "summary": "2026년 코리아 그랜드 페스티벌 기간 동안 지역 우수 소상공인 제품의 홍보 및 판매 촉진을 위하여 대전ㆍ세종지역 중소ㆍ소상공인을 대상으로 라이브커머스 참여기업을 아래와 같이 모집합니다. ☞ 대전ㆍ세종지역 중소ㆍ소상공인 ☞ 라이브방송 진행을 위한 촬영공간 및 장비, 방송 진행을 위한 쇼호스트 및 방송 송출(최대1시간) 등 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-16",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "(제2026-30호)_2026년_대전_세종_소상공인_라이브커머스_참여기업_추가_모집_공고.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776690&fileSn=0"
-        },
-        {
-          "name": "(제2026-30호)_2026년_대전_세종_소상공인_라이브커머스_참여기업_추가_모집_공고.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776689&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127089",
-      "source": "bizinfo",
-      "title": "[세종] 중소기업 기술도약 지원사업 모집 공고(세종지역 산업기술단지 거점기능강화사업 기술ㆍ인프라 연계형)",
-      "org": "세종특별자치시 · 세종테크노파크",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "지자체",
-      "region": "세종",
-      "target": "중소기업",
-      "applyStart": "2026-10-08",
-      "applyEnd": "2026-10-22",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127089",
-      "summary": "세종테크노파크에서 세종시 중소기업을 대상으로 비즈니스 역량 강화를 위해 「세종시 중소기업 기술도약 지원사업」 시행 계획을 다음과 같이 공고하오니 많은 관심과 참여를 바랍니다. ☞ 본사 소재지가 세종특별자치시에 소재하고 있으며, 세종시 주력산업을 영위 중인 기업 ※ 지역 주력산업(바이오ㆍ모빌리티) 및 전기ㆍ전자 분야 기술도약 및 정부 R&D 진입 희망 기업 ☞ 기업당 600만원 내외 간접지원 - 기업진단-수요-공급 매칭부터 신규 R&D까지 중소기업의 기술 도약을 위한 연구기관의 기술ㆍ인프라 맞춤지원",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-13",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "붙임. 기술·인프라 연계형 세종시 중소기업 기술도약 지원사업 참여기업 모집 공고문 및 제출서류.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776114&fileSn=0"
-        },
-        {
-          "name": "붙임. 기술·인프라 연계형 세종시 중소기업 기술도약 지원사업 참여기업 모집 공고문 및 제출서류+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776113&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000126937",
-      "source": "bizinfo",
-      "title": "[세종] 제9회 세종시 기업인의 날 우수기업 및 유공자 선정계획 공고",
-      "org": "세종특별자치시 · 직접수행",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "지자체",
-      "region": "세종",
-      "target": "중소기업",
-      "applyStart": "2026-10-01",
-      "applyEnd": "2026-10-22",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126937",
-      "summary": "「제9회 세종시 기업인의 날」우수기업 및 유공자 선정계획을 다음과 같이 공고하오니 관내 기업인들의 적극적인 참여를 바랍니다. ☞ (기업대상) 세종시에 본사 또는 공장이 소재한 제조 중소ㆍ중견기업 / 우수한 기술력으로 경영성과를 내며 지역사회 발전에 기여한 기업 - (유망중소기업) 세종시에 공장등록을 하고 3년 이상 공장을 가동 중인 제조 중소기업 / 우수한 기술ㆍ경영 능력을 바탕으로 성장 가능성이 큰 중소기업 - (매출의 탑) 세종시에 본사 또는 공장이 소재한 3년 이상 된 제조 중소ㆍ중견기업 중 전년도(2025년) 매출실적이 일정",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-02",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "「제9회 세종시 기업인의 날」 우수기업 및 유공자 선정계획 공고.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775330&fileSn=1"
-        }
-      ]
-    },
     {
       "id": "bizinfo-PBLN_000000000127275",
       "source": "bizinfo",
@@ -545,87 +438,6 @@
       ]
     },
     {
-      "id": "kstartup-179540",
-      "source": "kstartup",
-      "title": "[ 모 집 ] GVC AI Platform Startup Enabling Program 및 스마트워크·쇼핑몰 창업지원 및 AI 전환 지원",
-      "org": "글로벌벤처센터",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-10-16",
-      "applyEnd": "2026-10-22",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179540",
-      "summary": "글로벌벤처센터(GVC)는 AI 기반 플랫폼 서비스를 만들고 싶은 예비창업자와 초기 스타트업을 모집합니다. 아이템 검증부터 MVP 개발, 글로벌 런칭, 투자 연계까지 창업 과정을 함께하는 Startup Builder 사업화 육성 프로그램입니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-10-17",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-179501",
-      "source": "kstartup",
-      "title": "[중앙사회서비스원] 2026년 제3회 사회서비스 투자교류회",
-      "org": "중앙사회서비스원",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-10-13",
-      "applyEnd": "2026-10-22",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179501",
-      "summary": "안녕하세요. 중앙사회서비스원입니다. 「2026년 제3회 사회서비스 투자 교류회」 가 2026년 11월 17일(화) 창원컨벤션센터 600홀에서 개최됩니다. 보건복지부와 중앙사회서비스원, 그리고 엠와이소셜컴퍼니가 함께하는 사회서비스 투자 교류회는 사회서비스 기업의 투자 유치 기회를 확대하고, 유관기관과의 교류를 통해 협업·실증을 논의하는 연결의 장입니다. 올해의 마지막 교류회(누적 15회)는 지역에서의 돌봄 기술 확산을 위해 경상남도에서 개최되며, 경상남도사회서비스원과 함께합니다. 관련하여 우수한 돌봄 기술과 성장 가능성을 가진 사회서",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-10-15",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127078",
-      "source": "bizinfo",
-      "title": "2026년 블록체인 퓨처 챌린지 기업 모집 공고(블록체인 기업 IR 경진대회)",
-      "org": "과학기술정보통신부 · 한국인터넷진흥원",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-10-07",
-      "applyEnd": "2026-10-22",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127078",
-      "summary": "과학기술정보통신부와 한국인터넷진흥원은 블록체인 기업에 대한 투자유치 지원을 위한 국내 IR 경진대회(2026년 블록체인 퓨처 챌린지)에 참여할 기업을 아래와 같이 모집합니다. 국내 유망 블록체인 기업의 많은 관심과 참여 바랍니다. ☞ 프리시드(Pre-Seed) 단계 ~ 시리즈 A(Series A) 단계의 블록체인 기술 및 서비스를 보유한 업력 10년 이내기업 ☞ IR경진대회(참여 투자사 대상 IR 발표), 투자상담회(참여 투자사와 1:1 투자 상담), 사전 IR컨설팅(모의 IR 통한 IR 발표 컨설팅) 지원 ※ 자세한 지원내용 공고",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-09",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
       "id": "bizinfo-PBLN_000000000127295",
       "source": "bizinfo",
       "title": "2026년 상생협력형 내일채움공제 도입 및 지원 공고",
@@ -945,33 +757,6 @@
       "enyyRaw": "3년미만",
       "privateHost": true,
       "firstSeen": "2026-10-16",
-      "sources": [
-        "kstartup"
-      ]
-    },
-    {
-      "id": "kstartup-179496",
-      "source": "kstartup",
-      "title": "2026 산업단지 오픈이노베이션프로그램 KICXUP 챌린지 & 로컬 스타트업 2차 모집 공고",
-      "org": "한국산업단지공단",
-      "category": "사업화",
-      "sector": "창업·사업화",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-10-12",
-      "applyEnd": "2026-10-23",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179496",
-      "summary": "한국산업단지공단과 신용보증기금에서 산업단지 오픈이노베이션 생태계 활성화를 위해 「2026 KICXUP 챌린지 & 로컬 프로그램」을 아래와 같이 실시하고자 하오니, 참여를 희망하는 혁신 스타트업의 많은 지원 바랍니다.",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,7년미만",
-      "privateHost": false,
-      "firstSeen": "2026-10-15",
       "sources": [
         "kstartup"
       ]
@@ -1423,6 +1208,33 @@
       ]
     },
     {
+      "id": "kstartup-179496",
+      "source": "kstartup",
+      "title": "2026 산업단지 오픈이노베이션프로그램 KICXUP 챌린지 & 로컬 스타트업 2차 모집 공고",
+      "org": "한국산업단지공단",
+      "category": "사업화",
+      "sector": "창업·사업화",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-10-12",
+      "applyEnd": "2026-10-26",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179496",
+      "summary": "한국산업단지공단과 신용보증기금에서 산업단지 오픈이노베이션 생태계 활성화를 위해 「2026 KICXUP 챌린지 & 로컬 프로그램」을 아래와 같이 실시하고자 하오니, 참여를 희망하는 혁신 스타트업의 많은 지원 바랍니다.",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,7년미만",
+      "privateHost": false,
+      "firstSeen": "2026-10-15",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000127070",
       "source": "bizinfo",
       "title": "2026년 해외 물시장 기술 테스트 및 검증 지원사업 모집 공고",
@@ -1683,6 +1495,39 @@
       "firstSeen": "2026-08-28",
       "sources": [
         "kstartup"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127397",
+      "source": "bizinfo",
+      "title": "2026년 10월 코리아그랜드페스티벌 오프라인 기획전 공고",
+      "org": "중소벤처기업부 · 한국중소벤처기업유통원",
+      "category": "내수",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-21",
+      "applyEnd": "2026-10-27",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127397",
+      "summary": "한국중소벤처기업유통원에서는 행복한백화점 야외 광장 행사를 통한 기획전 진행을 위해 「2026년 10월 코리아그랜드페스티벌 오프라인 기획전」을 아래와 같이 모집합니다. 많은 관심과 신청하여 주시기 바랍니다. ☞ 오프라인 기획전 진행을 희망하는 업체(생활ㆍ잡화ㆍ주방ㆍ식품) - 오프라인 기획전 기간 판매인원 상주 가능 업체 ☞ 행복한백화점 야외 행사 기획전 진행 지원",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-23",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "26년 10월 코리아그랜드페스티벌 오프라인 기획전.pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777445&fileSn=0"
+        }
       ]
     },
     {
@@ -2194,6 +2039,60 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-07",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127393",
+      "source": "bizinfo",
+      "title": "2026년 6차 수출 도전기업 IP위험 대응역량 강화사업 위험대응 유형 모집 공고",
+      "org": "지식재산처 · 한국지식재산보호원",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-22",
+      "applyEnd": "2026-10-30",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127393",
+      "summary": "수출 도전기업의 안정적인 해외진출과 수출활성화 도모를 위한「수출 도전기업 IP위험 대응역량 강화사업」위험대응 유형 6차 모집을 다음과 같이 공고합니다 ☞ 위험진단 유형 지원기업 ☞ 위험진단에서 확인된 IP위험을 해소하는 대응전략 지원(최대 사업비 14,000,000원 지원)",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-23",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127395",
+      "source": "bizinfo",
+      "title": "2026년 2차 유망수출품목발굴 지원사업 참여기업 모집 연장 공고",
+      "org": "방위사업청 · 국방기술진흥연구소",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-20",
+      "applyEnd": "2026-10-30",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127395",
+      "summary": "방위사업청 훈령 제 937호「국제경쟁력강화 지원사업 운영규정」 제3장 1절 11조의 규정에 따라 국제경쟁력을 갖춘 방산기업을 육성하기 위해 「’26-2차 유망수출품목발굴 지원사업 참여기업 모집」을 다음과 같이 공고하오니, 관심 있는 기업의 적극적인 참여 바랍니다. ☞ 방위산업분야에서 단위 완제품, 구성품, 부품, 소프트웨어 등을 연구개발 또는 생산하는 중소ㆍ중견기업 ※ 자세한 신청자격 공고문 참조 ☞ 지원분야별 총 소요비용에 대해 기업 유형별로 70~75%, 정부지원금 최대 5,000만원까지 지원 - 해외 인증획득, 수출 컨설팅, ",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-23",
       "sources": [
         "bizinfo"
       ]
@@ -3860,6 +3759,33 @@
       ]
     },
     {
+      "id": "kstartup-179571",
+      "source": "kstartup",
+      "title": "[온라인·무료] 코딩·사업자 없이 여는 내 강의·전자책 판매 사이트",
+      "org": "스쿨모아 주식회사",
+      "category": "창업교육",
+      "sector": "창업·사업화",
+      "orgType": "민간",
+      "region": "전국",
+      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
+      "applyStart": "2026-10-23",
+      "applyEnd": "2026-11-05",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179571",
+      "summary": "GPT·Claude 같은 AI와 대화하며 화면을 만드는 '바이브코딩'으로, 코딩 몰라도 내 강의·전자책 판매 사이트를 직접 만듭니다. 강의·상담·전자책 등 내 경험을 상품으로 만들고, 사업자 등록 없이도 바로 결제를 받을 수 있도록 연결합니다. 1대다 실시간 비대면(구글 미트) 3시간 과정으로, 막히는 부분은 채팅으로 바로 질문하며 함께 완성합니다. 교육이 끝나면 내 사이트, 첫 상품 상세페이지, 홍보 콘텐츠, 30일 운영 체크리스트가 남습니다. 수강료 무료, 수료 시 200만 원 상당 사이트 제작 쿠폰을 드리며, 노트북과 Chat",
+      "foodBio": false,
+      "youngOk": true,
+      "enyyOk": true,
+      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
+      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
+      "privateHost": true,
+      "firstSeen": "2026-10-22",
+      "sources": [
+        "kstartup"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000127353",
       "source": "bizinfo",
       "title": "2027년 미국 라스베가스 방송장비 전시회 (NAB 2027) 한국관 참가기업 모집 공고",
@@ -4977,33 +4903,6 @@
       ]
     },
     {
-      "id": "bizinfo-PBLN_000000000122273",
-      "source": "bizinfo",
-      "title": "2026년 찾아가는 1:1 디지털 교육 소상공인 모집 공고",
-      "org": "중소벤처기업부 · 소상공인시장진흥공단",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "소상공인",
-      "applyStart": "2026-05-20",
-      "applyEnd": "2026-11-30",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122273",
-      "summary": "소상공인의 온라인 판로 진출 및 디지털 전환 실현을 위한「’26년 찾아가는 1:1 디지털 교육」에 참여를 희망하는 소상공인을 모집합니다. ☞ 온라인 진출의사가 있으나, 디지털 활용 수준 및 경영여건으로 집체교육 참여가 어려운 디지털 취약계층 소상공인 - ｢소상공인 기본법｣ 제2조에 따른 소상공인으로, 신청일 현재 정상적으로 영업 중인 점포 ☞ 집합교육 참여가 어려운 소상공인을 대상으로 온라인 플랫폼 입점 및 홍보 방법 등 찾아가는 1:1 디지털 교육 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-17",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
       "id": "bizinfo-PBLN_000000000127265",
       "source": "bizinfo",
       "title": "2026년 온라인수출플랫폼 사업 수출계약 대응 지원 참여기업 모집 공고",
@@ -5576,142 +5475,6 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-09-23",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122268",
-      "source": "bizinfo",
-      "title": "2026년 2차 메카노바이오활성소재 혁신의료기기 실증 기반구축 생물학적 시험평가인증 지원사업 공고(산업혁신기반구축사업)",
-      "org": "산업통상부 · 국가독성과학연구소",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122268",
-      "summary": "「국가독성과학연구소 전북첨단바이오연구본부 중개독성연구센터」에서는 산업통상자원부와 전북특별자치도 및 전주시가 함께 지원하는 2026년도 산업혁신 기반 구축 사업의 일환으로, 생물학적 시험평가인증 지원사업을 다음과 같이 공고하오니 의료기기 전ㆍ후방 산업군에 해당하는 중소ㆍ중견기업의 많은 참여 바랍니다. ☞ 의료기기 전ㆍ후방 산업군에 해당하는 전국의 중소ㆍ중견기업 ☞ 설치류 급성전신독성시험 지원(기업당 최대 800만 원 상당)",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-17",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "[양식] 신청서_생물학적 시험평가인증 지원사업.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=0"
-        },
-        {
-          "name": "[양식] 신청서_생물학적 시험평가인증 지원사업.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=1"
-        },
-        {
-          "name": "[공고문] 2026년 생물학적 시험평가인증 지원사업 (2차).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756541&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122309",
-      "source": "bizinfo",
-      "title": "2026년 바이오 의료기기 해외 진출 지원 제로트러스트 기반구축사업 참여기업 상시 지원 모집 공고",
-      "org": "산업통상부 · 한국산업기술시험원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122309",
-      "summary": "2026년부터 산업통상자원부가 시행하는 바이오산업기반구축사업 내「바이오의료기기 해외진출지원 제로트러스트 기반구축」과제를 수행하고 있는 건양대학교 산학협력단입니다. 본 과제는 제품의 잠재적 사용오류 및 유용성 개선 등을 통해 국내 의료기기 제품의 글로벌 인허가 대응력 강화를 위한 지원을 수행하고 있습니다. 본 사업단에서 지원하는 분야에 대한 상세 내용을 아래와 같이 공고하오니, 참여를 희망하는 역량있는 기업들의 많은 신청 바랍니다. ☞ 해외 시장 진출을 목표로 하며, 지원이 필요한 경쟁력 있는 바이오 의료기기 제조 기업(HWSW) -",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-17",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "붙임2.+2026년+바이오+의료기기+해외진출지원+제로트러스트+기반+구축+참여기업+상시+지원+모집+신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756628&fileSn=0"
-        },
-        {
-          "name": "붙임2.+2026년+바이오+의료기기+해외진출지원+제로트러스트+기반+구축+참여기업+상시+지원+모집+신청서.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756628&fileSn=1"
-        },
-        {
-          "name": "붙임1.+2026년+바이오+의료기기+해외진출지원+제로트러스트+기반+구축+참여기업+상시+지원+모집+공고.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756627&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122333",
-      "source": "bizinfo",
-      "title": "2026년 SDV 전장부품 보안 평가센터 기업지원사업 수혜기업 모집 공고",
-      "org": "산업통상부 · 지능형자동차부품진흥원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122333",
-      "summary": "지능형자동차부품진흥원에서는 SDV 지향 전장부품 기업 해외 시장 진출 촉진과 기술 경쟁력 확보를 위한 기업지원 프로그램 운영을 통한 기술 및 사업화 지원을 위해「2026년 SDV 전장부품 보안 평가센터 기업지원사업」수혜기업을 모집 공고하오니 국내 중소ㆍ중견 전장부품 기업의 많은 관심과 신청 바랍니다. ☞ 국내 중소ㆍ중견 전장부품 기업 ☞ 해외 수출 지원, 성능 평가 지원, 기술 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-17",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122428",
-      "source": "bizinfo",
-      "title": "2026년 콘텐츠 기업 노무 컨설팅 참가기업 모집 공고",
-      "org": "문화체육관광부 · 한국콘텐츠진흥원",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122428",
-      "summary": "한국콘텐츠진흥원은 일하는 방식 및 고용환경 변화에 따른 국내 콘텐츠 기업의 경쟁력 강화를 위해 기업 맞춤형 노무 컨설팅을 지원할 예정입니다. 콘텐츠 기업의 많은 관심과 참여 바랍니다. ☞ 콘텐츠 기업(개인/법인사업자) ※ 콘텐츠 기업 : 방송, 출판, 만화, 음악, 게임, 애니메이션, 캐릭터, 콘텐츠솔루션, 공연 등 ※ 상시근로자 수 : 공고 게시일로부터 제출일 이내 대표를 제외한 4대 보험 가입자명부 기준 ※ 중소기업기본법 시행령 제8조에 따른 중소기업이 아닌 경우 신청 불가 ※ 방송법 제2조 3호에 의거한 방송사업자 신청 불가 ",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-17",
       "sources": [
         "bizinfo"
       ]
@@ -6830,33 +6593,6 @@
       "firstSeen": "2026-10-21",
       "sources": [
         "bizinfo"
-      ]
-    },
-    {
-      "id": "kstartup-179571",
-      "source": "kstartup",
-      "title": "[온라인·무료] 코딩·사업자 없이 여는 내 강의·전자책 판매 사이트",
-      "org": "스쿨모아 주식회사",
-      "category": "창업교육",
-      "sector": "창업·사업화",
-      "orgType": "민간",
-      "region": "전국",
-      "target": "청소년,대학생,일반인,대학,연구기관,일반기업,1인 창조기업",
-      "applyStart": "2026-10-23",
-      "applyEnd": "2026-11-05",
-      "alwaysOpen": false,
-      "status": "upcoming",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=179571",
-      "summary": "GPT·Claude 같은 AI와 대화하며 화면을 만드는 '바이브코딩'으로, 코딩 몰라도 내 강의·전자책 판매 사이트를 직접 만듭니다. 강의·상담·전자책 등 내 경험을 상품으로 만들고, 사업자 등록 없이도 바로 결제를 받을 수 있도록 연결합니다. 1대다 실시간 비대면(구글 미트) 3시간 과정으로, 막히는 부분은 채팅으로 바로 질문하며 함께 완성합니다. 교육이 끝나면 내 사이트, 첫 상품 상세페이지, 홍보 콘텐츠, 30일 운영 체크리스트가 남습니다. 수강료 무료, 수료 시 200만 원 상당 사이트 제작 쿠폰을 드리며, 노트북과 Chat",
-      "foodBio": false,
-      "youngOk": true,
-      "enyyOk": true,
-      "ageRaw": "만 20세 미만,만 20세 이상 ~ 만 39세 이하,만 40세 이상",
-      "enyyRaw": "예비창업자,1년미만,2년미만,3년미만,5년미만,7년미만,10년미만",
-      "privateHost": true,
-      "firstSeen": "2026-10-22",
-      "sources": [
-        "kstartup"
       ]
     },
     {
