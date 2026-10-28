@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-27T09:58:44.239+09:00",
-  "today": "2026-10-27",
+  "generatedAt": "2026-10-28T09:48:34.933+09:00",
+  "today": "2026-10-28",
   "sources": {
     "kstartup": {
       "error": "Unexpected token '<', \"<br>\r\n<br>\"... is not valid JSON"
     },
     "bizinfo": {
-      "count": 168
+      "count": 171
     }
   },
   "items": [
@@ -200,6 +200,43 @@
         {
           "name": "2026년 하반기 착한가격업소 지정신청 공고(서식포함).hwpx",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777726&fileSn=0"
+        }
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127476",
+      "source": "bizinfo",
+      "title": "[대전ㆍ세종] 2026년 중소기업 마케팅ㆍ판로 전문가 현장컨설팅 참여기업 모집 공고",
+      "org": "중소벤처기업부 · 대전ㆍ세종지방중소벤처기업청",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "세종",
+      "target": "중소기업",
+      "applyStart": "2026-10-28",
+      "applyEnd": "2026-11-06",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127476",
+      "summary": "우리청은 중소기업의 마케팅&판로 애로해소를 위해 현장 맞춤형 전문가 컨설팅 참여기업 모집을 다음과 같이 공고합니다. ☞ 대전ㆍ세종 소재 제조 중소기업 - 중소기업 혁신바우처 탈락 기업 - 뿌리산업 영위기업, 창업초기 기업 또는 컨설팅 희망 중소기업 ☞ 마케팅ㆍ판로 분야 컨설팅 지원 - 마케팅 역량진단 및 추진전략 수립 - 시장진출 및 판로개척을 위한 시장조사/분석 - 온라인시장(쇼핑몰, 홈쇼핑, 미디어 등) 전략수립 - 정부지원사업 참여 연계 진로 제시 전략(홈페이지 제작, 제품 홍보영상 제작, 카달로그/브로셔 등)",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "2026년도_대전세종_중소기업_마케팅_판로_현장컨설팅_공고문(안).hwpx",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777810&fileSn=0"
+        },
+        {
+          "name": "2026년도_대전세종_중소기업_마케팅_판로_현장컨설팅_공고문(안).pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777809&fileSn=1"
         }
       ]
     },
@@ -448,66 +485,6 @@
           "name": "[공고문] 2026년 중소기업 제조물배상책임(PL)보험 참여기업 모집(상시모집).hwp",
           "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775603&fileSn=0"
         }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127397",
-      "source": "bizinfo",
-      "title": "2026년 10월 코리아그랜드페스티벌 오프라인 기획전 공고",
-      "org": "중소벤처기업부 · 한국중소벤처기업유통원",
-      "category": "내수",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-10-21",
-      "applyEnd": "2026-10-27",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127397",
-      "summary": "한국중소벤처기업유통원에서는 행복한백화점 야외 광장 행사를 통한 기획전 진행을 위해 「2026년 10월 코리아그랜드페스티벌 오프라인 기획전」을 아래와 같이 모집합니다. 많은 관심과 신청하여 주시기 바랍니다. ☞ 오프라인 기획전 진행을 희망하는 업체(생활ㆍ잡화ㆍ주방ㆍ식품) - 오프라인 기획전 기간 판매인원 상주 가능 업체 ☞ 행복한백화점 야외 행사 기획전 진행 지원",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-23",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "26년 10월 코리아그랜드페스티벌 오프라인 기획전.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777445&fileSn=0"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000126960",
-      "source": "bizinfo",
-      "title": "2026년 제30회 데이터 품질대상 공고",
-      "org": "과학기술정보통신부 · 한국데이터산업진흥원",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-09-28",
-      "applyEnd": "2026-10-27",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000126960",
-      "summary": "데이터 품질의 중요성과 품질인증제도의 확산을 위해 품질관리 우수기업과 품질인증 공로단체를 발굴 및 포상 하고자 아래와 같이 「2026 데이터 품질대상」을 공모하오니 많은 관심과 참여바랍니다. ☞ 데이터 품질인증기업 또는 데이터 품질 및 인증제도 진흥 및 활성화를 위해 공헌한 단체 - 품질관리 : 데이터 품질인증서를 획득한 대기업, 중견기업, 중소기업, 협단체 등 - 품질공로 : 데이터 품질 및 인증제도 발전에 기여 또는 공헌한 단체 ☞ 데이터 품질대상 시상 지원 - 품질관리 수상기업(품질공로 부문 제외)은 차년도 품질인증 신청 시 ",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-03",
-      "sources": [
-        "bizinfo"
       ]
     },
     {
@@ -776,6 +753,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-24",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127485",
+      "source": "bizinfo",
+      "title": "2027년 철도 유관기관 연계형 실용화 R&D 지원사업 공동연구개발 참여기업 공모",
+      "org": "과학기술정보통신부 · 한국철도기술연구원",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-26",
+      "applyEnd": "2026-10-30",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127485",
+      "summary": "한국철도기술연구원(이하 철도연)은 철도 유관기관과 함께 철도 부품의 개발과 실용화를 촉진하여 철도 중소ㆍ중견기업을 지원하고 철도산업의 경쟁력을 강화하고자 합니다. 이에 공동연구개발과제에 참여할 기업을 다음과 같이 공모하오니, 참여를 희망하는 기업의 많은 신청을 바랍니다. ☞ 중소ㆍ중견기업 中 최근 연도 기준 매출액 30억원 이상이며, 기업부설연구소 또는 연구개발전담부서를 보유한 기업 ☞ 철도 시설ㆍ운영기관이 운영ㆍ유지관리를 위해 구매하는 독점 수입품 등의 국산화 개발 및 기타 현장 수요 기술ㆍ제품 개발 지원 - 완성차 제작사의 해외",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
       "sources": [
         "bizinfo"
       ]
@@ -2010,6 +2014,43 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000127488",
+      "source": "bizinfo",
+      "title": "2026년 농식품수출성장패키지 (K-Fresh) 모집 공고",
+      "org": "농림축산식품부 · 한국농수산식품유통공사",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-26",
+      "applyEnd": "2026-11-04",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127488",
+      "summary": "신선농산물 통합조직 연계 신선농산물 수출 확대를 위한「2026년 농식품글로벌성장패키지(K-Fresh)」 참여기업을 아래와 같이 모집하오니 많은 신청 바랍니다. ☞ 최근 1년간(`25.10월~`26.9월) 신선농산물 통합조직(통합단계) 11개품목 1만$ 이상 수출실적(직ㆍ간접)을 보유한 통합조직 회원사 ☞ 사업메뉴 23개(붙임 2) 중 필요 메뉴를 배정 한도 내 자율 선택 사용 후 국고 지원 비율에 따라 지원 - 생산ㆍ수출기반, 수확후 관리, 운송 및 통관, 판로개척 지원 ※ 자세한 지원내용 공고문 참조",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "제출+서류+양식.zip",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777842&fileSn=0"
+        },
+        {
+          "name": "2026년+농식품글로벌성장패키지+지원사업+모집공고+(K-프레쉬).pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777841&fileSn=0"
+        }
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000127449",
       "source": "bizinfo",
       "title": "2026년 2차 1인 중증장애인기업 업무지원인 서비스 지원사업 의사소통형ㆍ경영지도형 지원대상자 모집 공고",
@@ -2032,6 +2073,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-27",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127482",
+      "source": "bizinfo",
+      "title": "2027년 이탈리아 밀라노 공작기계 및 자동화기기 전시회 (EMO Milano 2027) 한국관 참가기업 모집 공고",
+      "org": "산업통상부 · 대한무역투자진흥공사",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-22",
+      "applyEnd": "2026-11-04",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127482",
+      "summary": "KOTRA와 한국공작기계산업협회는 2027년 10월 4일 ~ 10월 8일 (5일간) 이탈리아 밀라노에서 개최되는 ‘2027 이탈리아 밀라노 공작기계 전시회(EMO 2027)’의 한국관 참가기업을 아래와 같이 모집하오니 관심 기업들의 많은 신청 바랍니다. ☞ 2027 이탈리아 밀라노 공작기계 전시회(EMO Milano 2027) 한국관 참가희망 기업 - 금속 절삭 및 성형 공작기계, 절삭공구, 부품ㆍ액세서리, 로봇 및 자동화시스템, 적층제조, 디지털 제조, 인공지능(AI) 등 ☞ 부스임차료와 장치비의 70% 이내 국고지원 예정, 운송",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
       "sources": [
         "bizinfo"
       ]
@@ -2433,6 +2501,43 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000127471",
+      "source": "bizinfo",
+      "title": "2026년 중국 로컬유통망 연계 소비재 입점 사업 참가업체 모집 공고",
+      "org": "산업통상부 · 대한무역투자진흥공사",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-19",
+      "applyEnd": "2026-11-10",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127471",
+      "summary": "코트라 선양무역관은 중국 동북지역 판로 개척 지원을 위해 Happy Farm 유통망과 협업하여「중국 로컬유통망 연계 소비재 입점 사업」을 추진할 예정이오니 관심 있는 우수 식품기업의 많은 참여 바랍니다. ☞ 식품기업 - 품평회 참가용 샘플 무료 제공 가능 기업(참가비용 무료) - 중국 내 수입 유통 요건 구비 기업 ☞ 현지 유통망 협업을 통한 구매본부 샘플 품평회 및 입점 지원",
+      "foodBio": true,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
+      "sources": [
+        "bizinfo"
+      ],
+      "attachments": [
+        {
+          "name": "동북 유통망 사업 신청서(선양무역관).xlsx",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777657&fileSn=1"
+        },
+        {
+          "name": "중국 로컬유통망 연계 소비재 입점 사업.pdf",
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777656&fileSn=1"
+        }
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000127130",
       "source": "bizinfo",
       "title": "2026년 연구개발특구 기술사업화대상 후보자 추천 공고",
@@ -2455,6 +2560,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-13",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127490",
+      "source": "bizinfo",
+      "title": "2027년 미국 샌프란시스코 정보보안 전시회 (RSA Conference) 한국관 참가기업 모집 공고",
+      "org": "산업통상부 · 대한무역투자진흥공사",
+      "category": "수출",
+      "sector": "판로·수출",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-27",
+      "applyEnd": "2026-11-13",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127490",
+      "summary": "KOTRA와 한국정보보호산업협회는 2027년 4월 5일 ~ 4월 8일 (4일간) 미국 샌프란시스코에서 개최되는 ‘2027 미국 샌프란시스코 정보보안 전시회(RSA Conference)’ 한국관 참가기업을 아래와 같이 모집하오니 관심기업들의 많은 신청 바랍니다. ☞ 2027 미국 샌프란시스코 정보보안 전시회(RSA Conference) 한국관에 참여를 희망하는 국내 정보보호 기업 - 전시품목 : 정보보호 시스템, 네트워크 보안, 인증 및 암호, PC 보안, 바이러스 백신, DB보안, DRM, 내부정보보호 유출방지, 무선/모바일 보안 ",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
       "sources": [
         "bizinfo"
       ]
@@ -2855,6 +2987,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-09-23",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127500",
+      "source": "bizinfo",
+      "title": "2027년 착수 민ㆍ군기술이전사업 과제(연구개발계획서) 공모",
+      "org": "방위사업청 · 국방과학연구소",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-10-27",
+      "applyEnd": "2026-11-27",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127500",
+      "summary": "「민ㆍ군기술협력사업 촉진법」에 따라 군사 부문과 비군사 부문 상호 간 기술이전을 확대함으로써 국방력과 산업경쟁력을 강화하기 위하여 추진하고 있는 민ㆍ군기술이전사업의 2027년도 착수 신규과제 발굴을 위한 기술수요조사를 실시하오니, 관심 있는 기관의 많은 참여를 바랍니다. ☞ (주관연구개발기관ㆍ공동연구개발기관) 「국가연구개발혁신법」 제2조제3호 및 「동법 시행령」 제2조제1항에 따른 ‘연구개발기관’ ※ 자세한 신청자격 공고문 참조 ☞ 민ㆍ군기술 적용연구사업 연구개발비 지원 ※ 자세한 지원내용 공고문 참조",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
       "sources": [
         "bizinfo"
       ]
@@ -3469,87 +3628,6 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-09-23",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122103",
-      "source": "bizinfo",
-      "title": "2026년 기술임치기업 보증용 기술가치평가 지원사업 참여기업 모집 공고",
-      "org": "중소벤처기업부 · 대중소기업농어업협력재단",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122103",
-      "summary": "중소기업의 금융기관 대출 연계 활성화 및 운용자금 확보, 안정적 기업 운영ㆍ사업화를 촉진하기 위해「2026년 기술임치기업 보증용 기술가치평가」참여기업을 다음과 같이 모집하오니 많은 관심과 참여 바랍니다. ☞ 협력재단 기술자료임치센터 내 기술자료 등을 임치한 국내 유망 중소기업 ☞ 기술가치평가 비용 1건당 1백만원(50%) 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-24",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122104",
-      "source": "bizinfo",
-      "title": "2026년 중소사업자 개인정보 안전조치 모니터링 지원 사업 공고",
-      "org": "개인정보보호위원회 · 개인정보보호협회",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122104",
-      "summary": "중소사업자의 개인정보 보호수준을 높이고 유출사고를 사전에 예방하기 위한 시범사업입니다. 이용자의 개인정보를 취급하는 중소사업자를 대상으로 자가진단 및 맞춤형 컨설팅을 지원하여 기업의 보안 역량을 강화하고 개인정보 유출 사고를 예방하기 위한 사업입니다. ☞ 중소기업법 제2조 및 동법 시행령 3조에 따른 중소기업에 해당하는 사업자 ☞ 기업 IT 환경 맞춤형 보안 컨설팅 - (취약점 점검) 개인정보를 처리하는 서비스 환경 전반에 대한 보안 진단 - (컨설팅 및 조치) 진단 결과 바탕 보안 컨설팅 및 취약점 조치 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-24",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000122147",
-      "source": "bizinfo",
-      "title": "2026년 영업비밀ㆍ기술 보호 컨설팅 모집 공고",
-      "org": "지식재산처 · 한국지식재산보호원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122147",
-      "summary": "중소ㆍ중견기업, 대학ㆍ공공연구기관의 기술유출 방지 및 영업비밀 보호 강화를 위한 「2026년 영업비밀ㆍ기술 보호 컨설팅」을 아래와 같이 변경하여 공고합니다. ☞ 중소ㆍ중견기업, 대학ㆍ공공연구기관 ☞ 단계별 컨설팅(기초ㆍ심화) 및 공공연 등 맞춤형 컨설팅 지원 ※ 자세한 지원내용 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-24",
       "sources": [
         "bizinfo"
       ]
@@ -4951,6 +5029,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-24",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127484",
+      "source": "bizinfo",
+      "title": "2027년 전문기술인 활용 재난재해 대응기술 현장화 지원 사업 신규 과제 공고",
+      "org": "과학기술정보통신부 · 한국연구재단",
+      "category": "기술",
+      "sector": "기술·R&D",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-11-10",
+      "applyEnd": "2026-11-27",
+      "alwaysOpen": false,
+      "status": "upcoming",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127484",
+      "summary": "과학기술정보통신부가 추진하는 2027년도「전문기술인 활용 재난재해 대응기술 현장화 지원 사업」의 신규 과제를 아래와 같이 공모하오니 관심 있는 기술사 및 연구자들의 많은 참여 바랍니다. ☞「국가연구개발혁신법」 제2조제3호에 따른 연구개발기관 중 다음 각 호의 어느 하나에 해당하는 기관ㆍ단체 -「상법」 제169조에 따른 회사로서「중소기업기본법」 제2조에 따른 중소기업 -「민법」 또는 다른 법률에 따라 설립된 비영리법인 ※ 자세한 지원대상 공고문 참조 ☞ 전문기술인 활용 재난재해 대응기술 현장화 지원 - 기술연계형, 신기술적용형, AI",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-10-28",
       "sources": [
         "bizinfo"
       ]
