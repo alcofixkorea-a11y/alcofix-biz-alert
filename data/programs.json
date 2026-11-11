@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-10T12:52:29.487+09:00",
-  "today": "2026-11-10",
+  "generatedAt": "2026-11-11T10:34:02.721+09:00",
+  "today": "2026-11-11",
   "sources": {
     "kstartup": {
       "error": "Unexpected token '<', \"<br>\r\n<br>\"... is not valid JSON"
     },
     "bizinfo": {
-      "count": 151
+      "count": 147
     }
   },
   "items": [
@@ -39,11 +39,11 @@
       "attachments": [
         {
           "name": "제출서류(양식).hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778466&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDY2IiwiZmlsZVNuIjoiMSJ9.dL5phuYPSr02-yIdxGDEGEEimptr0ZsMEXBYqwBbssk"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778466&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDY2IiwiZmlsZVNuIjoiMSJ9.9-P8rKTSq3lsgun3RnjZkYLFKDnxU-D9KKY0wJrPVyk"
         },
         {
           "name": "세종시 일자리창출 유공 포상 추천대상 모집 공고.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778461&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDYxIiwiZmlsZVNuIjoiMSJ9.4JF9_7BHW2_u-Ex9zrIYyynFTmMCRmXo4aZxsL62kZ4"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778461&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDYxIiwiZmlsZVNuIjoiMSJ9.QE6clnjdtp7xcfQpiqNLNAuzu9Yfpzs7S9G5RpIyoW0"
         }
       ]
     },
@@ -76,7 +76,7 @@
       "attachments": [
         {
           "name": "‘26년대전·세종모범중소·벤처기업포상계획(3).hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778116&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTE2IiwiZmlsZVNuIjoiMCJ9.DF0mxGEQTCJQKaFL1l6Dwz0DZTUOd8VyNd6nam8dOJI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778116&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTE2IiwiZmlsZVNuIjoiMCJ9.e4rplDzqjhkz6KDst05l8cG4d-F8_xEHZRkxTcK5pzs"
         }
       ]
     },
@@ -109,7 +109,7 @@
       "attachments": [
         {
           "name": "2. (모집공고) SK텔레콤 협력 「세종시 사회적 배려 대상자 AI·디지털 건강케어」 오픈이노베이션 참여 창업기업 모집_FF.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778621&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NjIxIiwiZmlsZVNuIjoiMCJ9.Ed0nHQ6DjG_9rGoFPmtbARf1e3sW2n-D_8pieMAtGx0"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778621&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NjIxIiwiZmlsZVNuIjoiMCJ9.yQtcC54Nrjh854Fvf8C0KVtmo9PM7A8rvK52VGM5ThU"
         }
       ]
     },
@@ -142,11 +142,11 @@
       "attachments": [
         {
           "name": "2027년도 유기농업자재지원 사업 시행지침.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779055&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDU1IiwiZmlsZVNuIjoiMSJ9.cChIkcOcAqJrBauw-aEhsF8Oy4bRl0pZmkuPkhYF6QU"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779055&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDU1IiwiZmlsZVNuIjoiMSJ9.2yQ14VSl5VFzGxbklwYb6IaoYfy5dK3Oog38F4iO9yE"
         },
         {
           "name": "2027년 유기농업자재 지원사업 신청 공고.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779054&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDU0IiwiZmlsZVNuIjoiMSJ9.0L-ZNaCZWEdnESh0IhV0ktBwk8gr3_YHj19T1qbE5VI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779054&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDU0IiwiZmlsZVNuIjoiMSJ9.eN4e2V5D1z2sjnaWWCs-VHMTBUuIA_qRxCeAeP0b264"
         }
       ]
     },
@@ -179,15 +179,15 @@
       "attachments": [
         {
           "name": "(서식2)_붙임_서식.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000754580&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU0NTgwIiwiZmlsZVNuIjoiMCJ9.1RORkpzup_SpgNYbzdYgfKpuXZCMm-ZiYxbwt54VL_k"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000754580&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU0NTgwIiwiZmlsZVNuIjoiMCJ9.k5bc2V7LXtDACyr4FA7b-InLuQ2oy4M5Uf16W4MD7Bw"
         },
         {
           "name": "(서식1)_사업신청서_및_계획서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000754580&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU0NTgwIiwiZmlsZVNuIjoiMSJ9.FMFHhT4tFiBEOaLLt52NPzEFu1gdSePRzW9V4rUDZf4"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000754580&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU0NTgwIiwiZmlsZVNuIjoiMSJ9.tFteyz-pMA2HciMNfduH7QXCEgWqwc1JrxblkuyHc1A"
         },
         {
           "name": "EMS_해외물류비_지원사업_공고문.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000754579&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU0NTc5IiwiZmlsZVNuIjoiMCJ9.S5UwqGrtUzqPoIdHPdFyESeJiAAgTFjugOJwb9u7AZM"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000754579&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg1OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU0NTc5IiwiZmlsZVNuIjoiMCJ9.6cM5sOg42LZtARq9FhDnO4sNuvf55imm-0m-cup5HKA"
         }
       ]
     },
@@ -220,7 +220,7 @@
       "attachments": [
         {
           "name": "[세종창조경제혁신센터] 2026 창업-BuS in 세종 수요투자라운드(미니IR피칭) 신청 안내.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756367&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2MzY3IiwiZmlsZVNuIjoiMCJ9.z6Tl9ArWv6j3OTZb2_TOLX-IvkMuAyp21T9_YekmQ2w"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756367&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2MzY3IiwiZmlsZVNuIjoiMCJ9.VynloOyEmi1HnE6dQq1qboFZ4xNutc7-k-I5InummaA"
         }
       ]
     },
@@ -253,11 +253,11 @@
       "attachments": [
         {
           "name": "붙임+2.+2026년+세종테크밸리+첨단기업+유치+임차료+지원사업+희망기업임차기업+모집+신청서식.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758803&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4ODAzIiwiZmlsZVNuIjoiMCJ9.K-Ti0DvN0qSkyl8mmDoiA9Qm-BCGBSpureZEtC1FOhI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758803&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4ODAzIiwiZmlsZVNuIjoiMCJ9.wK7pWTKiJQFU2cHASfBoSzXyhFfXeBIbiJxTt6orsIE"
         },
         {
           "name": "붙임+1.+2026년+세종테크밸리+첨단기업+유치+임차료+지원사업+희망기업임차기업+모집+수정+공고문+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758802&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4ODAyIiwiZmlsZVNuIjoiMSJ9.IOW2zNeiCLS0mHKsmfBAz5hku7g9JC2xIq6sbD-FIIE"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758802&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4ODAyIiwiZmlsZVNuIjoiMSJ9.xD03N4C840D365vFRZJWSw-R5M8u0uKAO41uDaR41ds"
         }
       ]
     },
@@ -290,7 +290,7 @@
       "attachments": [
         {
           "name": "[공고문] 2026년 다수공급자계약(MAS) 컨설팅.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000759009&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU5MDA5IiwiZmlsZVNuIjoiMSJ9.NehqbeSLnciu2GrCgaMr_FYl053mfhJtyKegkHnZ570"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000759009&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU5MDA5IiwiZmlsZVNuIjoiMSJ9.hfYThr8SpHzPH6pSzXebLD5e6j4sJO6n-pY8xRXUHgY"
         }
       ]
     },
@@ -323,11 +323,11 @@
       "attachments": [
         {
           "name": "kpc-AI훈련지원사업-4P브로슈어.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770427&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwNDI3IiwiZmlsZVNuIjoiMSJ9.c19FlwnLx16Q9ZhD-qZ2NRwvM3F8Uf4ROlyAFjjq1vw"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770427&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwNDI3IiwiZmlsZVNuIjoiMSJ9.HcUJ_GXm93aviTI6VjW63XF04p3LN1ix-0jj42xtQsY"
         },
         {
           "name": "★기업용 사업안내자료 8페이지.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770285&fileSn=4&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwMjg1IiwiZmlsZVNuIjoiNCJ9.9-X0EBA9b92_yK5XgdhhoG4Y8AS2hxvhsx7LEChIfBg"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770285&fileSn=4&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwMjg1IiwiZmlsZVNuIjoiNCJ9.0RMjcehDbZMdr6RN3tvVUNwTjfPPsomiG_-Hc_6jvIE"
         }
       ]
     },
@@ -360,11 +360,11 @@
       "attachments": [
         {
           "name": "(붙임)_★_2026년_중소기업육성자금_지원계획_변경(2차)_공고문.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770862&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwODYyIiwiZmlsZVNuIjoiMCJ9.MGNohecbGJuuc-e4B8qMNxVpwNlMZLJSC7l90G3P4Y0"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770862&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwODYyIiwiZmlsZVNuIjoiMCJ9.ru3Rb3as_mx0Z87wl7lE8MHc31RfEd61XD9PN6ZLsrE"
         },
         {
           "name": "(붙임)_★_2026년_중소기업육성자금_지원계획_변경(2차)_공고문.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770861&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwODYxIiwiZmlsZVNuIjoiMCJ9.CVyq1S9B8kLsjfWyBNR3Ua2z4Gp5OPfgLoWP_vuO0MA"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000770861&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzcwODYxIiwiZmlsZVNuIjoiMCJ9.AOFq3Ayz3ejiCpPFR3glM5atRcEosgViSiBxU57asCI"
         }
       ]
     },
@@ -397,11 +397,11 @@
       "attachments": [
         {
           "name": "[발송공문] 2026년 중소기업 제조물배상책임(PL) 지원사업 참여기업 모집 공문(상시모집).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775604&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NjA0IiwiZmlsZVNuIjoiMCJ9.rMfcWEaHaHiiRCb7S22LrEtlqpJhsiE5KG9Kb3eQxC4"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775604&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NjA0IiwiZmlsZVNuIjoiMCJ9.ferflAis9spWa3REGlzsS8iiF7itfF2-wMbLXOy86Qk"
         },
         {
           "name": "[공고문] 2026년 중소기업 제조물배상책임(PL)보험 참여기업 모집(상시모집).hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775603&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NjAzIiwiZmlsZVNuIjoiMCJ9.kH9qjfutMAaXhtVwPOEirwBzfP98ZBrvnxBbgPTUdlI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775603&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NjAzIiwiZmlsZVNuIjoiMCJ9.lNu9APcIIOZHXnb-bfoMKK6f-nXhrQ-DOQYmieSxSuk"
         }
       ]
     },
@@ -434,191 +434,19 @@
       "attachments": [
         {
           "name": "붙임2.+포스터+2026년+세종시+중소기업+정보보호+지원+사업+수요기업+모집상시+홍보포스터.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778113&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEzIiwiZmlsZVNuIjoiMCJ9.7PfQnnali6sJGMlhYZ-_8aQOR2tdOWo-WwieiiZPQhY"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778113&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEzIiwiZmlsZVNuIjoiMCJ9.GezMr4BFGfQjNoIfw6v3dVsVwRXLldrGySnccMzaSGM"
         },
         {
           "name": "붙임3-1.+정보보호+지원+가이드+2026년+ICT+중소기업+정보보호+지원+사업+수요기업+지원+가이드충청권-에스원.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778113&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEzIiwiZmlsZVNuIjoiMSJ9.iRqASE1E8LHx-rwoej-7MV0HWZvJn435NL6gd26YhB8"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778113&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEzIiwiZmlsZVNuIjoiMSJ9.ah8yZyxYRMjRCwQtg-gWTRZurohgbVBnrJWMZcPQGnM"
         },
         {
           "name": "붙임3-2.+정보보호+지원+가이드+2026년+ICT+중소기업+정보보호+지원+사업+수요기업+지원+가이드충청권-SK쉴더스.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778113&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEzIiwiZmlsZVNuIjoiMiJ9.lEw2kjetxVg7HAfw7zEC05GMdwmgSKb11N5DJZc57b4"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778113&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEzIiwiZmlsZVNuIjoiMiJ9.wURRV-cQAne3Tb3tvj2pN4gW1EPdnJdiDo-6Ah4a6wg"
         },
         {
           "name": "붙임1.+공고문+2026년+세종시+중소기업+정보보호+지원+사업+수요기업+모집+공고상시.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778112&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEyIiwiZmlsZVNuIjoiMCJ9.M-86VaIXLPzWQdcdHLz9Am9iGLIMBtqwScqVyo39jxg"
-        }
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127737",
-      "source": "bizinfo",
-      "title": "2026년 2차 1인 중증장애인기업 업무지원인 서비스 지원사업 의사소통형ㆍ경영지도형 지원대상자 모집 연장 공고",
-      "org": "중소벤처기업부 · 장애인기업종합지원센터",
-      "category": "인력",
-      "sector": "인력",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "장애인기업",
-      "applyStart": "2026-11-05",
-      "applyEnd": "2026-11-10",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127737",
-      "summary": "장애인기업종합지원센터는 중증장애인기업의 안정적인 경영활동 지원을 위한 「2026년 1인 중증장애인기업 업무지원인 서비스 지원사업」의 의사소통형ㆍ경영지도형 지원대상자를 다음과 같이 모집합니다. ☞ 아래 조건을 모두 충족하는 장애인 기업 - 장애정도가 심한 장애인(중증장애인) - 장애인기업 확인서가 발급되었으며 기한이 유효한 장애인기업 - 신청자(장애인 대표)가 대표자로 있는 모든 사업장에 상시 근로자가 없는 1인 장애인기업(신청일 제출 전일 기준) ☞ 의사소통형ㆍ경영지도형 직무 전문가 수행 비용(최대 300만원) 지원 - (의사소통형",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-11-07",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127555",
-      "source": "bizinfo",
-      "title": "2026년 11월 투자용 콘텐츠가치평가 공고",
-      "org": "문화체육관광부 · 한국콘텐츠진흥원",
-      "category": "금융",
-      "sector": "자금·융자",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-11-01",
-      "applyEnd": "2026-11-10",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127555",
-      "summary": "콘텐츠의 단계별(기획ㆍ제작) 사업화 가능성(완성ㆍ흥행)을 가치평가하여 투자기관에 연계함으로써 투자유치를 지원하는 사업입니다. 많은 관심과 신청 바랍니다. ☞ 기획ㆍ제작 중인 콘텐츠를 보유한 국내 콘텐츠 법인기업 - 대상(분야) : 영화, 게임, 애니메이션, 방송, 뮤지컬, 만화(웹툰), 콘서트, 음악, 이러닝, 캐릭터, 전시, 출판 등 12개 분야 ☞ 한국콘텐츠진흥원에 상담ㆍ신청ㆍ접수 후 가치평가를 통해 기업 추천 및 투자기관의 투자 검토를 거쳐 의사결정 및 투자 지원",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-30",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127577",
-      "source": "bizinfo",
-      "title": "2026년 예술경영지원센터 예술산업보증 11월(8차) 공모",
-      "org": "문화체육관광부 · 예술경영지원센터",
-      "category": "금융",
-      "sector": "자금·융자",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-11-01",
-      "applyEnd": "2026-11-10",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127577",
-      "summary": "문화체육관광부, (재)예술경영지원센터, 기술보증기금은 예술기업 대상으로 보증지원을 추진하여 예술산업의 지속가능한 성장 및 미래 경쟁력을 제고하고자 <2026 예술산업보증>을 진행합니다. 관심 있는 예술기업의 많은 참여 바랍니다. ☞ 예술산업분야 예술기업및 예술 프로젝트 - 분야 : 공연예술, 시각예술, 문학, 그 외 예술 일반 등 ☞ 예술기업 보증, 예술 프로젝트 보증(기업당 최대 통합 한도는 10억 원 이내) 지원 ※ 자세한 지원내용 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-31",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127379",
-      "source": "bizinfo",
-      "title": "2026년 4차 기술개발제품 시범구매 지원계획 공고",
-      "org": "중소벤처기업부 · 한국중소벤처기업유통원",
-      "category": "내수",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-10-21",
-      "applyEnd": "2026-11-10",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127379",
-      "summary": "창업기업 및 조달 첫걸음기업 등 기술개발제품의 공공판로 개척을 지원하기 위한 「2026년 기술개발제품 시범구매 지원계획(4차)」을 다음과 같이 공고하오니 많은 참여 바랍니다 ☞ 설립 7년 이하 「판로지원법」시행령 제13조의2제1항제1호에 따른 중소기업자 - 우선구매 대상 기술개발제품 12종 또는 벤처창업혁신조달상품, 우수발명품, 상생협력제품, 산업융합 신제품 적합성인증제품 중 1개 이상의 인증을 보유한 제품 ※ 자세한 지원대상 공고문 참조 ☞ 구매기관이 적용 받는 법률 또는 규정에 의거하여 시범구매, 공공기관 대상 제품홍보(안내),",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-22",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127129",
-      "source": "bizinfo",
-      "title": "2026년 에너지기술 수용성 제고 및 사업화 촉진 사업 신규지원 대상 연구개발과제 공고",
-      "org": "기후에너지환경부 · 한국에너지기술평가원",
-      "category": "기술",
-      "sector": "기술·R&D",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-10-19",
-      "applyEnd": "2026-11-10",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127129",
-      "summary": "2026년도 에너지기술수용성제고 및 사업화촉진사업 신규지원 대상 연구개발과제를 다음과 같이 공고하오니 해당 연구개발과제를 수행하고자 하는 자는 관련규정에 따라 신청하여 주시기바랍니다. ☞ 주관연구개발기관 및 공동연구개발기관 - 기업, 대학, 연구기관, 연구조합, 사업자단체, 의료기관 등 - 주관연구개발기관이 기업인 경우 접수마감일 현재 법인사업자이어야 함 ☞ 기후가치평가 방법론 개발 및 운영ㆍ활용체계 구축방안 마련 연구개발 지원 ※ 자세한 지원내용 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-13",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000127471",
-      "source": "bizinfo",
-      "title": "2026년 중국 로컬유통망 연계 소비재 입점 사업 참가업체 모집 공고",
-      "org": "산업통상부 · 대한무역투자진흥공사",
-      "category": "수출",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "중소기업",
-      "applyStart": "2026-10-19",
-      "applyEnd": "2026-11-10",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127471",
-      "summary": "코트라 선양무역관은 중국 동북지역 판로 개척 지원을 위해 Happy Farm 유통망과 협업하여「중국 로컬유통망 연계 소비재 입점 사업」을 추진할 예정이오니 관심 있는 우수 식품기업의 많은 참여 바랍니다. ☞ 식품기업 - 품평회 참가용 샘플 무료 제공 가능 기업(참가비용 무료) - 중국 내 수입 유통 요건 구비 기업 ☞ 현지 유통망 협업을 통한 구매본부 샘플 품평회 및 입점 지원",
-      "foodBio": true,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-10-28",
-      "sources": [
-        "bizinfo"
-      ],
-      "attachments": [
-        {
-          "name": "동북 유통망 사업 신청서(선양무역관).xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777657&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NjU3IiwiZmlsZVNuIjoiMSJ9.ibxGN9pLfgq-FM-UPlaH_li0pacV_ms1B9NdeieQHsg"
-        },
-        {
-          "name": "중국 로컬유통망 연계 소비재 입점 사업.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777656&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NjU2IiwiZmlsZVNuIjoiMSJ9.aXzvWevoANykQmNKYocETZY2gBXiIOasgivFmnHyg9c"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778112&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4MTEyIiwiZmlsZVNuIjoiMCJ9.qoz-_q4-B5iR9To_6L_KbLZuOqHPvsJSvP8bz0cPtCY"
         }
       ]
     },
@@ -705,11 +533,11 @@
       "attachments": [
         {
           "name": "★2027년_고성장_혁신형_기업_모집공고문_최종(메인비즈).hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778285&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4Mjg1IiwiZmlsZVNuIjoiMCJ9.shKazMlL-_KUmex6jq99ha9aYiX4RUj4VnWRzTgme9A"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778285&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4Mjg1IiwiZmlsZVNuIjoiMCJ9.qu5M2EbJxFT5V8p_HL9kyNeu9S-QMmu6ZqVIhPXJUrQ"
         },
         {
           "name": "★2027년_고성장_혁신형_기업_모집공고문_최종(메인비즈)+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778284&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4Mjg0IiwiZmlsZVNuIjoiMCJ9.ZAs6dwT-Hj3HHYKb4Ih9-70MtdHIClYcrUXU5Ojtiec"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778284&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4Mjg0IiwiZmlsZVNuIjoiMCJ9.-3BW2SH9bPDZPuz907scTo19F77OJdqDz5MsCczgbWU"
         }
       ]
     },
@@ -931,23 +759,23 @@
       "attachments": [
         {
           "name": "(공고문) 2026년도 미래개척융합과학기술개발사업(한계돌파 R&D) 신규과제 공모.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMCJ9.IWkR9TR4oJyk3JbXoQrT0qYm0ca-LjV05qUz5WtFRTw"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMCJ9.fpJ_7Bg8wJovpm8iR9IWLhDd4QtiThR8CeCN67dJqTA"
         },
         {
           "name": "붙임 1. 과제계획요청서(PPR).zip",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMSJ9.kdn1cPS3NOBW_DiuzWwNihTfMIG3NB2m_ebtcHn8er0"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMSJ9.JcazMt4Tioj_n0qFFkrj5o2_CjJQxmfDR6ALSAZjCVk"
         },
         {
           "name": "붙임 2. 연구개발계획서 및 별첨 양식.zip",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMiJ9.1IJ8mfQertLo2vfZmIfnOp75kI7VfYua1YvpgsWzmJQ"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMiJ9.o0W0h7gCheX9Jv6oUS_hbn3VMv5q-EPSvxVs9jT3fRI"
         },
         {
           "name": "붙임 3. 한계도전 RnD 프로젝트 사업설명 자료.zip",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMyJ9.I4OmienFFdjgV9_XEkEXnB6xlbNqNlgdqt3qtFKwFTY"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776530&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTMwIiwiZmlsZVNuIjoiMyJ9.YskmRbgqXaBCHYZktR0pJCAgwke0W5gjgwI-rzUMgis"
         },
         {
           "name": "(공고문) 2026년도 미래개척융합과학기술개발사업(한계돌파 R&D) 신규과제 공모.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776529&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTI5IiwiZmlsZVNuIjoiMCJ9.rPOuQpAIsfbW6MnacKXO5Ihf7eTywCSl5-DPgTLRWz4"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000776529&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc2NTI5IiwiZmlsZVNuIjoiMCJ9.LM4pOv-8RPIQnCULUQHvX0ldTnY0CWXlsqDuAnIPNTk"
         }
       ]
     },
@@ -1277,23 +1105,23 @@
       "attachments": [
         {
           "name": "원클릭_매뉴얼1.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMCJ9.7E54uD9ikaTxgVxcr2XzEOt5Q0kr3WPkqsdEjuN51e0"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMCJ9.iF-AGsEeOMAY7fMammGCco7FJwpaacCAxTIFN15NMDk"
         },
         {
           "name": "(신청서+양식)+K-푸드+위조상품+온라인플랫폼AI+모니터링+및+차단+지원사업1.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMSJ9.xRoWdHulzcP8CVUPMjd_zKNip6H6ewm1KMxBPmh0PVI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMSJ9.yqsCFRw-rEx9lqkjRw5R-cuzgMiWLz7r-HwZXOb-Oj4"
         },
         {
           "name": "원클릭_매뉴얼3.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMiJ9.a7cwJ67fkn99oliXQFSIOwOGe3Vvyepb5XXtglhVNKw"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMiJ9.ZQrLmrXppPe1H2jYEjs_OMX2JurhgLQLjbG1FKuMrqA"
         },
         {
           "name": "원클릭_매뉴얼2.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMyJ9.5nRZrdKiAhEAEY7l3svesXFBr99SlHXixD1XigrA1K8"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778752&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUyIiwiZmlsZVNuIjoiMyJ9.cE2Nckcd9woeH510TIaMhz-S-j6gIqEGZ2_mBApBW9Y"
         },
         {
           "name": "(공고문)+K-푸드+위조상품+온라인플랫폼AI+모니터링+및+차단+지원사업1.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778751&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUxIiwiZmlsZVNuIjoiMCJ9.WWkmtL07_qCq0cgI9tw-T3_JLZs6lHjCj8tGF-SiMcI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778751&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NzUxIiwiZmlsZVNuIjoiMCJ9.8ngIFCHseQGTDsqRY7wryEmka3vnctebvI8axfSPCoc"
         }
       ]
     },
@@ -1380,15 +1208,15 @@
       "attachments": [
         {
           "name": "[신청서식] 참가신청서 및 협업 제안서 등.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777923&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTIzIiwiZmlsZVNuIjoiMCJ9.9Bturiyg8foJwa2iCe-hA91N4Mfm9inJXJLSYrY6eFI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777923&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTIzIiwiZmlsZVNuIjoiMCJ9.RxuH-NLmoLvBlKhWCtXJliu0hrAKUGUtJCEf-9KBM6o"
         },
         {
           "name": "연구개발특구진흥재단 x (주)알테오젠 2026년 바이오 딥테크 오픈이노베이션 포스터(최종).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777923&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTIzIiwiZmlsZVNuIjoiMSJ9.24evr7jnsxjh5tyEgumXhrF_hfxzrLNc4jBFhuwDPZ8"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777923&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTIzIiwiZmlsZVNuIjoiMSJ9.rJ5rjV0OX4olz13d_h6bPTLsrypdY9PXWak-zVcrO-I"
         },
         {
           "name": "[공고문] 연구개발특구진흥재단 X 알테오젠 『2026년 바이오 딥테크 오픈이노베이션』 참여기업 모집 공고문+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777922&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTIyIiwiZmlsZVNuIjoiMCJ9.mgzGEj3yx93zFnDQ9lqK30jDTW2bkZHoGhS1iZkEk34"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777922&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTIyIiwiZmlsZVNuIjoiMCJ9.dwfjYflpkOzwzimIWYVA05zmrBejx-1RxuJ6Pt-z39M"
         }
       ]
     },
@@ -1556,15 +1384,15 @@
       "attachments": [
         {
           "name": "K-BUSINESS DAY 2026_참여기업 매칭 신청서.xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778912&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4OTEyIiwiZmlsZVNuIjoiMCJ9.53o8L3HVaRb_F5xbMU_Sq50RpKovbQugMUkfS_-vYFc"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778912&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4OTEyIiwiZmlsZVNuIjoiMCJ9.xuXs-DUUGNa43aVpuw7y3DE72SCd8e_6zLPh4Ic1hWY"
         },
         {
           "name": "K-BUSINESS DAY 2026(글로벌 해외바이어 초청 수출상담회) 참여기업 모집 안내.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778912&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4OTEyIiwiZmlsZVNuIjoiMSJ9.XW-EwbSx-dWHimG89uC-bkqZJxIQRBAiqDJWHvEJMdk"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778912&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4OTEyIiwiZmlsZVNuIjoiMSJ9.VkXv552RAUAjmb6OenWHeAM1JqYj5x7yFuvQF6mudoA"
         },
         {
           "name": "K-BUSINESS DAY 2026 참여기업 모집 안내문.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778911&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4OTExIiwiZmlsZVNuIjoiMCJ9.0GM0WRgsZgmbBkSqQORR78IwZ1N7tCktezKV01HagXc"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778911&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4OTExIiwiZmlsZVNuIjoiMCJ9.nhV45V0EFY1a10TJS6HlvexNdaH_Y_030KFZNQe5x-4"
         }
       ]
     },
@@ -1759,11 +1587,11 @@
       "attachments": [
         {
           "name": "2027 JP Morgan Healthcare Conference 연계 글로벌 IR 및 비즈니스 파트너링 참가신청서.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779047&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDQ3IiwiZmlsZVNuIjoiMCJ9.DEAn2x4maaLlJqL9msngeOwlfFUkJNuMLp93MgwknHM"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779047&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDQ3IiwiZmlsZVNuIjoiMCJ9.ZcE1Em4MuSRNWPZbxcoHzEALS1dyIP9kOBD0rQy2Q2g"
         },
         {
           "name": "2027년 JP Morgan Healthcare Conference 연계 글로벌 IR 피칭 및 비즈니스 파트너링 참가기업 모집.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779046&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDQ2IiwiZmlsZVNuIjoiMCJ9.DUEAQpF6Z9XQXev5TaSHVnXrHawR9gxeKhLO9SfLIXw"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779046&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDQ2IiwiZmlsZVNuIjoiMCJ9.EcGAJbBCS8oHKKwsEkLDppSHRmAKbgv4Dp4wnX0-eqk"
         }
       ]
     },
@@ -1904,11 +1732,11 @@
       "attachments": [
         {
           "name": "제품 상세 자료.xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778634&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NjM0IiwiZmlsZVNuIjoiMCJ9.i1CDnmsupPN3R52hWvcsBZQdKJQ8xyErxCAsSFWI2iw"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778634&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NjM0IiwiZmlsZVNuIjoiMCJ9.LjKYVPZFobstDCU_FYYaKwTyVFuzX9GRtW5UkxsdR2M"
         },
         {
           "name": "하얼빈 빙설축제 유망 소비재 판촉전.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778633&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NjMzIiwiZmlsZVNuIjoiMCJ9.fgHH3OhNv0tmLtcs737L9FH6881fIksvWGdoIY3_p7E"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778633&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg2OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NjMzIiwiZmlsZVNuIjoiMCJ9.maeWElSFbhZRRjat_EokaCmcZDsayHsU45LtZqcI3Jo"
         }
       ]
     },
@@ -1941,11 +1769,11 @@
       "attachments": [
         {
           "name": "(붙임) 2027년 생산단계 축산물 스마트 HACCP 현장구축 사업대상자 추가 선정 공고(2차).hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778404&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDA0IiwiZmlsZVNuIjoiMSJ9.sMHKyLkBJjs7EqAOweK-7wSkqdFfQgtJuFZi4nL1qJo"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778404&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDA0IiwiZmlsZVNuIjoiMSJ9.D410Nl9JQhyDKHtDKN9C0LLk9h_ii8nfjSBIiacGVl8"
         },
         {
           "name": "(붙임) 2027년 생산단계 축산물 스마트 HACCP 현장구축 사업대상자 추가 선정 공고(2차)+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778403&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDAzIiwiZmlsZVNuIjoiMSJ9.Z54RKn9YteV4JeKCwXDsoTxgCusEKh_U3M5bWH9PKnM"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778403&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDAzIiwiZmlsZVNuIjoiMSJ9.5rVqSKW2iY-0DdyzllvtvN6WowukLkT0peV2QUfRDXQ"
         }
       ]
     },
@@ -1978,15 +1806,15 @@
       "attachments": [
         {
           "name": "[참고]+K-푸드+콜드풀링+운항일정+및+이용단가+내역.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778460&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDYwIiwiZmlsZVNuIjoiMCJ9.Rk97jrjrJ5rJ8yYJkcauN2mD449_Ucr2ufgYiMEyYLE"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778460&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDYwIiwiZmlsZVNuIjoiMCJ9.d9L1ChM-NpF-_z0QatRxldIq3w7InANby4nZjgW9PtY"
         },
         {
           "name": "[양식]+K-푸드+콜드풀링+시범사업+이용업체+지원신청서1.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778460&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDYwIiwiZmlsZVNuIjoiMSJ9.9Vke2AEIfxFr_I_w96B3PYPSou3UnQydtvY3ERHD8yg"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778460&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDYwIiwiZmlsZVNuIjoiMSJ9.FV6gU_xT-q3Ecs7Mj6BqqXOHUaT2VSeDhnZYIIGgei0"
         },
         {
           "name": "[공고문]+2026년도+K-푸드+콜드풀링+시범사업+이용업체+모집공고(2차).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778459&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDU5IiwiZmlsZVNuIjoiMCJ9.eUk0q8b_Uvy9oh-dxMkgftMYOIcNZqb4msSfFteOs7k"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000778459&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc4NDU5IiwiZmlsZVNuIjoiMCJ9.MfYmLzWAyjO_L4IG1BGRd7trLNVVwDTHMO11oHsR_qY"
         }
       ]
     },
@@ -2154,11 +1982,11 @@
       "attachments": [
         {
           "name": "동물세포기반 백신 공공 CDMO 전략적 육성 및 바이오텍 생산지원사업 수혜기업 선정 모집 공고문 (팝업).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779255&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MjU1IiwiZmlsZVNuIjoiMSJ9.TBccqAkAI5Za_iImP29vZSnzWLUfHKzzXsd4MqUzjSk"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779255&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MjU1IiwiZmlsZVNuIjoiMSJ9.A4oqLAbmp0ZotItW-Dqyk2Qpm7awa3jOerRhXSmiomg"
         },
         {
           "name": "동물세포기반 백신 공공 CDMO 전략적 육성 및 바이오텍 생산지원사업 수혜기업 선정 모집 공고문(4차).hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779254&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MjU0IiwiZmlsZVNuIjoiMSJ9.n46azpxcQ7NBiibECCjdqZQ5FxTK763QeOQMbDDdUhI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779254&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MjU0IiwiZmlsZVNuIjoiMSJ9.zCV23pmJTmDCP6VcVmKQaG2eJGwdewHhWHwgWnpIkg0"
         }
       ]
     },
@@ -2212,6 +2040,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-09-23",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127804",
+      "source": "bizinfo",
+      "title": "2026년 3차 친환경인증선박 보급지원사업 공고",
+      "org": "해양수산부 · 한국해양교통안전공단",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-11-09",
+      "applyEnd": "2026-11-30",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127804",
+      "summary": "2026년 친환경인증선박 보급지원사업의 시행과 관련하여 목적, 지원규모 및 대상, 선정 기준, 사업신청 구비서류, 지원대상자 선정 일정 등을 다음과 같이 공고합니다. ☞ 신청 자격을 갖춘 자로서 사업 공고일(’26.11.9.) 기준 당해연도 또는 전년도에 국내조선소와 친환경인증선박 건조계약을 체결하여, 선박을 건조 중이거나 건조를 완료한 자 ※ 자세한 신청자격 공고문 참조 ☞ 국내 친환경인증선박 신조 수요 등을 고려하여 ’26년 예산의 범위 내에서 지원 - 선박 건조가격을 기준으로 보조금 차등지원 ※ 자세한 지원내용 공고문 참조",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-11-11",
       "sources": [
         "bizinfo"
       ]
@@ -2326,11 +2181,11 @@
       "attachments": [
         {
           "name": "2._신청서식.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000774887&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc0ODg3IiwiZmlsZVNuIjoiMCJ9.e15q8GrMSkOBni-Ujik8d7idDCa7NTR3t0_M0ufSaYc"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000774887&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc0ODg3IiwiZmlsZVNuIjoiMCJ9.Lerfw7gOhwa4PYPDBWqKnmAyEFPgkoihOQKLnX3_bZ8"
         },
         {
           "name": "1._사업공고문.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000774886&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc0ODg2IiwiZmlsZVNuIjoiMCJ9.A9B93HLk_-UlFYFQI8s1c_LO-u6g_h8Znp6Wdezh7YU"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000774886&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc0ODg2IiwiZmlsZVNuIjoiMCJ9.Zvz9zUZJqSbEq81WELoapsDD_TVzP7Yd-UQyNZleDOA"
         }
       ]
     },
@@ -2384,33 +2239,6 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-11-03",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000123334",
-      "source": "bizinfo",
-      "title": "2026년 소상공인 무료 법률ㆍ세무ㆍ노무 간편상담 지원사업 모집 공고",
-      "org": "중소벤처기업부 · 소상공인연합회",
-      "category": "경영",
-      "sector": "경영·기타",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "소상공인",
-      "applyStart": "2026-06-16",
-      "applyEnd": "2026-11-30",
-      "alwaysOpen": false,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000123334",
-      "summary": "중소벤처기업부와 소상공인연합회는 소상공인 여러분의 성공적인 사업 운영을 돕고 경영 현장에서 겪는 다양한 애로사항을 해결해 드리고자 「소상공인 간편상담센터」를 운영합니다. 각 분야의 전문가가 1:1 맞춤형 무료 상담을 제공하오니, 소상공인 여러분의 많은 관심과 참여를 바랍니다. 소상공인의 성공을 함께하는 든든한 동반자가 되겠습니다. ☞ 소상공인이라면 누구나 ☞ 법률, 세무, 노무 분야 전문가 무료 상담 지원(전화 및 서면 상담으로 진행)",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-09-23",
       "sources": [
         "bizinfo"
       ]
@@ -2606,15 +2434,15 @@
       "attachments": [
         {
           "name": "2. 2026년 공공연구기관·대학 기술나눔 목록(106건).xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779075&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDc1IiwiZmlsZVNuIjoiMCJ9.h3cQjbdWyZc2dmUT7uJO6uesaql6o8RP_oScPnmjPig"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779075&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDc1IiwiZmlsZVNuIjoiMCJ9.4osXp56jFoI_4DZSgbGH3c62WQIxihPVNdfgKd6fjnU"
         },
         {
           "name": "2026년도 산업통상부-공공연구기관·대학 기술나눔 공고.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779075&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDc1IiwiZmlsZVNuIjoiMSJ9.STLVCdC0QAXtApPMBpv4myzqLRhACOvk-QaObn0E5B0"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779075&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDc1IiwiZmlsZVNuIjoiMSJ9.hGsJsEj1jSqpt8_ZDFmeloYbnxRAkirwlE2ZCnAd74M"
         },
         {
           "name": "2026년도 산업통상부-공공연구기관·대학 기술나눔 공고+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779074&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDc0IiwiZmlsZVNuIjoiMSJ9.hlVqbjDjxxjSeCkLtKNXuKGDzERtK1P6Ffoc932mnw0"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000779074&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc5MDc0IiwiZmlsZVNuIjoiMSJ9.q3vJWb4P1vz3I3MXiX9O7G5YP-mYIJAY61-v9IOl6VY"
         }
       ]
     },
@@ -2641,6 +2469,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-14",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127799",
+      "source": "bizinfo",
+      "title": "2027년 장애인 고용촉진 유공자 포상 공고",
+      "org": "고용노동부 · 한국장애인고용공단",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-11-09",
+      "applyEnd": "2026-12-10",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127799",
+      "summary": "한국장애인고용공단에서「장애인 고용촉진 유공자」를 포상하고자, 아래와 같이 모집하오니 많은 관심과 신청 바랍니다. ☞ 사업주, 장애인 노동자, 업무유공자 ※ 자세한 지원대상 공고문 참조 ☞ 포상규모 총 34점 지원 - 훈장ㆍ포장, 대통령ㆍ국무총리표창, 고용노동부장관표창 포상",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-11-11",
       "sources": [
         "bizinfo"
       ]
@@ -2727,6 +2582,33 @@
       ]
     },
     {
+      "id": "bizinfo-PBLN_000000000127806",
+      "source": "bizinfo",
+      "title": "2027년 자동차ㆍ조선산업 발전 유공(자동차산업) 포상 공고",
+      "org": "산업통상부 · 한국자동차모빌리티산업협회",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": "2026-11-09",
+      "applyEnd": "2026-12-25",
+      "alwaysOpen": false,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127806",
+      "summary": "제24회 자동차의 날을 맞이하여 2027년도「자동차ㆍ조선 산업 발전 유공자 포상」중 자동차산업 분야 발전에 기여한 유공자를 발굴하여 그 공로를 기리고자 다음과 같이 공고하오니, 관심 있으신 분들의 많은 신청 바랍니다. ☞ 국내 자동차 및 부품 제조 분야의 업계, 관련 단체, 연구기관, 학계 등 각 분야에서 자동차산업 발전과 국민경제 발전에 현저하게 공헌한 자로서 다음에 해당하는 자 및 단체 - 경영 합리화와 생산성 제고에 기여한 자 - 수출 증진 및 시장 개척에 기여한 자 - 미래차 분야의 신기술 개발 및 사업화에 기여한 자 - 자",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-11-11",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
       "id": "bizinfo-PBLN_000000000126930",
       "source": "bizinfo",
       "title": "2027년 한국표준과학연구원(KRISS) 기술홈닥터 지원사업 참여기업 모집 공고",
@@ -2782,11 +2664,11 @@
       "attachments": [
         {
           "name": "(서식1~4)+지원사업+신청서+서식+일체(국제공인시험지원).hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775237&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1MjM3IiwiZmlsZVNuIjoiMCJ9.JFUnGpFSb-MqjES4oWsxPKZID-kOqy06nPNWurovu6I"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775237&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1MjM3IiwiZmlsZVNuIjoiMCJ9.ZLz6HhELJudf7_IfnKAelcBFemqzgmetlrTRv9-fxsw"
         },
         {
           "name": "「AI기반 슬립테크 국제협력 실증 확산 지원사업」 공고문_260929_국제공인시험지원+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775236&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1MjM2IiwiZmlsZVNuIjoiMCJ9.JjYoyRKygsKr4EszDcGHOtt0bLhENFoz9_VvyFHhKY8"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775236&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1MjM2IiwiZmlsZVNuIjoiMCJ9.TToMllfYh_PPG-qU0UdWVxWBVuzMnqlRTFxY2_IYM9g"
         }
       ]
     },
@@ -2948,33 +2830,6 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-09-23",
-      "sources": [
-        "bizinfo"
-      ]
-    },
-    {
-      "id": "bizinfo-PBLN_000000000121480",
-      "source": "bizinfo",
-      "title": "2026년 TV홈쇼핑 및 데이터홈쇼핑 입점지원사업 소상공인 모집 공고",
-      "org": "중소벤처기업부 · 한국중소벤처기업유통원",
-      "category": "내수",
-      "sector": "판로·수출",
-      "orgType": "중앙부처·공공",
-      "region": "전국",
-      "target": "소상공인",
-      "applyStart": null,
-      "applyEnd": null,
-      "alwaysOpen": true,
-      "status": "open",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121480",
-      "summary": "소상공인의 온라인시장 진출 및 판로개척 지원을 위한「2026년 TV홈쇼핑 및 데이터홈쇼핑 입점지원사업」을 다음과 같이 공고하오니, 소상공인의 많은 참여를 바랍니다. ☞ 「소상공인기본법」 제2조에 따른 소상공인 ☞ 방송지원 및 홈쇼핑 입점상담회 지원 - 방송지원 : TV홈쇼핑 또는 데이터홈쇼핑 방송 제작 및 송출 지원 - 입점상담회 : 홈쇼핑 입점을 위한 컨설팅(상품성, QA, 입점절차 등) 진행 및 방송으로 연계지원 가능한 우수 소상공인 상품 발굴 지원 ※ 자세한 지원내용 공고문 참조",
-      "foodBio": false,
-      "youngOk": null,
-      "enyyOk": null,
-      "ageRaw": "",
-      "enyyRaw": "",
-      "privateHost": false,
-      "firstSeen": "2026-11-07",
       "sources": [
         "bizinfo"
       ]
@@ -3251,15 +3106,15 @@
       "attachments": [
         {
           "name": "[양식] 신청서_생물학적 시험평가인증 지원사업.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2NTQyIiwiZmlsZVNuIjoiMCJ9.fe9_mtABoGRZGV6xukyDZxY_4P5YTwJ9K5K0PVqFScM"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2NTQyIiwiZmlsZVNuIjoiMCJ9.uzH5vfGm2GFzdU8Sg1ied1Mkt0ElSqaegik6rsSQZk4"
         },
         {
           "name": "[양식] 신청서_생물학적 시험평가인증 지원사업.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2NTQyIiwiZmlsZVNuIjoiMSJ9.KDEZP8fw0oPMBMmS-fAy4xSXw88I3L1aktqcrUagVto"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756542&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2NTQyIiwiZmlsZVNuIjoiMSJ9.RBGgNtcoR71fvc9RRQLPTOytwWYYYKe1fBMmDU1v3Iw"
         },
         {
           "name": "[공고문] 2026년 생물학적 시험평가인증 지원사업 (2차).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756541&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2NTQxIiwiZmlsZVNuIjoiMCJ9.hqTBf-b8jsnt85XkPvJre_FNvFivyXPkWQMepgxtJKY"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000756541&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU2NTQxIiwiZmlsZVNuIjoiMCJ9.VffeLP8AJb5D5YDe05ERbePw6_B90HQsd0iVtPXlcmw"
         }
       ]
     },
@@ -3373,19 +3228,19 @@
       "attachments": [
         {
           "name": "(경쟁력분석형)+맞춤형+조사+지원사업+신청서2.xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUzIiwiZmlsZVNuIjoiMSJ9.wfaHewGDKxVmCpS-Y3QgK4CBcrsTps2qvxHcmjeu7dk"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUzIiwiZmlsZVNuIjoiMSJ9.H-cewnMqNmiIorE6PP2-PoeyCo3bra3cEQwDdWWWa3U"
         },
         {
           "name": "(시장분석형)+맞춤형+조사+지원사업+신청서1.xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUzIiwiZmlsZVNuIjoiMiJ9.MQIzELm_VmKN2EQmzv45rtmzRPj_kU9c7xEuek-lnSg"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUzIiwiZmlsZVNuIjoiMiJ9.dJb3IC79wvrofK9S43pr483T6hisSdvA3ZLZlammSMw"
         },
         {
           "name": "(참고)+24~25년+수출기업+맞춤형+보고서+발간+리스트1.xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUzIiwiZmlsZVNuIjoiMyJ9.pyoYLK1OwhPNRFvtC26SO-TcxyxlQbwevt1LcEtAQ6k"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758453&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUzIiwiZmlsZVNuIjoiMyJ9.SiAxcEcTNzprvW3xLiEUoiSLKTL-bFtFmYbGiIDga5U"
         },
         {
           "name": "2026년+수출기업+맞춤형+조사+지원사업+추가모집+공고문.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758452&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUyIiwiZmlsZVNuIjoiMCJ9.7UqsHA5dhX4V_z6EoE7EW5_IGV9p8C1QEf-DcrIZkGQ"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000758452&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU4NDUyIiwiZmlsZVNuIjoiMCJ9.NO6EuLX6v807yCct7jk7OTxaZlY45V24ERpOHrNlJbM"
         }
       ]
     },
@@ -3472,11 +3327,11 @@
       "attachments": [
         {
           "name": "2.+해외+네트워크+활용+K-푸드+정품+전시+홍보+제품+신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000759724&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU5NzI0IiwiZmlsZVNuIjoiMSJ9.qW3yCakkVzexbf6i_O5Y-KWOPU0gLn9_VGr3yvRPmj8"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000759724&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU5NzI0IiwiZmlsZVNuIjoiMSJ9.frOaRoQToo-lYXCc2X72EK4FCbXSi-TSJhiK48oohQ4"
         },
         {
           "name": "1.+해외+네트워크+활용+K-푸드+정품+전시+홍보+제품+모집+공고+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000759721&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU5NzIxIiwiZmlsZVNuIjoiMCJ9.u6uK0S_rN_JF5MNx1x-9xBu0H2tRxnWhMS0BDCRcLzI"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000759721&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzU5NzIxIiwiZmlsZVNuIjoiMCJ9.W-tPY6A3E7ZU2zlzF-jqgA-p2iN4DtE-8LrQvBJVTzc"
         }
       ]
     },
@@ -3671,19 +3526,19 @@
       "attachments": [
         {
           "name": "2.+2026년+복합형+거점+물류센터(DC)+지원사업+참가업체+신청서(양식)1.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765041&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQxIiwiZmlsZVNuIjoiMSJ9.BVBxUc9aVtlpw6Nxc2hq8mIcyX0e1oeKtqkw3dHIJdo"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765041&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQxIiwiZmlsZVNuIjoiMSJ9.UYN4ISOzfbfByIqFu04YI5qv1v0O5QdGbtdqKJw1evA"
         },
         {
           "name": "3.+2026년+복합형+거점+물류센터(DC)+현황_게시용1.xlsx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765041&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQxIiwiZmlsZVNuIjoiMiJ9.HGsoUQIX6cLyDcZs-x2GFj2ndSL9Sk-Cy72mzwQzpZQ"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765041&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQxIiwiZmlsZVNuIjoiMiJ9.9qk7SwiGVPRCMENchQuJN5Jbij3E5jHvHTBEQjPvk5E"
         },
         {
           "name": "4.+(참고)+무역통계+정보제공+동의_온라인+동의+프로세스2.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765041&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQxIiwiZmlsZVNuIjoiMyJ9.X4vRgVo8Zqitm4oIaB-c5cijOSDUQfWtHKku7dwU_v4"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765041&fileSn=3&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQxIiwiZmlsZVNuIjoiMyJ9.YYinzccFlcABfhKKjneYHX3CJkAkSbD-xLGPrI5sooY"
         },
         {
           "name": "1.+2026년+복합형+거점+불류센터(D.C)+지원사업+수출업체+수시모집+공고1.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765040&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQwIiwiZmlsZVNuIjoiMSJ9.rLPDzox4OAV2P5TniDP_NC8H8aivM7Y9kj3-4PDTQTA"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000765040&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY1MDQwIiwiZmlsZVNuIjoiMSJ9.tqIYKbBzKvthw0qVKbtXQCNS_zjp8c3chVgmW22dsq4"
         }
       ]
     },
@@ -3716,11 +3571,11 @@
       "attachments": [
         {
           "name": "[신청양식]+2026년+글로벌+K-푸드페어·국제식품박람회+비대면+홍보+참여기업+신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766135&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY2MTM1IiwiZmlsZVNuIjoiMCJ9.4084Ck9a1uAEUG1m6I66h1dJpeTCLdd7YTzgTmTMSug"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766135&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY2MTM1IiwiZmlsZVNuIjoiMCJ9.QNVYNqu8LQTpFRW0zy0lPpdu2zw2aNKPoTUY_ZUfSNs"
         },
         {
           "name": "[공고문]+2026년+글로벌+K-푸드페어+국제식품박람회+비대면+홍보+참여기업+모집공고.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766134&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY2MTM0IiwiZmlsZVNuIjoiMCJ9.yjULH2aJPy2MEjP-KAR02btg8TV_f8kR8yKv03yneTg"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000766134&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3NywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzY2MTM0IiwiZmlsZVNuIjoiMCJ9.f3GpUCA1vVrz3NtZrK_V6FkMte6qWvht6bSKtG7w-dE"
         }
       ]
     },
@@ -4077,11 +3932,11 @@
       "attachments": [
         {
           "name": "[양식] 2026년 생물학적시험평가인증지원사업_신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000773544&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzczNTQ0IiwiZmlsZVNuIjoiMSJ9.oMvIbBu_dNG77OrdBWsA0OwbB0oTYYs0ctd66TX3tzo"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000773544&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzczNTQ0IiwiZmlsZVNuIjoiMSJ9.MLw3D1D2sMK3kUBm1Zb0_No1R1b7waVFnz6Wbl4LuhY"
         },
         {
           "name": "[공고문] 2026년 생물학적시험평가인증지원사업_3차+.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000773543&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MiwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzczNTQzIiwiZmlsZVNuIjoiMSJ9.x1pheu4nwAlW2NjJC-3ZODLWC02cQRC08CirVFUdjiA"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000773543&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzczNTQzIiwiZmlsZVNuIjoiMSJ9.tk3F2xV771hxqs7U6oR8d4WvWnMNtpaoU2dntFuQ-cY"
         }
       ]
     },
@@ -4195,15 +4050,15 @@
       "attachments": [
         {
           "name": "붙임_2._의료기기·바이오_부품·모듈_인증시험_기술지원_지원신청서.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775484&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NDg0IiwiZmlsZVNuIjoiMCJ9.JA-yn_IdvgraRZGGSbEfFtXbH57EHZUYgZRXUOBQfHc"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775484&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NDg0IiwiZmlsZVNuIjoiMCJ9.CmgNpKqTLxTSH_q8cNm9S9MMhE2iQShG3lrG7DSqvZY"
         },
         {
           "name": "붙임_3._의료기기·바이오_부품·모듈_인증시험_기술지원_기타서식_20260930.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775484&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NDg0IiwiZmlsZVNuIjoiMSJ9.Pdx1op6KmQCyuU9K6TnhqTEtrdaXON98VBJvaNF11L4"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775484&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NDg0IiwiZmlsZVNuIjoiMSJ9.zCCRgZEl5TH-_Bq65_AqgwN-_ofQb651YNMI-6yS0nk"
         },
         {
           "name": "붙임_1._의료기기·바이오_부품·모듈_인증시험_기술지원_기업모집공고문(수정공고)_20260930.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775483&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NDgzIiwiZmlsZVNuIjoiMCJ9.x_SYHSz2UjZuK1ZYtj0RAbqHkd1zMLefnNhZ-Zp76fQ"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000775483&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc1NDgzIiwiZmlsZVNuIjoiMCJ9._kA4MeHAnI6qbOZR-UB0mRWx-_3emMEMVUUwCTRdhV4"
         }
       ]
     },
@@ -4371,15 +4226,15 @@
       "attachments": [
         {
           "name": "[붙임1] 서천군 예비창업자 지원사업 신청서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777743&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NzQzIiwiZmlsZVNuIjoiMCJ9.dM9RxjC1VltDAAlgMtsqwj4ilZlOKW3SbH-LJlyVFms"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777743&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NzQzIiwiZmlsZVNuIjoiMCJ9.I130bqLcPYlf_vCab8RbDx1dcVRfSqb1VoJbVQkc5bg"
         },
         {
           "name": "[붙임2] 개인정보 이용 동의서 및 중복지원금지 확약서.hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777743&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NzQzIiwiZmlsZVNuIjoiMSJ9.2ILRYBz22u23mBxMPGl1bWtY6wvuue6GcGPWn3ibeVo"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777743&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NzQzIiwiZmlsZVNuIjoiMSJ9.VRMby9BV_e9XtjnseC3smg3sQRiuMCeZ19v7w8fqzWw"
         },
         {
           "name": "서천군 예비창업자 지원사업 프로그램 공고문(상시).hwp",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777742&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4MywiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NzQyIiwiZmlsZVNuIjoiMCJ9.TavhLXFIGpExTkzCasASwp13p5SuYOKY0S61dHkxVfc"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777742&fileSn=0&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg3OSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3NzQyIiwiZmlsZVNuIjoiMCJ9.riooGnnBIWHWJkXf5OAe5ftY4Lwp_74_yUEPUz0A0To"
         }
       ]
     },
@@ -4412,11 +4267,11 @@
       "attachments": [
         {
           "name": "붙임2. 글로벌 진출 스마트 휴머니제이션 기업지원사업 신청서.hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777943&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQzIiwiZmlsZVNuIjoiMSJ9.-vySlN9F8TtCQxutkXDDmTLIdXH2yGhEO8QCIi4TF9g"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777943&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg4MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQzIiwiZmlsZVNuIjoiMSJ9.eEDiVsdP-EEQ0Kg0g_3n1cIjzvEOLjKdCVUfOWaTm4k"
         },
         {
           "name": "붙임1. [공고문] 글로벌 진출 스마트 휴머니제이션 사업(상시공고)-.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777942&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4NCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQyIiwiZmlsZVNuIjoiMiJ9.cwUaHSnYX1JsNKKzbjEtxYVnqvs-k58O8WF4OM2rklc"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777942&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg4MCwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQyIiwiZmlsZVNuIjoiMiJ9.afDEaBNWso4YO9n-CySeMMuv2AnjrAy8CWGI3yACyto"
         }
       ]
     },
@@ -4449,15 +4304,15 @@
       "attachments": [
         {
           "name": "바이오생체활성제품 글로벌 사업화지원 기업지원사업 신청서류(시험평가 인허가 품질인증 마케팅 전시회 컨설팅 디자인).hwpx",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777947&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQ3IiwiZmlsZVNuIjoiMSJ9.PERG0ugl0RxoQVZb1--6CEGKD9dLIfnt5bN61kVZObA"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777947&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQ3IiwiZmlsZVNuIjoiMSJ9.QY3ly7PlVD4rJImtOcDANU6Xr596V-_qOvUeVf3yvfs"
         },
         {
           "name": "바이오글로벌 사업화지원센터 소개자료.pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777947&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQ3IiwiZmlsZVNuIjoiMiJ9.F0jMtZvFPoNxdJJYsGgRt3mOThz8mDO_slMflm6Xz7M"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777947&fileSn=2&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQ3IiwiZmlsZVNuIjoiMiJ9.hkwbW-6-_wPFQA52vXG1OqrlnkX4PpVh5QKPtW88Ji0"
         },
         {
           "name": "2026 바이오글로벌 사업화지원센터 기업지원사업 공고문(상시).pdf",
-          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777946&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDI4Mjc4NSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQ2IiwiZmlsZVNuIjoiMSJ9.Cacv9Myywws5Tiq4XXREiyK6SnGHDQ-NRJlb5a9wuyE"
+          "url": "https://www.bizinfo.go.kr/cmm/fms/fileDown.do?atchFileId=FILE_000000000777946&fileSn=1&downloadToken=eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoiZmlsZV9kb3dubG9hZCIsImlhdCI6MTc5NDM2MDg4MSwiYXRjaEZpbGVJZCI6IkZJTEVfMDAwMDAwMDAwNzc3OTQ2IiwiZmlsZVNuIjoiMSJ9.-TTOXzxcdV__HEiTLTI9u7V3f9g-A0Swx5NRnLqIUyw"
         }
       ]
     },
@@ -4484,6 +4339,33 @@
       "enyyRaw": "",
       "privateHost": false,
       "firstSeen": "2026-10-31",
+      "sources": [
+        "bizinfo"
+      ]
+    },
+    {
+      "id": "bizinfo-PBLN_000000000127808",
+      "source": "bizinfo",
+      "title": "2026년 2차 권역별 선도서점 육성 사업 컨설팅(경영ㆍ마케팅ㆍ디지털) 참여서점 추가 모집 공고",
+      "org": "문화체육관광부 · 한국출판문화산업진흥원",
+      "category": "경영",
+      "sector": "경영·기타",
+      "orgType": "중앙부처·공공",
+      "region": "전국",
+      "target": "중소기업",
+      "applyStart": null,
+      "applyEnd": null,
+      "alwaysOpen": true,
+      "status": "open",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127808",
+      "summary": "지역서점의 경쟁력을 강화하여 서점이 지역사회와 긴밀하게 연결된 독서 문화 공간으로 자리 잡을 수 있도록「2026년 권역별 선도서점 육성 사업 컨설팅 참여서점 모집」을 다음과 같이 공고합니다. 지역서점 관계자 여러분의 많은 관심과 참여를 부탁드립니다. ☞ 아래 2가지 조건 모두 충족 ① 「출판문화산업 진흥법」제7조의2에 따른 지역서점의 요건을 갖추고, 정상적으로 영업 중인 오프라인 매장 운영 서점 ② e나라도움 사용 가능 서점 ☞ 선도서점 아카데미(공통 교육과정, Track1)와 심화 컨설팅(Track2) 지원 ※ 자세한 지원내용 공",
+      "foodBio": false,
+      "youngOk": null,
+      "enyyOk": null,
+      "ageRaw": "",
+      "enyyRaw": "",
+      "privateHost": false,
+      "firstSeen": "2026-11-11",
       "sources": [
         "bizinfo"
       ]
