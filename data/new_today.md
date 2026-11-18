@@ -1,7 +1,6 @@
-## 📬 2026-11-17 신규 지원사업 공고 2건
+## 📬 2026-11-18 신규 지원사업 공고 1건
 
-### 일반 (2건)
-- [2026년 KOTRA 해외 수출기업 기술분쟁 소송 보험료 지원사업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127933) — 산업통상부 · 대한무역투자진흥공사 (마감 2026-11-20)
-- [2026년 스타트업 법률지원사업 참여기업 모집 수정 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121175) — 중소벤처기업부 · 창업진흥원 (상시)
+### 일반 (1건)
+- [2027년 실증시험 지원사업 후보과제 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127964) — 방위사업청 · 국방기술진흥연구소 (마감 2026-11-26)
 
 👉 전체 공고 보기: https://alcofixkorea-a11y.github.io/alcofix-biz-alert/
