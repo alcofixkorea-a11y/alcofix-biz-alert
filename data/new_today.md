@@ -1,6 +1,7 @@
-## 📬 2026-11-18 신규 지원사업 공고 1건
+## 📬 2026-11-19 신규 지원사업 공고 2건
 
-### 일반 (1건)
-- [2027년 실증시험 지원사업 후보과제 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127964) — 방위사업청 · 국방기술진흥연구소 (마감 2026-11-26)
+### 일반 (2건)
+- [2026년 3차 장애인기업 국내ㆍ외 전시회참가 지원사업 참여기업 모집 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127994) — 중소벤처기업부 · 장애인기업종합지원센터 (마감 2026-11-25)
+- [2027년 정보통신 및 정보문화 유공 정부포상 계획 공고](https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127992) — 과학기술정보통신부 · 한국정보방송통신대연합 (마감 2026-12-22)
 
 👉 전체 공고 보기: https://alcofixkorea-a11y.github.io/alcofix-biz-alert/
